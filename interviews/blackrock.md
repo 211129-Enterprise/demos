@@ -17,6 +17,8 @@
 
 - What’s the difference between an immutable and mutable object? 
 
+- Write a method to determine whether a String is a palindrome.
+
 - Not too many questions outside of core Java 
 
 - Who are you? 
