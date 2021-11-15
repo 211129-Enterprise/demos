@@ -1,8 +1,6 @@
 # Welcome to 21083 Reston Java Enterprise!
-*This is the repository for the remote Fullstack Java Enterprise Revature batch starting August 23rd, 2021.
+*This is the repository for the remote Java Enterprise Revature batch starting November 29th, 2021.
 Here you will find all of the notes from class aslong with study-guides, project guidelines, and more resources.*
-
-<br>
 
 ### Most Recent QC/Interview Guide can be found [here](https://github.com/211129-Enterprise/demos/blob/main/week1/README.md) :star:
 > QC is important! It is meant to simulate the interview process.  Check out [this guide on how to do well](https://github.com/211129-Enterprise/demos/blob/main/how-to-do-well-in-qc.md). 
