@@ -1,5 +1,5 @@
 # Purpose of this Directory
-Within this directory you will find some prep material for client interviews.  Regardless of the client you're interivewing with, it's reccomended you study all of the client interview questions.  Better overprepared than under!
+Within this directory you will find some prep material for client interviews based on the questions that former associates have recalled from their interviews.  Regardless of the client you're interivewing with, it's reccomended you study all of the questions.  Better overprepared than under!
 
 ## Contents
 - [Bank of America and Citi Interview Questions](https://github.com/211129-Enterprise/demos/blob/main/interviews/bofa-and-citi.md)
