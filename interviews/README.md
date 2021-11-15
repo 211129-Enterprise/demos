@@ -1,7 +1,7 @@
 # Purpose of this Directory
-Within this directory you will find some prep material for client interviews.
+Within this directory you will find some prep material for client interviews.  Regardless of the client you're interivewing with, it's reccomended you study all of the client interview questions.  Better overprepared than under!
 
 ## Contents
-- [How to Do Well in QC](https://github.com/211129-Enterprise/demos/blob/main/interviews/how-to-do-well-in-qc.md)
 - [Bank of America and Citi Interview Questions](https://github.com/211129-Enterprise/demos/blob/main/interviews/bofa-and-citi.md)
 - [BlackRock Interview Questions](https://github.com/211129-Enterprise/demos/blob/main/interviews/blackrock.md)
+- [How to Do Well in QC](https://github.com/211129-Enterprise/demos/blob/main/interviews/how-to-do-well-in-qc.md)
