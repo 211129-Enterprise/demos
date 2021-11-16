@@ -1,4 +1,4 @@
-# Welcome to 21083 Reston Java Enterprise!
+# Welcome to 211129 Reston Java Enterprise!
 *This is the repository for the remote Java Enterprise Revature batch starting November 29th, 2021.
 Here you will find all of the notes from class aslong with study-guides, project guidelines, and more resources.*
 
