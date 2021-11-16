@@ -4,3 +4,6 @@ Knowledge of data structures like Hash Tables, Lists, Queues, Graphs, and variou
 Just like a car mechanic needs the right tool to fix a car and make it run properly, a programmer needs the right tool (algorithm and data structure) to make the software run properly, making it efficient and scalable.
 
 > *Below is a list of demos we cover in class and the challenges you should practice immediately afterward to build your skills.  This list will expand through out the weeks.*
+
+## Content
+- *TBA*
