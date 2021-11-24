@@ -41,7 +41,7 @@ Time EST |  Monday | Tuesday | Wednesday | Thursday |   Friday   |
 
 :pizza: = Lunch <br>
 :pencil2: = Quiz <br>
-:speech_balloon: = 1-on-1 Interviews and/or QC evaluation
+:speech_balloon: = 1-on-1 Interviews and/or QC evaluation <br>
 `blank space` = lecture, demos & exercises <br>
 :mag: = self or group study 
 
