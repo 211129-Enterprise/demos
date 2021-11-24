@@ -1,5 +1,3 @@
-[![Image from Gyazo](https://i.gyazo.com/e4a47a2ea74401c972995cb57ded81ea.gif)](https://gyazo.com/e4a47a2ea74401c972995cb57ded81ea)
-
 # Data Structures & Algorithms
 Knowledge of data structures like Hash Tables, Lists, Queues, Graphs, and various algorithms goes a long way in solving engineering problems efficiently.  Interviewers are often interested in seeing how candidates use these tools to solve a problem. 
 
@@ -9,3 +7,5 @@ Just like a car mechanic needs the right tool to fix a car and make it run prope
 
 ## Content
 - *TBA*
+
+[![Image from Gyazo](https://i.gyazo.com/e4a47a2ea74401c972995cb57ded81ea.gif)](https://gyazo.com/e4a47a2ea74401c972995cb57ded81ea)
