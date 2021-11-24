@@ -12,7 +12,7 @@ Here you will find all of the notes from class aslong with study-guides, project
 
 ## Weekly Schedule:
 * The work day starts 10:00am ET M-F, technically ends at 6:00pm M-Th, ends 3pm on Friday
-  > Typically I will end lecture at 3/3:30pm EST.  You are expected to code and study for the remainder of the work day.
+  > Typically I will end lecture at 3/3:30pm ET.  You are expected to code and study for the remainder of the work day.
  
 * **Mondays** will serve as evaluation days of the material covered the week prior. QC's are typically held on either Mondays or Tuesdays.
 
