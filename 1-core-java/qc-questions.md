@@ -22,7 +22,7 @@
   * In the String pool in the heap
 
 * Explain stack vs heap?
-  * Heap is where objects are stored in memory. Stack is where local variable references are kept - a new stack is created for each method invocation
+  * Heap is where objects are stored in memory. Stack is where local variable references are kept - a new stack FRAME is created for each method invocation
 
 * What are annotations?
   * A type of syntactic metadata added to the code, read by the compiler - use `@` syntax
