@@ -1,0 +1,29 @@
+package com.revature.models;
+
+public class Driver {
+	public static void main(String[] args) {
+		Person p1 = new Person();
+		System.out.println("The name of the person is "+p1);//This prints a null because we have not set a name.
+		
+		Person p2 = new Person("Jimmy");
+		p2.introduce();
+		
+		Person p3 = new Person("Sally", 25, 163, 42.5);
+		Person p4 = new Person("Sally", 25, 163, 42.5);
+		
+		//Will .equals return true for the two above us? .equals tests for values. For it to be equal we must override what .equals does.
+		System.out.println(p3.equals(p4));
+		
+		//Will it return for == which tests for the position in memory?
+		System.out.println(p3 == p4);
+		
+		System.out.println(p3);
+		
+		//Liskov Substitution Principal, sub classes should be interchangable with one another
+		Employee e1 = new Employee("Larry", 38, 203, 89, "Finance");
+		System.out.println(e1.getAge());//Despite not being defined within employee the getName getter is still available. Thanks to inheritance we don't need to redo it.
+		//Abstraction means it doesn't need to be shown either. 
+		//e1 = new Artist();
+		
+	}
+}
