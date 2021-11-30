@@ -32,6 +32,39 @@ public class Driver {
 		System.out.println(p4.hashCode());
 		System.out.println(p5.hashCode());
 		
+		System.out.println("=====================================");
+		
+		// Liskov Substitution Priciple - google
+		Person e1 = new Employee("Larry", 45, 6.2, 270, "Finance");
+		// e1 = new Artist(); // this is the Liskov Substitution Priciple at work 
+		
+		String name = e1.getName();
+		System.out.println(name);
+		
+		((Employee) e1).getDept();
+		
+//		e1.name = "Garry";
+		e1.setName("Garry");
+		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
