@@ -30,7 +30,7 @@ public class Driver {
 				System.out.println(i);
 			}
 			int o = i;
-			System.out.println(result)
+			System.out.println(result);
 		}
 	}
 	
