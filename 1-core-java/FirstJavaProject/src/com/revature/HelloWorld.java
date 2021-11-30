@@ -3,6 +3,8 @@ package com.revature;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.garbagecollection.GarbageDriver;
+
 public class HelloWorld {
 	
 		/**
@@ -138,6 +140,8 @@ public class HelloWorld {
 		 * 
 		 * == vs. .equals();
 		 */
+		
+		System.out.println(GarbageDriver.numThatNeverChanges); // i can call it's public static variable
 	}
 
 }
