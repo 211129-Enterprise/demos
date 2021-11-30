@@ -31,6 +31,17 @@ public class Driver {
 		 
 		 System.out.println(p4.hashCode()); //hash codes return different by default
 		 System.out.println(p5.hashCode()); //overriding in Person class changes it
+		 
+		 
+		 
+		 
+		 //Liskov Substitution Principle
+		 Person e1 = new Employee("Larry", 45, 6.2, 270, "Finance");
+		 e1 = new Artist(); //Lisov Substitution Principle at work
+		 
+		 String name = e1.getName();
+		 System.out.println(name);
+		 
 	}
 
 }
