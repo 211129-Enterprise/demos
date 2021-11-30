@@ -41,6 +41,11 @@ public class GradeCalcChallenge {
 		
 		System.out.println("The Student's Letter grade is " + letterGrade + " . That's " + String.format("%,.2f", grade)  + " % !");
 
+		String name = "vishal athar";
+		for (int i=0; i < name.length(); i++)
+		{
+			System.out.println(name.charAt(i));
+		}
 	}
 	
 	public static double percentCal(double score, double total)
