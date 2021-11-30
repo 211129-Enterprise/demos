@@ -19,12 +19,14 @@ public class GradingCalcChallenge {
 		 * 1. Prompt the user to enter the total amount of points on the quiz (use the Scanner class) -> save it to a variable.
 		 * */
 		Scanner scan = new Scanner(System.in);
+		System.out.println("Please enter the total amount of points.");
 		String totalPointsStr = scan.nextLine();
 		Double totalPoints = Double.parseDouble(totalPointsStr);
-		System.out.println("Please enter the total amount of points.");
+		System.out.println("Please enter the number of points the student received.");
 		String pointsScoredStr = scan.nextLine();
 		Double scoredPoints = Double.parseDouble(pointsScoredStr);
-		System.out.println("Please enter the number of points the student received.");
+		
+		scan.close();
 		/*
 		 * 
 		 * 					====== HINT =======
@@ -39,7 +41,23 @@ public class GradingCalcChallenge {
 		 * 	
 		 * 
 		 * */
+	    /*
+	     
+	     */
 		Double grade = ((scoredPoints / totalPoints) * 100);
+		
+		
+		if (grade >= 90) {
+		System.out.println("The Student's Letter grade is an A. That's " + String.format("%,.0f", grade) + "%");
+		} else if (grade >= 80) {
+		System.out.println("The Student's Letter grade is a B. That's " + String.format("%,.0f", grade) + "%");
+		} else if (grade >= 70) {
+		System.out.println("The Student's Letter grade is a C. That's " + String.format("%,.0f", grade) + "%");
+		} else if (grade >= 60) {
+		System.out.println("The Student's Letter grade is a D. That's " + String.format("%,.0f", grade) + "%");
+		} else if (grade >= 50) {
+		System.out.println("The Student's Letter grade is an F. That's " + String.format("%,.0f", grade) + "%");
+		}
 		
 		/*
 		 * if (x <= 90 ) {
@@ -76,5 +94,11 @@ public class GradingCalcChallenge {
 		 */
 
 	}
+		
+		public static double calc(double maxPoints, double score) {
+			Double grade = ((score / maxPoints) * 100);
+			
+			return grade;
+		}
 
 }
