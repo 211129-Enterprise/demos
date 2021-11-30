@@ -1,39 +1,45 @@
 package com.revature.scanner;
 
-import java.util.Scanner;
+import java.util.Scanner; // this is in the JRE!
 
 public class Driver {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        
-        // prompt the user to enter their name
-        System.out.println("Please Enter your Name: ");
-        
-        // capture the users input and save it to a local variable
-        String name = scan.nextLine();
-        
-        // ask the user for their age
-        System.out.println("Please Enter your Age: ");
-        
-        // save the age to an int variable
-        int age = scan.nextInt();
-        
-        // print the output
-        System.out.println("Your name is " + name + " and you are " + age + " years old");
-        
-        int futureAge = getFutureAge(age);
-        
-        // print the future age
-        System.out.println("In a century you will be " + futureAge + " years old.");
-        
-        // close the scanner
-        scan.close();
-    }
 
-    
-    // method: getFutureAge
-    public static int getFutureAge(int age)
-    {
-        return age + 100;
-    }
+	
+	public static void main(String[] args) { 
+		
+		Scanner scan = new Scanner(System.in);
+		
+		// prompt the user to enter their name
+		System.out.println("Please enter your name!"); // sysout + ctrl + space (command if you're on map) 
+		
+		// capture the users input and save it to a variable called name
+		String name = scan.nextLine();
+		
+		// ask the user for their age
+		System.out.println("What's your age?");
+		
+		// save the age to an INT variable
+		int age = scan.nextInt();
+		
+		// print back the name and age of the user!
+		System.out.println("Your name is " + name + " and you are " + age + " years old");
+		
+		// In 100 years you will be ____ years old
+		
+//		int futureAge = getFutureAge(age);
+		
+		System.out.println("In 100 years you will be " + getFutureAge(age));
+		
+//		scan.close();
+		
+	}
+	
+	
+	// method: getFutureAge - takes in an age and returns an integer value that is = tpo currentAge + 100 years
+	public static int getFutureAge(int currentAge) {
+		
+		return currentAge + 100;
+		
+	}
+	
 }

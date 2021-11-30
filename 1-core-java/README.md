@@ -5,4 +5,5 @@
 - [JavaTPoint](https://www.javatpoint.com/java-tutorial)
 - [W3 Schools](https://www.w3schools.com/java/default.asp)
 - [YouTube Video: Class vs. Object](https://www.youtube.com/watch?v=3sMxJxeUOLg&ab_channel=Telusko)
+- [GeeksForGeeks: Garbage Collection](https://www.geeksforgeeks.org/garbage-collection-java/)
 - [YouTube Video: Heap and Garbage Collector](https://www.youtube.com/watch?v=n_0gdyObLpc&ab_channel=edureka%21)
