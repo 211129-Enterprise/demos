@@ -23,7 +23,7 @@ public class GradeCalcChallenge {
 		scan.close();
 		
 		// calculate percentage
-		double scorePercent = (quizPoints / totalPoints) * 100;
+		double scorePercent = getPercent(quizPoints, totalPoints);
 		
 		// cast percentage to int for comparison, (could use something to round here if we wanted to?)
 		int percentage = (int) scorePercent;
@@ -46,10 +46,10 @@ public class GradeCalcChallenge {
 		else if(percentage >= 80){
 			grade = 'B';
 		}
-		else if(percentage >= 75){
+		else if(percentage >= 70){
 			grade = 'C';
 		}
-		else if(percentage >= 70){
+		else if(percentage >= 60){
 			grade = 'D';
 		}
 		else if(percentage >= 0){
@@ -64,6 +64,11 @@ public class GradeCalcChallenge {
 	
 		
 	}
+	
+	public static double getPercent(double points, double total) {
+		return (points / total) * 100;
+	}
+	
 	
 
 }

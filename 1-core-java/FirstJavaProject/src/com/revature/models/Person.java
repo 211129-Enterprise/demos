@@ -3,7 +3,7 @@ package com.revature.models;
 import java.util.Objects;
 
 // remember that custom classes inherit from java.lang.Object class
-public class Person { // pojo = plain old java project
+public class Person { // POJO = Plain Old Java Object
 
 	
 	// properties (states)
@@ -71,24 +71,24 @@ public class Person { // pojo = plain old java project
 		public String toString() {
 			return "Person [name=" + name + ", age=" + age + ", height=" + height + ", weight=" + weight + "]";
 		}
-//		@Override
-//		public int hashCode() {
-//			return Objects.hash(age, height, name, weight);
-//		}
-//		@Override
-//		public boolean equals(Object obj) {
-//			if (this == obj)
-//				return true;
-//			if (obj == null)
-//				return false;
-//			if (getClass() != obj.getClass())
-//				return false;
-//			Person other = (Person) obj;
-//			return age == other.age && Double.doubleToLongBits(height) == Double.doubleToLongBits(other.height)
-//					&& Objects.equals(name, other.name)
-//					&& Double.doubleToLongBits(weight) == Double.doubleToLongBits(other.weight);
-//		}
-//	
+		@Override
+		public int hashCode() {
+			return Objects.hash(age, height, name, weight);
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Person other = (Person) obj;
+			return age == other.age && Double.doubleToLongBits(height) == Double.doubleToLongBits(other.height)
+					&& Objects.equals(name, other.name)
+					&& Double.doubleToLongBits(weight) == Double.doubleToLongBits(other.weight);
+		}
+	
 		
 		// we can override a method that we inherit
 		
