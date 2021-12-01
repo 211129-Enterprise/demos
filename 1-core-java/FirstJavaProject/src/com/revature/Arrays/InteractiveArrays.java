@@ -2,7 +2,7 @@ package com.revature.Arrays;
 
 import java.util.Scanner;
 
-import javax.management.loading.PrivateClassLoader;
+//import javax.management.loading.PrivateClassLoader;
 
 public class InteractiveArrays {
 
@@ -12,6 +12,9 @@ public class InteractiveArrays {
 		// TODO Auto-generated method stub
 		
 	int[] nums = getInteger(6);
+	
+	double avg = average(nums);
+	System.out.println(nums);
 	
 
 	}
@@ -69,6 +72,13 @@ public class InteractiveArrays {
 		return resultString + " ]";
 		
 	}
+	
+	public static void printArray(int [] arr) {
+		for(int n : arr) {
+			System.out.println(n);
+		}
+	}
+	
 	
 	
 	
