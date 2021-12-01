@@ -36,7 +36,7 @@ public class InteractiveArrays {
 		// initialize the array
 		int[] numbers = new int[capacity];
 		
-		// create a for loop to loop the array and each timme the loop executes
+		// create a for loop to loop the array and each time the loop executes
 		// it captures the user's input and saves that input to a slot
 		// within the array
 		for (int i=0; i<numbers.length; i++) {
