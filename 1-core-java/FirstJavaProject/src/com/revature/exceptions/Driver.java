@@ -22,8 +22,9 @@ public class Driver {
 		System.out.println("I reached this line!");
 		
 		createFileCheckedException("something", "something");
+		
 		try {
-			checkAge(20);
+			checkAge(20); // because this method may throw an exception
 		} catch (AgeDeniedException e) { 
 			System.out.println(e);
 		} 
@@ -40,14 +41,12 @@ public class Driver {
 		if (age < 21) {
 			throw new AgeDeniedException("Sorry you're age is " + age + " which is under 21.");
 		} else {
-			System.out.println("Welcome!");
-			
+			System.out.println("Welcome!");	
 		}
-		
 		
 	}
 	
-	// Polymorphism - overloading changing number of parameters
+	// Polymorphism - overloading: changing number of parameters
 	static int divideTryCatch() {
 		
 		// we will call the scan object and ask the user for integers
@@ -77,7 +76,6 @@ public class Driver {
 			// close our resources!
 			scan.close();
 		}
-		
 		
 	}
 	
@@ -123,14 +121,13 @@ public class Driver {
 			// forces us to handle it.
 			e.printStackTrace();
 		} 
-		
-	
+			
 		// try with resources will automatically close all resources you're using
-//	try (/*an object you're using to access a resource) {	
-//		// run some code
-//	} catch (IOException) 
-//		
-//	}
+		//	try (/*an object you're using to access a resource) {	
+		//		// run some code
+		//	} catch (IOException) 
+		//		
+		//	}
 
 	}
 }
