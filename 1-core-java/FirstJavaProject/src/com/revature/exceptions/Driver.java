@@ -17,6 +17,16 @@ public class Driver {
 		System.out.println(divide(x, y));
 	}
 	
+	static void checkAge(int age) {
+		// make sure that the person's age is > 21
+		if(age < 21) {
+			throw new AgeDeniedException("sorry your age is" + age + "which is under 21"));
+		} else {
+			System.out.println("welcome!");
+		}
+		// if the age is under 21, we throw exception
+	}
+	
 	// Polymorphism - overloading changing number of parameters 
 	static int divideTryCatch() {
 		// we will call the scan object and ask the user for integers 
