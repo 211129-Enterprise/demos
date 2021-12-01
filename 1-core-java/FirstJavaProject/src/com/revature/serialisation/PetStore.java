@@ -109,7 +109,7 @@ public class PetStore {
 	 */
 	public void serialize() {
 		
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("pet.db"))) {
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("files/pet.db"))) {
 			
 			// we are taking the petDB arraylist of the object that invokes this method
 			// and writing it to a file
@@ -134,7 +134,7 @@ public class PetStore {
 			
 			// whenever a petStore object calls this method, it SETS it's petDB arraylist
 			// EQUAL TO the info that's read from a file (in the form of a java object)
-			this.setPetDB((ArrayList<Pet>) ois.readObject());
+			this.setPetDB( (ArrayList<Pet>) ois.readObject()  );
 			
 			
 		} catch (FileNotFoundException e) {
