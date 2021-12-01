@@ -110,7 +110,7 @@ public class Driver {
 			}
 			
 			//Enhanced for loop
-			for(char c : word.split("")) { //word.split("") = an array like ["a", "p", "p"]
+			for(String c : word.split("")) { //word.split("") = an array like ["a", "p", "p"]
 				System.out.println(c);
 			}
 			
