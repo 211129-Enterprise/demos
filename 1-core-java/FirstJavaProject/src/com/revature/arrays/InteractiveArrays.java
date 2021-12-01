@@ -11,8 +11,13 @@ public class InteractiveArrays {
 	public static void main(String[] args) {
 		
 		int[] userNumbers = getIntegers(5);
-		System.out.println(Arrays.toString(userNumbers));
+//		System.out.println(Arrays.toString(userNumbers));
+		printArray(userNumbers);
+		
+		double avg = getAverage(userNumbers);
 
+		System.out.println("the average was " + avg);
+		
 	}
 	
 	/**
@@ -53,7 +58,39 @@ public class InteractiveArrays {
 	 * 
 	 * Once you create this method, call it within the main method, and print its return, after passing through
 	 * the array that was returned by the getIntegers method.
+	 * 
+	 * BONUS: can you create another method that prints out the array so we don't have to always call the Arrays.toString method?
 	 */
+	static double getAverage(int[] arr) {
+		// I will need a for loop to iterate thru the entire array
+		// I need to record a SUM of all the numbers I'm iterating through
+		// I need to make sure I capture the lenght (the number of elements within the array)
+		
+		double sum = 0;
+
+		// if my array's capacity is 4...the lenght is 4...[ _0_, 1, 2, 3]
+		for (int i=0; i<arr.length; i++) {
+			
+//			sum = sum + arr[i];
+			sum += arr[i]; // this is short hand 
+		}
+		
+		double avg = sum/arr.length;
+		
+		return avg;
+		
+	}
+	
+	static void printArray(int[] arr ) {
+		
+		for (int n : arr) {
+			
+			System.out.println(n);
+		}
+		
+	}
+	
+	
 	
 	
 	
