@@ -1,5 +1,7 @@
 package com.revature.exceptions;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -75,5 +77,28 @@ public class Driver {
 			System.out.println("In the finally block.");
 		}
 	}
+	
+	// this method will create a file at a specified path
+	static void createFileCheckedException(String path, String text) {
+		
+		// at the specified path, we'll create a file and fill it with the text passed through
+		FileWriter writer;
+		
+		try {
+			writer = new FileWriter(path, true); // true means it can append text/files to the path
+			writer.write(text);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 
+		
+		
+		
+		
+	}
+
+	
+	
+	
 }
