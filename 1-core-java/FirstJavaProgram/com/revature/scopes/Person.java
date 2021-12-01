@@ -1,4 +1,4 @@
-package com.revature.models;
+package com.revature.scopes;
 
 public class Person {
 	private String name;

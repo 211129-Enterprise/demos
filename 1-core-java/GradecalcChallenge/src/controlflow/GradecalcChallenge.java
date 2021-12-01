@@ -1,4 +1,4 @@
-package com.revature.controlflow;
+package controlflow;
 
 import java.util.Scanner;
 
