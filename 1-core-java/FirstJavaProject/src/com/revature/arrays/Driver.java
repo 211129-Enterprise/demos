@@ -63,12 +63,6 @@ public class Driver {
 		System.out.println(Arrays.toString(fruits));
 		
 		
-		
-		
-		
-		
-		
-
 	}
 
 }

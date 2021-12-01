@@ -45,7 +45,7 @@ public class InteractiveArrays {
 		
 		
 		for (int i=0; i<numbers.length; i++) {
-			// store the nextInt accepeted by scanner object and store it to index i of the array
+			// store the nextInt accepted by scanner object and store it to index i of the array
 			
 			// to improve UX 
 			System.out.println("Enter the " + (i + 1) + "th number");
@@ -71,7 +71,7 @@ public class InteractiveArrays {
 	 */
 	
 	static double getAvgArray (int[] intArray) {
-		int totalElements = intArray.length + 1;
+		int totalElements = intArray.length ;
 		
 		int total = 0;
 		
@@ -83,6 +83,10 @@ public class InteractiveArrays {
 		return avg;
 	}
 	
-	
+	static void printArray(int[] arr) {
+		for (int n : arr) {
+			System.out.println(n);
+		}
+	}
 
 }
