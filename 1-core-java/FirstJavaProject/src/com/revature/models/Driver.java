@@ -17,6 +17,9 @@ public class Driver {
 		System.out.println(p4.hashCode());
 		System.out.println(p3 == p4);
 		System.out.println(p3.equals(p4));
+		
+		Person e1 = new Employee("Larry", 25, 6.2, 220, "Finance");
+		System.out.println(e1.getName());
 	}
 
 }

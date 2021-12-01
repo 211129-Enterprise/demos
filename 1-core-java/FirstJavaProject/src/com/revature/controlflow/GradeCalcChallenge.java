@@ -53,7 +53,7 @@ public class GradeCalcChallenge {
 		 * 		Student scores 15 out of 20 -> 75% -> C
 		 * 		"The Student's Letter grade is C. That's 75% !" 
 		 */
-		System.out.println("The Student's Letter grade is " + letterGrade + ". That's " + ((int) grade) + "% !");
+		System.out.println("The Student's Letter grade is " + letterGrade + ". That's " + String.format("%.2f", grade) + "% !");
 		
 		/*
 		 *  Bonus:

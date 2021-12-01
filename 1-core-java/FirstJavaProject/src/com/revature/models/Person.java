@@ -17,6 +17,8 @@ public class Person {
 	}
 	
 	
+	Person(){}
+	
 	Person(String name){
 		super();
 		this.name = name;
