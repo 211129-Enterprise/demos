@@ -29,22 +29,20 @@ public class Driver {
 		} 
 		
 		System.out.println("Reaching this line");
-	
-		
-		
+
 	}
 	
 	static void checkAge(int age) {
 		
 		// make sure that the person's age is > 21
+		
+		// if the age is under 21, we throw exception
 		if (age < 21) {
 			throw new AgeDeniedException("Sorry you're age is " + age + " which is under 21.");
 		} else {
 			System.out.println("Welcome!");
 			
 		}
-		
-		 // if the age is under 21, we throw exception
 		
 		
 	}
