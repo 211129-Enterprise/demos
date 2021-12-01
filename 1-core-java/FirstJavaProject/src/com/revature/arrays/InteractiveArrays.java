@@ -11,7 +11,9 @@ public class InteractiveArrays {
 	public static void main(String[] args) {
 		
 		int[] userNumbers = getIntegers(5);
-		System.out.println(Arrays.toString(userNumbers));
+		//System.out.println(Arrays.toString(userNumbers));
+		System.out.println(getAverage(userNumbers));
+		printArray(userNumbers);
 
 	}
 	
@@ -55,7 +57,24 @@ public class InteractiveArrays {
 	 * the array that was returned by the getIntegers method.
 	 */
 	
+
 	
+	static double getAverage(int[] array) {
+		double aveCalculated = 0;
+		
+		for(int i = 0; i< array.length; i++)
+			aveCalculated += array[i];
+		aveCalculated = aveCalculated / array.length;
+		
+		return aveCalculated;
+	}
+	
+	static void printArray(int[] array) {
+		
+		for(int i = 0; i< array.length; i++)
+			System.out.println(array[i]);
+		
+	}
 	
 	
 	
