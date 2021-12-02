@@ -7,17 +7,26 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<!-- Project Object Model -->
-	<!--  xml - eXtensible Markup Language -->
+	<!-- xml - eXtensible Markup Language -->
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
-	<!-- ctrl + a + ctrl + shift + f -->
+	<!--ctrl + shift + f to auto-format-->
+	<!--  ctrl + s to save -->
 
 	<dependencies>
 
 		<!-- Later we will paste in a Testing Framework dependency (JUnit) -->
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
 
 	</dependencies>
 

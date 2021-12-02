@@ -113,10 +113,54 @@ public class Student implements Serializable {
 		
 		viewBalance();
 	}
-	
-	
-	
-	
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getGradeYear() {
+		return gradeYear;
+	}
+
+	public void setGradeYear(int gradeYear) {
+		this.gradeYear = gradeYear;
+	}
+
+	public String getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
+	public double getTuitionBalance() {
+		return tuitionBalance;
+	}
+
+	public void setTuitionBalance(double tuitionBalance) {
+		this.tuitionBalance = tuitionBalance;
+	}
 
 	// add toString() HashCode() & Equals()
 	@Override
