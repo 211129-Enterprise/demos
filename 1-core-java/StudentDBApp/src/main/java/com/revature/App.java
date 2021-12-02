@@ -1,8 +1,11 @@
 package com.revature;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.revature.exceptions.NotAGradeYearException;
 import com.revature.models.Student;
+import com.revature.util.UtilityMethods;
 
 public class App {
 
@@ -36,13 +39,36 @@ public class App {
 			String lastName = scan.next();
 
 			System.out.println("What's the student's grade year:\n1 - Freshman\n2 - Sophmore\n3 - Junior\n4 - Senior");
-			int gradeYear = scan.nextInt();
+
+			int gradeYear = 0;
+			boolean isValidInput = false;
+
+			while (!isValidInput) {
+
+				try {
+					 gradeYear = scan.nextInt();
+					 UtilityMethods.validateGradeYear(gradeYear);
+					 isValidInput = true;
+				} catch (NotAGradeYearException e) {
+					System.out.println(e.getMessage());
+				} catch(InputMismatchException e) {
+					System.out.println("please enter a valid number");
+				} finally {
+					scan.nextLine();
+				}
+
+			}
 
 			// for each element ask the user for firstname lastname and gradeyear
 			Student s = new Student(firstName, lastName, gradeYear);
 
 			students[i] = s;
 			// for each empty element call the student contructor
+		}
+
+		for (Student s : students) {
+			System.out.println(s.toString());
+			s.enroll();
 		}
 	}
 
