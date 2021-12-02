@@ -28,10 +28,10 @@ public class Driver {
 		
 		
 		
-//		PetStore petsMart = new PetStore();
-//		petsMart.deserialize();
-//		
-//		System.out.println(petsMart.getPetDB());
+		PetStore petsMart = new PetStore();
+		petsMart.deserialize();
+		
+		System.out.println(petsMart.getPetDB());
 		
 	}
 

@@ -24,7 +24,13 @@ public class PetStore {
 	public void deserialize() {
 		 try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("files/pet.db"))) {
 			 this.setPetDB((ArrayList<Pet>) ois.readObject());
-		 }
+         } catch (ClassNotFoundException e) {
+		     e.printStackTrace();
+         } catch(FileNotFoundException e) {
+        	 e.printStackTrace();
+         } catch (IOException e) {
+        	 e.printStackTrace();
+         }
 		 
 	}
 
