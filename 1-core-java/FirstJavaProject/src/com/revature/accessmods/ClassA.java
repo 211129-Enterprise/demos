@@ -43,14 +43,7 @@ public class ClassA {
 		System.out.println(classA.defaultField);
 		System.out.println(classA.protectedField);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }

@@ -28,7 +28,6 @@ public class Driver {
 		// instantiate a new Pet Store that will deserialize that object and adopt that collection as its own
 		PetStore petsMart = new PetStore();
 		petsMart.deserialize(); // this will read from the file and deserialize (hydrate) those objects
-		
 		System.out.println(petsMart.getPetDB());
 		
 		

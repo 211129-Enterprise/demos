@@ -6,8 +6,4 @@ public class NotAGradeYearException extends RuntimeException {
 		super(s);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	
-	
 }

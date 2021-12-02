@@ -3,6 +3,7 @@ package com.revature.abstraction;
 // An abstract class cannot be instantiated
 public abstract class Animal {
 	
+
 	private int legs;
 	private String color;
 	
@@ -15,6 +16,7 @@ public abstract class Animal {
 	public abstract void makeSound();
 	
 	// if we added final here, we can't override
+
 	public void exist() {
 		System.out.println("I EXIST!");
 	}
@@ -24,7 +26,7 @@ public abstract class Animal {
 	public int getLegs() {
 		return legs;
 	}
-	
+
 	public void setLegs(int legs) {
 		this.legs = legs;
 	}
@@ -35,8 +37,8 @@ public abstract class Animal {
 
 	public void setColor(String color) {
 		this.color = color;
+
 	}	
-	
 	
 	
 }

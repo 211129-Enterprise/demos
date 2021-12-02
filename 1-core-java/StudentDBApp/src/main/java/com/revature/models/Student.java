@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 // Java Bean
 public class Student implements Serializable {
-	
 	// 1000 - everytime a new student is created this value increases by 1;
 	public static int GLOBAL_ID = 1000;
 	private static Scanner scan = new Scanner(System.in);
@@ -24,8 +23,7 @@ public class Student implements Serializable {
 	private double tuitionBalance = 0;
 	
 	// constructor will be firstName, lastName, gradeYear
-	public Student(String firstName, String lastName,
-			int gradeYear) {
+	public Student(String firstName, String lastName, int gradeYear) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -49,7 +47,6 @@ public class Student implements Serializable {
 		
 		// step 2. open up a while loop and have the user click q to quit
 		boolean isDone = false;
-			
 		while (!isDone) { // isDone == false
 			
 			// step 3. prompt the user to enter a course name
@@ -92,7 +89,6 @@ public class Student implements Serializable {
 	}
 	
 	// pay tuition
-	
 	public void payTuition() {
 		
 		viewBalance();
@@ -113,7 +109,6 @@ public class Student implements Serializable {
 		
 		
 	}
-	
 	
 	public String getFirstName() {
 		return firstName;
@@ -163,6 +158,8 @@ public class Student implements Serializable {
 		this.tuitionBalance = tuitionBalance;
 	}
 
+
+	// add toString() HashCode() & Equals()
 	@Override
 	public String toString() {
 		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", gradeYear=" + gradeYear
@@ -188,5 +185,4 @@ public class Student implements Serializable {
 				&& Objects.equals(studentId, other.studentId)
 				&& Double.doubleToLongBits(tuitionBalance) == Double.doubleToLongBits(other.tuitionBalance);
 	}
-	
 }

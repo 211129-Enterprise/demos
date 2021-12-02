@@ -56,7 +56,6 @@ public class InteractiveArrays {
 //		// return the array
 //		return numbers;
 //	}
-	
 	static int[] getIntegers(int capacity) {
 		
 		System.out.println("Please enter " + capacity + " integers");

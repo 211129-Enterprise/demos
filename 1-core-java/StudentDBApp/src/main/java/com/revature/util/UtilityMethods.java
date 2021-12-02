@@ -14,10 +14,8 @@ public class UtilityMethods {
 	public static void printStudentInfo(Student[] students) {
 		
 		for (Student s : students) {
-			
 			System.out.println("s.toString()");
 		}
 		
 	}
-	
 }

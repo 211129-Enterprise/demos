@@ -77,7 +77,4 @@ public class PetStore {
 	
 	
 	// ArrayList is a class implementation of the List Interface
-	
-	
-	
 }

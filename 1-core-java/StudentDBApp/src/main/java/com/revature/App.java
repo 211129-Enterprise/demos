@@ -25,7 +25,6 @@ public class App {
 		
 		// step 1. prompt the user how many students to enter
 		System.out.println("How many students are you entering into the DB?");
-		
 		// step 2. grab the capacity that the user entered and build an array to hold student Objects
 		int numOfStudents = scan.nextInt();
 		
@@ -51,7 +50,6 @@ public class App {
 			boolean isValidInput = false;
 			
 			while (!isValidInput) {
-
 				try {
 					gradeYear = scan.nextInt(); // in the case that we don't have an integer, we need to catch InputMismatch exception
 					UtilityMethods.validateGradeYear(gradeYear); // if the integer is greater than 4 or less than 0

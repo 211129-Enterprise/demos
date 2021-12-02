@@ -46,14 +46,13 @@ public class Driver {
 		// [_0_ _1__ _2_ _3_ __ __ __ __] zero indexed
 		
 		byte[] bytes; // declarying the array, not initializing
-		bytes = new byte[16_000]; // initialization
-		
+		bytes = new byte[16_000]; // initialization		
 		char[] letters;
 		String[] words = new String[5];
 		
 		Object[] myObjects;
 		
-		
+
 		int[][] twoDArr = new int[2][2];
 		
 		for ( int i = 0 ; i < twoDArr.length ; i++ ) {
@@ -65,8 +64,7 @@ public class Driver {
 			}
 		}
 		
-		// print out
-		
+		// print out		
 		for (int[] arr : twoDArr) {
 			for (int i : arr ) {
 				
@@ -88,5 +86,5 @@ public class Driver {
 		
 		
 	}
-	
+
 }

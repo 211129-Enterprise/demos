@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Course {
 
+
 	public static final double COST_OF_COURSE = 600.00;
 	private String name;
 	
@@ -17,18 +18,21 @@ public class Course {
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	// toSTring Method
+
 	@Override
 	public String toString() {
 		return "Course [name=" + name + "]";
 	}
+
 	
 	// This ensure that if Course obj has the same String name property
+
 	// it is considered the same in value to another
 	@Override
 	public int hashCode() {
@@ -46,7 +50,4 @@ public class Course {
 		Course other = (Course) obj;
 		return Objects.equals(name, other.name);
 	}
-	
-	
-	
 }

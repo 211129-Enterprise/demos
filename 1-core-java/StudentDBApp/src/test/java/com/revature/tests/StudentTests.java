@@ -10,7 +10,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 import com.revature.exceptions.NotAGradeYearException;
 import com.revature.models.Course;
 import com.revature.models.Student;
@@ -23,7 +22,7 @@ import com.revature.util.UtilityMethods;
 
 public class StudentTests {
 	
-	// dummy objects (stubs)
+	// dummy objects (stubs) - why are these static? So I can repeatedly use
 	static Student dummyStudent;
 	static Course c1;
 	static Course c2;
@@ -80,11 +79,14 @@ public class StudentTests {
 		
 		int sum = (x + y);
 		
+		System.out.println("The sum is " + sum);
+
 		// we're asserting that the actual value is equal to what I expect
 		assertEquals(sum, 5); // assertion
 	}
 	
 	@Test
+
 	public void testWhenInstantiateStudent_thenAssignUniqueStudentId() {
 		
 		dummyStudent = new Student("John", "Doe", 4); // senior
@@ -129,7 +131,6 @@ public class StudentTests {
 		// If this method throws an exception, then the test passes
 		
 		
+		}
 	}
-	
-	
 }

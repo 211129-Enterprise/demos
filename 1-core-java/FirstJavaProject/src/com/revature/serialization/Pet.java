@@ -111,6 +111,6 @@ public class Pet implements Serializable {
 				+ age + ", color=" + color + "]";
 	}
 	
-	
+	// alt + shift + S > hashCode & equals()
 	
 }

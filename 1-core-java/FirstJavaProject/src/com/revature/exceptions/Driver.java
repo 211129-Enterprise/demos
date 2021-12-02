@@ -10,7 +10,6 @@ public class Driver {
 	private static Scanner scan = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		
 		int x = 10;
 		int y = 0; // our compiler never told us that something would go wrong
 		
@@ -31,7 +30,6 @@ public class Driver {
 		
 		System.out.println("Reached this line...");
 
-		
 	}
 	
 	static void checkAge(int age) {
@@ -63,6 +61,7 @@ public class Driver {
 			//repeat the process
 			System.out.println("Enter a divisor");
 			// store the input to a variable
+
 			int y = scan.nextInt();
 			
 			return x/y;
@@ -70,7 +69,6 @@ public class Driver {
 		} catch(ArithmeticException e) {
 			System.out.println("Please enter a number greater than 0");
 			return 0;
-			
 		} catch(InputMismatchException ex) {
 			System.out.println("You must enter an integer...");
 			return 0;
@@ -79,7 +77,6 @@ public class Driver {
 		}
 		
 	}
-	
 	
 	// this method is static, returns an int which is the quotient of 1 number divided by another.
 	static int divide(int x, int y) {
@@ -114,7 +111,7 @@ public class Driver {
 		
 		// at the specified path, we'll create a file and fill it with the text passed through
 		FileWriter writer; // java.io
-		
+	
 		try { 
 			writer = new FileWriter(path, true); // true means please append text/files to the path
 			writer.write(text);
@@ -132,11 +129,4 @@ public class Driver {
 //	}
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 }

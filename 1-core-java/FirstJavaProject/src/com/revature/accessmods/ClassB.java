@@ -14,5 +14,4 @@ public class ClassB {
 		System.out.println(classA.protectedField);
 	}
 	
-	
 }

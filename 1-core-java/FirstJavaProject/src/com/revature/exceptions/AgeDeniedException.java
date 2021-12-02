@@ -6,6 +6,5 @@ public class AgeDeniedException extends RuntimeException {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 }

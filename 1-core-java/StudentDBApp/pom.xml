@@ -7,6 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<!-- Project Object Model -->
+	<!-- xml - eXtensible Markup Language -->
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -51,5 +52,4 @@
 	</build>
 	
 <!-- mvn test -->
-	
 </project>
