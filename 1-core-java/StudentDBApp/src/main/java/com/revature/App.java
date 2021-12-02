@@ -52,8 +52,15 @@ public class App {
 		
 		// let's print out the student array toString() AFTER we initialize it
 		System.out.println("This is what's inside the students array with " + numOfStudents + " places.");
-		System.out.println(Arrays.toString(students)); // Arrays class provides us utility methods to manipulate arrays
+//		System.out.println(Arrays.toString(students)); // Arrays class provides us utility methods to manipulate arrays
 		
+		//for each Student object within the Student array, call sysout(student.toString());
+		for (Student s : students) {
+			
+			// s represents the individual Student Object within the array we're iterating over
+			System.out.println(s.toString());
+			
+		}
 		
 	}
 
