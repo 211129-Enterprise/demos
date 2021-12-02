@@ -68,7 +68,7 @@ public class StudentTests {
 		courses = null;
 		dummyStudent = null;
 		
-		Student.GLOBAL_ID = 1000;
+		Student.GLOBAL_ID = 1000;	
 	}
 	
 	@Test
@@ -111,7 +111,7 @@ public class StudentTests {
 		
 		dummyStudent = new Student("Bob", "Smith", 1); // both will have diff IDs.
 		Student anotherStudent = new Student("Bob", "Smith", 1); //
-		
+	
 		dummyStudent.setStudentId("0");
 		anotherStudent.setStudentId("0");
 		
@@ -133,4 +133,4 @@ public class StudentTests {
 		
 		}
 	}
-}
+

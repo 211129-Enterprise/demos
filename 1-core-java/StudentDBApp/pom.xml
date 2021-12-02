@@ -12,7 +12,6 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-
 	<!--  ctrl + a + ctrl + shift + f -->
 
 	<dependencies>
@@ -26,10 +25,8 @@
     		<scope>test</scope>
 		</dependency>
 
-	
 	</dependencies>
 	
-
 	<build>
 		<plugins>
 			<!-- Surefire plugin to print tests during build cycle -->
@@ -45,9 +42,7 @@
 						<version>3.0.0-M5</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			
-			
+			</plugin>			
 		</plugins>
 	</build>
 	
