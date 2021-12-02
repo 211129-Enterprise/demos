@@ -36,70 +36,6 @@ public class Student implements Serializable {
 		System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentId);
 	}
 	
-	public static int getGLOBAL_ID() {
-		return GLOBAL_ID;
-	}
-
-	public static void setGLOBAL_ID(int gLOBAL_ID) {
-		GLOBAL_ID = gLOBAL_ID;
-	}
-
-	public static Scanner getScan() {
-		return scan;
-	}
-
-	public static void setScan(Scanner scan) {
-		Student.scan = scan;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public int getGradeYear() {
-		return gradeYear;
-	}
-
-	public void setGradeYear(int gradeYear) {
-		this.gradeYear = gradeYear;
-	}
-
-	public String getStudentId() {
-		return studentId;
-	}
-
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
-	}
-
-	public List<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
-	}
-
-	public double getTuitionBalance() {
-		return tuitionBalance;
-	}
-
-	public void setTuitionBalance(double tuitionBalance) {
-		this.tuitionBalance = tuitionBalance;
-	}
-
 	// it will auto-increment some value, 
 	private void setStudentId() {
 		GLOBAL_ID++; // globalId = globalId + 1;
@@ -177,10 +113,54 @@ public class Student implements Serializable {
 		
 		viewBalance();
 	}
-	
-	
-	
-	
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getGradeYear() {
+		return gradeYear;
+	}
+
+	public void setGradeYear(int gradeYear) {
+		this.gradeYear = gradeYear;
+	}
+
+	public String getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
+	public double getTuitionBalance() {
+		return tuitionBalance;
+	}
+
+	public void setTuitionBalance(double tuitionBalance) {
+		this.tuitionBalance = tuitionBalance;
+	}
 
 	// add toString() HashCode() & Equals()
 	@Override

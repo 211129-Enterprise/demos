@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Course {
 	
 	public static final double COST_OF_COURSE = 600.00;
+
 	private String name;
 
 	// constructor (with parameterized)
@@ -51,5 +52,4 @@ public class Course {
 		Course other = (Course) obj;
 		return Objects.equals(name, other.name);
 	}
-
 }

@@ -42,21 +42,26 @@ public class App {
 			
 			System.out.println("Please enter the last name");
 			String lastName = scan.next();
-			
-			int gradeYear  = 0;
-			boolean isValidate = false;
-			
+
 			System.out.println("Enter the student's grade year:\n1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior");
-			while (!isValidate) {
+			
+			int gradeYear = 0;
+			boolean isValidInput = false;
+			
+			while (!isValidInput) {
+			
 				try {
-					gradeYear = scan.nextInt();
-					UtilityMethods.validateGradeYear(gradeYear);
-				}catch(NotAGradeYearException e) {
+					gradeYear = scan.nextInt(); // in the case that we don't have an integer, we need to  catch InputMistmath exception
+					UtilityMethods.validateGradeYear(gradeYear);  // if the integer is greater than 4 or less than 0 
 					
-				}catch(InputMismatchException ex){
-					
-				}finally {
-					scan.nextLine();
+					// we would only reach this line if none of the above lines threw an exception
+					isValidInput = true;
+				} catch (NotAGradeYearException e) {
+					System.out.println(e.getMessage());
+				} catch (InputMismatchException ex) {	
+					System.out.println("Please enter a valid number");
+				} finally {
+					scan.nextLine(); // this allows us to repeat the loop if necessary
 				}
 			}
 			
@@ -73,13 +78,18 @@ public class App {
 		
 		//for each Student object within the Student array, call sysout(student.toString());
 		for (Student s : students) {
-			
+
 			// s represents the individual Student Object within the array we're iterating over
 			System.out.println(s.toString());
 			s.enroll();
-			
+
 		}
 		
 	}
 
+
+	
+	
+	
+	
 }
