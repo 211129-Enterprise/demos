@@ -6,4 +6,7 @@ Just like a car mechanic needs the right tool to fix a car and make it run prope
 > *Below is a list of demos we cover in class and the challenges you should practice immediately afterward to build your skills.  This list will expand through out the weeks.*
 
 ## Content
-- *TBA*
+- **Searching Algorithms**
+  - Hackerrank Challenge: [Binary Search](https://www.hackerrank.com/contests/launchpad-1-winter-challenge/challenges/binary-search-basic/problem) 👈 
+
+<br>
