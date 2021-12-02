@@ -109,11 +109,12 @@ public class PetStore {
 	 */
 	public void serialize() {
 		
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("files/pet.db"))) {
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("files/pet.txt"))) {
 			
 			// we are taking the petDB arraylist of the object that invokes this method
 			// and writing it to a file
 			oos.writeObject(this.getPetDB());
+			oos.writeDouble(0);
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -130,10 +131,11 @@ public class PetStore {
 	public void deserialize() {
 		// this method is responsible to reading that byte stream and
 		// creating a java object from the data inside of the file 
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("files/pet.db"))) {
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("files/pet.txt"))) {
 			
 			// whenever a petStore object calls this method, it SETS it's petDB arraylist
 			// EQUAL TO the info that's read from a file (in the form of a java object)
+			
 			this.setPetDB( (ArrayList<Pet>) ois.readObject()  );
 			
 			
