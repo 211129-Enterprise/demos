@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Student implements Serializable {
 
 	// 1000 - everytime a new student is created this value increases by 1;
-	private static int GLOBAL_ID = 1000;
+	public static int GLOBAL_ID = 1000;
 	private static Scanner scan = new Scanner(System.in);
 	
 	private String firstName;
