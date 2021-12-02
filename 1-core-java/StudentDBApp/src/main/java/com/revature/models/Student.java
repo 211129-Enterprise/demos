@@ -4,12 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 
 // Java Bean
 
 public class Student implements Serializable {
 	
 	private static int GLOBAL_ID= 1000;
+	private static Scanner scan = new Scanner(System.in);
+	
 	
 	private String firstName;
 	private String lastName;
@@ -40,9 +43,70 @@ public class Student implements Serializable {
 	}	
 		
 	public void enroll() {
+		//step 1: Create an empty arraylist of courses to add
+		List<Course> coursesToAdd = new ArrayList<Course>();
+		
+		//step 2: open up a while loop and have the user click q to quit
+		boolean isDone = false;
+		
+		while (!isDone) {
+			
+			//step 3 : prompt the user to enter a course name
+			System.out.println("Enter the name of a course to enroll in:");
+			
+			//step 3a: capture the string in an String variable called name
+			String courseName = scan.next();
+			
+			if(courseName.equalsIgnoreCase("q")) { //if the user puts in an uppercase
+				
+				//step 4: use the name to build a course Object
+				Course course = new Course(courseName);
+				
+				//step 4a. add it to courses to add list
+				coursesToAdd.add(course);
+				
+				//step 5: increase the students balance field
+				tuitionBalance += Course.COST_OF_COURSE; // tuition balance is equal to tuition balance plus the static cost of the course
+				scan.nextLine();//flushing out the scanner. this is necessary to repeat the loop
+				
+			} else {
+				System.out.println("======quiting program======");
+				isDone = true;
+			}
+
+		}
+		
+			
+			
+			//step 6: set the students course list equal to the course list that we create here
+			this.course = coursesToAdd;
+			
+			//step 7: print it all out
+			
+			System.out.println("ENROLLED IN" + course.toString());
+	}
+	
+	//view balance
+	public void viewBalance() {
+		System.out.println("Your balance is equal to "+ tuitionBalance);
+	}
+	// pay tuition
+
+	public void payTuition() {
+		viewBalance();
+		
+		//1. prompt enter payment amount
+		System.out.println("Please enter a payment amount");
+		//2. capture the amount as a double
+		double payment = scan.nextDouble();
+		//3. subtract the amount that we capture from the objects tuition
+		tuitionBalance -= payment;
+		//4. print out thank you and show the payment amount again
+		System.out.println("Thank You for your pament of" + payment);
+		viewBalance();
 		
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(course, firstName, gradeYear, lastName, studentId, tuitionBalance);
