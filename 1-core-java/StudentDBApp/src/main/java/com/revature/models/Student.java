@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Student implements Serializable {
 
-	private static int GLOBAL_ID = 1000;
+	public static int GLOBAL_ID = 1000;
 
 	private static Scanner scan = new Scanner(System.in);
 

@@ -1,6 +1,7 @@
 package com.revature.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -10,8 +11,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.exceptions.NotAGradeYearException;
 import com.revature.models.Course;
 import com.revature.models.Student;
+import com.revature.util.UtilityMethods;
 
 public class StudentTests {
 	
@@ -52,6 +55,8 @@ public class StudentTests {
 		
 		courses = null;
 		dummyStudent = null;
+		
+		Student.GLOBAL_ID = 1000;
 	}
 	
 	@Test
@@ -76,6 +81,26 @@ public class StudentTests {
 		String expectedId = "41001";
 		
 		assertEquals(expectedId, actualId);
+	}
+	
+	@Test
+	public void testStudentObjectEquality() {
+		dummyStudent = new Student("Bob", "Smith", 1);
+		Student anotherStudent = new Student("Bob", "Smith", 1);
+		
+		System.out.println(dummyStudent);
+		System.out.println(anotherStudent);
+		
+		dummyStudent.setStudentId("0");
+		anotherStudent.setStudentId("0");
+		
+		assertTrue(dummyStudent.equals(anotherStudent));
+	}
+	
+	@Test(expected=NotAGradeYearException.class)
+	public void testbadGradeYearExceptionIsThrown() {
+		int badGradeYear = -1;
+		UtilityMethods.validateGradeYear(badGradeYear);
 	}
 	
 	
