@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.Vector;
 
 import com.revature.models.Animal;
 
@@ -14,12 +15,30 @@ public class CollectionDriver {
 	public static void main(String[] args) {
 		
 		
-		/**
-		 * List (Interface)
+		/*
+		 * List
 		 * 
-		 * A list is an ordered collection (sometimes called a sequence).
-		 * Lists may contain duplicate elements.
-		 * It inherits some basic operations from the Collection interface.
+		 * A List is an ordered Collection (sometimes called a sequence). Lists may contain duplicate elements.
+		 * In addition to the operations inherited from Collection, the List interface includes operations for the following:
+		 * 
+		 * 		+ Positional access 
+		 * 			— manipulates elements based on their numerical position in the list. This includes 
+		 * 			  methods such as get, set, add, addAll, and remove.
+		 * 
+		 * 		+ Search 
+		 * 			— searches for a specified object in the list and returns its numerical position. 
+		 * 			  Search methods include indexOf and lastIndexOf.
+		 * 
+		 * 		+ Iteration 
+		 * 			— extends Iterator semantics to take advantage of the list's sequential nature. 
+		 * 			  The listIterator methods provide this behavior.
+		 * 
+		 * 		+ Range-view 
+		 * 			— The sublist method performs arbitrary range operations on the list.
+		 * 
+		 * The Java platform contains two general-purpose List implementations. ArrayList, which performs well when adding or removing from 
+		 * the collection frequently. A LinkedList which offers better performance when the collection will be accessed frequently (get and 
+		 * set methods).
 		 * 
 		 * ArrayList (one concrete implementation - implementation class)
 		 * - retrieval - with O(1) with .get() method
@@ -56,21 +75,41 @@ public class CollectionDriver {
 			
 		}
 		
+		/*
+		 * Vector differs from ArrayList in 2 ways:
+		 * 
+		 * - Data Growth: A vector will double in size when it expands. (Whereas an ArrayList increases by 50%) 
+		 * 
+		 * - Synchronization: It's slower because it blocks multiple threads from using it at once. (locking).
+		 * 		- If you're dealing with a multi-threaded program, and multiple threads are accessing one List,
+		 * 		- you want to make sure it's a Vector.
+		 */
+		List<Integer> threadSafeNums = new Vector<Integer>();
+		
+		threadSafeNums.add(3);
+		threadSafeNums.add(74);
+		threadSafeNums.add(-9000);
+		
+		System.out.println(threadSafeNums);
+		
 		// find the 2nd element (index 1)
 		Animal second = animals.get(1); // O(1) retrieval 
 		
-		System.out.println("========= SETS ===========");
-		
-		/**
-		 * Set Interface
+		/*
+		 * Set
 		 * 
-		 * Unlike a List, a Set doesNOT maintain insertion order.
-		 * It doesNOT allow duplicate elements.
+		 * A Set is a Collection that cannot contain duplicate elements. It models the mathematical set abstraction. The Set 
+		 * interface contains only methods inherited from Collection and adds the restriction that duplicate elements are 
+		 * prohibited. 
+		 * 
+		 * Set also adds a stronger contract on the behavior of the equals and hashCode operations, allowing Set 
+		 * instances to be compared meaningfully even if their implementation types differ. Two Set instances are equal if they 
+		 * contain the same elements.
 		 */
 		
+		System.out.println("==================== SETS BELOW =========================");
+		
 		Set<Animal> animalSet = new HashSet<Animal>();
-		
-		
 		
 		animalSet.add(a1); // If this set already contains the element, the call leaves the set unchanged and returns false
 		animalSet.add(a2);
