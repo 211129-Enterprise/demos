@@ -1,11 +1,14 @@
 package com.revature;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
+import java.util.Vector;
 
 import com.revature.models.Animal;
 
@@ -94,6 +97,46 @@ public class CollectionDriver {
 			}
 		
 		}
+		
+		/**
+		 * Queue Interface
+		 * FIFO - First in, first out
+		 * Allow for extra operations
+		 */
+		
+		Queue<Animal> animalQ = new LinkedList<Animal>();
+		
+		System.out.println("===== QUEUES =====");
+		
+		animalQ.add(a1);
+		animalQ.add(a2);
+		animalQ.add(a3);
+		
+		//build a while loop - while the queue is not empty, we'll remove the HEAD of the queue
+		// * Poll releases object from data structure *
+		while(animalQ.size() != 0) {
+			System.out.println("Queue Size: " + animalQ.size());
+			
+			//We'll call the .poll method to remove the head of the queue
+			System.out.println("Processing..." + animalQ.poll()); //.poll() will remove the head of the queue
+			
+			
+		}
+		
+		//LIFO - Last in, First out
+		//The order of operations for a stack
+		
+		List<Integer> nums = new Vector<Integer>(); //Thread safe array list
+		
+		nums.add(3);
+		nums.add(1); //Compiler is autoboxing the primitive values to
+		nums.add(2); //integer objects
+		
+		//Collections is just a class for manipulating collections like Arrays class (utility class)
+		System.out.println(nums);
+		Collections.sort(nums); //Always sorts in ascending order based on natural order
+		System.out.println("After sorting with the collections utility class...");
+		System.out.println(nums);
 		
 	}
 
