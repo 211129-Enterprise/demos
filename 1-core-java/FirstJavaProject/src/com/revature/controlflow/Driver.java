@@ -27,7 +27,7 @@ public class Driver {
 		
 		String fruit; // declaring the variable 
 		
-		fruit = (temp < 32) ? "apple" : "orange"; // intiilaziung it based on a condition
+		fruit = (temp < 32) ? "apple" : "orange"; // initializing it based on a condition
 	 //                      // if the () condition is true, fruit = "apple"
 		
 		System.out.println(fruit);
@@ -102,7 +102,7 @@ public class Driver {
 			System.out.println("Please enter a word");
 			String word = scan.next();
 			
-			// enahnce for loop
+			// enhance for loop
 			for (String c : word.split("")) { // word.split("") = an array ["a", "p", "p"}
 				System.out.println(c);
 			}

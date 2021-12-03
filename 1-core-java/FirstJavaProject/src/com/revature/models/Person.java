@@ -1,29 +1,39 @@
 package com.revature.models;
 
-// Remmeber that our custom class inherits from the java.lang.Object class
-public class Person { // POJO = Plain Old Java Object
+import java.util.Objects;
 
-	// properties (states)
+// This is gonna be a custom class
+// Our custom class inherits from the java.lang.Object class
 
-	// Instance variables - properties specific to each Person object that's
+public class Person {
+
+	// A (custom) class has 2 things
+
+	// properties (states) - instance variables , static variables
+	// instance variables - properties specific to each Person object that's
 	// instantiated
+	//
+
 	private String name;
 	private int age;
 	private double height;
 	private double weight;
 
 	// constructors
-	
+
 	public Person() {
-		// this is a no-args constructor which allows me to  create a person withour massing in args
+		// this is no args constructor
 	}
-	
+
 	public Person(String name) {
-		super(); // I'm calling the Object class (or direct parent class)
-		this.name = name; // this points to the specific object that I'm instantiating's NAME property 
+		super();
+		this.name = name; // this points to 'THIS' specific object being instantiated
+		// this. objects name property (property is simillar to variable in JS) is equal
+		// to incoming variable 'name'
+
 	}
-	
-	// a FULLY initialize person
+
+	// Fully initialized Person
 	public Person(String name, int age, double height, double weight) {
 		super();
 		this.name = name;
@@ -32,61 +42,68 @@ public class Person { // POJO = Plain Old Java Object
 		this.weight = weight;
 	}
 
-	// methods (behaviors)
-	public void introduce() { // void is a non-access modifier - specifies the return type which is nothing - it just does something 
-		System.out.println("Hello my name is " + name); 
-		// by default, we know that name refers to the instance variable of this object that's calling it
-	}
+	// getters and setters -> so that we can change private properties of the
+	// objects that are created form this class
+
 	
 
-	// we must generate getters & setters so that we can change the private
-	// properties of the objects that are created from this class
+
+	public Person(String name) {
+		super();
+		this.name = name;
+	}
 	
-	// right click -> source -> generate getters & setters
+	
+	
 	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getAge() {
 		return age;
 	}
+
 	public void setAge(int age) {
 		this.age = age;
 	}
+
 	public double getHeight() {
 		return height;
 	}
+
 	public void setHeight(double height) {
 		this.height = height;
 	}
+
 	public double getWeight() {
 		return weight;
 	}
+
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 
-	// we can override a method that we inherit from the Object class
-	@Override // overrideing the toString() method from the IObject class to rpoerly reflect the specific instanct varibale of a Perosn object
+	// method (behaviors)
+
+	public void introduce( ) {
+		System.out.println("Hello my name is " + name); // we didn't need to call this.name because we know 'name' refers to the instance variable that's calling it
+	}
+
+	
+	// we can over ride a method we inherit
+	@Override
 	public String toString() {
 		return "Person [name=" + name + ", age=" + age + ", height=" + height + ", weight=" + weight + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + age;
-		long temp;
-		temp = Double.doubleToLongBits(height);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		temp = Double.doubleToLongBits(weight);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		return result;
+		return Objects.hash(age, height, name, weight);
 	}
 
 	@Override
@@ -98,21 +115,24 @@ public class Person { // POJO = Plain Old Java Object
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		if (age != other.age)
-			return false;
-		if (Double.doubleToLongBits(height) != Double.doubleToLongBits(other.height))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (Double.doubleToLongBits(weight) != Double.doubleToLongBits(other.weight))
-			return false;
-		return true;
+		return age == other.age && Double.doubleToLongBits(height) == Double.doubleToLongBits(other.height)
+				&& Objects.equals(name, other.name)
+				&& Double.doubleToLongBits(weight) == Double.doubleToLongBits(other.weight);
 	}
-
 	
 	
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
