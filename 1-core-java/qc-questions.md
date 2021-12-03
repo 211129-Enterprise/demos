@@ -1,4 +1,4 @@
-# QC Questions that may be asked on Monday Dec. 6th
+# QC Questions that may be asked on Tuesday Dec. 7th
 
 ## Java Basics
 * What is Java? / Why Java?
