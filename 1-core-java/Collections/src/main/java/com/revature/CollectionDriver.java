@@ -1,11 +1,14 @@
 package com.revature;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
+import java.util.Vector;
 
 import com.revature.models.Animal;
 
@@ -103,7 +106,35 @@ public class CollectionDriver {
 			
 			
 		}
+		/*
+		 * Queue Interface
+		 * FIFO - First in First out allow for extra operations.
+		 */
 		
+		Queue<Animal> animalQ= new LinkedList<Animal>();
+		System.out.println("=====================Queue's===================");
+		animalQ.add(a1);
+		animalQ.add(a2);
+		animalQ.add(a3);
+		//build while loop - while the q is not empty, we're going to remove the HEAD of the 
+		// queue
+		while (animalQ.size()!= 0) {
+			System.out.println("Queue Size "+ animalQ.size());
+			//We call .poll() method to remove the head of the queue
+			System.out.println("Processing....."+animalQ.poll());
+		}
+		/*
+		 * LIFO, Last in First out, stacks are like this.
+		 * 
+		 */
+		List<Integer> nums = new Vector<Integer>();
+		nums.add(3); //compiler is autoboxing the primitive values to Integer objects.
+		nums.add(1);
+		nums.add(2);
+		System.out.println(nums);
+		Collections.sort(nums);
+		System.out.println(nums);
+		//comparable interface can manipulate our own order===================================
 	}
 
 }
