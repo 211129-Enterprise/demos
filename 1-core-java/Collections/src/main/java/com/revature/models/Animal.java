@@ -1,6 +1,12 @@
 package com.revature.models;
 
-public class Animal {
+// Comparable Interface is a functional Interface meaning you implement it to implement ONE method
+// That one method defined how to order your objects of this user-defined class.
+
+// Now if I want to perform a binary search on a list of animals
+// as long as those objects implement Comaprable, they can be processed by the method
+// in order to understand Target is animal is > or < the Animal at the mid point
+public class Animal implements Comparable<Animal>{
 	
 	String name;
 	int age;
@@ -11,6 +17,13 @@ public class Animal {
 		this.age = age;
 	}
 
+
+	@Override // returns 0, 1, or -1 
+	public int compareTo(Animal animal) {
+		// TODO Auto-generated method stub
+		return this.name.compareToIgnoreCase(animal.getName());
+	}
+	
 	@Override
 	public String toString() {
 		return "Animal [name=" + name + ", age=" + age + "]";
@@ -58,11 +71,5 @@ public class Animal {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-	
-	
-	
-	
-	
-
+	}	
 }
