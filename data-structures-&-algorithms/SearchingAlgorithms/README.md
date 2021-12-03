@@ -5,7 +5,6 @@
 - **Basic Linear Search** - O(n) Linear
 - **Binary Search** - O(log n) Logarithmic
   > *Logarithmic running time (O(log n)) essentially means that the running time grows in proportion to the logarithm of the input size - as an example, if 10 items takes at most some amount of time x, and 100 items takes at most, say, 2x, and 10,000 items takes at most 4x, then it's looking like an O(log n) time complexity.*
-
 <br>
 
 - **Recursive Linear Search**
