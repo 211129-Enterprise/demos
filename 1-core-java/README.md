@@ -7,3 +7,4 @@
 - [YouTube Video: Class vs. Object](https://www.youtube.com/watch?v=3sMxJxeUOLg&ab_channel=Telusko)
 - [GeeksForGeeks: Garbage Collection](https://www.geeksforgeeks.org/garbage-collection-java/)
 - [YouTube Video: Heap and Garbage Collector](https://www.youtube.com/watch?v=n_0gdyObLpc&ab_channel=edureka%21)
+- [JavaTPoint: Collections Framework](https://www.javatpoint.com/collections-in-java)
