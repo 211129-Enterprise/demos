@@ -11,11 +11,15 @@ public class Frog extends Animal implements Amphibious, Ectothermic{
 		System.out.println("Ribbit Ribbit");
 	}
 	
+
 	public void makeSound(int n) {
 		for (int i = 0; i<n;i++)
 			System.out.println("Ribbit");
 	}
 	
+	// the following method can only be used if the object is created as an object of this type, not if the liskov principle is used to create it
+	// --Frog a = new Frog();-- Usable
+	// --Animal a = new Frog();-- Not Usable
 	public void makeMoreSound(int n) {
 		for (int i = 0; i<n;i++)
 			System.out.println("Ribbit");

@@ -8,6 +8,12 @@ public class Cat extends Animal{
 	public void makeSound() {
 		System.out.println("Meow");		
 	}
+	
+	@Override // we have to override all methods coming from an abstract parent class...
+	public void makeSound(int i) {
+		// I don't want the cat to make a bunch of noise... mine are already too annoying lol
+		
+	}
 
 	public Cat(boolean hasFur) {
 		super();
@@ -26,6 +32,8 @@ public class Cat extends Animal{
 	public String toString() {
 		return "Cat [hasFur=" + hasFur + "]";
 	}
+
+
 	
 	
 	

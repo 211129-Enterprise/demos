@@ -12,6 +12,8 @@ public abstract class Animal{
 	
 	// Abstract methods are methods that have no body and are intended to be inherited and overridden.
 	public abstract void makeSound();
+	//if we add the version that takes an int here it works in frog, but now we have to implement it in cat too...
+	public abstract void makeSound(int i);
 	
 	// if we make this final then we can't overwrite it
 	public void exist() {
