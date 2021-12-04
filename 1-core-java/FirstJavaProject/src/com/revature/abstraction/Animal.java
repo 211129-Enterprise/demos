@@ -1,7 +1,7 @@
 package com.revature.abstraction;
 
 // Abstract classes cannot be instantiated
-public abstract class Animal {
+public abstract class Animal{
 
 	private int legs;
 	private String color;

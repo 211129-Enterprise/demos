@@ -13,7 +13,12 @@ public class Frog extends Animal implements Amphibious, Ectothermic{
 	
 	public void makeSound(int n) {
 		for (int i = 0; i<n;i++)
-			System.out.println("Ribbit Ribbit");
+			System.out.println("Ribbit");
+	}
+	
+	public void makeMoreSound(int n) {
+		for (int i = 0; i<n;i++)
+			System.out.println("Ribbit");
 	}
 
 	@Override
