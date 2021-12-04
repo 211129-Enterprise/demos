@@ -32,6 +32,8 @@ public class ClassA {
 	 * 			   even if those chld classes are in other packages
 	 */
 	
+	
+	
 	public static void main(String[] args) {
 		
 		// instantiate classA
@@ -43,7 +45,6 @@ public class ClassA {
 		System.out.println(classA.defaultField);
 		System.out.println(classA.protectedField);
 	}
-
 	
 	
 }

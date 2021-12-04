@@ -12,6 +12,8 @@ public class Driver {
 		
 		a1 = new Frog();
 		
+		a1.makeSound();
+		
 	}
 
 }

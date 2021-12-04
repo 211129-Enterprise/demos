@@ -35,7 +35,7 @@ public class Employee extends Person implements Serializable {
 	public Employee() {
 		
 	}
-	
+
 	public Employee(String name, int age, double height, double weight, String dept) {
 		super(name, age, height, weight);
 		this.dept = dept;
