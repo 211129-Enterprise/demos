@@ -1,12 +1,13 @@
 package com.revature.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Student {
+public class Student implements Serializable {
 
-	private static int GLOBAL_ID = 1000;
+	public static int GLOBAL_ID = 1000;
 	private static Scanner scan = new Scanner(System.in);
 	
 	private String firstName;
@@ -34,6 +35,14 @@ public class Student {
 		studentId = gradeYear + "" + GLOBAL_ID;
 	}
 	
+	public String getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+
 	public void enroll() {
 		List<Course> coursesToAdd = new ArrayList<Course>();
 		boolean isDone = false;
