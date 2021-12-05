@@ -1,6 +1,7 @@
 package com.revature.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -10,8 +11,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.exceptions.NotAGradeYearException;
 import com.revature.models.Course;
 import com.revature.models.Student;
+import com.revature.util.UtilityMethods;
 
 /**
  * This is a Test Suite (a grouping of unit tests relating to one class)
@@ -65,6 +68,8 @@ public class StudentTests {
 		courses = null;
 		dummyStudent = null;
 		
+		Student.GLOBAL_ID = 1000;
+		
 	}
 	
 	
@@ -101,10 +106,33 @@ public class StudentTests {
 	
 	// assertTrue(student1.equals(student2));
 	
-	
-	
-	
-	
-	
+	@Test
+	public void testStudentObjEquality() {
+		
+		dummyStudent = new Student("Bob", "Smith", 1);
+		Student anotherStudent = new Student("Bob", "Smith", 1);
+		
+		System.out.println(dummyStudent); // both will have diff id's 1002
+		System.out.println(anotherStudent); // this will be 1003
+		
+		// Here I'm setting this as a constanct (because otherwise this studentID will be different
+		dummyStudent.setStudentId("0");
+		anotherStudent.setStudentId("0");
+		
+		assertTrue(dummyStudent.equals(anotherStudent));
+		
+	}
 
+	// We want to test that when someone enters a grade that's belo 0 or above 4, it throws a
+	// not a grade exception
+	@Test(expected=NotAGradeYearException.class)
+	public void testbadGradeYearExceptionIsThrown() {
+		
+		int badGradeYear = -1;
+		// we're testing our utility method that takes in a grade year and checks it
+		
+		UtilityMethods.validateGradeYear(badGradeYear);
+		// if this method throws an exception then the test passes
+	}
 }
+
