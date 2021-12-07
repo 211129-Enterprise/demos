@@ -4,25 +4,26 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
+ * What is JDBC?
  * 
- * JDBC (Java Database Connectivity) - it is an API included in the JRE
- * in the form of the java.sql package that is used to manage a connection
- * to a database along with querying the database, and performing CRUD operations.
- *
+ * JDBC (Java Database Connectivity) is the Java API that manages 
+ * connecting to a database, issuing queries and commands, 
+ * and handling result sets obtained from the database
+ * 
+ * Singleton Class is a software design pattern that ensures there will be one
+ * single instance of that class.
+ * 
+ * -- private constructors 
+ * -- static field of an instance of the class to be returned 
+ * -- leverage a public static getInstance() (our getInstance method is the getConnection() method
+ * 
+ * The connection to our DB will be established by a singleton class which will
+ * contain all the necessary driver information (jdbc url, username, password).
  */
 
 public class ConnectionUtil {
 	
 	private static Connection conn = null;
-	/**
-	 * Singleton class allows only ONE instance of this class
-	 * to exist at a time.
-	 * 
-	 * You cannot instantiate this calss like other classes.
-	 * 
-	 * In order to detch the instance (in this case the instance will represent a CONNECTION)
-	 * you need to call the getInstance() method...getConnection().
-	 */
 	
 	// the constructor is private to preventmultiple instantiations of the class
 	private ConnectionUtil() {
@@ -47,7 +48,7 @@ public class ConnectionUtil {
 		}
 		
 		
-		String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=sophiag";
+		String url = "jdbc:postgresql://enterprise211129.cvtq9j4axrge.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=sophiag";
 		String username = "postgres";
 		String password = "postgres";
 		
