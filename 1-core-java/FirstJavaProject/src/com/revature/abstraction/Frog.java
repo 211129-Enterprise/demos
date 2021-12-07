@@ -32,12 +32,12 @@ public class Frog extends Animal implements Amphibious, Ectothermic {
 		
 	}
 	
-//	// overloading
-//	public void makeSound(int n) {
-//		for (int i=0; i<n; i++) {
-//			System.out.println("ribbit");
-//		}
-//	}
+	// overloading
+	public void makeSound(int n) {
+		for (int i=0; i<n; i++) {
+			System.out.println("ribbit");
+		}
+	}
 
 	@Override
 	public void heatUp() {

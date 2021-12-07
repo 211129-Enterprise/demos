@@ -6,4 +6,9 @@ package com.revature.serialization;
  *
  */
 
-public enum Color { BROWN, WHITE, BLACK, GREY }
+public enum Color {
+WHITE,
+BLACK,
+BROWN,
+GREY
+}
