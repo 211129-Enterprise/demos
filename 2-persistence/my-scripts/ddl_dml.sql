@@ -82,6 +82,7 @@ CREATE TABLE phonenumbers (
 --DML
 INSERT INTO aaronm.phonenumbers (employee_id, home, mobile, work_num)
 	VALUES (1, '(555) 867-5309', '(555) 555-5555', '(555) 123-4567'),
-		   (2, '(555) 999-5555', '(555) 420-6969', '(555) 123-4567');
-	
+			(2, '(555) 999-5555', '(555) 420-6969', '(555) 123-4567');
+
+--DQL
 SELECT * FROM phonenumbers;
