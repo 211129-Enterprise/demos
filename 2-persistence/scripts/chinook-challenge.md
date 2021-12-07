@@ -4,9 +4,8 @@
 <br>
 
 ## 1.0 Access the Chinook Schema
-> *You don't have to do this...just use the schema I set up for you in the RDS* 
 
-* In DBeaver,Create a new connection
+* In DBeaver, Create a new connection
 * Click Postgres
 * Enter `enterprise211129.cvtq9j4axrge.us-east-1.rds.amazonaws.com` as *Host*
 * Password is `postgres`
