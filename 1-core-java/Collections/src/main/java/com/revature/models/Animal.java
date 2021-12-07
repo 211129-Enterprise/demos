@@ -1,6 +1,9 @@
 package com.revature.models;
 
-public class Animal {
+//Comparable Interface is a functional Interface meaning you implement 
+// one method to define how to order your objects of this user defined class.
+
+public class Animal implements Comparable<Animal>{
 	String name;
 	
 	int age;
@@ -58,6 +61,13 @@ public class Animal {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	@Override
+	public int compareTo(Animal animal) {
+		// TODO Auto-generated method stub
+		return this.name.compareToIgnoreCase(animal.getName());
+		return 0;
 	}
 	
 }
