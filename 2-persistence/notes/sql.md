@@ -21,6 +21,8 @@ RDBMS: Relational Database Management System
 - A database management system that upholds specified relationships between tables
 - It includes functions that maintain the security, accuracy, integrity, and consistency of the data
 
+<br>
+
 ## SQL Sublanguages
 
 - DDL: Data Definition Language
@@ -40,6 +42,8 @@ RDBMS: Relational Database Management System
 - TCL: Transaction Control Language
   - Pertaining to work on the database and finalizing or reverting changes
   - Commands: COMMIT (persist data), ROLLBACK (revert data), SAVEPOINT, SET TRANSACTION (used to set isolation level)
+
+<br>
 
 ## Constraints
 
@@ -82,6 +86,8 @@ UPDATE employee SET email = 'email2@work.com'
   WHERE first_name = 'John' AND last_name = 'Smith';
 ```
 
+<br>
+
 ## Cardinality
 
 Cardinality: Describes the numerical relationship between 2 tables
@@ -99,6 +105,8 @@ There are 3 (technically 4) kinds:
     - This is best represented using a join table
     - Ex: Students and courses
 
+<br>
+
 ## Normalization
 
 - Database Normalization: Design pattern for databases that aims to reduce both duplicate data and redundancy
@@ -111,6 +119,8 @@ There are 3 (technically 4) kinds:
     - Which means all values must identified by a single column (no composite keys)
   3. 3rd Normal Form: Also in 2nd plus no transitive dependencies
     - Which means no column is dependent on a column that is not the primary key
+
+<br>
 
 ## Joins
 
@@ -128,6 +138,8 @@ SELECT <columns> FROM <left> <JOIN TYPE> JOIN <right>
 ON <left.column> = <right.column>;
 ```
 
+<br>
+
 ## Transactions
 
 A transaction is a unit of work preformed against a database. It is the propagation of one or more changes to the database. Generally used with UPDATE, DELETE, and INSERT operations.
@@ -144,6 +156,8 @@ I. Isolation: Enables transactions to operate independently of each other.
 
 D. Durability: Ensures that the result or effect of a committed transaction persists in case of system failure.
 
+<br>
+
 ### Transaction Problems
 
 There are some issues that can arise when following ACID principles. We try to handle transactions concurrently because it is faster. But, what happens when one transaction reads data from another transaction, but then the second transaction gets rolled back? We retrieved data that should not have existed.
@@ -151,6 +165,8 @@ There are some issues that can arise when following ACID principles. We try to h
 - Dirty Read: Occurs when a transaction reads data that has been added by a different transaction but has not been committed
 - Non-Repeatable Read: Transaction re-reads data that it has previously read and finds another committed transaction has modified or deleted data
 - Phantom Read: Transaction re-runs a query to find that the number of records has changed
+
+<br>
 
 ### Transaction Isolation levels
 
