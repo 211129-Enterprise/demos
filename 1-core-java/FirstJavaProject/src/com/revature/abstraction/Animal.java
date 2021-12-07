@@ -3,6 +3,7 @@ package com.revature.abstraction;
 public abstract class Animal {
 	private String colorString;
 	private int legs ;
+
 	
 	public Animal() {
 		

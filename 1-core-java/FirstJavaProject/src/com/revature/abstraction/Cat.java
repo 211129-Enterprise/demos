@@ -9,8 +9,11 @@ public class Cat extends Animal{
 		// TODO Auto-generated method stub
 		
 		System.out.println("sound b");
+	
+		String[] strings =  new String[4];
 		
 	}
+	
 	
 	
 	
