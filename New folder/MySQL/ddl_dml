@@ -1,0 +1,107 @@
+-- this is a comment \\
+/*
+
+
+
+
+*/
+
+-- DDL dara definition language 
+--
+--create table employees (
+--
+--id  PRIMARY KEY, 
+--first_name VARCHAR(30) CHECK(LENGTH(firts_name) >=2),
+--last_name VARCHAR(30), NOT NULL, 
+--email VARCHAR(100) UNIQUE ,
+--employe_age INTEGER NOT NULL DEFAULT 0,
+--supervisor INTEGER , -- POINT TO ANOTHER EMPLOYEE's ID
+--
+--)
+
+
+DROP TABLE IF EXISTS marouane.employees CASCADE;
+--it will delete the table entirly;
+
+CREATE TABLE employees ( -- PRIMARY KEY IS the UNIQUE identifier FOR a record 
+	id SERIAL PRIMARY KEY, -- evreytime i INSERT an emp OBJECT, I INSERT the id automatically
+	first_name VARCHAR(30) CHECK(LENGTH(first_name) >= 2), -- IN PostgreSQL, varchar represents a string DATATYPE AND constraint
+	last_name VARCHAR(30) NOT NULL, -- CONSTARINTS SERVe TO FILTER the TYPE OF DATA IN that COLUMN
+	email VARCHAR(100) UNIQUE,
+	employee_age INTEGER NOT NULL DEFAULT 0,
+	supervisor INTEGER -- POINT TO THE OTHER EMPLOYEE THAT MANAGES ONE EMPLOYEE
+);
+
+
+-- to change the table 
+-- here we manually defining the foreing key 
+--
+--ALTER TABLE employees 
+--	ADD CONSTRAINT employee_supervisor-fk 
+--	FOREIGN KEY (supervisor) REFERENCES  employees(id);
+
+ALTER TABLE employees 
+	ADD CONSTRAINT employee_supervisor_fk
+	FOREIGN KEY (supervisor) REFERENCES employees(id);
+
+
+-- DML DATA MANIPULATION LANGUAGE 
+-- INSERT INTO  TAble_name
+ 
+INSERT INTO employees (first_name , last_name, email, employee_age)
+	VALUES('Peter', 'Parker', 'spidermane@gmail.com', 16);
+	--VALUES('Peter', 'Parker', 'spidermane2@gmail.com', 16);
+INSERT INTO employees (first_name , last_name, email, employee_age)
+	VALUES('Tony', 'Stark', 'ironman@gmail.com', 16);
+
+--DQL 
+
+SELECT * FROM employees ;
+
+
+TRUNCATE TABLE employees ;
+-- delete every record in the table
+
+
+
+CREATE TABLE phonenumbers (
+	id SERIAL PRIMARY KEY,
+	employees_id INTEGER NOT NULL REFERENCES  employees(id), -- declaring a FOREIGN KEY
+	home VARCHAR(20),
+	mobile VARCHAR(20),
+	work_num VARCHAR(20)
+
+);
+
+INSERT INTO phonenumbers(employees_id, home , mobile, work_num)
+VALUES(2, '123-456-987', '222-222-222', '333-333-333' ),
+		(1, '121-111-333', '123-321-3434', '123-456-678');
+
+-- DML DELETE , INSERT , UPDATE
+	
+SELECT * FROM  phonenumbers 	
+
+DELETE FROM  phonenumbers WHERE employees_id = 2;
+
+UPDATE phonenumbers 
+	SET home = '347-483-03-76'
+	WHERE employees_id  = 1;
+
+
+SELECT * FROM employees
+SELECT * FROM employees e WHERE employee_age = 16;
+
+--
+SELECT  first_name || ' ' ||  last_name AS "Full Name"  FROM employees e 
+
+-- views represent "virtual tables"
+
+CREATE VIEW names AS SELECT first_name , last_name FROM employees e  ;
+
+
+SELECT * FROM names ;
+
+
+
+
+
