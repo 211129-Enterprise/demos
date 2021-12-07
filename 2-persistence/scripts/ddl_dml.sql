@@ -57,7 +57,41 @@ CREATE TABLE phonenumbers (
 
 -- let's insert Tony Stark's numbers and peter parker's numbers
 INSERT INTO phonenumbers (employee_id, home, mobile, work_num)
-	VALUES (3, '111-111-1111', '222-222-2222', '333-333-3333'),
-		   (4, '555-555-5555', '982-212-8839', '646-337-0172');
+	VALUES (7, '111-111-1111', '222-222-2222', '333-333-3333'),
+		   (8, '555-555-5555', '982-212-8839', '646-337-0172');
 
 SELECT * FROM phonenumbers;
+
+-- 
+-- Interview question what is the difference (in SQL) between truncate, drop, and delete?
+-- delete deletes 1 record at a time, truncate wipes all records at one time
+-- drop deltes the entire table
+
+-- DML: DELETE, INSERT, UPDATE
+DELETE FROM phonenumbers WHERE employee_id = 8;
+
+/*
+ * UPDATE table_name
+	SET column1 = value1,
+    column2 = value2,
+    ...
+	WHERE condition;
+ */
+
+-- updateing a SPECIFIC record DML 
+UPDATE phonenumbers 
+	SET home = '973-221-8932'
+	WHERE employee_id = 7;
+
+SELECT * FROM employees;
+SELECT first_name, last_name FROM employees WHERE employee_age = 44;
+
+-- CONCATENATEING DATA FROM TWO COLUMNSA AND RETURNING UNDER AN ALIAS
+SELECT first_name || ' ' || last_name AS "Full Name" FROM employees
+
+
+-- Views represent "virtual tables" as the result of a query
+CREATE VIEW names AS SELECT first_name, last_name FROM employees;
+
+SELECT * FROM names; -- just a SIMPLE way OF storing the results OF a query
+
