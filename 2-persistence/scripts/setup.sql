@@ -25,11 +25,39 @@ DROP TABLE IF EXISTS sophiag.users_accounts_jt CASCADE;
 CREATE TABLE sophiag.users_accounts_jt (
 	acc_owner INTEGER NOT NULL REFERENCES sophiag.users(id), -- 1 - 12
 	account INTEGER NOT NULL REFERENCES sophiag.accounts(id) -- 1 - 13
-															 -- 2 - 12
-															 -- 42 - 12
+															 -- 2 - 12												 -- 42 - 12
 );
 
 -- implement PL/pgsql functional programming langue for Postgres RDBMS
 -- create a function so that everytime a new account is entered into the accounts table
--- 
+
+INSERT INTO sophiag.users (username, pwd, user_role) 
+	VALUES ('Larry', 'pass', 'Employee'),
+			('Marry', '1234', 'Customer'),
+			('Barry', 'pass', 'Customer');
+			
+SELECT * FROM users;
+
+
+INSERT INTO sophiag.accounts (balance, acc_owner)
+	VALUES (100, 1),
+		    (200, 2),
+		    (2000, 2),
+		    (300, 3);
+		   
+SELECT * FROM ACCOUNTS;
+
+INSERT INTO users_accounts_jt (acc_owner, account) 
+	VALUES (1, 1),
+	 	   (2, 2), -- Marry's account (her id is 2)
+	 	   (2, 3), -- Marry's account (her id is 2)
+	 	   (3, 4);
+
+SELECT * FROM users_accounts_jt;
+	 	  
+
+
+
+
+
 
