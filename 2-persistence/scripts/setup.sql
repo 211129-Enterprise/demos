@@ -30,6 +30,7 @@ CREATE TABLE sophiag.users_accounts_jt (
 
 -- implement PL/pgsql functional programming langue for Postgres RDBMS
 -- create a function so that everytime a new account is entered into the accounts table
+<<<<<<< HEAD
 
 INSERT INTO sophiag.users (username, pwd, user_role) 
 	VALUES ('Larry', 'pass', 'Employee'),
@@ -60,4 +61,7 @@ SELECT * FROM users_accounts_jt;
 
 
 
+=======
+-- all of the accounts with the id correlated to that user are also enteres to the joins table
+>>>>>>> bd233b45453cb9c975673a0284e37f51ea1d5059
 

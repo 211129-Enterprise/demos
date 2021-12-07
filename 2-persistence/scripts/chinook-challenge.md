@@ -1,12 +1,8 @@
 # Chinook SQL Lab
-> *In this exercise you will practice populating a database by running the provided `chinook.sql` scripts in sequential order within DBeaver.  Use SQL Sublanguages to return the requested information below:*
-
-<br>
 
 ## 1.0 Access the Chinook Schema
-> *You don't have to do this...just use the schema I set up for you in the RDS* 
 
-* In DBeaver,Create a new connection
+* In DBeaver, Create a new connection
 * Click Postgres
 * Enter `enterprise211129.cvtq9j4axrge.us-east-1.rds.amazonaws.com` as *Host*
 * Password is `postgres`
