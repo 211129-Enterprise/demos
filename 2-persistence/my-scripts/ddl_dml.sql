@@ -82,7 +82,26 @@ CREATE TABLE phonenumbers (
 --DML
 INSERT INTO aaronm.phonenumbers (employee_id, home, mobile, work_num)
 	VALUES (1, '(555) 867-5309', '(555) 555-5555', '(555) 123-4567'),
-			(2, '(555) 999-5555', '(555) 420-6969', '(555) 123-4567');
+		(2, '(555) 999-5555', '(555) 420-6969', '(555) 123-4567');
 
 --DQL
 SELECT * FROM phonenumbers;
+
+
+--DML: DELETE, INSERT, UPDATE
+DELETE FROM phonenumbers WHERE employee_id = 2;
+
+--DML: updating a SPECIFIC record
+UPDATE phonenumbers 
+	SET home = '(555) 111-2222'
+	WHERE employee_id = 1;
+
+SELECT * FROM employees;
+SELECT first_name, last_name FROM employees WHERE employee_age = 44;
+
+-- Concatenating data from two columns and returning under an alias
+SELECT first_name || ' ' || last_name AS "Full Name" FROM employees;
+
+--Views represent "Virtual Tables" as the result of a query
+CREATE VIEW names AS  SELECT first_name, last_name FROM employees; --Storing a query FOR later
+SELECT * FROM names; --Accessing query later on
