@@ -11,6 +11,44 @@ import org.apache.log4j.Logger;
 
 import com.revature.models.User;
 import com.revature.util.ConnectionUtil;
+/*
+ * JDBC API main Classes and Interfaces:
+ * https://www.tutorialspoint.com/what-are-the-main-classes-and-interfaces-of-jdbc
+ * 
+ * (1) DriverManager class
+ * 	- This class manages the JDBC drivers.
+ * 	- Some static methods, such as getConnection() that we use to connect to a DB
+ * 	- Used to obtain a Connection
+ * 
+ * (2) Connection Interface
+ * 	- Represents a Connection to our DB
+ * 	- Has methods to obtain Statements
+ * 	- This interface provides methods such as close(), commit(), rollback(), 
+ * 		createStatement(), prepareCall(), prepareStatement(), setAutoCommit() setSavepoint() etc.
+ * 
+ * (3) Statement Interface
+ * 	- Represents a static SQL statement that will be performed against the DB
+ * 	- There are sub-interfaces for specific use-cases
+ * 		- PreparedStatement Interface 
+ * 			- CallableStatement Interface
+ * 	- Have methods to obtain ResultSets
+ * 
+ * (4) ResultSet Interface
+ * 	- Represents data obtained from the DB
+ * 	- Follows an "Iterator" structure
+ * 		- Is pointing to individual rows
+ * 		- Invoke the .next() method to step forward
+ * 		- Starts at the position BEFORE the first row
+ * 	- Has methods to obtain data from individual columns for that row
+ * 		- getInt()
+ * 		- getString()
+ * 
+ * (5) CallableStatement Interface
+ * 	- Using an object of this interface you can execute stored procedures. 
+ * 	- Methods include prepareCall()
+ * 	- A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+ */
+
 
 /**
  * This class be instantiated in the Service layer to perform all DB operations
