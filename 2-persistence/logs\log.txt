@@ -1,0 +1,33 @@
+2021-12-08 08:27:38 INFO  com.revature.LoggingDemo:28 - Application has started!
+2021-12-08 08:27:38 INFO  com.revature.LoggingDemo:29 - Application has successfully completed!
+2021-12-08 08:28:46 INFO  com.revature.LoggingDemo:31 - Application has started!
+2021-12-08 08:28:46 INFO  com.revature.LoggingDemo:32 - Application has successfully completed!
+2021-12-08 08:32:36 INFO  com.revature.LoggingDemo:31 - Application has started!
+2021-12-08 08:34:11 INFO  com.revature.LoggingDemo:32 - Application has started!
+2021-12-08 08:35:33 INFO  com.revature.LoggingDemo:32 - Application has started!
+2021-12-08 08:35:33 ERROR com.revature.LoggingDemo:36 - Something has gone horribly wrong...
+2021-12-08 08:35:33 INFO  com.revature.LoggingDemo:38 - Application has successfully completed!
+2021-12-08 08:42:57 INFO  com.revature.LoggingDemo:34 - Application has started!
+2021-12-08 08:42:57 ERROR com.revature.LoggingDemo:38 - Something has gone horribly wrong...
+2021-12-08 08:42:57 INFO  com.revature.LoggingDemo:40 - Application has successfully completed!
+2021-12-08 08:43:51 INFO  com.revature.LoggingDemo:34 - Application has started!
+2021-12-08 08:43:51 INFO  com.revature.LoggingDemo:42 - Application has successfully completed!
+2021-12-08 08:44:01 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-08 08:44:11 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-08 08:44:11 INFO  revature.util.ConnectionUtil:43 - Returned re-used connection object
+2021-12-08 09:58:37 INFO  revature.service.UserService:21 - Registering user...
+2021-12-08 09:58:37 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-08 09:58:37 ERROR revature.dao.UserDAO:68 - Unable to insert user - SQL exception thrown.
+2021-12-08 10:04:26 INFO  revature.service.UserService:21 - Registering user...
+2021-12-08 10:04:26 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-08 10:04:26 ERROR revature.dao.UserDAO:68 - Unable to insert user - SQL exception thrown.
+2021-12-08 10:07:51 INFO  revature.service.UserService:21 - Registering user...
+2021-12-08 10:07:51 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-08 10:07:51 INFO  revature.dao.UserDAO:63 - Returned User ID #4
+2021-12-08 10:07:51 INFO  revature.service.UserService:43 - Successfully registered User with the id of 4
+2021-12-08 10:09:02 INFO  revature.service.UserService:21 - Registering user...
+2021-12-08 10:09:02 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-08 10:09:02 ERROR revature.dao.UserDAO:68 - Unable to insert user - SQL exception thrown.
+2021-12-08 10:09:32 INFO  revature.service.UserService:21 - Registering user...
+2021-12-08 10:09:32 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-08 10:09:32 ERROR revature.dao.UserDAO:68 - Unable to insert user - SQL exception thrown.
