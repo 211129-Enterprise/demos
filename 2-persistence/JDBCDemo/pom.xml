@@ -29,6 +29,16 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.2.23</version>
 		</dependency>
+		
+
+		<!-- Log4J Framework-->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+
 
 	</dependencies>
 
