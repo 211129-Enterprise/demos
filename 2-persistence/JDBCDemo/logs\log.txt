@@ -1,0 +1,4 @@
+2021-12-08 09:28:40 INFO  com.revature.LoggingDemo:13 - Application has started
+2021-12-08 09:28:40 INFO  com.revature.LoggingDemo:14 - Application has successfully completed
+2021-12-08 09:28:53 INFO  com.revature.LoggingDemo:13 - Application has started
+2021-12-08 09:28:53 INFO  com.revature.LoggingDemo:14 - Application has successfully completed

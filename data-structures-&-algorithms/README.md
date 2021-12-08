@@ -6,6 +6,11 @@ Just like a car mechanic needs the right tool to fix a car and make it run prope
 > *Below is a list of demos we cover in class and the challenges you should practice immediately afterward to build your skills.  This list will expand through out the weeks.*
 
 ## Content
-- *TBA*
+- **Searching Algorithms**
+  - Question #7 in the `java-20-questions` challenge
+    > You may need to modify the method signature like so: <br>
+    > `extend static class BinarySearch<T extends Comparable<T>> { ... }`
+  
+  - Hackerrank Challenge: [Binary Search](https://www.hackerrank.com/contests/launchpad-1-winter-challenge/challenges/binary-search-basic/problem) 👈 
 
-[![Image from Gyazo](https://i.gyazo.com/e4a47a2ea74401c972995cb57ded81ea.gif)](https://gyazo.com/e4a47a2ea74401c972995cb57ded81ea)
+<br>
