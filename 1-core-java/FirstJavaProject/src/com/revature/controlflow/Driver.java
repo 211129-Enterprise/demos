@@ -42,7 +42,7 @@ public class Driver {
 		
 		// while (assess condition first, then run some code
 		
-			int counter = 10;
+ 			int counter = 10;
 			
 			while (counter > 0) {
 				System.out.println("counter's value is: " + counter);
