@@ -10,6 +10,7 @@ public class App {
 		run();
 		
 		ConnectionUtil.getConnection();
+		ConnectionUtil.getConnection();
 
 	}
 	

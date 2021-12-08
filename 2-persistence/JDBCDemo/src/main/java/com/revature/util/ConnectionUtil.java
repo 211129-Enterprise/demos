@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+
+import org.apache.log4j.Logger; // refresh project and Maven Update the project to make sure it identifies your Maven Dependencies
 /**
  * What is JDBC?
  * 
@@ -27,9 +29,11 @@ import java.util.Properties;
 
 public class ConnectionUtil {
 	
+	// instnatiate a Logger for this Class and bind it at the Static level (Class Scope)
+	private static Logger logger = Logger.getLogger(ConnectionUtil.class); // import from org.apache.log4j
 	private static Connection conn = null;
 	
-	// the constructor is private to preventmultiple instantiations of the class
+	// the constructor is private to prevent multiple instantiations of the class
 	private ConnectionUtil() {
 		super();
 	}
@@ -38,15 +42,16 @@ public class ConnectionUtil {
 	 * The following method is designed to return the ONE instance of this
 	 * class if it exists, or instantite it if it doesn't
 	 */
-	public static Connection getConnection() {
+	public static Connection getConnection() { // this is similar to getInstance()
 		
 		// check if there is an instance
 		try {
 			if (conn != null && !conn.isClosed()) {
+				logger.info("returned re-used connection object");
 				return conn;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			logger.error("we failed to re-use a connection");
 			e.printStackTrace();
 			return null;
 		}
@@ -74,15 +79,16 @@ public class ConnectionUtil {
 			 */
 			conn = DriverManager.getConnection(url, username, password);
 			
-			System.out.println("You established a connection!!!");
+			logger.info("Database Connection Established");
+			
 		} catch (SQLException e) {
-			System.out.println("Cannot establish DB connection");
-			e.printStackTrace();
+			logger.error("SQL Exception thrown - Cannot establish DB connection");
+//			e.printStackTrace();
 		} catch (FileNotFoundException e) {
-			System.out.println("Cannot locate application.properties file");
+			logger.error("Cannot locate application.properties file");
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("Something wrong with app.props file");
+			logger.error("Something wrong with app.props file");
 			e.printStackTrace();
 		}
 		
