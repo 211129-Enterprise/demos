@@ -11,7 +11,19 @@ public class Driver {
 		
 		a1 = new Frog();
 		
+		Frog f1 = new Frog();
+		
+		f1.makeSound(3); // this is the overloaded method
+		
+		a1.makeSound(); // this will call the concrete class' implementation OF the abstract parent class method
 
+	}
+	
+	public static void makeGeneralANimalSound(Animal someAnimal) {
+		
+		// this will output the overridden version of the child class' method
+		someAnimal.makeSound();
+		
 	}
 
 }
