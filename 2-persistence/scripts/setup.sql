@@ -54,3 +54,72 @@ INSERT INTO users_accounts_jt (acc_owner, account)
 	 	   (3, 4);
 
 SELECT * FROM users_accounts_jt;
+
+/*
+ * The goal is so that Evrytime a new Acocunt is added to account
+ * table, the users_accounts_jt is automatically populated with 
+ * the acc_owner ID and the account id
+ */
+
+/**
+ * PL/pgsql Procedural Language for PostgreSQL 
+ * 
+ * Allows you to create 
+ * 		- custom types
+ * 		- stored functions (return a result)
+ * 		- stored procedures (think of it as a void function) since Postgres 11
+ * 		- triggers
+ */
+
+/**
+ * 
+ *  create [or replace] function [name] (params)
+ *  returns [type]
+ *  as '
+ * 		begin
+ * 			[logic]
+ * 		end
+ *  '
+ *  language plpgsql;
+ * 
+ */
+
+-- create a function that inserts the acc_owner id & acc id into the joins table
+-- every time a new record is inserted into Accounts table
+CREATE OR REPLACE FUNCTION sophiag.auto_insert_into_jt()
+RETURNS TRIGGER 
+AS '
+	BEGIN
+
+		INSERT INTO sophiag.users_accounts_jt (acc_owner, account)	
+			VALUES (NEW.acc_owner, NEW.id);
+			
+			RETURN NEW;
+
+	END
+'
+LANGUAGE plpgsql;
+
+-- this is a trigger function - the above function is depeNdent on it
+CREATE TRIGGER trig 
+	AFTER INSERT ON sophiag.accounts
+	FOR EACH ROW
+	EXECUTE PROCEDURE sophiag.auto_insert_into_jt();
+
+SELECT * FROM sophiag.users;
+SELECT * FROM sophiag.accounts;
+SELECT * FROM sophiag.users_accounts_jt;
+
+INSERT INTO sophiag.accounts (balance, acc_owner, active)
+	VALUES (500000, 4, TRUE);
+
+
+
+
+
+
+
+
+
+
+
