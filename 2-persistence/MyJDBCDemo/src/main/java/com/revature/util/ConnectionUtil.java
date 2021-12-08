@@ -66,7 +66,7 @@ public class ConnectionUtil {
 		
 		// this is the NOT secure method!!
 		try {
-			prop.load(new FileReader("C:\\Users\\kphu\\Desktop\\projects\\demos\\2-persistence\\MyJDBCDemo\\src\\main\\resources\\application.properties"));
+			prop.load(new FileReader("src\\main\\resources\\application.properties"));
 			
 			url = prop.getProperty("url"); // this is retrieving the value of the "url" key in application.properties file
 			username = prop.getProperty("username");
@@ -82,14 +82,14 @@ public class ConnectionUtil {
 
 		} catch (SQLException e) {
 			logger.error("SQL Exception thrown - Cannot establish DB connection");
-//			e.printStackTrace();
+			e.printStackTrace();
 			return null;
 		} catch (FileNotFoundException e) {
 			logger.error("Cannot locate application.properties file");
-//			e.printStackTrace();
+			e.printStackTrace();
 		} catch (IOException e) {
 			logger.error("There's something wrong with application.properties file");
-//			e.printStackTrace();
+			e.printStackTrace();
 		}
 		return conn;
 	}

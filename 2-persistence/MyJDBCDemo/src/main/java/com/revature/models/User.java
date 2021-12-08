@@ -18,7 +18,7 @@ public class User implements Serializable {
 	private int id; // represented in our DB as a SERIAL PRIMARY KEY
 	private String username;
 	private String pwd;
-	private String role; // this will correlate to the ENUM type in our DB
+	private Role role; // this will correlate to the ENUM type in our DB
 	
 	// data structure that represents all the accounts a User has
 	private List<Account> accounts;
@@ -29,7 +29,7 @@ public class User implements Serializable {
 	}
 	
 	// a few constructors
-	public User(int id, String username, String pwd, String role, List<Account> accounts) {
+	public User(int id, String username, String pwd, Role role, List<Account> accounts) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -43,7 +43,8 @@ public class User implements Serializable {
 	 * create it within my "business layer" aka Java Application before I send it to the DB.
 	 * the DB will then create an ID for the user because of the SERIAL PRIMARY KEY.
 	 */
-	public User(String username, String pwd, String role, List<Account> accounts) {
+	
+	public User(String username, String pwd, Role role, List<Account> accounts) {
 		super();
 		this.username = username;
 		this.pwd = pwd;
@@ -77,11 +78,11 @@ public class User implements Serializable {
 		this.pwd = pwd;
 	}
 	
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
 	
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 	
