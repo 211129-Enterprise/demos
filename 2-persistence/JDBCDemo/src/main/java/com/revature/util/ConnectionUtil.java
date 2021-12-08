@@ -1,8 +1,12 @@
 package com.revature.util;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 /**
  * What is JDBC?
  * 
@@ -47,18 +51,38 @@ public class ConnectionUtil {
 			return null;
 		}
 		
+		// this class is instantiated to read from a properties file 
+		Properties prop = new Properties(); // imported from java.util
 		
-		String url = "jdbc:postgresql://enterprise211129.cvtq9j4axrge.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=sophiag";
-		String username = "postgres";
-		String password = "postgres";
+		String url = "";
+		String username = "";
+		String password = "";
 		
 		// this is the NOT secure method!!
 		try {
+			
+			// I right clicked on the application.properties > went to properties than copy/pasted the exact location of the file
+			prop.load(new FileReader("C:\\Users\\SophieGavrila\\Desktop\\demos\\2-persistence\\JDBCDemo\\src\\main\\resources\\application.properties"));
+			
+			url = prop.getProperty("url"); // this is retrieving the value of the "url" key in application.properties file
+			username =  prop.getProperty("username");
+			password = prop.getProperty("password");
+			
+			/**
+			 * When the getConnection() method is called, the DriverManager (class from the JDBC API - java.sql) 
+			 * will attempt to locate a suitable driver amongst those loaded initialization.
+			 */
 			conn = DriverManager.getConnection(url, username, password);
 			
 			System.out.println("You established a connection!!!");
 		} catch (SQLException e) {
 			System.out.println("Cannot establish DB connection");
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			System.out.println("Cannot locate application.properties file");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Something wrong with app.props file");
 			e.printStackTrace();
 		}
 		
