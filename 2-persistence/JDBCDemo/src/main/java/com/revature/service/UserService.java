@@ -41,5 +41,11 @@ public class UserService {
 		return u;
 	}
 	
+	public void listAllAccounts() {
+		
+		// return all the user accounts that exist in the DB
+		
+	}
+	
 
 }

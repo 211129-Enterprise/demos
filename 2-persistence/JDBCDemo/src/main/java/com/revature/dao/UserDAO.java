@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Types;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -129,8 +131,53 @@ public class UserDAO implements IUserDAO {
 	}
 
 	@Override
-	public List<User> findAll() {
-		// TODO Auto-generated method stub
+	public List<User> findAll() { // return both user info AND account info associated with the user
+
+		// empty list to store User objects
+		List<User> allUsers = new LinkedList<User>();
+		
+		// try / catch with the connection
+		try (Connection conn = ConnectionUtil.getConnection()) {
+
+			// create statment
+			Statement stmt = conn.createStatement();
+			
+			String sql = "SELECT users.id, users.username, users.pwd, users.user_role, accounts.id AS account_id, accounts.balance, \r\n" + 
+					"accounts.active \r\n" + 
+					"	FROM users\r\n" + 
+					"	LEFT JOIN users_accounts_jt ON users.id = users_accounts_jt.acc_owner\r\n" + 
+					"	LEFT JOIN accounts ON accounts.id = users_accounts_jt.account";
+			
+			// grab user data from each row
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			// iterate through the table of data returned
+			while (rs.next())  {
+				
+				// grab id, username, password, role,
+				
+				// create accont obj
+				
+				// id, balance, isActive
+				
+				
+			}
+			
+			
+			
+			// grab account data
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+		
+		
+		
+		
+		
 		return null;
 	}
 
