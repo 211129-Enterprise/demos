@@ -4,13 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Types;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 
 import com.revature.models.Account;
+import com.revature.models.Role;
 import com.revature.models.User;
 import com.revature.util.ConnectionUtil;
 
@@ -90,8 +93,82 @@ public class UserDAO implements IUserDAO {
 	@Override 
 	public List<User> findall() {
 
+		//empty list to store User objects
+		List<User> allUsers = new LinkedList<User>();
 		
-		return null;
+		// try / catch with the connection
+		try(Connection conn = ConnectionUtil.getConnection()){
+			
+			//Create statement
+			Statement stmt = conn.createStatement();
+			
+			String sql = "SELECT users.id, users.username, users.pwd, users.user_role, accounts.id AS account_id, accounts.balance, accounts.active\n"
+					+ "	FROM aaronm.users\n"
+					+ "	LEFT JOIN aaronm.users_accounts_jt ON users.id = users_accounts_jt.acc_owner\n"
+					+ "	LEFT JOIN aaronm.accounts ON accounts.id = users_accounts_jt.account;";
+			
+			// grab user data from each row
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			// Iterate through the table of the data returned
+			while(rs.next()) {
+				
+				//grab id, username, and password, role
+				int id = rs.getInt("id");
+				String username = rs.getString("username"),
+						password = rs.getString("pwd");
+				
+				Role role = Role.valueOf(rs.getString("user_role"));
+				
+				int accId = rs.getInt("account_id");
+				double balance = rs.getInt("balance");
+				boolean isActive = rs.getBoolean("active");
+				
+				
+				// if the account ID is zero, that means that the user doesn't have an account
+				if(accId == 0) {
+					
+					allUsers.add( new User(id, username, password, role, new LinkedList<Account>()) );
+					
+				} else {
+					
+					// Remember: "id" below represents the User's ID which is the owner Id
+					int ownerId = id;
+					Account a = new Account( accId, balance, ownerId, isActive );
+					
+					// Next week (Week 3) we'll go in depth into the String API
+					List<User> potentialOwners = allUsers.stream()
+												.filter((u) -> u.getId() == ownerId)
+												.collect(Collectors.toList());
+					
+					if(potentialOwners.isEmpty()) {
+						List<Account> ownedAccounts = new LinkedList<Account>();
+						ownedAccounts.add(a);
+						
+						User u = new User(ownerId, username, password, role, ownedAccounts);
+						
+						allUsers.add(u);
+					} else {
+						// The owner of this account already exists
+						User u = potentialOwners.get(0);
+						
+						// This is the logic that enables us to capture multiple accounts that belong to one person
+						List<Account> ownedAccs = u.getAccounts();
+						ownedAccs.add(a);
+						u.setAccounts(ownedAccs);
+					}
+					
+				}
+				
+			}
+			
+		} catch (SQLException e) {
+			logger.warn("SQL Exception thrown - Can't retrieve all users from DB");
+			e.printStackTrace(); // This will give you a good idea of EXACTLY what is going on
+		}
+		
+		
+		return allUsers; // Return null if there are no users
 	}
 
 	@Override

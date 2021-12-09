@@ -62,7 +62,7 @@ public class ConnectionUtil {
 		Properties prop = new Properties(); // Imported from java.util
 		
 		try {
-			prop.load(new FileReader(""));
+			prop.load(new FileReader("/Users/cosmos/Documents/Revature/demos/2-persistence/src/main/resources/application.properties"));
 			
 			String url = prop.getProperty("url"),
 					username = prop.getProperty("username"),

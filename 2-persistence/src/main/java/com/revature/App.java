@@ -13,12 +13,15 @@ public class App {
 	//This is the entry point of my application!
 	public static void main(String[] args) {
 		
-		run();
+//		run();
 		
 //		ConnectionUtil.getConnection();
 //		
 //		//Return the re-used connection object
 //		ConnectionUtil.getConnection();
+		
+		UserService userv = new UserService();
+		userv.listAllAccounts();
 
 	}
 	

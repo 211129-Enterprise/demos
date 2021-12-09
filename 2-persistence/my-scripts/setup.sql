@@ -5,20 +5,20 @@ CREATE TYPE aaronm.user_role AS ENUM ('Admin', 'Customer', 'Employee');
 
 DROP TABLE IF EXISTS aaronm.users CASCADE;
 CREATE TABLE aaronm.users (
-	user_id SERIAL PRIMARY KEY,
-	username VARCHAR(50) NOT NULL UNIQUE, --50 IS standard CHARACTER length
-	pwd VARCHAR(50) NOT NULL,
-	user_role aaronm.user_role NOT NULL
+	id SERIAL PRIMARY KEY,
+ 	username VARCHAR(50) NOT NULL UNIQUE,
+ 	pwd VARCHAR(50) NOT NULL,
+ 	user_role aaronm.user_role NOT NULL
 );
 
 
 
 DROP TABLE IF EXISTS aaronm.accounts CASCADE;
 CREATE TABLE aaronm.accounts (
-	accounts_id SERIAL PRIMARY KEY,
-	account_balance NUMERIC(50, 2) DEFAULT 0, --NUMERIC(left side digits, right side digits)
-	account_owner INTEGER NOT NULL REFERENCES aaronm.users(user_id),
-	active BOOLEAN DEFAULT FALSE --This determines whethe account has been opened
+	id SERIAL PRIMARY KEY,
+	balance NUMERIC(50, 2) DEFAULT 0, -- 67283467846782364783264823784678.02
+	acc_owner INTEGER NOT NULL REFERENCES aaronm.users(id),
+	active BOOLEAN DEFAULT FALSE -- this determines whether the account has been opened
 
 );
 
@@ -26,8 +26,8 @@ CREATE TABLE aaronm.accounts (
 --Join table
 DROP TABLE IF EXISTS aaronm.users_accounts_jt CASCADE;
 CREATE TABLE aaronm.users_accounts_jt (
-	account_owner INTEGER NOT NULL REFERENCES aaronm.users(user_id),
-	account INTEGER NOT NULL REFERENCES aaronm.accounts(accounts_id)
+	acc_owner INTEGER NOT NULL REFERENCES aaronm.users(id), -- 1 - 12
+	account INTEGER NOT NULL REFERENCES aaronm.accounts(id) -- 1 - 13
 );
 
 --Later on implement PL/pgsql - functional programming language for Postgres RDBMS
@@ -40,25 +40,25 @@ INSERT INTO aaronm.users (username, pwd, user_role)
 	('Mary', '12345', 'Customer'),
 	('Barry', 'JillSandwich', 'Customer');
 	
-SELECT * FROM users;
+SELECT * FROM aaronm.users;
 
 
-INSERT INTO aaronm.accounts(account_balance, account_owner)
+INSERT INTO aaronm.accounts(balance, acc_owner)
 	VALUES (100, 1), 	-- One account FOR Larry
 	(200, 2),  	-- Checking acct FOR Mary (2)
 	(2000, 2),	-- Savings acct FOR Mary (2)
 	(300, 3); -- One account FOR Barry
 	
-SELECT * FROM accounts;
+SELECT * FROM aaronm.accounts;
 
 
-INSERT INTO aaronm.users_accounts_jt(account_owner, account)
+INSERT INTO aaronm.users_accounts_jt(acc_owner, account)
 	VALUES (1, 1),
 	(2, 2),
 	(2, 3),
 	(3, 4);
 	
-SELECT * FROM users_accounts_jt;
+SELECT * FROM aaronm.users_accounts_jt;
 
 
 /*
@@ -114,3 +114,15 @@ SELECT * FROM aaronm.users_accounts_jt;
 
 INSERT INTO aaronm.accounts (account_balance, account_owner, active)
 	VALUES (5, 4, true);
+
+
+-- USER ID, username, password, role, account id, account balance, isActive
+--SELECT aaronm.users.user_id, aaronm.users.username, aaronm.users.pwd, aaronm.users.user_role, aaronm.accounts.accounts_id AS account_id, aaronm.accounts.account_balance, aaronm.accounts.active
+--	FROM aaronm.users
+--	LEFT JOIN aaronm.users_accounts_jt ON aaronm.users.user_id = aaronm.users_accounts_jt.account_owner
+--	LEFT JOIN aaronm.accounts ON aaronm.account.accounts_id = aaronm.users_accounts_jt.account;
+
+SELECT users.id, users.username, users.pwd, users.user_role, accounts.id AS account_id, accounts.balance, accounts.active
+	FROM aaronm.users
+	LEFT JOIN aaronm.users_accounts_jt ON users.id = users_accounts_jt.acc_owner
+	LEFT JOIN aaronm.accounts ON accounts.id = users_accounts_jt.account;
