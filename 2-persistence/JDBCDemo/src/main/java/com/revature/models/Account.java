@@ -29,8 +29,6 @@ public class Account implements Serializable{
 		this.accOwner = accOwner;
 		this.active = active;
 	}
-	
-	
 
 	public int getId() {
 		return id;
