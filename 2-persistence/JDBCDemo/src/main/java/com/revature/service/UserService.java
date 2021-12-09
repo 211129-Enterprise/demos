@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.revature.dao.IUserDAO;
@@ -13,7 +15,7 @@ public class UserService {
 	
 	// we will inject a DAO object into this class, so that this class can use its methods
 	// DEPENDENCY INJECTION
-	private IUserDAO udao = new UserDAO();
+	public IUserDAO udao = new UserDAO();
 	
 
 	public User register(User u) {
@@ -44,6 +46,17 @@ public class UserService {
 	public void listAllAccounts() {
 		
 		// return all the user accounts that exist in the DB
+//		for (User u : udao.findAll()) {
+//			
+//			System.out.println(u);
+//			
+//		}
+		
+		// Java 8 addition is the forEach(
+		List<User> users = udao.findAll();
+		
+		// below we're utilizing a lambda function
+		users.forEach(u -> System.out.println(u));
 		
 	}
 	

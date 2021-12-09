@@ -8,9 +8,12 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 
+import com.revature.models.Account;
+import com.revature.models.Role;
 import com.revature.models.User;
 import com.revature.util.ConnectionUtil;
 /*
@@ -155,30 +158,61 @@ public class UserDAO implements IUserDAO {
 			while (rs.next())  {
 				
 				// grab id, username, password, role,
+				int id = rs.getInt("id");
+				String username = rs.getString("username");
+				String password = rs.getString("pwd");
 				
-				// create accont obj
+				Role role = Role.valueOf(rs.getString("user_role"));
 				
-				// id, balance, isActive
+				int accId = rs.getInt("account_id");
+				double balance = rs.getDouble("balance");
+				boolean isActive = rs.getBoolean("active");
 				
+				// if the account ID is zero that means that the User doesn't have an account
+				
+				if (accId == 0) {
+					
+					allUsers.add(new User(id, username, password, role, new LinkedList<Account>()));
+					
+				} else {
+					
+					// remember that "id" below represents the User's ID which is the ownerID
+					int ownerId = id;
+					Account a = new Account(accId, balance, ownerId, isActive);
+					
+					// next week we will go in depth into the Stream API
+					List<User> potentialOwners = allUsers.stream()
+							.filter((u) -> u.getId() == ownerId)
+							.collect(Collectors.toList());
+					
+					if (potentialOwners.isEmpty()) {
+						
+						List<Account> ownedAccounts = new LinkedList<Account>();
+						ownedAccounts.add(a);
+						
+						User u = new User(ownerId, username, password, role, ownedAccounts);
+						allUsers.add(u);						
+					
+					} else {
+						// the owner of this account already exists
+						User u = potentialOwners.get(0);
+						
+						// this is the logic that enables us to capture multiple accounts that belong to one User.
+						List<Account> ownedAccs = u.getAccounts();
+						ownedAccs.add(a);
+						
+						u.setAccounts(ownedAccs);
+					}
+					
+				}
 				
 			}
 			
-			
-			
-			// grab account data
-			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.warn("SQL Exception thrown - can't retreive all users from DB");
+			e.printStackTrace(); // this will give you a good idea of EXACTLY what's going wrong
 		}
-		
-
-		
-		
-		
-		
-		
-		return null;
+		return allUsers; // this will return null if there are no users
 	}
 
 	@Override
