@@ -18,6 +18,7 @@ import com.revature.models.User;
 import com.revature.service.AccountService;
 
 public class AccountServiceTests {
+	
 	private AccountService aservice;
 	
 	private AccountDAO mockdao;
