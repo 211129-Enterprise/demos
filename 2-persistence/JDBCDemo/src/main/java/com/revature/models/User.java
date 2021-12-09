@@ -23,6 +23,15 @@ public class User implements Serializable {
 	public User() {
 		
 	}
+	
+
+	public User(String username, String password, Role role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+
 
 	public User(int id, String username, String password, Role role, List<Account> accounts) {
 		super();
@@ -57,6 +66,46 @@ public class User implements Serializable {
 		User other = (User) obj;
 		return id == other.id && Objects.equals(password, other.password) && role == other.role
 				&& Objects.equals(username, other.username);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
 	}
 	
 	// data structure that represents all the accounts a user has
