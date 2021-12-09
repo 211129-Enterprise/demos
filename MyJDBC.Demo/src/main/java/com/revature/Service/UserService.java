@@ -1,5 +1,7 @@
 package com.revature.Service;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.revature.DAO.IUserDAO;
@@ -10,7 +12,7 @@ import com.revature.models.User;
 public class UserService {
 
 
-	private 	IUserDAO  udao = new UserDAO();
+	public 	IUserDAO  udao = new UserDAO();
 	private Logger logger = Logger.getLogger(UserService.class);
 	
 	// we will inject a DAO object into this class ,
@@ -43,5 +45,24 @@ public class UserService {
 		 
 	 }
 
+	 
+		public void listAllAccounts() {
+			
+			for(User u : udao.findAll()) {
+				
+				System.out.println(u);
+				
+			}
+			
+			List <User> users = udao.findAll();
+			
+			
+			// lamda function 
+			users.forEach(u-> System.out.println(u));
+			
+			
+			
+			
+		}
 	
 };

@@ -1,10 +1,10 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import com.revature.models.Role;
 import java.util.List;
 import java.util.Objects;
 
-import javax.management.relation.Role;
 
 public class User implements Serializable {
  // id
@@ -33,18 +33,18 @@ public class User implements Serializable {
 	}
 	
 	
-	public User(int id, String username, String password, Role role, List<Account> accounts) {
+	public User(int id, String username, String password, Role admin, List<Account> accounts) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.role = role;
+		this.role = admin;
 		this.accounts = accounts;
 	}
 
 	
 
-	public User(String string, String string2, com.revature.models.Role customer, Object object) {
+	public User(String string, String string2, Role customer, Object object) {
 		// TODO Auto-generated constructor stub
 	}
 
