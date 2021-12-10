@@ -106,6 +106,8 @@ CREATE TRIGGER trig
 	FOR EACH ROW
 	EXECUTE PROCEDURE sophiag.auto_insert_into_jt();
 
+
+
 SELECT * FROM sophiag.users;
 SELECT * FROM sophiag.accounts;
 SELECT * FROM sophiag.users_accounts_jt;
@@ -113,6 +115,12 @@ SELECT * FROM sophiag.users_accounts_jt;
 INSERT INTO sophiag.accounts (balance, acc_owner, active)
 	VALUES (500000, 4, TRUE);
 
+-- USER ID, username, password, role, account id, account balance, isActive
+SELECT users.id, users.username, users.pwd, users.user_role, accounts.id AS account_id, accounts.balance, 
+accounts.active 
+	FROM users
+	LEFT JOIN users_accounts_jt ON users.id = users_accounts_jt.acc_owner
+	LEFT JOIN accounts ON accounts.id = users_accounts_jt.account;
 
 
 
