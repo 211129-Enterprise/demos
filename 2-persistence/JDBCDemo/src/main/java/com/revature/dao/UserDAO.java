@@ -60,7 +60,7 @@ import com.revature.util.ConnectionUtil;
  * regarding User objects
  * 
  * This class will incorporate all persistence logic.
- *
+ * This is the concrete implementation class
  */
 public class UserDAO implements IUserDAO {
 
