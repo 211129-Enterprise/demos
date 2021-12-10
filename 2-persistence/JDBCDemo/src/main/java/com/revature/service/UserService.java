@@ -43,6 +43,24 @@ public class UserService {
 		return u;
 	}
 	
+	public User login(String username, String password) {
+		
+		
+		// call our dao's findByUsername() method
+		User returnedUser = udao.findByUsername(username);
+		
+		if (returnedUser.getPassword() == password) {
+			
+			System.out.println("Successfully logged in!");
+			return returnedUser;
+			
+		}
+		
+		// otherwise if the password is NOT equal to the queried user
+		return null;
+	}
+	
+	
 	public void listAllAccounts() {
 		
 		// return all the user accounts that exist in the DB

@@ -128,9 +128,51 @@ public class UserDAO implements IUserDAO {
 	}
 
 	@Override
-	public User findByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public User findByUsername(String username) { // regex
+	
+		User u = new User();
+		
+		try (Connection conn = ConnectionUtil.getConnection()) { 
+			
+			String sql =  "SELECT * FROM users WHERE username = ?";
+			
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, username); // here we're setting the ? = to the value of the username that's being passed in
+			
+			ResultSet rs;
+			
+			
+			if ((rs = stmt.executeQuery()) != null) {
+				
+				// move the cursor forward
+				rs.next();
+				
+				int id = rs.getInt("id");
+				String returnedUsername =  rs.getString("username");
+				String password = rs.getString("pwd"); // make sure that the column matches the name that you're passing through
+				Role role = Role.valueOf(rs.getString("user_role"));
+				
+				// here we're not returning accounts
+				
+				u.setId(id);
+				u.setUsername(returnedUsername);
+				u.setPassword(password);
+				u.setRole(role);
+				
+				
+			} else {
+				
+				return u;
+				
+			}
+
+		} catch (SQLException e) {
+			logger.warn("SQL Exception thrown - can't retreive user from DB");
+			e.printStackTrace(); // this will give you a good idea of EXACTLY what's going wrong
+		}
+
+		return u; // we reutrn the fully initialize user
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 // Java Bean
+
 public class User implements Serializable {
 
 	private int id; // represented in our DB as a SERIAL PRIMARY KEY

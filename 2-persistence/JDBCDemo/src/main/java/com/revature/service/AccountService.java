@@ -52,5 +52,13 @@ public class AccountService {
 		return adao.findByOwner(userId);
 
 	}
+	
+	public void deposit(double depositAmount, int acc_owner_id) {
+		
+		// have the logic to query the correct account
+		// update the balance there
+		
+		
+	}
 
 }
