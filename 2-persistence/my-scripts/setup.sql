@@ -95,44 +95,154 @@ CREATE VIEW names AS SELECT first_name, last_name FROM employees;
 
 SELECT * FROM names; -- just a SIMPLE way OF storing the results OF a query
 
-CREATE TYPE "MarkM".user_role AS ENUM ('Admin', 'Employee', 'Customer');
-
+CREATE TYPE "MarkM".user_role AS ENUM ('Administrator', 'Employee', 'Customers');
+--DROP TABLE IF EXISTS "MarkM".user_role CASCADE;
 --DROP TABLE IF EXISTS "MarkM".Customers CASCADE;
-CREATE TABLE "MarkM".Customers (
+--DROP TABLE IF EXISTS "MarkM".Checking CASCADE;
+--DROP TABLE IF EXISTS "MarkM".Customers_Account_jt CASCADE;
+CREATE TABLE "MarkM".Accounts (
+	id SERIAL UNIQUE,
 	first_name VARCHAR (20) NOT NULL,
 	middle_initial VARCHAR (1) NOT NULL,
 	last_name VARCHAR (30),
 	birthdate DATE NOT NULL,
-	account_ranking NUMERIC(1,0) DEFAULT 0,
+	account_ranking NUMERIC(1,0) DEFAULT 0 PRIMARY KEY,
 	credit_check NUMERIC (3,0) DEFAULT 0,
 	social_security VARCHAR (9) UNIQUE,
 	username VARCHAR(30) NOT NULL UNIQUE,
 	pwd VARCHAR(40) NOT NULL,
-	user_role "MarkM".user_role NOT NULL --enum
+	user_role "MarkM".user_role NOT NULL --ENUM
 );
-INSERT INTO "MarkM".Customers (first_name, middle_initial, last_name, birthdate,account_ranking,
+
+INSERT INTO "MarkM".Accounts (first_name, middle_initial, last_name, birthdate,account_ranking,
+		credit_check, social_security, username, pwd, user_role)
+	VALUES 	('Larry', 'B', 'Pass', '01/02/1992', 1, 620, 123456789, 'larry.pass', 'iloveyou22', 'Customers'); 
+INSERT INTO "MarkM".Accounts (first_name, middle_initial, last_name, birthdate,account_ranking,
 		credit_check, social_security, username, pwd, user_role)
 	VALUES ('Tony', 'I', 'Stark', '06/06/1966', 2, 730, 222113333, 'tony.stark', 'iamironman01', 'Employee'); 
+INSERT INTO "MarkM".Accounts (first_name, middle_initial, last_name, birthdate,account_ranking,
+		credit_check, social_security, username, pwd, user_role)
+	VALUES 	('Thomas', 'G', 'Leroy', '11/26/1929', 3, 800, 111123255, 'imtheboss22', 'youowememoney$$', 'Administrator'); 
+				
+
+
+
+CREATE TABLE "MarkM".Accounts_Customers (
+	id SERIAL UNIQUE,
+	account_number VARCHAR (10) UNIQUE NOT NULL,
+	balance NUMERIC(50,2) DEFAULT 0,
+	social_security VARCHAR (9) UNIQUE,
+	account_ranking NUMERIC(1,0) DEFAULT 0 PRIMARY KEY REFERENCES "MarkM".Accounts(account_ranking),
+	acc_owner INTEGER NOT NULL,
+	user_role "MarkM".user_role NOT NULL,
+	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
+);
+CREATE TABLE "MarkM".Accounts_Employees (
+	id SERIAL UNIQUE,
+	account_number VARCHAR (10) NOT NULL UNIQUE,
+	balance NUMERIC(50,2) DEFAULT 0,
+	social_security VARCHAR (9) UNIQUE,
+	account_ranking NUMERIC(1,0) DEFAULT 0 PRIMARY KEY REFERENCES "MarkM".Accounts(account_ranking),
+	acc_owner INTEGER NOT NULL,
+	user_role "MarkM".user_role NOT NULL,
+	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
+);
+CREATE TABLE "MarkM".Accounts_Administrator (
+	id SERIAL UNIQUE,
+	account_number VARCHAR (10) NOT NULL UNIQUE,
+	balance NUMERIC(50,2) DEFAULT 0,
+	social_security VARCHAR (9) UNIQUE,
+	account_ranking NUMERIC(1,0) DEFAULT 0 PRIMARY KEY REFERENCES "MarkM".Accounts(account_ranking),
+	acc_owner INTEGER NOT NULL,
+	user_role "MarkM".user_role NOT NULL,
+	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
+);
+//checking account AND savings account
+CREATE TABLE "MarkM".Checking (
+	id SERIAL PRIMARY KEY,
+	account_number VARCHAR (10) NOT NULL,
+	balance NUMERIC(50,2) DEFAULT 0,
+	social_security VARCHAR (9) UNIQUE REFERENCES "MarkM".Accounts_Administrator(social_security),
+	acc_owner INTEGER NOT NULL,
+	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
+);
+CREATE TABLE "MarkM".Savings (
+	id SERIAL PRIMARY KEY,
+	account_number VARCHAR (10) NOT NULL,
+	balance NUMERIC(50,2) DEFAULT 0,
+	social_security VARCHAR (9) UNIQUE REFERENCES "MarkM".Accounts_Administrator(social_security),
+	acc_owner INTEGER NOT NULL,
+	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
+);
+CREATE TABLE "MarkM".Customers_jt (
+	account_owner VARCHAR (20) NOT NULL REFERENCES "MarkM".accounts(social_security),	
+	account VARCHAR (10) NOT NULL REFERENCES "MarkM".accounts_customers(account_number)
+);
+
+--Alter accounts checking and savings for customers for ss# key
+ALTER TABLE "MarkM".checking 
+	ADD CONSTRAINT fk_key
+	FOREIGN KEY (social_security) 
+	REFERENCES Accounts_Employees(social_security);
+ALTER TABLE "MarkM".savings 
+	ADD CONSTRAINT fk_key
+	FOREIGN KEY (social_security) 
+	REFERENCES Accounts_Customers(social_security);
+--Alter accounts checking and savings for employees for ss# key
+ALTER TABLE "MarkM".checking 
+	PRIMARY KEY (social_security) 
+	REFERENCES Accounts_Employees(social_security);
+ALTER TABLE "MarkM".savings 
+	ADD CONSTRAINT fk_key
+	PRIMARY KEY (social_security) 
+	REFERENCES Accounts_Employees(social_security);
+
+ALTER TABLE "MarkM".savings 
+	ADD CONSTRAINT fk_key
+	PRIMARY KEY (social_security) 
+	REFERENCES Accounts_Employees(social_security);
+
+--SELECT *
+	
+--FROM accounts_Customers.social_security, accounts_Employees.social_security, 
+--		accounts_Administrators
+--JOIN accounts_customers.social_security, accounts_employees.social_security, 
+--		accounts_administrators  ON checking.social_security, savings.social_security; 
+--
+--SELECT accounts_Customers "social_security", accounts_Employees "social_security", 
+--		accounts_Administrators "social_security"
+
+	--ADD id varchar(10)
+--ALTER TABLE "MarkM".accounts_employees 
+--ADD COLUMN user_role "MarkM".user_role NOT NULL;
+--
+--ALTER TABLE "MarkM".accounts
+--	UPDATE user_role REFERENCES "MarkM".accounts_administrator (user_role),
 
 --UPDATE "MarkM".Customers
 --	SET social_security = '222113333'
 --	WHERE username = 'tony.stark';
 
+--FORMAT(123456789, '###-##-####'),
+--ALTER TABLES customers 
+--	DROP COLUMN id
 
-FORMAT(123456789, '###-##-####'),
-CREATE TABLE "MarkM".Accounts (
-	id SERIAL PRIMARY KEY,
-	account_number VARCHAR (10) NOT NULL REFERENCES "MarkM".Customers(social_security),
-	balance NUMERIC(50,2) DEFAULT 0,
-	acc_owner INTEGER NOT NULL,
-	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
-);
 
-CREATE TABLE "MarkM".Customers_Account_jt (
-	account_owner VARCHAR (20) NOT NULL REFERENCES "MarkM".Customers(social_security),	
-	account INTEGER NOT NULL REFERENCES "MarkM".Accounts(id)
-);
 
 --implement PL/pgsql functional programming language langue for Postgres RDBMS
 --create a function so that everytime a new account is enetered into the accounts table.
---
+
+INSERT INTO "MarkM".Customers (first_name, middle_initial, last_name, birthdate, account_ranking,
+		credit_check, social_security, username, pwd, user_role)
+	VALUES ('Larry', 'B', 'Pass', '01/02/1992', 1, 620, 123456789, 'larry.pass', 'iloveyou22', 'Customer'),
+			('Thomas', 'G', 'Leroy', '11/26/1929', 3, 800, 111123255, 'imtheboss22', 'youowememoney$$', 'Admin'); 
+
+SELECT * FROM "MarkM".Customers; --brings up AT bottom.
+
+SELECT * FROM "MarkM".Customers;
+INSERT INTO "MarkM".accounts (acc_owner, balance, account_number)
+	VALUES (1, 0.00, 524986523),
+			(1, 2.75, 265875423),
+			(3, 20.00, 845625698);
+		
+SELECT * FROM "MarkM".customers_account_jt;
