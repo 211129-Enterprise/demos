@@ -1,5 +1,5 @@
 # Week 2: SQL & JDBC Study Questions
-You should research and be able to answer the following questions at the ned of each day:
+You should research and be able to answer the following questions at the end of each day:
 
 > - Use Google and [SQL class notes](https://github.com/211129-Enterprise/demos/blob/main/2-persistence/notes/sql.md). <br>
 > - ❗ *Remember that when you present your Project 0, you will need to have your database connected to an AWS RDS running PostgreSQL engine.* You can use mine: <br>
