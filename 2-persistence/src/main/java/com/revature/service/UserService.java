@@ -59,4 +59,19 @@ public class UserService {
 		users.forEach( u -> System.out.println(u) ); // Using a lambda ( -> ) to define functionality
 		
 	}
+	
+	public User login(String username, String password) {
+		
+		// Call our DAO's findByUserName() method to return the users from the DB
+		User returnedUser = udao.findByUsername(username);
+		
+		if(returnedUser.getPassword() == password) {
+			
+			System.out.println("SUCCESSFULLY LOGGED IN!");
+			return returnedUser;
+		}
+			
+		// Otherwise if the password is not equal to the queried user
+		return null;
+	}
 }

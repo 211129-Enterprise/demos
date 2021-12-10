@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -76,9 +77,45 @@ public class AccountDAO implements IAccountDAO{
 	}
 
 	@Override
-	public List<Account> findByOwner(int accOwnerId) {
+	public List<Account> findByOwner(int userId) {
+
+		List<Account> ownedAccounts	= new LinkedList<Account>();
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			
+			String sql = "SELECT accounts.id, accounts.balance, accounts.active FROM sophiag.accounts\r\n" + 
+					"	INNER JOIN users_accounts_jt \r\n" + 
+					"		ON accounts.id = users_accounts_jt.account 	\r\n" + 
+					"			WHERE users_accounts_jt.acc_owner = ?;"; 
+			
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			// how do we set the ?
+			stmt.setInt(1, userId); 
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()) {
 				
-		return null;
+				int id = rs.getInt("id");
+				double balance = rs.getDouble("balance");
+				boolean isActive = rs.getBoolean("active");
+				
+				Account a = new Account(id, balance, userId, isActive);
+				
+				// in the case that there are duplicates, DON'T add them to the arraylist
+				if(!ownedAccounts.contains(a)) {
+					ownedAccounts.add(a);
+				}	
+			}
+
+		} catch (SQLException e) {
+			logger.warn("Failed to retrieve all accounts owned by user with id " + userId);
+			e.printStackTrace();
+		}
+		
+		return ownedAccounts;
+		
 	}
 
 	@Override

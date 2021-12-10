@@ -41,4 +41,11 @@ public class AccountService {
 			System.out.println(a);
 		}
 	}
+	
+	public void deposit(double depositAmount, int acc_owner_id) {
+		
+		// Have the logic to query the correct account
+		// Update the balance there
+		
+	}
 }

@@ -53,3 +53,12 @@
 2021-12-09 12:28:51 INFO  revature.service.UserService:23 - Registering user...
 2021-12-09 12:28:51 INFO  revature.service.UserService:45 - Successfully registered User with the id of 41
 2021-12-09 12:28:51 INFO  revature.service.UserService:23 - Registering user...
+2021-12-10 07:56:15 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-10 07:56:15 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-10 07:56:40 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-10 07:56:40 WARN  revature.dao.UserDAO:125 - SQL Exception thrown - Can't retrieve user from DB
+2021-12-10 07:56:40 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-10 07:56:40 WARN  revature.dao.UserDAO:125 - SQL Exception thrown - Can't retrieve user from DB
+2021-12-10 07:57:32 INFO  revature.service.UserService:23 - Registering user...
+2021-12-10 07:57:32 INFO  revature.util.ConnectionUtil:76 - Connection attempt successful!
+2021-12-10 07:57:32 ERROR revature.dao.UserDAO:73 - Unable to insert user - SQL exception thrown.
