@@ -72,6 +72,8 @@ You should research and be able to answer the following questions at the end of 
 2. What are the core interfaces / classes in JDBC?
 
 3. What is a stored procedure and how would you call it in Java?
+    -  [Stored Procedures](https://stackoverflow.com/questions/459457/what-is-a-stored-procedure)
+    -  To call it, use the JDBC API’s `CallableStatement` interface, resource [here](https://www.geeksforgeeks.org/how-to-use-callable-statement-in-java-to-call-stored-procedure/)
 
 4. What is the difference between Statement and PreparedStatement?
 
