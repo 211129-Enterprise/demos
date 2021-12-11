@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 // Java Bean
+
 public class User implements Serializable {
 
 	private int id; // represented in our DB as a SERIAL PRIMARY KEY
@@ -120,8 +121,12 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + ", accounts="
+				+ accounts + "]";
 	}
+
+	
+	
 	
 	
 
