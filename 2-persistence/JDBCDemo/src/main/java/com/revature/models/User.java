@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
+import com.revature.enums.Role;
+
 
 
 public class User implements Serializable {

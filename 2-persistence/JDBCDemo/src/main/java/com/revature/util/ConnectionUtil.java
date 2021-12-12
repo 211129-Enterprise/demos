@@ -25,7 +25,7 @@ public class ConnectionUtil {
 	public static Connection getConnection() {
 		try {
 			if (conn != null && !conn.isClosed()) {
-				
+				return conn;
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -40,11 +40,11 @@ public class ConnectionUtil {
 		String password = "";
 		try {
 			// try this if it doesn't work C:\Users\somer\projects\demos\2-persistence\JDBCDemo\src\main\resources\application.properties
-			prop.load(new FileReader("C:\\Users\\somer\\projects\\demos\\2-persistence\\JDBCDemo\\src\\main\\resources\\application.properties"));
-			
-			url = prop.getProperty("url");
-			username = prop.getProperty("username");
-			password = prop.getProperty("password");
+//			prop.load(new FileReader("C:\\Users\\somer\\projects\\demos\\2-persistence\\JDBCDemo\\src\\main\\resources\\application.properties"));
+//			
+//			url = prop.getProperty("url");
+//			username = prop.getProperty("username");
+//			password = prop.getProperty("password");
 //			try {
 //				Class.forName("org.postgresql.Driver");
 //			} catch (ClassNotFoundException e) {
@@ -53,7 +53,7 @@ public class ConnectionUtil {
 //			} 
 //			Driver driver = DriverManager.getDriver("org.postgresql.Driver");
 //			DriverManager.registerDriver(driver);
-			conn = DriverManager.getConnection(url, username, password);
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=somersm", "postgres", "postgres");
 			
 			logger.info("Database Connection Established");
 		} catch (SQLException e) {
@@ -61,16 +61,16 @@ public class ConnectionUtil {
 			logger.error("we failed to re-use a connection");
 			e.printStackTrace();
 			return null;
-		} catch (FileNotFoundException e) {
-			System.out.println("cannot locate properties file");
-			// TODO Auto-generated catch block
-			logger.error("Cannot locate application.properties");
-			e.printStackTrace();
-		} catch (IOException e) {
-			System.out.println("something wrong with app.props");
-			logger.error("Something wrong with app.props file");
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+//		} catch (FileNotFoundException e) {
+//			System.out.println("cannot locate properties file");
+//			// TODO Auto-generated catch block
+//			logger.error("Cannot locate application.properties");
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			System.out.println("something wrong with app.props");
+//			logger.error("Something wrong with app.props file");
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
 		}
 		return conn;
 	}

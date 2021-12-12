@@ -15,6 +15,8 @@ public class UserDAO implements IUserDAO{
 	
 	private static Logger logger = Logger.getLogger(UserDAO.class);
 
+	
+
 	@Override
 	public int insert(User u) {
 		// TODO Auto-generated method stub
@@ -27,6 +29,7 @@ public class UserDAO implements IUserDAO{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, u.getUsername());
 			stmt.setString(2, u.getPassword());
+			stmt.setString(3, u.getRole());
 			
 			ResultSet rs; 
 			
@@ -64,6 +67,11 @@ public class UserDAO implements IUserDAO{
 	@Override
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
+//		SELECT users.id, users.username, users.pwd, users.user_role, accounts.id AS account_id, accounts.balance, 
+//		accounts.active 
+//			FROM users
+//			LEFT JOIN users_accounts_jt ON users.id = users_accounts_jt.acc_owner
+//			LEFT JOIN accounts ON accounts.id = users_accounts_jt.account;
 		return null;
 	}
 

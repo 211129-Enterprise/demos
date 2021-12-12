@@ -1,8 +1,7 @@
 package com.revature;
-
 import java.util.Scanner;
 
-import com.revature.models.Role;
+import com.revature.enums.Role;
 import com.revature.models.User;
 import com.revature.service.UserService;
 import com.revature.util.ConnectionUtil;
@@ -11,9 +10,10 @@ public class App {
 	
 	static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
+		ConnectionUtil.getConnection();
 		run();
 		
-		ConnectionUtil.getConnection();
+	
 	}
 	
 	public static void run() {

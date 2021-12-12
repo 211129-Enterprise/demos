@@ -11,7 +11,7 @@ public class UserService {
 	// we will inject a DAO object into this class, so that this class can use its methods
 	// DEPENDENCY INJECTION
 	
-	private IUserDAO udao = new UserDAO();
+	public IUserDAO udao = new UserDAO();
 	
 	private Logger logger = Logger.getLogger(UserService.class);
 	
