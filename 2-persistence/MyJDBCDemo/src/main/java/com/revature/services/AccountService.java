@@ -45,5 +45,10 @@ public class AccountService {
 		
 	}
 	
-	
+	public void deposit(double depositAmount, int acc_owner_id) {
+		
+		// have the logic to query the correct amount
+		// update the balance there
+		
+	}
 }

@@ -48,7 +48,6 @@ public class LoggingDemo {
 	
 	public static void recursiveMethod () {
 		
-		
 		// Recursion is the act of a method invoking itself
 		recursiveMethod();
 		

@@ -9,7 +9,6 @@ public interface IAccountDAO {
 	int insert(Account a);
 	
 	// 3 read methods
-	
 	List<Account> findAll();
 	Account findById(int id);
 	List<Account> findByOwner(int accOwnerId);
