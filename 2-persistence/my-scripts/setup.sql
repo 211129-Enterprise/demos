@@ -137,6 +137,7 @@ CREATE TABLE "MarkM".Accounts_Customers (
 	user_role "MarkM".user_role NOT NULL,
 	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
 );
+
 CREATE TABLE "MarkM".Accounts_Employees (
 	id SERIAL UNIQUE,
 	account_number VARCHAR (10) NOT NULL UNIQUE,
@@ -147,6 +148,7 @@ CREATE TABLE "MarkM".Accounts_Employees (
 	user_role "MarkM".user_role NOT NULL,
 	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
 );
+
 CREATE TABLE "MarkM".Accounts_Administrator (
 	id SERIAL UNIQUE,
 	account_number VARCHAR (10) NOT NULL UNIQUE,
@@ -157,6 +159,7 @@ CREATE TABLE "MarkM".Accounts_Administrator (
 	user_role "MarkM".user_role NOT NULL,
 	active BOOLEAN DEFAULT FALSE -- this determines whether an account has been opened. 
 );
+
 //checking account AND savings account
 CREATE TABLE "MarkM".Checking (
 	id SERIAL PRIMARY KEY,
@@ -178,6 +181,14 @@ CREATE TABLE "MarkM".Customers_jt (
 	account_owner VARCHAR (20) NOT NULL REFERENCES "MarkM".accounts(social_security),	
 	account VARCHAR (10) NOT NULL REFERENCES "MarkM".accounts_customers(account_number)
 );
+ALTER TABLE "MarkM".accounts_administrator ADD CONSTRAINT accounts_administrator_check CHECK (user_role = 'Administrator');
+ALTER TABLE "MarkM".accounts_customers ADD CONSTRAINT accounts_customers_check CHECK (user_role = 'Customers');
+ALTER TABLE "MarkM".accounts_employee ADD CONSTRAINT accounts_employee_check CHECK (user_role = 'Employee');
+
+ALTER TABLE "MarkM".checking DROP CONSTRAINT checking_pkey;
+ALTER TABLE "MarkM".checking DROP CONSTRAINT checking_social_security_key;
+ALTER TABLE "MarkM".checking ADD CONSTRAINT checking_un UNIQUE (id);
+ALTER TABLE "MarkM".checking ADD CONSTRAINT checking_pk PRIMARY KEY (social_security);
 
 --Alter accounts checking and savings for customers for ss# key
 ALTER TABLE "MarkM".checking 
