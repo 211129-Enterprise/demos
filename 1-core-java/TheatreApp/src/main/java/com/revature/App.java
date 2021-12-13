@@ -10,8 +10,7 @@ public class App {
 		
 		amc.reserveSeatBinary("G11");
 		//improve the algorithm by implementing a binary search - O(log n) Logarithmic Time
-		
-		Theatre.Seat seats = new Seat(null);
+		//amc.reserveSeatBruteForce("G11");  This one takes longer.
 		
 	}
 	

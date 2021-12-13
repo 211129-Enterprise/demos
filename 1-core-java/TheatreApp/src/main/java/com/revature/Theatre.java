@@ -25,6 +25,7 @@ public class Theatre {
 			}
 		}
 	}
+	
 	public boolean reserveSeatBinary(Seat seatToReserve) { //overloaded method
 		int low= 0;
 		int high = seats.size() -1; 
