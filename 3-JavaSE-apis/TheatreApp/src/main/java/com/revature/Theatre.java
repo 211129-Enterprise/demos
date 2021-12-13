@@ -3,8 +3,6 @@ package com.revature;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
-// Consumer, supplier, predicate functional interfaces
 
 public class Theatre {
 	
@@ -28,15 +26,83 @@ public class Theatre {
 		}
 	}
 	
+	public boolean reserveSeatBinary(Seat seatToReserve) {
+		
+		// binary search only works on a sorted list
+		int low = 0;
+		int high = seats.size() - 1; // equals to how many seats are in the theatre
+		int count = 0;
+		while (low <= high) {
+			System.out.println("Searching... " + count + " times.");
+			int mid = (low + high) / 2; // this represents index. Must finds eat at mid index
+			Seat midSeat = seats.get(mid);
+//			System.out.println("The middle seat is " + midSeat);			
+			
+			// How do I check whether my target seat is greater than or less than the mid seat?
+			int cmp = midSeat.compareTo(seatToReserve);
+			
+			// The seatNumber is of type String. String automatically implements Comparable interface
+			// which overrides the compareTo method.
+			// compareTo() returns 0 if equal, 1 if greater than, -1 if less than.
+			if (cmp < 0) {
+				low = mid + 1;
+				count++;
+			} else if (cmp > 0) {
+				high = mid - 1;
+				count++;
+			} else {
+				return seats.get(mid).reserve();
+			}
+			
+		}
+		
+		System.out.println("There is no seat " + seatToReserve.toString());
+		return false;
+	}
+	public boolean reserveSeatBinary(String seatNumber) {
+		
+		// binary search only works on a sorted list
+		int low = 0;
+		int high = seats.size() - 1; // equals to how many seats are in the theatre
+		int count = 0;
+		while (low <= high) {
+			System.out.println("Searching... " + count + " times.");
+			int mid = (low + high) / 2; // this represents index. Must finds eat at mid index
+			Seat midSeat = seats.get(mid);
+//			System.out.println("The middle seat is " + midSeat);			
+			
+			// How do I check whether my target seat is greater than or less than the mid seat?
+			int cmp = midSeat.getSeatNumber().compareTo(seatNumber);
+			
+			// The seatNumber is of type String. String automatically implements Comparable interface
+			// which overrides the compareTo method.
+			// compareTo() returns 0 if equal, 1 if greater than, -1 if less than.
+			if (cmp < 0) {
+				low = mid + 1;
+				count++;
+			} else if (cmp > 0) {
+				high = mid - 1;
+				count++;
+			} else {
+				return seats.get(mid).reserve();
+			}
+			
+		}
+		
+		System.out.println("There is no seat " + seatNumber);
+		return false;
+	}
+	
 	// 0(n) - Linear time complexity
 	public boolean reserveSeatBruteForce(String seatNumber) {
 		
 		// we will iterate through ALL the seats until we find the seat we're requesting
 		Seat requestedSeat = null;
+		int count = 0;
 		
 		for (Seat seat : seats) {
-			System.out.println("Searching...");
-			
+			System.out.println("Searching... " + count + " times.");
+			count++;
 			if (seat.getSeatNumber().equals(seatNumber)) {
 				// set the requested Seat = to seat
 				requestedSeat = seat;
@@ -53,8 +119,10 @@ public class Theatre {
 			return false;
 		}
 		
+		// return the requestedSeat.reserve();
 		
-		return requestedSeat.reserve();
+		return requestedSeat.reserve(); //t his will call the seat's reserve method
+		
 	}
 	
 	public void getSeats() {
@@ -134,18 +202,23 @@ public class Theatre {
 	 * and readable code.
 	 */
 	
-	private class Seat {
+	class Seat implements Comparable<Seat> {
 		
 		// All final instance variables must be initialized in a constructor
 		private final String seatNumber;
 		private boolean reserved = false;
+		private String boxLevel;
 		
-		private Seat (String seatNumber) {
+		Seat (String seatNumber) {
 			this.seatNumber = seatNumber;
 		}
 		
 		public String getSeatNumber() {
 			return seatNumber;
+		}
+		
+		public String getBoxLevel() {
+			return boxLevel;
 		}
 		
 		public boolean isReserved() {
@@ -194,6 +267,12 @@ public class Theatre {
 		@Override
 		public String toString() {
 			return seatNumber;
+		}
+
+		@Override
+		public int compareTo(Seat anotherSeat) {
+			
+			return this.seatNumber.compareToIgnoreCase(anotherSeat.getSeatNumber());
 		}
 		
 		

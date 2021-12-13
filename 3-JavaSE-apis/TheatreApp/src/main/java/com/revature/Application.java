@@ -8,6 +8,10 @@ public class Application {
 		
 		amc.getSeats();
 		
+		amc.reserveSeatBruteForce("G11");
+		amc.reserveSeatBinary("G11");
+		
+		
 		
 	}
 	
