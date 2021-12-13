@@ -27,6 +27,78 @@ public class Theatre {
 		}
 	}
 	
+	public boolean reserveSeatBinary(Seat seatToReserve) {
+		
+		int low = 0;
+		int high = seats.size() -1; // equaLS TO HOW MANY seats are in the theatre
+		
+		while (low <= high) {
+			
+			System.out.println("searching...");
+			int mid = (low + high) / 2; // thbis represents the index I'm looking for
+			// I need to finc the SEAT at that middle index
+			Seat midSeat = seats.get(mid);
+			
+//			System.out.println("THE MIDDLE SEAT IS" + midSeat);
+			
+			// How do I check whether my TARGET seat is greater than or less than the mid value?
+			int comparison = midSeat.compareTo(seatToReserve);
+			
+			// The seatNumber is of type String.... String automatically implements the Comparable interface which
+			// which the the compareTo() method
+			
+			// compareTo() returns 0, if equal, 1 if greater than , and -1 if less than
+			if (comparison < 0) { // let's say D12 is the mid point that's found, that's technically less than 
+				low = mid + 1; // discard the LHS
+			} else if (comparison > 0) {
+				high = mid -1;// discard the RHS
+			} else {
+				return seats.get(mid).reserve();
+			}
+		}
+		
+		System.out.println("There is no seat " + seatToReserve.getSeatNumber());
+		return false;
+
+	}
+	
+	public boolean reserveSeatBinary(String seatNumber) {
+		
+		// Alternatively you could just instantiate the seat here from the seatNumber
+		
+		// binary search only works on a sorted
+		int low = 0;
+		int high = seats.size() -1; // equaLS TO HOW MANY seats are in the theatre
+		
+		while (low <= high) {
+			
+			System.out.println("searching...");
+			int mid = (low + high) / 2; // thbis represents the index I'm looking for
+			// I need to finc the SEAT at that middle index
+			Seat midSeat = seats.get(mid);
+			
+//			System.out.println("THE MIDDLE SEAT IS" + midSeat);
+			
+			// How do I check whether my TARGET seat is greater than or less than the mid value?
+			int comparison = midSeat.getSeatNumber().compareTo(seatNumber);
+			
+			// The seatNumber is of type String.... String automatically implements the Comparable interface which
+			// which the the compareTo() method
+			
+			// compareTo() returns 0, if equal, 1 if greater than , and -1 if less than
+			if (comparison < 0) { // let's say D12 is the mid point that's found, that's technically less than 
+				low = mid + 1; // discard the LHS
+			} else if (comparison > 0) {
+				high = mid -1;// discard the RHS
+			} else {
+				return seats.get(mid).reserve();
+			}
+		}
+		
+		System.out.println("There is no seat " + seatNumber);
+		return false;
+	}
+	
 	// O(n) - Linear Time complexity
 	public boolean reserveSeatBruteForce(String seatNumber) {
 		
@@ -119,15 +191,26 @@ public class Theatre {
 	 * 
 	 * Nesting classes increases encapsulation, thus leading to more maintainable
 	 * and readable code.
+	 * 
+	 * Comparable Interface is used to order the objects of a user defined class
+	 * Think of the compareTo() method as the default comparison strategy for a class
 	 */
-	private class Seat {
+	private class Seat implements Comparable<Seat>{ 
 		
 		private final String seatNumber; // G11, H03, etc...
 		private boolean reserved = false;
 		
+		private String boxLevel;
+		
 		// All FINAL instance variables must be initialized in a constructor
-		private Seat(String seatNumber) {
+		public Seat(String seatNumber) {
 			this.seatNumber = seatNumber;
+		}
+		
+		@Override // returns 0 is the object it's being compared to is equal, 1 if greater than, -1 if less than
+		public int compareTo(Seat anotherSeat) {
+			
+			return this.seatNumber.compareTo(anotherSeat.getSeatNumber());
 		}
 		
 		public boolean reserve() {
@@ -144,7 +227,14 @@ public class Theatre {
 			}
 			
 		}
-		
+
+		public String getBoxLevel() {
+			return boxLevel;
+		}
+
+		public void setBoxLevel(String boxLevel) {
+			this.boxLevel = boxLevel;
+		}
 
 		public String getSeatNumber() {
 			return seatNumber;

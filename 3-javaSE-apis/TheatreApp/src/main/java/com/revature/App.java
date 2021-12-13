@@ -8,10 +8,11 @@ public class App {
 		
 		amc.getSeats();
 		
-		amc.reserveSeatBruteForce("A03");
+//		amc.reserveSeatBruteForce("G11");
+		
+		amc.reserveSeatBinary("G11");
 
 		// improve this algorithm by implementing a binary search - O(log n) Logarithmic Time
-		
 		
 	}
 
