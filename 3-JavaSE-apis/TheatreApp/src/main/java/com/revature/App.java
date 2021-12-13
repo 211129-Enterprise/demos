@@ -8,7 +8,9 @@ public class App {
 		
 		amc.getSeats();
 		
-		amc.researveSeatBruteForce("G11");
+//		amc.researveSeatBruteForce("G11");
+		
+		amc.researchSeatBinary("G11");
 		
 		// improve this algorithm by implementing a binary search
 

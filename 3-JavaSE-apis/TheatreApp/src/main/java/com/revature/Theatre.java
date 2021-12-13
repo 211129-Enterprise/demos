@@ -26,6 +26,31 @@ public class Theatre {
 			}
 		}
 	}
+	// SOPHIAQUESTION if we only know recursion binary search and not brute force, are we ok for code audit?
+	public boolean researchSeatBinary(String seatNumber) {
+		
+		int low = 0;
+		
+		int high = seats.size() - 1;
+		
+	    while (low <= high) {
+	    	int mid = (low + high) / 2;
+	    	Seat midSeat = seats.get(mid);
+	    	System.out.println("THE MIDDLE SEAT IS" + midSeat);
+	    	
+	    	int cmp = midSeat.getSeatNumber().compareTo(seatNumber);
+	    	
+	    	if (cmp < 0) {
+	    		low = mid + 1;
+	    	} else if (cmp > 0) {
+	    		high = mid -1;
+	    	} else {
+	    		return seats.get(mid).reserve();
+	    	}
+	    }
+		
+		return false;
+	}
 	
 	// O(n) linear time complexity
 	public boolean researveSeatBruteForce(String seatNumber) {
@@ -94,9 +119,11 @@ public class Theatre {
 	}
 
 	// nesting classes increases encapsulation
-	private class Seat {
+	private class Seat implements Comparable<Seat> {
 		private final String seatNumber;
 		private boolean reserved = false;
+		
+		private String boxLevel;
 		
 		public boolean reserve() {
 			if (!this.reserved) {
@@ -126,6 +153,13 @@ public class Theatre {
 		@Override
 		public String toString() {
 			return "Seat [seatNumber=" + seatNumber + ", reserved=" + reserved + "]";
+		}
+
+
+
+		@Override
+		public int compareTo(Seat anotherSeat) {
+			return this.seatNumber.compareToIgnoreCase(anotherSeat.getSeatNumber());
 		}
 		
 		
