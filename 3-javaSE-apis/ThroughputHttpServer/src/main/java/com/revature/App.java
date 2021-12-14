@@ -23,7 +23,15 @@ public class App {
 	public static void main(String[] args) throws IOException {
 
 		// Save the entire content of the file to a String object
-		String text = new String(Files.readAllBytes(Paths.get(INPUT_FILE)));
+		
+		String text = "";
+		
+		try {
+			 text = new String(Files.readAllBytes(Paths.get(INPUT_FILE)));
+		} catch (IOException e) {
+			System.out.println("Threw an IO exception - can't locate the file");
+			e.printStackTrace();
+		}
 		// Non-NBlocking IO 
 		// https://www.geeksforgeeks.org/introduction-to-java-nio-with-examples/#:~:text=Java%20NIO%20is%20a%20buffer,of%20the%20other%20NIO%20packages.
 		
@@ -132,7 +140,7 @@ public class App {
 			// we're using the index (which we'll increment each time to capture exactly where the word appeared so we don't repeat ourselves.
 			while (index >= 0) {
 				
-				// text os a String object that holds the entirete of war & peace.txt
+				// text os a String object that holds the entire of war & peace.txt
 				index = text.indexOf(word, index);
 				
 				// if hte index is positive, we found the word in the book
