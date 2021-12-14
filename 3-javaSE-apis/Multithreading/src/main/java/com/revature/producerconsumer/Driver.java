@@ -18,6 +18,15 @@ public class Driver {
 		
 		
 		// introduce the join() method
+
+		try {
+			producerThread.join();
+			consumerThread.join();
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
