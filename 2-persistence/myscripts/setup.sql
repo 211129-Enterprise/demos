@@ -10,13 +10,17 @@ CREATE TABLE kennyp.users (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(50) NOT NULL UNIQUE,
 	pwd VARCHAR(50) NOT NULL,
-	user_role kennyp.user_role NOT NULL	
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	ssn VARCHAR(9),
+	user_role kennyp.user_role NOT NULL
 );
 
 DROP TABLE IF EXISTS kennyp.accounts CASCADE; 
 CREATE TABLE kennyp.accounts (
 
 	id SERIAL PRIMARY KEY,
+	acc_number INT UNIQUE NOT NULL,
 	balance NUMERIC(50, 2) DEFAULT 0,
 --	acc_owner INTEGER NOT NULL REFERENCES kennyp.users(id),
 	acc_type kennyp.acc_type NOT NULL,
@@ -28,8 +32,8 @@ DROP TABLE IF EXISTS kennyp.users_accounts_jt CASCADE;
 CREATE TABLE kennyp.users_accounts_jt (
 	
 	id SERIAL PRIMARY KEY,
-	acc_owner INTEGER NOT NULL REFERENCES kennyp.users(id) ON DELETE CASCADE,
-	account INTEGER NOT NULL REFERENCES kennyp.accounts(id) ON DELETE CASCADE
+	acc_owner INTEGER NOT NULL REFERENCES kennyp.users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	account INTEGER NOT NULL REFERENCES kennyp.accounts(id) ON DELETE CASCADE ON UPDATE CASCADE
 
 );
 
@@ -120,3 +124,13 @@ SELECT users.id, users.username, users.pwd, users.user_role, accounts.id AS acco
 	FROM  users
 	LEFT JOIN users_accounts_jt ON users.id = users_accounts_jt.acc_owner
 	LEFT JOIN accounts ON accounts.id = users_accounts_jt.account;
+	
+SELECT accounts.id, accounts.balance, accounts.acc_type, accounts.active, users_accounts_jt.acc_owner FROM accounts
+	INNER JOIN users_accounts_jt 
+		ON accounts.id = users_accounts_jt.account
+
+CREATE PROCEDURE SelectAccountsAndOwners
+AS 
+SELECT * FROM accounts 
+INNER JOIN users_accounts_jt 
+ON accounts.id = users_accounts_jt.account GO;
