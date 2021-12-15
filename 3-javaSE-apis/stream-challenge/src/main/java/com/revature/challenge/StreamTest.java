@@ -53,54 +53,67 @@ public class StreamTest {
         ****************************************************************************/
 
         
-        Optional<Student> maybeBob = students.stream()
-        		.filter(s -> s.getName().equals("Bob"))
-        		.findFirst();
+        Optional<Student> s = students.stream()
+        			.filter(student -> student.getName().equals("Bob"))
+        			.findFirst();
 
-        System.out.println(maybeBob.isPresent() ? maybeBob : "No student found");
+        // ternary operator - if the optional<Student> object is NOT null (we found the student! -> Optional class' .get() returns the value of the obj/Student
+        System.out.println(s.isPresent() ? s.get().getName() : "No Student Found");
         
         
         
         /***************************************************************************
-         (2) Get the student with matching address "1235" and print their name to the console.
+         (2) Get the student with matching zipcode "1235" and print their name to the console.
              If the address does not exist, print "No student found".
              HINT: Store students.stream()...etc to an Optional<Student> in the case that the student
              doesn't exist. Resource: https://www.geeksforgeeks.org/java-8-optional-class/
         ****************************************************************************/
 
+        Optional<Student> s1 = students.stream()
+        			.filter(student -> student.getAddress().getZipcode().equals("1235"))
+        			.findFirst();
         
-        // Code your Solution here
-
-        
-        
-        
+        System.out.println(s1.isPresent() ? s1.get().getName() : "No Student found");
+        			
         
         /****************************************************************************
          (3) Get all the students that have the mobile number "3333" and print their
              names to the console.
         *****************************************************************************/
 
-        
-        // Code your Solution here
+        List<Student> sWith3333 = students.stream()
+        		.filter(stud -> stud.getMobileNumbers().stream().anyMatch(el -> Objects.equals(el.getNumber(), "3333")))
+        		.collect(Collectors.toList());
 
-        
+        // this prints out each student 
+        sWith3333.forEach(System.out::println);
         
         
         
         /***************************************************************************
-         (4) Get all student having mobile number "1233" and "1234" and print their
+         (4) Get all students having mobile numbers "1233" and "1234" and print their
              names to the console.
          ***************************************************************************/
 
+        // Shout out to Kenny for solution 
+        List<Student> studentsWithNums = students.stream()
+        		
+        		.filter(stud -> stud.getMobileNumbers()
+        			.stream().anyMatch(el -> Objects.equals(el.getNumber(), "1233")))
+        		// check that it includes BOTH 1233 & 1234 (set up another stream on the prev. stream)
+        				.filter(s5 -> s5.getMobileNumbers().stream().anyMatch(el -> Objects.equals(el.getNumber(), "1234")))
+        			.collect(Collectors.toList());
         
-        // Code your Solution here
+        String result = studentsWithNums.stream()
+        		.map(Student::getName) // method referencing! Apply the getName() method from the Student class to each element
+        		.collect(Collectors.joining(",", "[", "]"));
         
-        
-        
+        System.out.println("=========================");
+        System.out.println(result);
         
         
         /***************************************************************************
-	     (5) Create a List<Student> from the tmpStudents List. Call it studentList.
+	     (5)**** Create a List<Student> from the tmpStudents List. Call it studentList.
 	         Hint: Use Collectors.toList(). Print it to the console. 
 	         Resource: https://www.geeksforgeeks.org/collectors-tolist-method-in-java-with-examples/
         ****************************************************************************/
@@ -119,6 +132,12 @@ public class StreamTest {
         List<TempStudent> tmpStudents = Arrays.asList(tmpStud1, tmpStud2);
         
         // Code your Solution here, don't touch the code above
+        
+        List<Student> studentList = tmpStudents.stream()
+        			.map(temp -> new Student(temp.name, temp.age, temp.address, temp.mobileNumbers))
+        			.collect(Collectors.toList());
+        
+        // use a forEach loop to print this out 
  
 
         
@@ -158,10 +177,14 @@ public class StreamTest {
             Arrays.asList("Bob", "Danny", "Alice", "Eddie", "Cathy");
  
         // Code your Solution here, don't touch the code above
-
+        List<String> covertedNames = nameList.stream()
+        		.map(element -> {
+        		// multi line map in a stream
+        			return element.toUpperCase();
+        		})
+        		.collect(Collectors.toList()); // terminal operator!
         
-        
-        
+        covertedNames.forEach(System.out::println);
         
         /****************************************************************************
          (9) Sort List<String> namesList by natural order.

@@ -89,7 +89,6 @@ public class App {
 			 * 
 			 */
 			
-			
 			if (exits.containsKey(direction)) {
 				
 				loc = exits.get(direction);
