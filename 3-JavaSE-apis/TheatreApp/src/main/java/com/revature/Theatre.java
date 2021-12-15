@@ -40,9 +40,9 @@ public class Theatre {
 	    	
 	    	int cmp = midSeat.getSeatNumber().compareTo(seatNumber);
 	    	
-	    	if (cmp < 0) {
+	    	if (cmp == -1) {
 	    		low = mid + 1;
-	    	} else if (cmp > 0) {
+	    	} else if (cmp == 1) {
 	    		high = mid -1;
 	    	} else {
 	    		return seats.get(mid).reserve();
@@ -123,7 +123,7 @@ public class Theatre {
 		private final String seatNumber;
 		private boolean reserved = false;
 		
-		private String boxLevel;
+	
 		
 		public boolean reserve() {
 			if (!this.reserved) {
