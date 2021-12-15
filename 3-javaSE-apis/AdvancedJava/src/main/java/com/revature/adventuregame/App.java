@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public class App {
 	
-	// this will help us when we write our exits, so we know that when you press (for example)
-	// "W" from location 1 -> it will take you to location 2
+	/**this will help us when we write our exits, so we know that when you press (for example)
+	 * "W" from location 1 -> it will take you to location 2
+	 */
 	private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 	
 
@@ -21,13 +22,13 @@ public class App {
 		Location homeBase = new Location(0, "You are sitting at a computer learning Java", null);
 		locations.put(0, homeBase);
 		
-		// this will be the hashmap that we pass into the new location object
+		// this will be the hashmap that we pass into the new location object - we'll re-use tempExit
 		Map<String, Integer> tempExit = new HashMap<String, Integer>();
 		tempExit.put("N", 5);
 		tempExit.put("E", 3);
 		tempExit.put("S", 4);
 		tempExit.put("W", 2);
-		// now let's instantiate the Road location (id is 1)
+		// now let's instantiate the Road location (id is 1), and pass the respective exits map to the constructor
 		Location road = new Location(1, "You are standing at the end of a road in front of a brick building", tempExit);
 		//add the Road to our locations map
 		locations.put(1, road);
@@ -51,13 +52,14 @@ public class App {
 		tempExit.put("W", 2);
 		locations.put(5, new Location(5, "You're in a dark forest", tempExit));
 		
+		// start game at the "Road" location...
 		int loc = 1;
 		
 		while(true) {
 			
 			System.out.println(locations.get(loc).getDescription());
 			
-			// if the player presses Q then the locaiton will be set to 0 and we breka from the loop
+			// if the player presses Q then the location will be set to 0 and we break from the loop
 			if (loc == 0) {
 				break;
 			}
@@ -93,6 +95,7 @@ public class App {
 				loc = exits.get(direction);
 			} else {
 				System.out.println("That's not a possible exit");
+				// If a player types a command that's not an exit, we'll loop back to the beginning
 			}
 				
 		}		
