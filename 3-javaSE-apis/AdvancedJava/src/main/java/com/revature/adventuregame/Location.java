@@ -3,10 +3,14 @@ package com.revature.adventuregame;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.revature.annotations.Entity;
+
 /*
  * Location is a fully immutable class so that third party plug-ins
  * cannot modify the Location instances of their game-maps. 
  */
+
+@Entity(tableName = "locationTable")
 public final class Location {
 	
 	// we can't change any of the properties after instantiation
