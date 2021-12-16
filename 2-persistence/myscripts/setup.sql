@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS kennyp.accounts CASCADE;
 CREATE TABLE kennyp.accounts (
 
 	id SERIAL PRIMARY KEY,
-	acc_number INT UNIQUE NOT NULL,
+	acc_number INT UNIQUE,
 	balance NUMERIC(50, 2) DEFAULT 0,
 --	acc_owner INTEGER NOT NULL REFERENCES kennyp.users(id),
 	acc_type kennyp.acc_type NOT NULL,
@@ -39,29 +39,6 @@ CREATE TABLE kennyp.users_accounts_jt (
 
 --implement PL/pgsql functional programming LANGUAGE FOR postgres rdbms
 --CREATE a FUNCTION so that EVERY time a NEW account IS entered INTO the accounts table
-
-INSERT INTO kennyp.users (username, pwd, user_role)
-	VALUES ('Larry', 'pass', 'Employee'),
-		   ('Marry', '1234', 'Customer'),
-		   ('Barry', 'pass', 'Customer');
-
-SELECT * FROM users;
-
-INSERT INTO kennyp.accounts (balance, acc_owner)
-	VALUES (100, 1),
-		   (200, 2),
-		   (2000, 2),
-		   (300, 3);
-
-SELECT * FROM accounts;
-
-INSERT INTO users_accounts_jt (account, acc_owner)
-	VALUES (1, 1),
-		   (2, 2),
-		   (3, 2),
-		   (4, 3);
-
-SELECT * FROM users_accounts_jt;
 
 /*
  * The goal is so that Evrytime a new Acocunt is added to account
@@ -134,3 +111,40 @@ AS
 SELECT * FROM accounts 
 INNER JOIN users_accounts_jt 
 ON accounts.id = users_accounts_jt.account GO;
+
+SELECT * 
+FROM accounts
+LEFT JOIN accounts_bank ON accounts.id = accounts_bank.acc_owner
+LEFT JOIN bank ON bank.id = accounts_bank.bank_id
+WHERE account.id = ? ;
+
+
+INSERT INTO kennyp.users (username, pwd, user_role)
+	VALUES ('Larry', 'pass', 'Employee'),
+		   ('Mary', '1234', 'Customer'),
+		   ('Barry', 'pass', 'Admin');
+
+SELECT * FROM users;
+
+INSERT INTO kennyp.accounts (balance, acc_type)
+	VALUES (100, 'Checking'),
+		   (200, 'Savings'),
+		   (2000, 'Savings'),
+		   (300, 'Checking');
+
+SELECT * FROM accounts;
+
+INSERT INTO users_accounts_jt (account, acc_owner)
+	VALUES (5,1);
+--		   (3, 2),
+--		   (4, 2),
+--		   (6, 4),
+--		   (5, 3);
+
+SELECT * FROM users_accounts_jt;
+
+INSERT INTO kennyp.users (username, pwd, user_role) VALUES ('Cary', 'moo', 'Customer');
+INSERT INTO accounts (balance, acc_type) VALUES (10, 'Savings');
+INSERT INTO users_accounts_jt (acc_owner, account) VALUES (6, 7);
+
+DELETE FROM users WHERE username = 'Cary';
