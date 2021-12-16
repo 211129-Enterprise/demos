@@ -50,8 +50,8 @@
 
 		<!-- List of mapping files -->
 		<mapping class="com.revature.models.Crime" />
-		<!--<mapping class="com.revature.models.SuperVilla>in" />
-		<mapping class="com.revature.models.SuperPrison" / -->
+		<mapping class="com.revature.models.SuperVillain" />
+      	<mapping class="com.revature.models.SuperPrison" />
 
 	</session-factory>
 </hibernate-configuration>
