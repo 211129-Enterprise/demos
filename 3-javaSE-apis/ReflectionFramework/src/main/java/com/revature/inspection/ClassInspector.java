@@ -16,7 +16,6 @@ import java.util.Arrays;
  * 
  * Reflection is a feature in the Java programming language which allows the executing 
  * program to examine or "introspect" upon itself.
- *
  */
 public class ClassInspector {
 	
