@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- If there is an error persisting, please capitalize the J in Java in "http://Java.sun.com/xml/ns/javaee" -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>HelloServlets</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file> <!-- 404 is a client side error meaning the client is requesting a resource that doesn't exist -->
+  </welcome-file-list>
+
+  <!-- Servelt mapping here -->
+  
+  <servlet>
+  	<servlet-name>DirServ</servlet-name>
+  	<servlet-class>com.revature.directservlet.DirectServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DirServ</servlet-name>
+  	<url-pattern>/dirserv</url-pattern> 
+  </servlet-mapping>
+  
+  <!-- http:localhost:8080/HelloServlets/dirserv -->
+
+</web-app>

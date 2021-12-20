@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Hello Servlets!</title>
+
+</head>
+
+<body>
+
+	<h1>Welcome to Servlets!</h1>
+
+	<!-- Below I'm going to open what's called a form element which allows a user to pres a button,
+	sending a get request to another servlet -->
+	
+	<form method="GET" action="dirserv"> <!-- I'm sending a GET request as my HTTP method upon cliocking the button -->
+										 <!--  Which will trigger the doGet() method in the servlet mapped to /dirserv -->			
+		<p>Direct Servlet, GET!</p>
+		<!--  Here I'm putting a button below in the form of an input tag -->
+		<input type="submit" value="Direct Text Response">
+			
+	</form>
+	
+	
+
+</body>
+</html>
