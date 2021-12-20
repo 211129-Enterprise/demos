@@ -5,7 +5,7 @@ Here you will find all of the notes from class aslong with study-guides, project
 ### Most Recent QC Guide can be found [here](https://github.com/211129-Enterprise/demos/blob/main/1-core-java/qc-questions.md) :star:
 > QC is important! It is meant to simulate the interview process.  Check out [this guide on how to do well](https://github.com/211129-Enterprise/demos/blob/main/interviews/how-to-do-well-in-qc.md). 
 
-### Slides can be found [here](https://docs.google.com/presentation/d/1lOrz4BWbZO4tkQlK94SQ08ARVwq9n5bCRLMNoEXTtec/edit?usp=sharing)
+### Slides can be found [here](https://github.com/211129-Enterprise/demos/tree/main/3-javaSE-apis)
 
 ### Environment Setup Guide can be found [here](https://github.com/sophiagavrila/environment-setup).
 ---
