@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.revature</groupId>
+  <artifactId>ReflectionFramework</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20211216201735</lastUpdated>
+  </versioning>
+</metadata>
