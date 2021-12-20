@@ -3,12 +3,14 @@ package com.revature.adventuregame;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.revature.annotations.Entity;
+
 /**
  * We are making a fully immutable class.
  * Meaning that some third party plugin can't modify the location instances
- * 
  */
 
+@Entity(tableName="locations")
 public final class Location {
 	
 	private final int locationId;

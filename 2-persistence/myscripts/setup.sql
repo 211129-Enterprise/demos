@@ -21,7 +21,7 @@ CREATE TABLE kennyp.accounts (
 
 	id SERIAL PRIMARY KEY,
 	acc_number INT UNIQUE,
-	balance NUMERIC(50, 2) DEFAULT 0,
+	balance NUMERIC(50, 2) DEFAULT 0 CHECK (balance > 1),
 --	acc_owner INTEGER NOT NULL REFERENCES kennyp.users(id),
 	acc_type kennyp.acc_type NOT NULL,
 	active BOOLEAN DEFAULT FALSE -- this determines whether the account has been opened
@@ -97,7 +97,7 @@ INSERT INTO kennyp.accounts (balance, acc_owner, active)
 	VALUES (500000, 4, TRUE);
 	
 -- user id, username, password, role, account id, account balance, isActive
-SELECT users.id, users.username, users.pwd, users.user_role, accounts.id AS account_id, accounts.balance, accounts.active
+SELECT *
 	FROM  users
 	LEFT JOIN users_accounts_jt ON users.id = users_accounts_jt.acc_owner
 	LEFT JOIN accounts ON accounts.id = users_accounts_jt.account;
@@ -112,12 +112,6 @@ SELECT * FROM accounts
 INNER JOIN users_accounts_jt 
 ON accounts.id = users_accounts_jt.account GO;
 
-SELECT * 
-FROM accounts
-LEFT JOIN accounts_bank ON accounts.id = accounts_bank.acc_owner
-LEFT JOIN bank ON bank.id = accounts_bank.bank_id
-WHERE account.id = ? ;
-
 
 INSERT INTO kennyp.users (username, pwd, user_role)
 	VALUES ('Larry', 'pass', 'Employee'),
@@ -126,25 +120,20 @@ INSERT INTO kennyp.users (username, pwd, user_role)
 
 SELECT * FROM users;
 
-INSERT INTO kennyp.accounts (balance, acc_type)
-	VALUES (100, 'Checking'),
-		   (200, 'Savings'),
-		   (2000, 'Savings'),
-		   (300, 'Checking');
+INSERT INTO kennyp.accounts (balance, acc_type, active)
+	VALUES (100, 'Checking', true),
+		   (200, 'Savings', false),
+		   (2000, 'Savings', true),
+		   (300, 'Checking', false);
 
 SELECT * FROM accounts;
 
-INSERT INTO users_accounts_jt (account, acc_owner)
-	VALUES (5,1);
---		   (3, 2),
---		   (4, 2),
---		   (6, 4),
---		   (5, 3);
+INSERT INTO users_accounts_jt (acc_owner, account)
+	VALUES (1, 1),
+		   (1, 3),
+		   (2, 2),
+		   (3, 4);
 
 SELECT * FROM users_accounts_jt;
 
-INSERT INTO kennyp.users (username, pwd, user_role) VALUES ('Cary', 'moo', 'Customer');
-INSERT INTO accounts (balance, acc_type) VALUES (10, 'Savings');
-INSERT INTO users_accounts_jt (acc_owner, account) VALUES (6, 7);
 
-DELETE FROM users WHERE username = 'Cary';
