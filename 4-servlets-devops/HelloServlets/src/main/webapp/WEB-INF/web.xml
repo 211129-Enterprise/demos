@@ -2,18 +2,20 @@
 <!-- If there is an error persisting, please capital the "J" in "Java.sun.com/xml/ns/javaee" -->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://Java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>HelloServlets</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-
-
+	
+	
 	<!-- Servlet Mapping Example 1-->
 	<servlet>
 		<servlet-name>DirServ</servlet-name>
-		<servlet-class>com.revature.directservlet.DirectServlet</servlet-class>
+		<servlet-class>com.revature.directservlet.DirectServlet
+		</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DirServ</servlet-name>
@@ -22,5 +24,23 @@
 	<!--  Our URL will look like: 
 	http://localhost:8080/HelloServlets/dirserv -->
 	
-
+	
+	<!-- Servlet Mapping Example 2-->	
+	<servlet>
+		<description></description>
+		<display-name>IndirectServlet</display-name>
+		<servlet-name>IndirectServlet</servlet-name>
+		<servlet-class>com.revature.indirectservlet.IndirectServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndirectServlet</servlet-name>
+		<url-pattern>/indirserv</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet Error Page -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error.html</location>
+	</error-page>
 </web-app>

@@ -16,6 +16,8 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+
+
 	<dependencies>
 		<!-- The javax.servlet dependency is an api that gives us classes and interfaces 
 			that describe and define the contracts between a servlet class and the runtime 
@@ -28,9 +30,20 @@
 		</dependency>
 
 
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<!--  Jackson is an Object Mapping Library: It's 1 of, if not THE most popular tool, for -->
+		<!--  transforming a Java Object to JSON format so that the data can be used in a		 -->
+		<!--  JavaScript or front end application.												 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.0</version>
+		</dependency>
 
 	</dependencies>
-	
+
+
+
 	<build>
 		<plugins>
 			<plugin>

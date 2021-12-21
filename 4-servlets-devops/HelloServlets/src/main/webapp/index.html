@@ -3,59 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hello Servlets</title>
-	<style>
-		body {
-			background-color: #1B2634;
-			font-family: Arial;
-			text-align: center;
-		}
-		
-		h1 {
-			color: #fff;
-			font-family: Helvetica;
-			text-align: center;
-		}
-		
-		main {
-			background-color: #171a21;
-			border-radius: 5px;
-			color: #95979a;
-			left: 50%;
-			opacity: 0.75;
-			-webkit-opacity: 0.75;
-			padding: 25px;
-			position: absolute;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-				rgba(0, 0, 0, 0.19);
-			top: 50%;
-			transform: translate(-50%, -50%);
-			-moz-transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
-			-webkit-transform: translate(-50%, -50%);
-		}
-		input{
-			display: block;
-			background: #FFF;
-			border: 0px;
-			border-radius: 5px;
-			height: 30px;
-			margin: 10px auto;
-			transition: all 0.5s;
-			text-align: center;
-			width: 120px;
-		}
-		input:hover{
-			background: #898989;
-		}
-	</style>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<main>
 		<h1>Welcome to Servlets</h1>
-		<form method="GET" action="dirserv">
-			<p>Direct Servlet, GET!</p>
-			<input type="submit" value="DirectServlets" />
-		</form>
+		<div>
+		<h3>InDirect Servlet</h3>
+			<form method="GET" action="dirserv">
+				<p>Direct Servlet, GET!</p>
+				<input type="submit" value="DirectServlets" />
+			</form>
+			<!--  HTTP REQUEST -->
+			<!--  - URL - Where are we sending the request? -->
+			<!--  - HTTP verb/method correspond to their CRUD methods -->
+			<!--  - Request Header - Contains meta data about the request and also includes above info	 -->
+			<!--  - Request Body - Not present in a get request, but typically present in a POST request -->
+			<!--					the body in a post request might have the info used to CREATE some	 -->
+			<!-- 					resource on the server.												 -->
+			<form method="POST" action="dirserv">
+				<p>Direct Servlet, GET!</p>
+				<input type="submit" value="Send POST Request" />
+			</form>
+		</div>
+		<div>
+		<h3>InDirect Servlet</h3>
+			<form method="POST" action="indirserv">
+				<p>Indirect Servlet, GET!</p>
+				<input type="submit" value="sendRequest()" />
+			</form>
+					<form method="GET" action="indirserv">
+				<p>Indirect Servlet, GET!</p>
+				<input type="submit" value="forward()" />
+			</form>
+		</div>
 	</main>
 </body>
 </html>
