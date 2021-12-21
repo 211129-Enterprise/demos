@@ -6,24 +6,60 @@
 
 <title>Hello Servlets!</title>
 
+<!--  In the head of an HTML document you typically LINK the stylesheet that defines the CSS rules for the content -->
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
 </head>
 
 <body>
 
-	<h1>Welcome to Servlets!</h1>
+	<div class="supervillain-container">
 
-	<!-- Below I'm going to open what's called a form element which allows a user to pres a button,
+		<h1>Welcome to Supervillain Servlets!</h1>
+
+		<!-- Below I'm going to open what's called a form element which allows a user to pres a button,
 	sending a get request to another servlet -->
-	
-	<form method="GET" action="dirserv"> <!-- I'm sending a GET request as my HTTP method upon cliocking the button -->
-										 <!--  Which will trigger the doGet() method in the servlet mapped to /dirserv -->			
-		<p>Direct Servlet, GET!</p>
-		<!--  Here I'm putting a button below in the form of an input tag -->
-		<input type="submit" value="Direct Text Response">
-			
-	</form>
-	
-	
+
+		<form method="GET" action="dirserv">
+			<!-- I'm sending a GET request as my HTTP method upon cliocking the button -->
+			<!--  Which will trigger the doGet() method in the servlet mapped to /dirserv -->
+			<p>Direct Servlet, GET!</p>
+			<!--  Here I'm putting a button below in the form of an input tag -->
+			<input type="submit" value="Direct Text Response">
+
+		</form>
+
+		<!-- HTTP Request
+		- URL - where are we sending the request
+		- HTTP verb/methods
+		- Request Header (contains meta data about the request) this also includes the above info)
+		- Request Body (NOT present in a get request, but typically present in a POST request)
+			- the body in a post request might have the info used to CREATE some reosurce on the server
+	 -->
+
+		<!-- ctrl + shift + f autoformats-->
+		<form method="POST" action="dirserv">
+			<!-- I'm sending a GET request as my HTTP method upon cliocking the button -->
+			<!--  Which will trigger the doGet() method in the servlet mapped to /dirserv -->
+			<p>Direct Servlet, POST!</p>
+			<!--  Here I'm putting a button below in the form of an input tag -->
+			<input type="submit" value="Send Post Request to Direct Servlet">
+			<!-- When I send a post request to the server, the server instantiates some Java object and sends back its data in JSON -->
+		</form>
+
+		<form method="GET" action="indirserv">
+			<p>Indirect Servlet, GET!</p>
+			<input type="submit"
+				value="Trigger sendRedirect() in Indirect Servlet">
+		</form>
+
+		<form method="POST" action="indirserv">
+			<p>Indirect Servlet, POST!</p>
+			<input type="submit" value="Trigger forward() in Indirect Servlet">
+		</form>
+
+	</div>
 
 </body>
 </html>
