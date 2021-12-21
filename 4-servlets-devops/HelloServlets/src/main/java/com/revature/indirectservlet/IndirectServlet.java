@@ -48,7 +48,7 @@ public class IndirectServlet extends HttpServlet { // HttpServlet extends Generi
 		// request rather than generating a new one.
 		RequestDispatcher rdis = request.getRequestDispatcher("/dirserv");
 		rdis.forward(request, response);
-		System.out.println("Triggered the doPost method of IndirectServ");
+		System.out.println("Triggered the doPost() method of IndirectServ");
 		
 		// TODO Auto-generated method stub
 		//doGet(request, response);

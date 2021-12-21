@@ -1,8 +1,9 @@
+
 body {
-	background: #1B2634
+	background: #161616
 		url("https://undsgn.com/wp-content/uploads/2018/04/ltotbngnzzu.jpg");
 	background-size: cover;
-	font-family: Arial;
+	font-family: Helvetica, Arial, sansserif;
 	text-align: center;
 }
 
@@ -63,21 +64,11 @@ div {
 
 
 
-/* RESPONSIVENESS */
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
- /*
- ___@media DEBUGGING___
- Red = X-SMALL devices
- Yellow = SMALL devices
- Green = MEDIUM devices
- Blue = LARGE devices
- Cyan = X-LARGE devices
- */
+/* * * RESPONSIVENESS * * */
 
 /*EXTRA SMALL DEVICES (Landscape Phones)*/ 
 @media screen and (max-width: 600px) and (orientation: landscape), (max-height: 400px) {
 	main{
-		/*color: #FF00FF !important;/*<--Debugging*/
 		font-size: 15pt;
 		transform: none;
 		-moz-transform: none;
@@ -94,7 +85,6 @@ div {
  /* EXTRA SMALL DEVICES (Portrait Phones) */
 @media only screen and (max-width: 500px) and (orientation: portrait), (max-height: 550px) {
 	main{
-		/*color: #FF0000;/*<--Debugging*/
 		font-size: 15pt;
 		transform: none;
 		-moz-transform: none;
@@ -112,7 +102,6 @@ div {
 /* SMALL DEVICES (portriat tablet / larger phones) */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
 	main{
-		/*color: #FFFF00;/*<--Debugging*/
 		font-size: 14pt;
 		transform: none;
 		-moz-transform: none;
@@ -137,7 +126,6 @@ div {
 /* MEDIUM DEVICES (landscape tablets) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	main{
-		/*color: #00F00;/*<--Debugging*/
 		min-width: 60%;
 		}
 	main h2{
@@ -149,7 +137,6 @@ div {
 /* LARGE DEVICES (laptops / desktops) */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	main{
-		/*color: #0000FF;/*<--Debugging*/
 		min-width: 500px;
 		width: 40%;
 		}
@@ -158,10 +145,9 @@ div {
 	}
 }
 
-/* XL DEVICES (pretentious laptops / desktops :-P) */
+/* XL DEVICES (laptops / desktops) */
 @media only screen and (min-width: 1200px) {
 	main{
-		/*color: #00FFFF;/*<--Debugging*/
 		min-width: 500px;
 		width: 30%;
 	}
