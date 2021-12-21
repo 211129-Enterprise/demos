@@ -18,12 +18,6 @@ import com.revature.models.SuperVillian;
 public class SessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SessionServlet() {
-        super();
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -47,7 +41,7 @@ public class SessionServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		// Write it out in JSON format
-		out.write(new ObjectMapper().writeValueAsString(mudButtMan));
+		out.write( new ObjectMapper().writeValueAsString(mudButtMan) );
 		out.println("Oh noes! Mud Butt Man is on the loose and the session... is set!");
 		
 		
@@ -61,6 +55,27 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// Capture input from the HTTP request
+		String name = request.getParameter("name");
+		String superPower = request.getParameter("superpower");
+		double bounty = Double.parseDouble( request.getParameter("bounty") );
+		
+		// 2. Instantiate an object with that info
+		SuperVillian vill = new SuperVillian(name, superPower, bounty);
+		
+		// 3. Grab the HTTP session from the request
+		HttpSession session = request.getSession();
+		
+		// 4. Send the custom vill object to the session
+		session.setAttribute("the-villian", vill); // In our HelperSessionServlet, we're capturing the object with the "the-villian" key
+													// from the session so we'll set this villian object with the same session.
+		
+		// 5. Print to the sreen (using Print Writer) that the villian object will successfully send to the session
+		PrintWriter out = response.getWriter();
+		out.write( new ObjectMapper().writeValueAsString(vill) );
+		out.println( "A villian is on the loose... in the session" );
+		
+		// After it's been sent to the session, you can retrieve it by sending a GET request to the HelperSessionServlet
 		
 		
 		//// TODO Auto-generated method stub

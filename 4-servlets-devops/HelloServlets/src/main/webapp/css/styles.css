@@ -17,18 +17,21 @@ main {
 	background-color: #171a21;
 	border-radius: 25px;
 	color: #95979a;
-	left: 50%;
+	display: block;
 	padding: 25px 30px;
-	position: absolute;
+	/* position: absolute; 	* I horizontally / vertically centered my content before I added more *
+	left: 50 %;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
+ 		rgba(0, 0, 0, 0.19);
 	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
 	top: 50%;
 	transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%); */
+	margin: 25px auto;
+	width: 80%;
 }
 
 input {
@@ -54,12 +57,26 @@ form:first-child {
 
 form {
 	display: inline-block;
-	padding: 0px;
+	padding: 10px 5%;
 	margin: 0px 0px 45px 0px;
 }
 
 div {
 	display: flex-box;
+}
+
+.user-input{
+	display: block;
+	width: 100%;
+}
+.user-input:hover{
+	background: #eaeaea;
+}
+#submit-form{
+	background: #a4202e;
+	color: #FFF;
+	font-weight: bold;
+	width: 100%;
 }
 
 

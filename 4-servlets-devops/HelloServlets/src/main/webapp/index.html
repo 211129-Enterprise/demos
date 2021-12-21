@@ -9,9 +9,10 @@
 	<main>
 		<h1>Welcome to Servlets</h1>
 		<div>
-		<h3>InDirect Servlet</h3>
+			<h3>InDirect Servlet</h3>
+			
 			<form method="GET" action="dirserv">
-				<p>Direct Servlet, GET!</p>
+				<p>GET!</p>
 				<input type="submit" value="DirectServlets" />
 			</form>
 			<!--  HTTP REQUEST -->
@@ -22,19 +23,44 @@
 			<!--					the body in a post request might have the info used to CREATE some	 -->
 			<!-- 					resource on the server.												 -->
 			<form method="POST" action="dirserv">
-				<p>Direct Servlet, GET!</p>
+				<p>GET!</p>
 				<input type="submit" value="Send POST Request" />
 			</form>
 		</div>
 		<div>
-		<h3>InDirect Servlet</h3>
+			<h3>InDirect Servlet</h3>
+			
 			<form method="POST" action="indirserv">
-				<p>Indirect Servlet, GET!</p>
+				<p>POST!</p>
 				<input type="submit" value="sendRequest()" />
 			</form>
-					<form method="GET" action="indirserv">
-				<p>Indirect Servlet, GET!</p>
+			<form method="GET" action="indirserv">
+				<p>GET!</p>
 				<input type="submit" value="forward()" />
+			</form>
+		</div>
+		<div>
+			<h3>Session &amp; Helper Session Servlet</h3>
+			
+			<form method="GET" action="sesserv">
+				<p>Send Mud Man to the session!</p>
+				<input type="submit" value="Send Mud Man" />
+			</form>
+				<form method="GET" action="helpsesserv">
+				<p>Helper Session</p>
+				<input type="submit" value="Helper Ses" />
+			</form>
+		</div>
+		<div>
+			<h3>Session &amp; Helper Session Servlet</h3>
+			
+			<form method="POST" action="sesserv">
+				<p>Send a custom hero to the session!</p>
+				<input type="text" name="name" placeholder="Enter an evil name" class="user-input" />
+				<input type="text" name="superpower" placeholder="Enter an evil super power" class="user-input" />
+				<input type="number" name="bounty" placeholder="Enter an bounty amount" class="user-input" />
+				
+				<input type="submit" value="Push a custom villian to sess" id="submit-form" />
 			</form>
 		</div>
 	</main>
