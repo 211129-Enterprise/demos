@@ -59,7 +59,44 @@
 			<input type="submit" value="Trigger forward() in Indirect Servlet">
 		</form>
 
+		<form method="GET" action="sesserv">
+			<p>Session Servlet, GET!</p>
+			<input type="submit" value="Send Mud Man to the Session!">
+		</form>
+
+		<form method="GET" action="helpersesserv">
+			<p>Helper Session Servlet, GET!</p>
+			<input type="submit" value="Retrieve Villain from the Session!">
+		</form>
+		
+		
+		<!-- This will allow a use to input info for all the properties of a SuperVillain Object
+			  which will trigger the doPost() method in the SessionServlet.  Then we'll instantiate that
+			  Villain object based on the parameters we capture from the form. -->
+		<form method="POST" action="sesserv">
+			<p>Session Servlet, POST!</p>
+			
+			<input type="text" name="name" placeholder="Enter an evil name"> <br />
+			<input type="text" name="superpower" placeholder="Enter an evil superpower"> <br />
+			<input type="text" name="bounty" placeholder="Enter a bounty amount"> <br />
+			
+			<input type="submit" value="Push a Custom Villain to the Session">
+		</form>
+		
+
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
