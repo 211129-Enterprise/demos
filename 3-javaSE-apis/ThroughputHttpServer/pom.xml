@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.revature</groupId>
+	<artifactId>ThroughputHttpServer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-maven-plugin</artifactId>
+				<version>3.4.0</version>
+				<executions>
+					<!-- Generate JMeter configuration -->
+					<execution>
+						<id>configuration</id>
+						<goals>
+							<goal>configure</goal>
+						</goals>
+					</execution>
+					<!-- Run JMeter tests -->
+					<execution>
+						<id>jmeter-tests</id>
+						<goals>
+							<goal>jmeter</goal>
+						</goals>
+					</execution>
+					<!-- Fail build on errors in test -->
+					<execution>
+						<id>jmeter-check-results</id>
+						<goals>
+							<goal>results</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.lazerycode.jmeter
+										</groupId>
+										<artifactId>
+											jmeter-maven-plugin
+										</artifactId>
+										<versionRange>
+											[3.4.0,)
+										</versionRange>
+										<goals>
+											<goal>configure</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>
+
