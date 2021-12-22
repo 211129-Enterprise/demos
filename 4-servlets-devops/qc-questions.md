@@ -1,6 +1,6 @@
 # Upcoming QC Questions for Tuesday Jan. 4th :
 > Topics: <br>
-> - Review this [HTTP Study Guide](https://github.com/211129-Enterprise/demos/tree/main/4-servlets-devops)
+> - Review this [HTTP Study Guide](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/http.md)
 > - [Servlets](#servlets)
 > - [AWS](#aws)
 > - [DevOps/SDLC](#devops)
@@ -9,7 +9,7 @@
 <br>
 
 ## HTTP
-- Review Study guide [here]()
+- Review Study guide [here](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/http.md)
 
 
 <br>
