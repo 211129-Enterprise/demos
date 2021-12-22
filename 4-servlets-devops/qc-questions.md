@@ -63,13 +63,13 @@
 
 7. What is EBS?
 
-8. What's am AMI?
+8. What's an Amazon AMI?
 
 9. What is an RDS?
 
 10. What's the difference between Horizontal and Vertical Scaling? 
 
-11. What is AWS IAM? (*DON'T* confuse this with AMI!)
+11. What is Amazon IAM? (*DON'T* confuse this with AMI!)
 
 <br>
 
