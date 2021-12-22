@@ -9,6 +9,13 @@ QC for this week will be held on **Jan. 4th, 2022**. QC questions [here](https:/
   - CI/CD
   - Docker
 
+<br>
+
+### :star: Project 1 Requirements [here](https://github.com/211129-Enterprise/demos/tree/main/4-servlets-devops/project-1) 👈
+>***:clock2: Due Monday Jan. 10th, 2022***
+
+<br>
+
 ### AWS & DevOps Guides
 *Refer to the following guides to replicate the environments we set up in training.* 
 
@@ -17,5 +24,3 @@ QC for this week will be held on **Jan. 4th, 2022**. QC questions [here](https:/
 
 <br>
 
-### :star: Project 1 Requirements [here](https://github.com/211129-Enterprise/demos/tree/main/4-servlets-devops/project-1) 👈
->***:clock2: Due Monday Jan. 10th, 2022***
