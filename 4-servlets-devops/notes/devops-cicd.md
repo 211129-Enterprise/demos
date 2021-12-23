@@ -1,4 +1,6 @@
-> This document covers notes on Continuous Integration, Continuous Delivery, and Maven, plus some DevOps QC Qeustions (there is overlap from the qc-questions guide).
+> *This document covers notes on Continuous Integration, Continuous Delivery, and Maven, plus some DevOps QC Qeustions (there is overlap from the qc-questions guide).*
+
+<br>
 
 # Continuous Integration
 
