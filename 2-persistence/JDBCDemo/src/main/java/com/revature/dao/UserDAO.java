@@ -29,7 +29,7 @@ public class UserDAO implements IUserDAO{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, u.getUsername());
 			stmt.setString(2, u.getPassword());
-			stmt.setString(3, u.getRole());
+//			stmt.setString(3, u.getRole());
 			
 			ResultSet rs; 
 			

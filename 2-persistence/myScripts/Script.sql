@@ -79,3 +79,5 @@ SELECT first_name || ' ' || last_name AS "Full Name" FROM employees;
 CREATE VIEW names AS SELECT first_name, last_name FROM employees;
 
 SELECT * FROM names; 
+
+SELECT * FROM accounts AS acc INNER JOIN user_accounts_jt AS jt ON acc.id = jt.id WHERE acc.id = 1;
