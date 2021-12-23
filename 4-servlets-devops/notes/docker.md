@@ -95,7 +95,7 @@ docker run -d --name tomcat --rm -it -p 8080:8080 tomcat
 mvn package
 
 # While still in root directory of project, hand off the war file to tomcat to deploy
-docker cp target/HelloFrontController-0.0.1-SNAPSHOT.war tomcat:/usr/local/tomcat/webapps
+docker cp target/HelloFrontController.war tomcat:/usr/local/tomcat/webapps
 
 # You can now see your web app hosted within your container if you go to localhost:8080/HelloFrontController-0.0.1-SNAPSHOT
 ```
