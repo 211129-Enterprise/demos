@@ -1,14 +1,14 @@
 # Week 4: Servlets, AWS & DevOps
-QC for this week will be held on **Jan. 4th, 2022**. QC questions [here](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/qc-questions.md) 👈
+QC for this week will be held on **Jan. 3rd, 2022**. QC questions [here](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/qc-questions.md) 👈
 
 ## Topics Covered
 - [HTTP](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/http.md)
 - [Servlets](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/qc-questions.md#servlets)
 - [AWS](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/qc-questions.md#aws)
   - Study guide [here](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/aws.md)
-- DevOps
-  - CI/CD
-  - Docker
+- [DevOps](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/devops-cicd.md)
+  - [CI/CD](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/devops-cicd.md)
+  - [Docker](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/docker.md)
 
 <br>
 
