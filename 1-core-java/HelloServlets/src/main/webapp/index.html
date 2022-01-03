@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello Servlets!</title>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+	<div class=supervillain-container>
+
+		<h1>Welcome to Servlets!</h1>
+
+		<form method="GET" action="dirserv">
+			<p>Direct Servlet, GET!</p>
+			<input type="submit" value="Direct Text Response">
+		</form>
+
+		<!-- http request, parts
+		URL- where are we sending the request
+		HTTP - verb/methods
+		Request Header (contains meta dat about the request this also includes the above info
+		Request Body (not present in a get request, but typically presnet in a post request)
+		
+	 -->
+
+		<form method="POST" action="dirserv">
+			<p>Direct Servlet, POST!</p>
+			<input type="submit" value="send post request to direct service">
+
+		</form>
+
+		<form method="GET" action="indirserv">
+			<p>Indirect Servlet, GET!</p>
+			<input type="submit"
+				value="Trigger sendRedirect() in indirect servlet">
+		</form>
+
+		<form method="POST" action="indirserv">
+			<p>Indirect Servlet, POST!</p>
+			<input type="submit" value="Trigger forward() in indirect servlet">
+		</form>
+		
+		<form method="GET" action="sesserv">
+			<p>Session Servlet, POST!</p>
+			<input type="submit" value="Send mudman to the session">
+		</form>
+		
+		<form method="GET" action="helpersesserv">
+			<p>Helper Session Servlet, POST!</p>
+			<input type="submit" value="Retrieve villain from the session">
+		</form>
+		
+		<form method="POST" action="sesserv">
+			<p>Session Servlet, POST!</p>
+			<input type="text" name="name" placeholder="Enter an evil superpower"> <br />
+			<input type="text" name="superpower" placeholder="Enter an ability"> <br />
+			<input type="text" name="bounty" placeholder="Enter a bounty amount"> <br />
+			
+			<input type="submit" value="Push a custom villain to the session"></input>
+		</form>
+
+	</div>
+</body>
+</html>
