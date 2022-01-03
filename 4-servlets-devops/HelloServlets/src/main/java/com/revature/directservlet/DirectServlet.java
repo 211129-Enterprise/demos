@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.SuperVillain;
 
-public class DirectServlet extends HttpServlet {
+public class DirectServlet extends HttpServlet { 
 
 	/** When a client sends a GET request to the server at some location (which we have yet to map...this will be
 	 * done in our Deployment Descriptor - web.xml), it will trigger this method.
@@ -35,6 +35,14 @@ public class DirectServlet extends HttpServlet {
 		out.println("<html><body><h1>The Servlet is talking directly to the client!</h1></body></html>");
 
 		// Now we need to map where this functionality is available
+		
+		
+		// Call the Servlet context!
+		System.out.println("Context Example: " + getServletContext().getInitParameter("contextExample"));
+		
+		// You could make a log statement here logging what servlet is handling the get request
+		System.out.println("Config Example: " + getServletConfig().getInitParameter("configExample"));
+		
 	}
 	
 	/**
