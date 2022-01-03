@@ -1,4 +1,4 @@
-# Upcoming QC Questions for Tuesday Jan. 4th :
+# Upcoming QC Questions for Monday Jan. 3rd :
 > Topics: <br>
 > - Review this [HTTP Study Guide](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/http.md)
 > - [Servlets](#servlets)
