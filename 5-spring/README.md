@@ -14,7 +14,7 @@
 - :star: Study [Spring Overview](https://www.javatpoint.com/spring-tutorial)
   - *What are the benefits of Spring?* 
 
-- :star: Study the [Spring `IoC` Container](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html) (this is heavy documetnation, so try to absorb the top points, not the whole doc)
+- :star: Study the [Spring `IoC` Container](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html) (this is heavy documentation, so try to absorb the top points, not the whole doc)
 
 <br>
 
