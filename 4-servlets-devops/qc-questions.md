@@ -3,7 +3,7 @@
 > - Review this [HTTP Study Guide](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/http.md)
 > - [Servlets](#servlets)
 > - [AWS](#aws)
-> - [DevOps/SDLC](#devops)
+> - [DevOps](#devops)
 > - [Docker](#docker) <br>
 
 <br>
