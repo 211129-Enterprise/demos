@@ -8,7 +8,7 @@ QC for this week will be held on **Jan. 4th, 2022**. QC questions [here](https:/
   - Study guide [here](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/aws.md)
 - DevOps
   - [CI/CD](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/devops-cicd.md)
-  - [Docker]()
+  - [Docker](https://github.com/211129-Enterprise/demos/blob/main/4-servlets-devops/notes/docker.md)
 
 <br>
 
