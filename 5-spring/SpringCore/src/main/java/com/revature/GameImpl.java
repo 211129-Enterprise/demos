@@ -2,6 +2,7 @@ package com.revature;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class GameImpl implements Game {
 	
@@ -10,7 +11,11 @@ public class GameImpl implements Game {
 	// we will need the dependencies for the Logging API to use this
 
 	// == fields ==
+	
+	@Autowired // The Spring IoC knows that this is a dependency of this class that is the IoC's reponsibility to handle
 	private NumberGenerator numberGenerator; // question is how do we fulfill a dependency of this TYPE?
+	// Now we need to declare the implementation class as the object that gets injected into this GameImpl object
+	
 	private int guessCount = 10;
 	private int number;
 	private int guess;
@@ -19,14 +24,22 @@ public class GameImpl implements Game {
 	private int remainingGuesses;
 	private boolean validNumberRange = true;
 	
-	// Constructor that defines how this object is assembled
+	/* Constructor that defines how this object is assembled
+	 * 
+	 * ======= CONSTRUCTOR INJECTION =======
+	 * 
 	public GameImpl(NumberGenerator numberGenerator) {
 		// Note that I'm passing an interface, and not the implementation class
 		this.numberGenerator = numberGenerator;
 	}
-	
+	*/
 	
 	// == public methods ==
+	// ===== SETTER INJECTION =====
+//	public void setNumberGenerator(NumberGenerator numberGenerator) {
+//		this.numberGenerator = numberGenerator;
+//	}
+	
 	@Override
 	public void reset() {
 		smallest = 0;

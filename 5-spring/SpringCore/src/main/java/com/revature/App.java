@@ -15,7 +15,6 @@ public class App {
 	
 	
 	public static void main(String[] args) {
-	
 		// The Spring IoC Container will manage Dependecy injection for us
 		
 		// Step 1. Create the Context (Application Context) by feeding it configuration details!
@@ -24,14 +23,21 @@ public class App {
 		
 		
 		// Step 2. Instantiate a NumberGenerator Bean using Spring IoC
-		NumberGenerator numberGen = context.getBean("myNumbersjdgklsdjGenerator", NumberGenerator.class); // this points to the interface	
-																							  // that the impl class implements
+		NumberGenerator numberGen = context.getBean("myNumGenerator", NumberGenerator.class); // this points to the bean object that implements the interface	
+		Game game = context.getBean(Game.class); 
+		
 		// Step 3. Call next() (since the bean is fully assembled with its dependency
 		int number = numberGen.next();
 		
 //		System.out.println("The number is: " + number);
 		log.info("The number is {}", number);
 		
+		game.reset(); // this will print out the number
+		
+		number = game.getNumber(); // fetches the new number generated after the reset
+		
+		log.info("The number is {}", number);
+
 		context.close(); // prevent memory leakage
 		
 		

@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--  We define our Application Context here, which is read by the Spring IoC container -->
 
+	<!-- We define our Application Context here, which is read by the Spring 
+		IoC container -->
+		
+	<!-- In order to scan for for Annotations  when using Annotaiton configuration you add this: -->		
+	<context:annotation-config/> <!--  This will scan for the @Autowire annotation within the beans declared here -->
+	
+	<context:component-scan base-package="com.revature"/> <!-- This will scan all classes within the apacktes and look for the bean marked with @Component -->
+
+
+	<!-- Autowiring -->
+	<bean id="game" class="com.revature.GameImpl">
+		
+	</bean>
 
 	<!-- In Spring, the objects that form the backbone of your application and 
-		that are managed by the Spring IoC container are called beans. 
-		
-		A bean is 
+		that are managed by the Spring IoC container are called beans. A bean is 
 		an object that is instantiated, assembled, and otherwise managed by a Spring 
 		IoC container. -->
-		
-	<bean id="myNumGenerator" class="com.revature.NumberGeneratorImpl">
-	</bean>
 
-	<!--  Constructor injection -->
-	<bean id="game" class="com.revature.GameImpl">
-		<constructor-arg ref="myNumGenerator"/>
-	</bean>
+<!-- 	<bean id="myNumGenerator" class="com.revature.NumberGeneratorImpl"> -->
+<!-- 	</bean> -->
+
+	<!-- Constructor injection -->
+	<!-- <bean id="game" class="com.revature.GameImpl"> -->
+	<!-- <constructor-arg ref="myNumGenerator"/> -->
+	<!-- </bean> -->
+
+	<!-- Setter Injection -->
+<!-- 	<bean id="game" class="com.revature.GameImpl"> -->
+<!-- 		<property name="numberGenerator" ref="myNumGenerator"/> -->
+<!-- 	</bean> -->
+
+<!-- When to use Setter Injection Constructor Injection based DI -->
+<!-- Constructor injection is best for MANDATORY dependencies ensures your object comes  -->
+<!-- 	   completely assembled with the dependencies it needs. -->
+
+<!-- 	   Setter injection is good for optional dependencies -->
+	
+<!-- 	We need to mark the beans that this bean relies on as Components.... -->
+	
+	
+	
+	
+	
+
 
 </beans>

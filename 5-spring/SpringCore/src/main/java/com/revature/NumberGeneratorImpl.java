@@ -2,6 +2,9 @@ package com.revature;
 
 import java.util.Random;
 
+import org.springframework.stereotype.Component;
+
+@Component("myNumGenerator") // We're identifying this class as a possible dependency (Spring Bean) for another class (which is GameImpl) 
 public class NumberGeneratorImpl implements NumberGenerator{
 
 	// == fields ==
