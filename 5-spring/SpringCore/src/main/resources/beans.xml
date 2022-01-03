@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!--  In Spring, the objects that form the backbone of your application and
+		that are managed by the Spring IOC container are called beans.
+		
+		A bean is an object that is instantiated, assembled, and otherwise managed
+		by a Spring IoC container. -->
+  <bean id="myNumGenerator" class="com.revature.NumberGeneratorImpl">
+  </bean>
+
+  <bean id="myGame" class="com.revature.GameImpl">
+   	<constructor-arg ref="myNumGenerator" />
+  </bean>
+
+  <!-- more bean definitions go here -->
+
+</beans>
