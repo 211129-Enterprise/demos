@@ -18,7 +18,6 @@ import com.revature.annotations.JoinColumn;
 public class MetaModel<T> { // we're inferring that the MetaModel class can only be a metamodel of another class
 	
 	private Class<?> clazz;
-	
 	private PrimaryKeyField primaryKeyField; // we created this "type" in our com.revature.util package
 	private List<ColumnField> columnFields;
 	private List<ForeignKeyField> foreignKeyFields;
@@ -38,7 +37,7 @@ public class MetaModel<T> { // we're inferring that the MetaModel class can only
 	}
 	
 	// we only call the constructor when we invoke the MetaModel.of(MyCLass.class);
-	public MetaModel (Class<?> clazz) {
+	public MetaModel(Class<?> clazz) {
 	
 		this.clazz = clazz;
 		this.columnFields = new LinkedList<>();
