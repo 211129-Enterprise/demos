@@ -2,7 +2,10 @@ package com.revature;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GameImpl implements Game {
 
 	
@@ -13,7 +16,9 @@ public class GameImpl implements Game {
 	
 	
 	// == fields ==
+	@Autowired // The Spring IoC knows that this is a dependency of this class that is the IoC's responsibility to handle.
 	private NumberGenerator numberGenerator; // Question is how we fullfill a dependency of this type?
+	// Now we need to declare the implementation class as the object that gets injected into this GameImpl object
 	private int guessCount = 10;
 	private int number;
 	private int guess;
@@ -21,13 +26,20 @@ public class GameImpl implements Game {
 	private int biggest;
 	private int remainingGuesses;
 	private boolean validNumberRange = true;
+
 	
-	// Constructor that defines how this object is assembled
-	public GameImpl(NumberGenerator numberGenerator) {
-		// Note that I'm passing an interface and NOT the implementation class.
+// C O N S T R U C T O R   I N J E C T I O N	
+//	// Constructor that defines how this object is assembled
+//	public GameImpl(NumberGenerator numberGenerator) {
+//		// Note that I'm passing an interface and NOT the implementation class.
+//		this.numberGenerator = numberGenerator;
+//	}
+
+	
+// S E T T E R  I N J E C T I O N
+	public void setNumberGenerator(NumberGenerator numberGenerator) {
 		this.numberGenerator = numberGenerator;
 	}
-
 	
 	
 	// == public methods ==

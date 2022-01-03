@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<!--  In Spring, the objects that form the backbone of your application and
-		that are managed by the Spring IOC container are called beans.
-		
-		A bean is an object that is instantiated, assembled, and otherwise managed
-		by a Spring IoC container. -->
-  <bean id="myNumGenerator" class="com.revature.NumberGeneratorImpl">
-  </bean>
+<!-- In Spring, the objects that form the backbone of your application and  -->
+<!-- 		that are managed by the Spring IOC container are called beans. A bean is  -->
+<!-- 		an object that is instantiated, assembled, and otherwise managed by a Spring  -->
+<!-- 		IoC container. -->
+<!-- 	<bean id="myNumGenerator" class="com.revature.NumberGeneratorImpl"> -->
+<!-- 	</bean> -->
 
-  <bean id="myGame" class="com.revature.GameImpl">
-   	<constructor-arg ref="myNumGenerator" />
-  </bean>
 
-  <!-- more bean definitions go here -->
+<!-- Constructor injection -->
+<!-- <bean id="myGame" class="com.revature.GameImpl"> -->
+<!-- <constructor-arg ref="myNumGenerator" /> -->
+<!-- </bean> -->
+
+
+
+<!-- Setter Injection -->
+<!-- 	<bean id="myGame" class="com.revature.GameImpl"> -->
+<!-- 		<property name="numberGenerator" ref="myNumGenerator" /> -->
+<!-- 	</bean> -->
+
+
+
+<!-- AUTOWIRING EXAMPLE -->
+
+	<!--  In order to scan for annotations when using annotatoin configuration, you add this: -->
+	<context:annotation-config/> <!--  This will scan the @Autowire annotation within the beans declared here -->
+	<context:component-scan base-package="com.revature"/> <!--  This wll scan all classes within the com.revature package -->
+															<!--  and look for the bean marked with @component -->
+	<bean id="game" class="com.revature.GameImpl">
+		<!--  We need to mark the beans that this bean relies on as components.... -->
+	</bean>
 
 </beans>
