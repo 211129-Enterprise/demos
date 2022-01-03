@@ -11,6 +11,7 @@
 	<!-- We define our Application Context here, which is read by the Spring 
 		IoC container -->
 		
+	<!-- 	We need to mark the beans that this bean relies on as Components.... -->
 	<!-- In order to scan for for Annotations  when using Annotaiton configuration you add this: -->		
 	<context:annotation-config/> <!--  This will scan for the @Autowire annotation within the beans declared here -->
 	
@@ -40,18 +41,13 @@
 <!-- 		<property name="numberGenerator" ref="myNumGenerator"/> -->
 <!-- 	</bean> -->
 
-<!-- When to use Setter Injection Constructor Injection based DI -->
-<!-- Constructor injection is best for MANDATORY dependencies ensures your object comes  -->
-<!-- 	   completely assembled with the dependencies it needs. -->
-
-<!-- 	   Setter injection is good for optional dependencies -->
+<!-- 	When to Use Setter or Constructor Based DI? -->
 	
-<!-- 	We need to mark the beans that this bean relies on as Components.... -->
-	
-	
-	
-	
-	
-
-
+<!-- 	- Since you can mix constructor-based & setter-based DI, it is a good rule of thumb  -->
+<!-- 	  to use CONSTRUCTORS for MANDATORY dependencies and SETTER methods for optional -->
+<!-- 	  dependencies. -->
+	  
+<!-- 	- The Spring team generally advocates constructor injection as it enables one to  -->
+<!-- 	  implement application components as immutable objects and the ensure that required -->
+<!-- 	  dependencies are not null. -->
 </beans>
