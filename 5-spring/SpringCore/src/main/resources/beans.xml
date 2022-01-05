@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+			 xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+        	 http://www.springframework.org/schema/context/spring-context.xsd">
+        	 
+<!--   We define our Application Context here, which is read by the Spring IoC Container -->
+	
+<!-- 	In order to scan for Annotations when using Annotation configuration you add this: -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.revature"/> <!-- This will scan all classes within the com.revature package -->
+																												<!-- and look for the bean marked component -->		
+	<!-- Autowiring -->
+  <bean id="game" class="com.revature.GameImpl">
+  </bean>
+	
+	<!-- We define our Application Context here, which is read by the Spring IoC container -->
+	
+	<!--  In Spring, the objects that form the backbone of your application and
+				that are managed by the Spring IoC container are called beans.
+				
+				A bean is an object that is instantiated, assembled, and otherwise managed
+				by a Spring IoC container. -->
+
+<!--   <bean id="myNumGen" class="com.revature.NumberGeneratorImpl"> -->
+<!--   </bean> -->
+
+<!-- 	 Constructor injection -->
+<!--   <bean id="game" class="com.revature.GameImpl"> -->
+<!--   	<constructor-arg ref="myNumGen"/> -->
+<!--   </bean> -->
+  
+  <!-- Setter injection -->
+<!--   <bean id="game" class="com.revature.GameImpl"> -->
+<!--   	<property name="numberGenerator" ref="myNumGen"/> -->
+<!--   </bean> -->
+  
+<!--   When to use Setter Injection vs Constructor Injection based DI -->
+<!--   	- Constructor injection is best for MANDATORY dependencies -->
+<!--   		ensuring your object comes completely assembled -->
+<!--   	- Setter Injection is good for optional dependencies -->
+
+</beans>
