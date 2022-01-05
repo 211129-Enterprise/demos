@@ -5,9 +5,22 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  
+  <!-- A programming context can be defined as all relevent information about the application
+  Servlet Context is metadata available to all servlets -->
+  <context-param>
+  	<param-name>contextExample</param-name>
+  	<param-value>Global Info accessible by all servlets</param-value>
+  </context-param>
+
   <servlet>
     <servlet-name>DirServ</servlet-name>
     <servlet-class>com.revature.directservlet.DirectServlet</servlet-class>
+    <init-param>
+    	<param-name>configExample</param-name>
+    	<param-value>Info unique to JUST this servlet!!!</param-value>
+    </init-param>
+    
   </servlet>
   <servlet-mapping>
     <servlet-name>DirServ</servlet-name>

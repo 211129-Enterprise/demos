@@ -34,6 +34,8 @@ public class IndirectServlet extends HttpServlet { // HttpServlet extends Genric
 		response.sendRedirect("https://google.com");
 		
 		System.out.println("Triggered the doGet() method of IndirectServ");
+		
+		System.out.println("Context Example: " + getServletContext().getInitParameter("contextExample"));
 	}
 
 	/**
