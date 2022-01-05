@@ -26,11 +26,12 @@ public interface FoodRepository extends JpaRepository<Food, Integer>{ //<Object,
 	 */
 	Food findByDishName(String dishName); // SELECT * FROM food WHERE dishName = ?
 	
-	public List<Food> findByOrderDishName();
+	public List<Food> findByOrderByDishName();
 	
 	public Optional<Food> findByDishNameIgnoreCase(String dishName);
 	
-	@Query(value="FROM food WHERE dishName like %:substring")
-	public Food findByDishNameContains(String subString);
+	// custom queries!
+	@Query(value="FROM Food WHERE dishName like %:substring")
+	public Food findByDishNameContains(String substring);
 	
 }

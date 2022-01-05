@@ -15,7 +15,7 @@ public class Food {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	private String dishName;
+	private String dishName; // Translates camel case into snake case
 	
 	private int calories;
 	
