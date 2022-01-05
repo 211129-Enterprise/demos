@@ -1,4 +1,4 @@
-package com.revature.inspection;
+package com.revature.demomodels;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -17,7 +17,7 @@ import java.util.Arrays;
  * Reflection is a feature in the Java programming language which allows the executing 
  * program to examine or "introspect" upon itself.
  */
-public class ClassInspector {
+public class DummyUser {
 	
 	
 	public static void listPublicConstructor(Class<?> clazz) {

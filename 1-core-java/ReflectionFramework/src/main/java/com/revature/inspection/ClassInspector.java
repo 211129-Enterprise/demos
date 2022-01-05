@@ -43,6 +43,7 @@ public class ClassInspector {
 		if (fields.length == 0) {
 			System.out.println("\nThere are no non-public fields in " + clazz.getName());
 		}
+		
 		for (Field field : fields) {
 			if ((field.getModifiers() == (Modifier.PUBLIC))) {
 				continue;
