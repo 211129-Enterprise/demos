@@ -33,7 +33,7 @@ public class MethodExecutionCalculationAspect {
 	 * @Around is an advice type which ent hat advice can be run
 	 * before AND after method execution.
 	 */
-	// We're going to intercept all methods in the buness layer and
+	// We're going to intercept all methods in the business layer and
 	// return the amount of time it takes for it to execute.
 	@Around("execution(* com.revature.business.*.*(..))")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
