@@ -17,5 +17,3 @@ buildNumber.properties
 **/logs/*
 .vscode
 .metadata/
-.application.yml
-.application.properties
