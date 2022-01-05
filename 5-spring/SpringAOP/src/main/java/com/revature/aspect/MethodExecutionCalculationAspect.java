@@ -7,6 +7,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 
+
+/*
+ * Cross Cutting Concern
+ * A concern is a term that refers to a part of the 
+ * system divided by functionality. (A fire is a fireman's concern)
+ * 
+ * A cross cutting concern is a concern which is applicable throughout
+ * the entire application, and it affects the entire application.
+ * 
+ * For example:
+ * - logging
+ * - security
+ * - data transfer
+ * 
+ */
+
 @Aspect
 @Configuration // Tell Spring that it interacts with our beans
 public class MethodExecutionCalculationAspect {
