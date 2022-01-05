@@ -12,7 +12,7 @@ public class Food {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	private String dishName;
+	private String dishName; // this automatically turns into dish_name 
 	
 	private int calories;
 
