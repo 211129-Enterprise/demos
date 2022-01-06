@@ -29,7 +29,7 @@ public interface FoodRepository extends JpaRepository<Food, Integer>{ // <Object
 	public Optional<Food> findByDishNameIgnoreCase(String dishName);
 	
 	// custom queries!
-	@Query(value="FROM food WHERE dishName like %:substring")
+	@Query(value="FROM Food WHERE dishName like %:substring")
 	public Food findByDishNameContains(String substring);
 	
 	
