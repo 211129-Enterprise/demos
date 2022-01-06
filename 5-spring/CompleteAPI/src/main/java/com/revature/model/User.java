@@ -45,6 +45,7 @@ public class User {
 	@Email // from javax.validation.constraints this ensures every email property contains @
 	private String email;
 
+	// constructor without an id field
 	public User(@Length(min = 2) String firstName, String lastName,
 			@NotBlank @Length(min = 5) @Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") String username,
 			@NotBlank String password, @Email String email) {
