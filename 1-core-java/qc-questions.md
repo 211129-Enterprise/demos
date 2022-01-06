@@ -1,4 +1,4 @@
-# QC Questions that may be asked on Monday Dec. 6th
+# QC Questions that may be asked on Tuesday Dec. 7th
 
 ## Java Basics
 * What is Java? / Why Java?
@@ -22,7 +22,7 @@
   * In the String pool in the heap
 
 * Explain stack vs heap?
-  * Heap is where objects are stored in memory. Stack is where local variable references are kept - a new stack is created for each method invocation
+  * Heap is where objects are stored in memory. Stack is where local variable references are kept - a new stack FRAME is created for each method invocation
 
 * What are annotations?
   * A type of syntactic metadata added to the code, read by the compiler - use `@` syntax
@@ -266,7 +266,7 @@ mylist.add(new Person()); // what happens?
 * Do you need a catch block? Can have more than 1? Order of them?
   * Catch block is not necessary - try/finally will compile. You can have more than one catch block, but the order must be from most narrow exception to most broad/general.
 
-* What is base class of all exceptions? What interface do they all implement?
+* What is base class of all exceptions? 
   * The base class is `Exception`, which extends the `Throwable` class.
 
 * List some checked and unchecked exceptions?

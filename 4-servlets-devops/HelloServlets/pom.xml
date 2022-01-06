@@ -11,13 +11,23 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
+<<<<<<< HEAD
 	<dependencies>
 		
+=======
+
+	<dependencies>
+		<!-- The javax.servlet dependency is an api that gives us classes and interfaces 
+			that describe and define the contracts between a servlet class and the runtime 
+			environment provided for each instance of a class by a conforming servlet 
+			container (Tomcat!). -->
+>>>>>>> f3f3f52fd33d8857a40e61cc42c0f040b8df97ac
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+<<<<<<< HEAD
 		
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
@@ -37,5 +47,25 @@
 		<finalName>check</finalName>
 	</build>
 
+=======
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<!--  Jackson is an Object Mapping Library (1 of, if not THE most popular tool for transforming a Java object)
+		to JSON format so that the data can be used in a JavaScript or frontend application 
+		
+		Marshalling is the process of converting a java object to JSON, unmarshalling is the reverse-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId> 
+			<version>2.13.0</version>
+		</dependency>
+
+		<!-- If you have the plugin from Slack , you need to navigate to http://localhost:8080/check/dirserv 
+			<build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> 
+			<version>3.3.1</version> </plugin> </plugins> <finalName>check</finalName> 
+			</build> -->
+
+	</dependencies>
+>>>>>>> f3f3f52fd33d8857a40e61cc42c0f040b8df97ac
 
 </project>

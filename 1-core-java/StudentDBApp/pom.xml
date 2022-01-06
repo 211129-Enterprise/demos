@@ -7,6 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<!-- Project Object Model -->
+<<<<<<< HEAD
 	<!-- xml - exten -->
 	<properties>
     	<maven.compiler.source>1.8</maven.compiler.source>
@@ -26,6 +27,34 @@
 	<build>
 		<plugins>
 			<!-- Surefire plugin to print tests during build cycle -->
+=======
+	<!-- xml - eXtensible Markup Language -->
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<!--ctrl + shift + f to auto-format -->
+	<!-- ctrl + s to save -->
+
+	<dependencies>
+		<!-- Later we will paste in a Testing Framework dependency (JUnit) -->
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<!-- Surefire plugin to print tests during build cycle -->
+			<!--  This will allow Maven to print ot all of your tests -->
+>>>>>>> f3f3f52fd33d8857a40e61cc42c0f040b8df97ac
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -42,4 +71,10 @@
 
 		</plugins>
 	</build>
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> f3f3f52fd33d8857a40e61cc42c0f040b8df97ac
 </project>
