@@ -22,6 +22,8 @@ button.addEventListener("click", addUser);
 
 function addUser() {
 
+    console.log("clicked!")
+
     // Concatenate teh end point where we want to hit with a POST request
     const postUrl = url + "/users/add";
 
