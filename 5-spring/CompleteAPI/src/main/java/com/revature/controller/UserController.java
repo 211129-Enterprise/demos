@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.model.User;
 import com.revature.service.UserService;
 
+// Component-> Controller -> RestController (Very specific type of SteroType Annotation)
 @RestController // automatically infers that the return vlaue of all methods below will be within the HttpResponse body
 @RequestMapping("/users") // all methods available at localhost:5000/users...
 public class UserController {
