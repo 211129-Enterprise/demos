@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ import com.revature.data.UserRepository;
 import com.revature.exception.UserNotFoundException;
 import com.revature.model.User;
 
+@Service
 public class UserService {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());

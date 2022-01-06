@@ -12,6 +12,9 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +24,7 @@ import lombok.NoArgsConstructor;
 @Data //Generates getters / setters, toString, hashCode, and equals methods automatically
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class User {
 	
 	@Id

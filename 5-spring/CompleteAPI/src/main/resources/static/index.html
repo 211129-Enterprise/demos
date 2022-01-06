@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8, viewport-fit=cover">
+        
+        <title>User App</title>
+        <style>
+            #btn{
+                display: block;
+                margin: 50px auto 0px auto;
+                width: 200px;
+            }
+
+            /* Overriding bootstrap */
+            body{
+                background: #eaeaea !important;
+                height: 100vh !important;
+            }
+            .container{
+                background-color: #FFF !important;
+                border-radius: 5px !important;
+                left: 50% !important;
+                padding: 25px !important;
+                position: absolute !important;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                -moz-transform: translate(-50%, -50%) !important;
+                -ms-transform: translate(-50%, -50%) !important;
+                -webkit-transform: translate(-50%, -50%) !important;
+                width: 500px !important;
+            }
+        </style>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Enter your info:</h1>
+
+            <form>
+                <fieldset>
+                    <legend>Your User Details</legend>
+                    <br><br>
+                    <label>
+                        First Name: <input type="text" id="firstName"/>
+                    </label><br>
+                    <label>
+                        Last Name: <input type="text" id="lastName"/>
+                    </label><br>
+                    <label>
+                        Username: <input type="text" id="username"/>
+                    </label><br>
+                    <label>
+                        Password: <input type="password" id="password"/>
+                    </label><br>
+                    <label>
+                        Email: <input type="text" id="email"/>
+                    </label>
+                </fieldset>
+
+                <input type="button" value="Sign up now!" id="btn"/>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
