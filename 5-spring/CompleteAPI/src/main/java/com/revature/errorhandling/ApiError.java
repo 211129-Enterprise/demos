@@ -34,28 +34,25 @@ public class ApiError {
 	}
 
 	public ApiError(HttpStatus status) {
-		super();
+		this();
 		this.status = status.value();
 		this.error = status.getReasonPhrase();
-	}
+	}	
 
 	public ApiError(HttpStatus status, Throwable ex) {
-		super();
+		this(status);
 		this.message = "No message available";
 		this.debugMessage = ex.getLocalizedMessage();
+	}
+	
+	public ApiError(HttpStatus status, String message, Throwable ex) {
+		this(status, ex);
+		this.message = message;
 	}
 	
 	public void addSubError(ApiSubError err) {
 		this.subErrors.add(err);
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

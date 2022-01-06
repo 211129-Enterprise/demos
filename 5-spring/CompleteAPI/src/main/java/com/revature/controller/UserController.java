@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,40 +34,33 @@ public class UserController {
 	}
 	
 	@GetMapping("/find/{username}")  // localhost:5000/users/find/spongebob <- we extract this parameter
-	public User findByUsername(@PathVariable("username") String username) {
+	public ResponseEntity<User> findByUsername(@PathVariable("username") String username) {
 		
-		return userServ.getByUsername(username);
+		return ResponseEntity.ok(userServ.getByUsername(username));
 	}
 	
 	// Think of how you implement the following methods
 	
 	// POST - add()
 	@PostMapping("/add")
-	public User addUser(@Valid @RequestBody User u) { // valid annotation ensures that we can only accept a VALID user object
+	public ResponseEntity<User> addUser(@Valid @RequestBody User u) { // valid annotation ensures that we can only accept a VALID user object
 		// will reutrn the newly added User object in JSON
-		return userServ.add(u); 
+		return ResponseEntity.ok(userServ.add(u)); 
 	}
 	
 	// GET - getById() - extract the id from the URI like in findByUsername();
 	@GetMapping("/{id}")
-	public User findUserById(@PathVariable("id") int id) {
+	public ResponseEntity<User> findUserById(@PathVariable("id") int id) {
 		
-		return userServ.getById(id);
+		return ResponseEntity.ok(userServ.getById(id));
 	}
 	
 	@DeleteMapping("/{id}")
 	public void removeUser(@PathVariable("id") int id) {
 		userServ.remove(id);
 	}
-	
-	
 	// Complete these methods
 	// fill out the applciaiton.properties file to include a database - connect to H2
 	// Test with Postman
 	// ad dcusomt eexception handling
-	
-	
-	
-	
-
 }
