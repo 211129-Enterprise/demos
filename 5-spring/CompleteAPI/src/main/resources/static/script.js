@@ -1,7 +1,6 @@
 /**
  * Declare the URL that is the destination for our request
  */
-
 const url = window.location.origin+('/api');
 
 // capture the button element and add some functionality to it

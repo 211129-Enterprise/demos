@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 @Component
-@WebFilter("/*") // Our frontend Angular APplication will be running on Port 4200 and making a request to our localhost at port 5000
+@WebFilter("/*") // Our frontend Angular Application will be running on port 4200 and making request to our localhost at port 5000
 public class CorsFilter extends OncePerRequestFilter {
 
 	@Override
@@ -21,9 +21,9 @@ public class CorsFilter extends OncePerRequestFilter {
 		
         resp.setHeader("Access-Control-Allow-Origin", "*");
         resp.setHeader("Access-Control-Allow-Credentials", "true");
-        resp.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,DELETE");
+        resp.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,DELETE,PATCH");
         resp.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
         chain.doFilter(req, resp);	
 	}
-	
+
 }

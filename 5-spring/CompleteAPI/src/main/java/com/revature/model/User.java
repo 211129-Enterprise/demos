@@ -11,9 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
+import javax.validation.constraints.Email; // Java Persistence API
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Pattern; // JPA specification vs. Hibernate implementatino and Spring Data's role with both
 
 import org.hibernate.validator.constraints.Length;
 
@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="users")
-@Data // generates getters, setters, hashCode, equals, toString
+@Data // generates getters/setter, toString, hashCode, and equals() method automatically
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
@@ -36,34 +36,36 @@ public class User {
 	@Id
 	@Column(name="user_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@JsonView({JsonViewProfiles.User.class, JsonViewProfiles.User.class})
+	@JsonView({ JsonViewProfiles.User.class, JsonViewProfiles.Address.class })
+
 	private int id;
 	
-	// make sure that the length of these fields is >1
+	// make sure that the length of these fields is > 1
 	@Length(min=2)
 	private String firstName;
-	
 	private String lastName;
 	
 	@NotBlank
 	@Length(min=5)
-	@Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") // use regex only alphanumeric, no spaces
+	@Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") // use regex to make sure only alphanumeric chars allowed, no spaces
 	private String username;
 	
 	@NotBlank
 	private String password;
 	
-	@Email
+	@Email // from javax.validation.constraints this ensures every email property contains @
 	private String email;
 	
+	// Here since we're defining the JoinTable in the user class, we declare that User.java OWNS the relationship
+	
 	@ManyToMany
-	@JoinTable(name="users_address",
-	joinColumns=@JoinColumn(name="user_id"), 
-	inverseJoinColumns=@JoinColumn(name="address_id"))
-	@JsonView({JsonViewProfiles.User.class})
-	private Set<Address> addresses;
+	@JoinTable(name = "users_address",
+    joinColumns = @JoinColumn(name= "user_id"),
+    inverseJoinColumns = @JoinColumn(name = "address_id"))
+	@JsonView(JsonViewProfiles.User.class)
+	private Set<Address> addresses; // this is 
 
-	// 1 constructor with no id initialized
+	// constructor without an id field
 	public User(@Length(min = 2) String firstName, String lastName,
 			@NotBlank @Length(min = 5) @Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") String username,
 			@NotBlank String password, @Email String email) {
@@ -75,6 +77,4 @@ public class User {
 		this.email = email;
 	}
 
-	
-	
 }

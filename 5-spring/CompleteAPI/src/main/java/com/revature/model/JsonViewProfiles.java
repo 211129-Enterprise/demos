@@ -2,6 +2,16 @@ package com.revature.model;
 
 public class JsonViewProfiles {
 
-	public 
 	
+	
+	public static class User {
+		
+	}
+	
+	public static class Address {
+		
+		
+	}
+	
+
 }

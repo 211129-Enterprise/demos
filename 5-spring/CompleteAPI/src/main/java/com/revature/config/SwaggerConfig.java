@@ -2,19 +2,24 @@ package com.revature.config;
 
 import org.springframework.context.annotation.Bean;
 
+import org.springframework.context.annotation.Configuration;
+
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
-public class SwaggerConfig {
 
-	/**
+@Configuration
+public class SwaggerConfig {
+	
+	/*
 	 * Made possible by the SpringFox Dependency
 	 * https://www.webdevelopmenthelp.net/2016/08/use-spring-fox-java-application-development.html
-	 * 
-	 * expose endpoints at :5000/api/swagger-ui
 	 */
+	// expose endpoints at :5000/api/swagger-ui
+
 	
 	@Bean
 	public Docket api() {
@@ -24,5 +29,7 @@ public class SwaggerConfig {
 				.paths(PathSelectors.any())
 				.build();
 	}
+
+
 }
 

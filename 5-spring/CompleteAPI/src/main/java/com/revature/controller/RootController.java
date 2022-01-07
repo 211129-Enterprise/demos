@@ -15,5 +15,9 @@ public class RootController {
 		return new RedirectView("swagger-ui/index.html");
 	}
 	
-	
+
+	/**
+	 * This RootController is necessary along with SwaggerConfig.java
+	 */
+
 }
