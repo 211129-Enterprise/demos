@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.revature.data.AddressRepository;
 import com.revature.data.UserRepository;
 import com.revature.exception.UserNotFoundException;
 import com.revature.model.User;
@@ -23,6 +24,9 @@ public class UserService {
 	@Autowired
 	UserRepository userRepo;
 	
+	@Autowired
+	AddressRepository addressRepo;
+	
 	
 	// Why a set? No duplicates!
 	@Transactional(readOnly=true)
@@ -33,7 +37,7 @@ public class UserService {
 	}
 	
 	
-	//findByUsername()
+	// findByUsername()
 	@Transactional(readOnly=true)
 	public User getByUsername(String username) {
 		
@@ -72,6 +76,13 @@ public class UserService {
 		} else {
 			log.info("Could not add user with username {}", u.getUsername());
 		}
+		
+		// As long as the user's addresses are NOT null, add each address by 
+		// calling the save method on it from the AddressRepository
+		if(u.getAddresses() != null) {
+			u.getAddresses().forEach(a -> addressRepo.save(a)); // You need to autowire and address repository into this service layer
+		}
+		
 		
 		return returnedUser;
 	}

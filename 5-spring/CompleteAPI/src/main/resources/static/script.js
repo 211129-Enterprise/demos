@@ -63,3 +63,13 @@ function addUser(){
         .then(res => res.json())
         .then(res => console.log(res));
 }
+
+/*
+ * Do some other stuff...
+ */
+ function getRandomIndex(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+const userIconArr = ["user-ninja", "user-nurse", "user-plus", "user-secret", "user-tie", "user-md", "user-graduate","user-astronaut"];
+document.getElementById("user-icon").classList.add("fa-" + userIconArr[getRandomIndex(0, (userIconArr.length - 1))]);

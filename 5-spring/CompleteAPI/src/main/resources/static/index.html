@@ -7,20 +7,34 @@
         
         <title>User App</title>
         <style>
+	       @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Open+Sans&display=swap');
+           /* 
+            * It's not responsive, but whatever, I couldn't actually resist at least
+            * throwing in a few generic bootstrap classes and some of my old code
+            * into it before leaving it alone. 
+            */
+           
             #btn{
                 display: block;
-                margin: 50px auto 0px auto;
+                border: none !important;
+                margin: 50px auto 25px auto;
+                transition: all 0.5s;
                 width: 200px;
             }
+            #btn:hover{
+				background-color: #999;
+			}
 
-            /* Overriding bootstrap */
+            /* Overriding / Bruteforcing my own CSS over Bootstrap's BS */
             body{
-                background: #eaeaea !important;
+                background: #eaeaea url("bg-cc0.jpg") no-repeat !important;
+                background-size: cover !important;
                 height: 100vh !important;
             }
             .container{
                 background-color: #FFF !important;
                 border-radius: 5px !important;
+                font-family: 'Hind Light', sans-serif !important;
                 left: 50% !important;
                 padding: 25px !important;
                 position: absolute !important;
@@ -32,39 +46,69 @@
                 -webkit-transform: translate(-50%, -50%) !important;
                 width: 500px !important;
             }
+            h1{
+				font-family: 'Open Sans', sans-serif !important;
+				margin: 0px !important;
+			}
+            label{
+				display: block !important;
+				margin: 15px auto 20px auto !important;
+				width: 400px !important;
+			}
+			label > span{
+				display: block !important;
+			}
+			label > input{
+				background: #FFFFFF !important;
+				border: 1px solid #ececed !important;
+				border-radius: 6px !important;
+				display: block !important;
+				font-family: 'Hind Light', sans-serif !important;
+				font-size: 1.05rem !important;
+				margin: 5px 0 !important;
+				padding: 8px 15px !important;
+				width: 100% !important;
+			}
+			.fas{
+				font-size: 50px;
+				text-align: center;
+				margin: 15px 0px 0px 0px;
+				width: 100%;
+			}
+
         </style>
-        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
     <body>
         <div class="container">
-            <h1>Enter your info:</h1>
-
+			<i class="fas" id="user-icon"></i>
+            <h1 class="text-center">Create An Account</h1 >
             <form>
                 <fieldset>
-                    <legend>Your User Details</legend>
+                    <!--<legend>Enter your user details below</legend>-->
                     <br><br>
                     <label>
-                        First Name: <input type="text" id="firstName"/>
-                    </label><br>
+                        <span>First Name:</span><input type="text" id="firstName" placeholder="What's your first name?" />
+                    </label>
                     <label>
-                        Last Name: <input type="text" id="lastName"/>
-                    </label><br>
+                        <span>Last Name:</span><input type="text" id="lastName" placeholder="What's your last name?" />
+                    </label>
                     <label>
-                        Username: <input type="text" id="username"/>
-                    </label><br>
+                        <span>Username:</span><input type="text" id="username" placeholder="What's your new username?" />
+                    </label>
                     <label>
-                        Password: <input type="password" id="password"/>
-                    </label><br>
+                        <span>Password:</span><input type="password" id="password" placeholder="What's your secure password?"/>
+                    </label>
                     <label>
-                        Email: <input type="text" id="email"/>
+                        <span>Email:</span><input type="text" id="email" placeholder="Where do our emails go?" />
                     </label>
                 </fieldset>
 
-                <input type="button" value="Sign up now!" id="btn"/>
+                <input type="button" value="Sign up now!" id="btn" class="btn-dark btn-lg btn-block"/>
             </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/e2fe056a71.js?ver=1.0" id="fontawesome-js"></script>
         <script src="script.js"></script>
     </body>
 </html>
