@@ -9,13 +9,15 @@ import org.springframework.context.annotation.Profile;
 @ConfigurationProperties("spring.datasource")
 public class DBConfiguration {
 
-	// Below we feature 3 beans, each with credentials for different types of environments
+
+	// Below we feature 3 beans, each with credentials for different types of environemnts
+
 	
 	private String driverClassName;
 	private String url;
 	private String username;
 	private String password;
-	
+
 	@Profile("dev")
 	@Bean
 	public String devDBConnection() {

@@ -12,15 +12,17 @@ import lombok.Data;
 
 @Data
 public class ApiError {
+	
 	/**
 	 * This class is designed to represent info about an HTTP Error
 	 */
+
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy hh:mm:ss")
-	private LocalDateTime timeStamp;
+	private LocalDateTime timestamp;
 	
 	private int status;
 	
-	private String error;
+	private String error; // reperesent HTTP error ( in words)
 	
 	private String message;
 	private String debugMessage;
@@ -28,14 +30,15 @@ public class ApiError {
 	
 	public ApiError() {
 		super();
-		this.timeStamp = LocalDateTime.now();
+		this.timestamp = LocalDateTime.now();
 	}
 
 	public ApiError(HttpStatus status) {
 		this();
 		this.status = status.value();
 		this.error = status.getReasonPhrase();
-	}
+
+	}	
 
 	public ApiError(HttpStatus status, Throwable ex) {
 		this(status);
@@ -48,11 +51,9 @@ public class ApiError {
 		this.message = message;
 	}
 	
-	
 	public void addSubError(ApiSubError err) {
 		this.subErrors.add(err);
+
 	}
 
-	
-	
 }
