@@ -1,49 +1,57 @@
 package com.revature.accessmods;
 
+import com.revature.otherpackage.ClassC;
+
 public class ClassA {
 	
 	/**
-	 * 4 pillars of OOP
+	 * 4 Pillars of OOP
 	 * 
-	 * - A 
-	 * - P
-	 * - I
-	 * - E
+	 * - Abstraction 
+	 * - Polymorphism
+	 * - Inheritance
+	 * - Encapsulation
 	 * 
-	 * Abstraction, Polymorphism, Inheritence, Encapsulation
-	 * 
-	 * Encapsulation.. is a method of data and method can be wrapped in single unit
-	 * we can restrict access to this data by using access modifiers
+	 * Encapsulation is a mechanism in which data and methods can be wrapped
+	 * together in a single unit.  We can restrcit access to this data by using access
+	 * modifiers.
 	 */
 	
-	// lets create some instance variables
-	
+	// let's create some instance variables
 	public int publicField = 1;
-	private int privateField =2 ;
-	int defaultField = 3; 
+	private int privateField = 2;
+	int defaultField =  3; // this is default
 	protected int protectedField = 4;
 	
-	/**
-	 * public - visible through entire project
-	 * private - visible only inside class
-	 * default - visible within  same package (almost public)
-	 * protected - (almost like default) but  visible to child packages even if those classs are in other packages
+	/*
+	 * public = visible throughout the entire project
+	 * 
+	 * private = visible within the class ONLY 
+	 * 
+	 * default = visible within the same package
+	 * 
+	 * protected = visible (like default) except also visible to child classes even if those child classes are in
+	 * 			   other packages.
 	 */
 
 	public static void main(String[] args) {
-		// instatiate classA!
 		
-		ClassA classA = new ClassA ();
+		// instnatiate classA!
+		ClassA classA = new ClassA();
 		
-		// no problem accesing all of the fields
+		// no problem accessing all of the fields
 		System.out.println(classA.publicField);
-		System.out.println(classA.privateField );
+		System.out.println(classA.privateField);
 		System.out.println(classA.defaultField);
 		System.out.println(classA.protectedField);
 		
 	}
+
 	
 	
-	
+}
+
+// you can build another calss within the same file! (only one public class per file!)
+class ClassD {
 	
 }

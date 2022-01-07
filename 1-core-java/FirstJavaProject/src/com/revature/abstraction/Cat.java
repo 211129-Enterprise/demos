@@ -2,13 +2,30 @@ package com.revature.abstraction;
 
 public class Cat extends Animal {
 	
-	// the animal properties like legs and color are abstracted away from us
-	
-	//  because makeSound is abstract, we are forced to provide an implementation
-	
+	private boolean hasFur;
+
 	@Override
 	public void makeSound() {
-		System.out.println("ribbit ribbit");
+		System.out.println("Meow");
+		
+	}
+
+	public Cat(boolean hasFur) {
+		super();
+		this.hasFur = hasFur;
+	}
+
+	public boolean isHasFur() {
+		return hasFur;
+	}
+
+	public void setHasFur(boolean hasFur) {
+		this.hasFur = hasFur;
+	}
+
+	@Override
+	public String toString() {
+		return "Cat [hasFur=" + hasFur + "]";
 	}
 
 }

@@ -6,12 +6,11 @@ import java.util.Objects;
 /**
  * Java Beans
  * 
- * - Java Beans have private instance variables
- * - getter/setters
- * - overidden hashcode
- * - implements serializable interface
+ * - private instnace variables
+ * - getters/setters
+ * - overidden haschode and equals
+ * - implements serializable interface 
  * - no-args constructor
- *
  */
 public class Pet implements Serializable {
 	
@@ -20,13 +19,10 @@ public class Pet implements Serializable {
 	private String breed;
 	private String owner;
 	private int age;
+	private Color color;// brown, grey, black, white
 	
-	// pet color can only be brown, grey, black and white
-	
-	private Color color;// brown, grey, black, white // this is called enum
-	
-	// no args constructor
-	public Pet () {
+	// no-args constructor (also called default constructor)
+	public Pet() {
 		
 	}
 
@@ -41,61 +37,49 @@ public class Pet implements Serializable {
 		this.color = color;
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public int getTagNumber() {
 		return tagNumber;
 	}
-
 
 	public void setTagNumber(int tagNumber) {
 		this.tagNumber = tagNumber;
 	}
 
-
 	public String getBreed() {
 		return breed;
 	}
-
 
 	public void setBreed(String breed) {
 		this.breed = breed;
 	}
 
-
 	public String getOwner() {
 		return owner;
 	}
-
 
 	public void setOwner(String owner) {
 		this.owner = owner;
 	}
 
-
 	public int getAge() {
 		return age;
 	}
-
 
 	public void setAge(int age) {
 		this.age = age;
 	}
 
-
 	public Color getColor() {
 		return color;
 	}
-
 
 	public void setColor(Color color) {
 		this.color = color;
@@ -119,6 +103,14 @@ public class Pet implements Serializable {
 				&& Objects.equals(name, other.name) && Objects.equals(owner, other.owner)
 				&& tagNumber == other.tagNumber;
 	}
+
+	@Override
+	public String toString() {
+		return "Pet [name=" + name + ", tagNumber=" + tagNumber + ", breed=" + breed + ", owner=" + owner + ", age="
+				+ age + ", color=" + color + "]";
+	}
+	
+	// alt + shift + S > hashCode & equals()
 	
 	
 

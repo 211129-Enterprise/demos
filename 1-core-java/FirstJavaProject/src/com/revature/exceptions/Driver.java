@@ -1,107 +1,133 @@
 package com.revature.exceptions;
 
 import java.io.FileWriter;
-import java.util.Scanner;
 import java.io.IOException;
 import java.util.InputMismatchException;
-
-
+import java.util.Scanner;
 
 public class Driver {
-	
-	private Scanner scan = new Scanner(System.in);
-	
 
+	private static Scanner scan = new Scanner(System.in);
+	
 	public static void main(String[] args) {
+
+		int x = 10;
+		int y = 0; // our compiler never told us that something would go wrong
 		
-		int num1 = 10;
-		int num2 = 5;
+		// the Exception only occurred at runtime - a RUNTIME EXCEPTION
+		// UNCHECKED EXCEPTIONS are RUNTIME EXCEPTIONS
 		
-		System.out.println(divide(num1, num2));
+		System.out.println(divideTryCatch());
 		
-		System.out.println("I reached this line");
+		System.out.println("I reached this line!");
 		
-		
-		
-	}
-		
-	// this method is static return an int which is the quotient of a number divided by another
-	
-	
-	static int divide (int x, int y) {
-		
-		// look before you leap
-		
-		if (y != 0 ) {
-			return (x / y);
-			
-		}
-		
-		return 0;
-		
-	}
-	
-	static int divideTryCatch (int x, int y) {
+		createFileCheckedException("something", "something");
 		
 		try {
-			return x/y;
-		} catch (ArithmeticException e) {
-			System.out.println("Cant divide by zero");
-			return 0;
-		} finally {
-			// this code will always run ( regardless whether exception occurs or not)
-			// resource management can be included in finally block
-			
-			
+			checkAge(20); // because this method may throw an exception
+		} catch (AgeDeniedException e) { 
+			System.out.println(e);
+		} 
+		
+		System.out.println("Reaching this line");
+
+	}
+	
+	static void checkAge(int age) {
+		
+		// make sure that the person's age is > 21
+		
+		// if the age is under 21, we throw exception
+		if (age < 21) {
+			throw new AgeDeniedException("Sorry you're age is " + age + " which is under 21.");
+		} else {
+			System.out.println("Welcome!");	
 		}
 		
 	}
 	
-	//polymorphism - overloading chaning number of parameters
-	
-	static int divideTryCatch () {
+	// Polymorphism - overloading: changing number of parameters
+	static int divideTryCatch() {
 		
-		// we will call scanner
-		
+		// we will call the scan object and ask the user for integers
 		try {
-			// ask user to enter a number
+			// ask the user to enter a number
 			System.out.println("Enter a dividend");
+			
+			// store the input to a vairbale
 			int x = scan.nextInt();
 			
-			// store the input to a variable 
+			// ask the user to enter a number
 			System.out.println("Enter a divisor");
+			// store the input to a variable
+			
 			int y = scan.nextInt();
 			
-			return (x/y);
+			return x/y;
 			
-			
-		} catch (ArithmeticException e)  {
-			System.out.println("Please enter a number other than zero");
+		} catch(ArithmeticException e) {
+			System.out.println("Please enter a number greater than 0");
 			return 0;
 			
-		} catch(InputMismatchException ex) {
-			// import this from java.util
-			System.out.println("You must enter a number");
+		} catch (InputMismatchException ex) {  // import from java.util
+			System.out.println("You must enter an integer...");
 			return 0;
-		}
-		
-		finally {
+		} finally {
+			// close our resources!
 			scan.close();
 		}
 		
 	}
 	
-	
-	//this method will create a file at a specified path
-	
-	static void createFileCheckedException (String path, string text) {
-		// at the specified path, we'll create a file and fill it with the text passed through
+	// this method is static, returns an int which is the quotient of 1 number divided by another 
+	static int divide(int x, int y) {
 		
-		FileWriter writer; // need to import from java.io
+		// look before you leap
+		if (y != 0) { // ! flips logic
+			return x/y;
+		}
 		
-		writer = new FileWriter(path, true)
+		return 0;
+	}
+	
+	static int divideTryCatch(int x, int y) {
+		
+		try {
+			return x/y;
+		} catch (ArithmeticException e) { // java.lang package
+			// in the case that we catch that exception
+			System.out.println("You can't divide by zero!!!");
+			System.out.println(e.toString());
+			return 0;
+		} finally {
+			// this code will ALWAYS run (regardless of whether there's an exception_)
+			System.out.println("In the finally block");
+		}
+		
 		
 	}
 	
+	// this method will create a file at a specified path
+	static void createFileCheckedException(String path, String text) {
+		
+		// at the specified path, we'll create a file and fill it with the text passed through
+		FileWriter writer; // java.io
+		
+		try {
+			writer = new FileWriter(path, true); // this is where the code could be intercepted.
+			writer.write(text);
+			writer.close();
+		} catch (IOException e) { // this is a CHECKED exception. Our compiler detects that something COULD go wrong at compile time, so it
+			// forces us to handle it.
+			e.printStackTrace();
+		} 
+			
+		// try with resources will automatically close all resources you're using
+		//	try (/*an object you're using to access a resource) {	
+		//		// run some code
+		//	} catch (IOException) 
+		//		
+		//	}
 
+	}
 }
