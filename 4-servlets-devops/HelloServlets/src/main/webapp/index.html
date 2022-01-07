@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
 <meta charset="ISO-8859-1">
 <title>Hello Servlets!</title>
 <!-- In the head of an HTML document, you typically LINK the stylesheet that defines the CSS Rules for the content -->
 <link rel="stylesheet" type="text/css" href="css/styles.css">
+=======
+
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Hello Servlets!</title>
+
+<!--  In the head of an HTML document you typically LINK the stylesheet that defines the CSS rules for the content -->
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+>>>>>>> main
 </head>
 
 <body>
@@ -13,6 +26,7 @@
 
 		<h1>Welcome to Supervillain Servlets!</h1>
 
+<<<<<<< HEAD
 		<!-- Below I'm going to open what's called a form element which allows a user to press a button,  -->
 		<!-- sending a get request to another servlet	-->
 
@@ -22,10 +36,21 @@
 
 			<p>Direct Servlet, GET!</p>
 			<!-- Here I'm putting a button below in the form of an input tag -->
+=======
+		<!-- Below I'm going to open what's called a form element which allows a user to pres a button,
+	sending a get request to another servlet -->
+
+		<form method="GET" action="dirserv">
+			<!-- I'm sending a GET request as my HTTP method upon cliocking the button -->
+			<!--  Which will trigger the doGet() method in the servlet mapped to /dirserv -->
+			<p>Direct Servlet, GET!</p>
+			<!--  Here I'm putting a button below in the form of an input tag -->
+>>>>>>> main
 			<input type="submit" value="Direct Text Response">
 
 		</form>
 
+<<<<<<< HEAD
 		<!--  HTTP Request
 				- URL - where we are sending the request
 				- HTTP verb/methods
@@ -48,22 +73,54 @@
 			<input type="submit"
 				value="Trigger sendRedirect() in Indirect Servlet">
 
+=======
+		<!-- HTTP Request
+		- URL - where are we sending the request
+		- HTTP verb/methods
+		- Request Header (contains meta data about the request) this also includes the above info)
+		- Request Body (NOT present in a get request, but typically present in a POST request)
+			- the body in a post request might have the info used to CREATE some reosurce on the server
+	 -->
+
+		<!-- ctrl + shift + f autoformats-->
+		<form method="POST" action="dirserv">
+			<!-- I'm sending a GET request as my HTTP method upon cliocking the button -->
+			<!--  Which will trigger the doGet() method in the servlet mapped to /dirserv -->
+			<p>Direct Servlet, POST!</p>
+			<!--  Here I'm putting a button below in the form of an input tag -->
+			<input type="submit" value="Send Post Request to Direct Servlet">
+			<!-- When I send a post request to the server, the server instantiates some Java object and sends back its data in JSON -->
+		</form>
+
+		<form method="GET" action="indirserv">
+			<p>Indirect Servlet, GET!</p>
+			<input type="submit"
+				value="Trigger sendRedirect() in Indirect Servlet">
+>>>>>>> main
 		</form>
 
 		<form method="POST" action="indirserv">
 			<p>Indirect Servlet, POST!</p>
 			<input type="submit" value="Trigger forward() in Indirect Servlet">
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 		</form>
 
 		<form method="GET" action="sesserv">
 			<p>Session Servlet, GET!</p>
+<<<<<<< HEAD
 			<!-- Here I'm putting a button below in the form of an input tag -->
 			<input type="submit" value="Send Mudman to the Session">
+=======
+			<input type="submit" value="Send Mud Man to the Session!">
+>>>>>>> main
 		</form>
 
 		<form method="GET" action="helpersesserv">
 			<p>Helper Session Servlet, GET!</p>
+<<<<<<< HEAD
 			<!-- Here I'm putting a button below in the form of an input tag -->
 			<input type="submit" value="Retrieve villain from the session">
 		</form>
@@ -78,10 +135,42 @@
 			<input type="text" name="bounty" placeholder="Enter a bounty amount"><br />
 			
 			<input type="submit" value="Push a custom Villain to the session">
+=======
+			<input type="submit" value="Retrieve Villain from the Session!">
+		</form>
+		
+		
+		<!-- This will allow a use to input info for all the properties of a SuperVillain Object
+			  which will trigger the doPost() method in the SessionServlet.  Then we'll instantiate that
+			  Villain object based on the parameters we capture from the form. -->
+		<form method="POST" action="sesserv">
+			<p>Session Servlet, POST!</p>
+			
+			<input type="text" name="name" placeholder="Enter an evil name"> <br />
+			<input type="text" name="superpower" placeholder="Enter an evil superpower"> <br />
+			<input type="text" name="bounty" placeholder="Enter a bounty amount"> <br />
+			
+			<input type="submit" value="Push a Custom Villain to the Session">
+>>>>>>> main
 		</form>
 		
 
 	</div>
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> main
 </body>
 </html>

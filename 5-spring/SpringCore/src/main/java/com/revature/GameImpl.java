@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 public class GameImpl implements Game {
+<<<<<<< HEAD
 
 	// == constants ==
 	private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
@@ -14,6 +15,19 @@ public class GameImpl implements Game {
 	@Autowired // The Spring IoC knows that this is a dependency of this class that is the IoC's responsibilty to handle
 	private NumberGenerator numberGenerator; // question is how do we fulfill a dependency of this type?
 	//Now we need to declare the implementation class as the object that gets injected into GameImpl object
+=======
+	
+	// == constants ==
+	private static final Logger log = LoggerFactory.getLogger(GameImpl.class); // import from org.slf4j
+	// we will need the dependencies for the Logging API to use this
+
+	// == fields ==
+	
+	@Autowired // The Spring IoC knows that this is a dependency of this class that is the IoC's reponsibility to handle
+	private NumberGenerator numberGenerator; // question is how do we fulfill a dependency of this TYPE?
+	// Now we need to declare the implementation class as the object that gets injected into this GameImpl object
+	
+>>>>>>> main
 	private int guessCount = 10;
 	private int number;
 	private int guess;
@@ -22,6 +36,7 @@ public class GameImpl implements Game {
 	private int remainingGuesses;
 	private boolean validNumberRange = true;
 	
+<<<<<<< HEAD
 	// Constructor that defines how this object is assembled
 	
 	/**
@@ -42,6 +57,24 @@ public class GameImpl implements Game {
 	
 	
 	// == public methods ==
+=======
+	/* Constructor that defines how this object is assembled
+	 * 
+	 * ======= CONSTRUCTOR INJECTION =======
+	 * 
+	public GameImpl(NumberGenerator numberGenerator) {
+		// Note that I'm passing an interface, and not the implementation class
+		this.numberGenerator = numberGenerator;
+	}
+	*/
+	
+	// == public methods ==
+	// ===== SETTER INJECTION =====
+//	public void setNumberGenerator(NumberGenerator numberGenerator) {
+//		this.numberGenerator = numberGenerator;
+//	}
+	
+>>>>>>> main
 	@Override
 	public void reset() {
 		smallest = 0;
@@ -49,10 +82,16 @@ public class GameImpl implements Game {
 		remainingGuesses = guessCount;
 		biggest = numberGenerator.getMaxNumber();
 		number = numberGenerator.next();
+<<<<<<< HEAD
 		log.debug("the number is {}", number);
 	}
 
 
+=======
+		log.debug("the number is {}", number); // the {} are a place holder for the value of the second parameter
+	}
+
+>>>>>>> main
 	@Override
 	public int getNumber() {
 		return number;
@@ -84,7 +123,11 @@ public class GameImpl implements Game {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void check() {
+=======
+	public void check() { // checks the user's answer
+>>>>>>> main
 
 		checkValidNumberRange();
 
@@ -121,4 +164,8 @@ public class GameImpl implements Game {
 		validNumberRange = (guess >= smallest) && (guess <= biggest);
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 }

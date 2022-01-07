@@ -1,5 +1,6 @@
 package com.revature;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 import com.revature.models.Animal;
 
 public class WildCardDriver {
+
 	public static void main(String[] args) {
 		
 		List<Integer> list1 = new ArrayList<Integer>();
@@ -15,6 +17,7 @@ public class WildCardDriver {
 		
 		printList(list1);
 		
+
 		List<Animal> list2 = Arrays.asList(new Animal("Cat", 12), new Animal("Dog", 1));
 		
 		printList(list2);
@@ -38,8 +41,6 @@ public class WildCardDriver {
 	}
 	
 	// Upper Bounded Wildcard
-	
-	
 	//extends in the context of Upper Bound Wildcards refers to a Class that either extends a superclass or implements the specified interface
 	private static double add(List<? extends Number> list) {
 		

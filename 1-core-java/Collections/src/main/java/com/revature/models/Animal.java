@@ -8,6 +8,7 @@ package com.revature.models;
 // in order to understand Target animal is > or < the animal at the mid point
 
 public class Animal implements Comparable<Animal> {
+
 	
 	String name;
 	int age;
@@ -17,8 +18,8 @@ public class Animal implements Comparable<Animal> {
 		this.name = name;
 		this.age = age;
 	}
-	
-	@Override
+
+	@Override // returns 0, 1, or -1 
 	public int compareTo(Animal animal) {
 		// TODO Auto-generated method stub
 		return this.name.compareToIgnoreCase(animal.getName());
@@ -71,7 +72,7 @@ public class Animal implements Comparable<Animal> {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-	
+
+	}	
 
 }

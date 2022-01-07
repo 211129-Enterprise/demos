@@ -1,7 +1,10 @@
 package com.revature.model;
 
+<<<<<<< HEAD
 import java.util.Objects;
 
+=======
+>>>>>>> main
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,11 +17,16 @@ public class Food {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
+<<<<<<< HEAD
 	private String dishName;
+=======
+	private String dishName; // this automatically turns into dish_name 
+>>>>>>> main
 	
 	private int calories;
 
 	public Food() {
+<<<<<<< HEAD
 		// must create no-args constructor
 	}
 	public Food(String dishName, int calories) {
@@ -27,6 +35,11 @@ public class Food {
 		this.calories = calories;
 	}
 	
+=======
+		// must create constructor for Food
+	}
+
+>>>>>>> main
 	public Food(int id, String dishName, int calories) {
 		super();
 		this.id = id;
@@ -34,6 +47,16 @@ public class Food {
 		this.calories = calories;
 	}
 
+<<<<<<< HEAD
+=======
+	public Food(String dishName, int calories) {
+		super();
+		this.dishName = dishName;
+		this.calories = calories;
+	}
+	
+	
+>>>>>>> main
 	public int getId() {
 		return id;
 	}
@@ -60,7 +83,16 @@ public class Food {
 
 	@Override
 	public int hashCode() {
+<<<<<<< HEAD
 		return Objects.hash(calories, dishName, id);
+=======
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + calories;
+		result = prime * result + ((dishName == null) ? 0 : dishName.hashCode());
+		result = prime * result + id;
+		return result;
+>>>>>>> main
 	}
 
 	@Override
@@ -72,14 +104,30 @@ public class Food {
 		if (getClass() != obj.getClass())
 			return false;
 		Food other = (Food) obj;
+<<<<<<< HEAD
 		return calories == other.calories && Objects.equals(dishName, other.dishName) && id == other.id;
+=======
+		if (calories != other.calories)
+			return false;
+		if (dishName == null) {
+			if (other.dishName != null)
+				return false;
+		} else if (!dishName.equals(other.dishName))
+			return false;
+		if (id != other.id)
+			return false;
+		return true;
+>>>>>>> main
 	}
 
 	@Override
 	public String toString() {
 		return "Food [id=" + id + ", dishName=" + dishName + ", calories=" + calories + "]";
 	}
+<<<<<<< HEAD
 	
 	
 	
+=======
+>>>>>>> main
 }

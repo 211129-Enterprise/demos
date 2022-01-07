@@ -11,6 +11,7 @@ import com.revature.model.Food;
 import com.revature.service.FoodService;
 
 @SpringBootApplication
+<<<<<<< HEAD
 public class SpringDataJpaApplication implements CommandLineRunner {
 	
 	// logger
@@ -19,6 +20,18 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 	@Autowired
 	FoodService foodServ;
 	
+=======
+public class SpringDataJpaApplication implements CommandLineRunner{
+	
+	// logger
+	private Logger log = LoggerFactory.getLogger(this.getClass());
+	
+	// autowire a FoodService dependeny in here so i can call it and insert objects into the DB in the run() method
+	@Autowired
+	FoodService foodServ;
+	
+	
+>>>>>>> main
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDataJpaApplication.class, args);
 	}
@@ -26,8 +39,14 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
+<<<<<<< HEAD
 		Food f1 = new Food("Pasta", 200);
 		foodServ.add(f1);
+=======
+		Food f1 = new Food("pasta", 200);
+		foodServ.add(f1);
+		
+>>>>>>> main
 	}
 
 }

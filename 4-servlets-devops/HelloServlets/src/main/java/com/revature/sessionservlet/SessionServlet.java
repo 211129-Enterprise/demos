@@ -53,10 +53,12 @@ public class SessionServlet extends HttpServlet {
 		// 2. Instantiate an object with that info
 		SuperVillain vill = new SuperVillain(name, superPower, bounty);
 		
+
 		// 3. Grab the HTTP Session from the request
 		HttpSession session = request.getSession();
 		
 		// 4. Send the custom vill object to the session
+
 		session.setAttribute("the-villain", vill); // in our HelperSessionServlet we are capturing the object with "the-vill"
 		// key from the session, so we'll set this villain object with the same session
 		
@@ -67,5 +69,6 @@ public class SessionServlet extends HttpServlet {
 		
 		// After it's been set to the session, you can retrieve it by sending a GET request to the HelperSessionServlet
 	}
+
 
 }

@@ -9,8 +9,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 
+<<<<<<< HEAD
 @Aspect
 @Configuration
+=======
+@Aspect// Aspect
+@Configuration// Configuration
+>>>>>>> main
 public class AfterAspect {
 	
 	private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -19,16 +24,25 @@ public class AfterAspect {
 	@After("execution(* com.revature.business.*.*(..))")
 	public void after(JoinPoint joinPoint) {
 		
+<<<<<<< HEAD
 		log.info("After execution of {}", joinPoint);
 		
 	}
 	
 	// what if we want to intercept and log the return of a method
+=======
+		log.info("after execution of {}", joinPoint);
+		
+	}
+	
+	// what is we want to intercept and log the return of a method
+>>>>>>> main
 	@AfterReturning(
 			value="execution(* com.revature.business.*.*(..))",
 			returning="result") // result is a placeholder for the return of this method
 	public void after(JoinPoint joinPoint, Object result) {
 		
+<<<<<<< HEAD
 		log.info("{} returned value of {}", joinPoint, result);
 		
 	}
@@ -43,4 +57,24 @@ public class AfterAspect {
 	}
 	
 	
+=======
+		// log "{} returned the value {}
+		log.info("{} returned value {}", joinPoint, result);
+		
+	}
+	
+	// Intercept and exceptions that were thrown by a method
+	@AfterThrowing(
+			value="execution(* com.revature.business.*.*(..))",
+			throwing="exception")
+	public void afterThrowing(JoinPoint joinPoint, Object exception) {
+		
+		log.info("{} throws exception {}", joinPoint, exception);
+
+	}
+	
+	
+	
+
+>>>>>>> main
 }

@@ -13,6 +13,12 @@ public class Driver {
 		a1 = new Frog();
 		
 		a1.makeSound();
+	}
+	
+	public static void makeGeneralANimalSound(Animal someAnimal) {
+		
+		// this will output the overridden version of the child class' method
+		someAnimal.makeSound();
 		
 	}
 

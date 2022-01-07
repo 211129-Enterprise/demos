@@ -9,6 +9,7 @@ public class AlgorithmDriver {
 	
 	public static void main(String[] args) {
 		
+
 		int[] arr = {1, 4, 23, 52, 64, 65, 66, 89};
 		
 		int target = 65;
@@ -25,7 +26,9 @@ public class AlgorithmDriver {
 		// instantiate some Animals
 		Animal a1 = new Animal("Tiger", 12);
 		Animal a2 = new Animal("Dog", 4);
+
 		Animal a3 = new Animal("Wolf", 10);
+
 		
 		// add them to the list
 		animals.add(a1);
@@ -78,6 +81,4 @@ public class AlgorithmDriver {
 		
 		return -1; // return -1 if it doesn't find the target
 	}
-	
-	
 }

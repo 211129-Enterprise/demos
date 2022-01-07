@@ -44,27 +44,27 @@ public class Driver {
 		// iterate over each class that has been added to the configuration object and
 		// print info about it
 
-		for (MetaModel<?> metamodel : cfg.getMetaModels()) {
-			System.out.printf("Printing MetaModel for class: %s\n", metamodel.getClassName());
-			PrimaryKeyField pk = metamodel.getPrimaryKey();
-			List<ColumnField> columns = metamodel.getColumns();
-			List<ForeignKeyField> foreignKeyFields = metamodel.getForiegnKeys();
+//		for (MetaModel<?> metamodel : cfg.getMetaModels()) {
+//			System.out.printf("Printing MetaModel for class: %s\n", metamodel.getClassName());
+//			PrimaryKeyField pk = metamodel.getPrimaryKey();
+//			List<ColumnField> columns = metamodel.getColumns();
+//			List<ForeignKeyField> foreignKeyFields = metamodel.getForiegnKeys();
+//
+//			System.out.printf(
+//					"Found a primary key field named %s of type %s, \n\twhich maps to the column with name: %s\n",
+//					pk.getName(), pk.getType(), pk.getColumnName());
+//			for (ColumnField column : columns) {
+//				System.out.printf(
+//						"Found a column field named %s of type %s, \n\twhich maps to the column with name: %s\n",
+//						column.getName(), column.getType(), column.getColumnName());
+//			}
+//			for (ForeignKeyField foreignKey : foreignKeyFields) {
+//				System.out.printf(
+//						"Found a foreign key field named %s of type %s, \n\twhich maps to the column with name: %s\n",
+//						foreignKey.getName(), foreignKey.getType(), foreignKey.getColumnName());
+//			}
 
-			System.out.printf(
-					"Found a primary key field named %s of type %s, \n\twhich maps to the column with name: %s\n",
-					pk.getName(), pk.getType(), pk.getColumnName());
-			for (ColumnField column : columns) {
-				System.out.printf(
-						"Found a column field named %s of type %s, \n\twhich maps to the column with name: %s\n",
-						column.getName(), column.getType(), column.getColumnName());
-			}
-			for (ForeignKeyField foreignKey : foreignKeyFields) {
-				System.out.printf(
-						"Found a foreign key field named %s of type %s, \n\twhich maps to the column with name: %s\n",
-						foreignKey.getName(), foreignKey.getType(), foreignKey.getColumnName());
-			}
-
-		}
+//		}
 
 	}
 }

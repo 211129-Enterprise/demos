@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+
 public @interface Column {
 
 		String columnName();
@@ -34,4 +35,5 @@ public @interface Column {
  *		- Tells when annotation is valid to be used\
  *
  */
+
 

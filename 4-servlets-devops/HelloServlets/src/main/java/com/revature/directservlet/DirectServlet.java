@@ -36,12 +36,14 @@ public class DirectServlet extends HttpServlet {
 		
 		// Call the servlet context!
 		
+
 		System.out.println("Context Example: " + getServletContext().getInitParameter("contextExample"));
 		
 		// You could make a log statement here logging what servlet is handling the get request
 		System.out.println("Config Example: " + getServletConfig().getInitParameter("configExample"));
 		
 	}
+
 	/**
 	 * This method is responsible for handling a POST request that a client sends.
 	 * Instantiate an object, and send back the object's data in the form of JSON - JavaScript Object Notation
@@ -49,7 +51,7 @@ public class DirectServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
+
 		// Step 1. Declare the type of content for our HTTP response
 		response.setContentType("application/json");
 		
@@ -65,6 +67,7 @@ public class DirectServlet extends HttpServlet {
 		
 		
 	}
+	
 	/**
 	 * HTTP Response
 	 * 

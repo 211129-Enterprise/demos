@@ -27,6 +27,7 @@ public class SuperVillain {
 		this.name = name;
 	}
 
+
 	public String getSuperpower() {
 		return superpower;
 	}
@@ -65,6 +66,5 @@ public class SuperVillain {
 	public String toString() {
 		return "SuperVillain [name=" + name + ", superpower=" + superpower + ", bounty=" + bounty + "]";
 	}
-	
 	
 }

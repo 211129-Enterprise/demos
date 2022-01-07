@@ -112,25 +112,29 @@ public class CollectionDriver {
 		 * 
 		 * FIFO - first in first out
 		 * allow for extra operations
+
+		 * 
 		 */
 		
 		Queue<Animal> animalQ = new LinkedList<Animal>();
 		
+
 		System.out.println(("===== QUEUES ========"));
 		
 		animalQ.add(a1);
 		animalQ.add(a2);
 		animalQ.add(a3);
+
 	
 		// build while loop - while the Q is not empty, we will remove the HEAD of the queue
+
 		while (animalQ.size() != 0) {
 			
 			System.out.println("Queue Size " + animalQ.size());
 			
+
 			// we call the .poll() method to remove the head of the queue
 			System.out.println("Processing... " + animalQ.poll()); // .poll() will remove the head of the queue
-		
-		
 			
 		}
 		
@@ -151,4 +155,20 @@ public class CollectionDriver {
 		
 	}
 
+//		nums.add(3);
+//		nums.add(1); // compiler is autoboxing the primitive values to Integer onbjects
+//		nums.add(2);
+//		
+//		// Collections is just a Class for manipulating Collections like Arrays class (utility class)
+//		System.out.println(nums);
+//		Collections.sort(nums); // sorts in ascending order based on natural order
+//		System.out.println("after sorting with Collections Utility Class");
+//		System.out.println(nums);
+//
+//		
+
 }
+
+
+
+	

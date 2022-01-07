@@ -1,9 +1,17 @@
 /*
+<<<<<<< HEAD
 		CSS - Cascading Style Sheets
 		How we style HTML pages. Below we've constructed CSS styling rules
 		for the different HTML elements on our web page.
 */
 
+=======
+	CSS - Cascading Style Sheets
+	How we style HTML pages.  Below we've constructed CSS syling rules
+	for the different HTML elements on our web page.
+
+*/
+>>>>>>> main
 
 .supervillain-container {
 	
@@ -11,7 +19,11 @@
 	text-align: center;
 	display: flex;
 	flex-direction: column;
+<<<<<<< HEAD
 	align-items: center;	
+=======
+	align-items: center;
+>>>>>>> main
 }
 
 form {
@@ -26,4 +38,11 @@ input {
 	
 	margin: 3px;
 	
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+>>>>>>> main
