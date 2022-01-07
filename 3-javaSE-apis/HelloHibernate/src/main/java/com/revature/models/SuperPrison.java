@@ -2,6 +2,7 @@ package com.revature.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,24 +16,37 @@ import javax.persistence.Table;
 @Entity
 @Table(name="super_prison")
 public class SuperPrison {
-
+	
 	@Id
 	@Column(name="sp_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int spId;
 	
-	@Column(name="sp_name")
+	@Column(name="sp_name", unique=true, nullable=false)
 	private String name;
 	
 	private String location;
 	
-	// THis lists the many Villains whose foreign key points to this superprison's primary key
-	// 1 superPrison per SuperVillain (inversely) many supervillains per superprison
-	@OneToMany(mappedBy="superPrisonHolder", fetch=FetchType.LAZY) // we are mapping to the property of the SuperVillain class
+	// This lists the many Villains whose foreign keys point to this superprison's primary key
+	// 1 SuperPrison houses many Supervillains
+	@OneToMany(mappedBy="superPrisonHolder",fetch=FetchType.LAZY)
 	private List<SuperVillain> villList = new ArrayList<SuperVillain>();
-
+	
 	public SuperPrison() {
 		
+	}
+
+	public SuperPrison(String name, String location) {
+		super();
+		this.name = name;
+		this.location = location;
+	}
+	
+	public SuperPrison(String name, String location, List<SuperVillain> villList) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.villList = villList;
 	}
 	
 	public SuperPrison(int spId, String name, String location, List<SuperVillain> villList) {
@@ -41,27 +55,6 @@ public class SuperPrison {
 		this.name = name;
 		this.location = location;
 		this.villList = villList;
-	}
-
-	public SuperPrison(String name, String location, List<SuperVillain> villList) {
-		super();
-		this.name = name;
-		this.location = location;
-		this.villList = villList;
-	}
-	
-	
-
-	public SuperPrison(String name, String location) {
-		super();
-		this.name = name;
-		this.location = location;
-	}
-
-	@Override
-	public String toString() {
-		return "SuperPrison [spId=" + spId + ", name=" + name + ", location=" + location + ", villList=" + villList
-				+ "]";
 	}
 
 	public int getSpId() {
@@ -98,13 +91,7 @@ public class SuperPrison {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((location == null) ? 0 : location.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + spId;
-		result = prime * result + ((villList == null) ? 0 : villList.hashCode());
-		return result;
+		return Objects.hash(location, name, spId, villList);
 	}
 
 	@Override
@@ -116,23 +103,16 @@ public class SuperPrison {
 		if (getClass() != obj.getClass())
 			return false;
 		SuperPrison other = (SuperPrison) obj;
-		if (location == null) {
-			if (other.location != null)
-				return false;
-		} else if (!location.equals(other.location))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (spId != other.spId)
-			return false;
-		if (villList == null) {
-			if (other.villList != null)
-				return false;
-		} else if (!villList.equals(other.villList))
-			return false;
-		return true;
+		return Objects.equals(location, other.location) && Objects.equals(name, other.name) && spId == other.spId
+				&& Objects.equals(villList, other.villList);
 	}
+
+	@Override
+	public String toString() {
+		return "SuperPrison [spId=" + spId + ", name=" + name + ", location=" + location + ", villList=" + villList
+				+ "]";
+	}
+	
+	
+	
 }

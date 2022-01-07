@@ -6,14 +6,12 @@ import com.revature.lambdas.Employee;
 public class Driver {
 
 	public static void main(String[] args) {
+
+		ClassInspector cI = new ClassInspector();
 		
-		// Imported from our local maven repository
-		ClassInspector CI = new ClassInspector();
+//		cI.listPublicMethods(Employee.class);
 		
-		CI.listPublicMethods(Employee.class);
-		
-		CI.listNonPublicFields(Employee.class);
-		
+		cI.listNonPublicFields(Employee.class);
 		
 	}
 

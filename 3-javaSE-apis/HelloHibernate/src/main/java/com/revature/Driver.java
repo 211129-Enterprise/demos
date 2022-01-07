@@ -1,7 +1,6 @@
 package com.revature;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import com.revature.dao.CrimeDAO;
@@ -14,17 +13,18 @@ import com.revature.models.SuperVillain;
 public class Driver {
 	
 	static CrimeDAO cdao = new CrimeDAO();
-
+	static SuperVillainDAO svdao = new SuperVillainDAO();
+	static SuperPrisonDAO spdao = new SuperPrisonDAO();
+	
 	public static void main(String[] args) {
-		System.out.println("Running our Hibernate Demo ");
+		System.out.println("Running our Hibernate DEMO");
 		
 		Crime c1 = new Crime("Freeze", "covering the city in ice");
 		Crime c2 = new Crime("Time Manipulation", "freezing time, robbin' banks");
-		Crime c3 = new Crime("Arson", "setting the city ablaze");
+		Crime c3 = new Crime("Arson", "set a buncha stuff on fire");
 		
-		// as of now make sure you're only mapping the Crime model, not the others because we haven't created them
-		cdao.insert(c1);
 		cdao.insert(c2);
+		cdao.insert(c1);
 		cdao.insert(c3);
 		
 		List<Crime> crimes = new ArrayList<Crime>();
@@ -35,17 +35,12 @@ public class Driver {
 		
 		SuperVillain joker = new SuperVillain("The Joker", "evilness", 1_000_000.00, crimes, arkham);
 		
-		// add the joker and arkham to the DB
-		
-		SuperPrisonDAO spdao = new SuperPrisonDAO();
 		spdao.insert(arkham);
-		
-		
-		SuperVillainDAO svdao = new SuperVillainDAO();
+
 		svdao.insert(joker);
 		
 		System.out.println(svdao.selectAll());
-
+	
 	}
 
 }

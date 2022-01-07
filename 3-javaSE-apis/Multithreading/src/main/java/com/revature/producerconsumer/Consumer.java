@@ -1,7 +1,6 @@
 package com.revature.producerconsumer;
 
 public class Consumer implements Runnable {
-
 	
 	public Holder data;
 	int max;
@@ -11,15 +10,13 @@ public class Consumer implements Runnable {
 		this.max = max;
 	}
 	
-	
 	@Override
 	public void run() {
-		// open a for loop, iterate up to the max
-		for (int i=0; i<=max; i++) {
-			
+		// open for loop, iterate up to max
+		for (int i = 0; i <= max ; i++) {
 			int currentVal = this.data.getVal();
 			System.out.println("The consumer got: " + currentVal);
 		}
+		
 	}
-
 }

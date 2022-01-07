@@ -1,43 +1,51 @@
 package com.revature.demomodels;
 
+import java.util.Objects;
+
 import com.revature.annotations.Column;
 import com.revature.annotations.Entity;
 import com.revature.annotations.Id;
 import com.revature.annotations.JoinColumn;
 
-@Entity(tableName="users")
+@Entity(tableName="")
 public class DummyUser {
-
-	@Id(columnName="user_id") // this has been marked as a Primary Key
+	
+	@Id(columnName="user_id") // this has been marked as a primary key
 	private int id;
 	
-	@Column(columnName="first_name")
+	@Column(columnName="       ")
 	private String firstName;
 	
 	@Column(columnName="last_name")
-	private String lastname;
+	private String lastName;
+	
+<<<<<<< Updated upstream:3-JavaSE-apis/ReflectionFramework/src/main/java/com/revature/demomodels/DummyUser.java
+=======
+	@Column(columnName="healthy")
+	private boolean healthy;
 	
 	// this is an example of how we might define a property that serves as a foreign key
+>>>>>>> Stashed changes:3-javaSE-apis/ReflectionFramework/src/main/java/com/revature/demomodels/DummyUser.java
 	@JoinColumn(columnName="test_relation")
 	private DummyOtherClass testRelation;
 	
-
+	//Foreign Key
+	
 	public DummyUser() {
 		
-		
 	}
-	
-	public DummyUser(int id, String firstName, String lastname) {
+
+	public DummyUser(int id, String firstName, String lastName) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
-		this.lastname = lastname;
+		this.lastName = lastName;
 	}
 
-	public DummyUser(String firstName, String lastname) {
+	public DummyUser(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
-		this.lastname = lastname;
+		this.lastName = lastName;
 	}
 
 	public int getId() {
@@ -56,27 +64,17 @@ public class DummyUser {
 		this.firstName = firstName;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
-	@Override
-	public String toString() {
-		return "DummyUser [id=" + id + ", firstName=" + firstName + ", lastname=" + lastname + "]";
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
-		return result;
+		return Objects.hash(firstName, id, lastName);
 	}
 
 	@Override
@@ -88,21 +86,13 @@ public class DummyUser {
 		if (getClass() != obj.getClass())
 			return false;
 		DummyUser other = (DummyUser) obj;
-		if (firstName == null) {
-			if (other.firstName != null)
-				return false;
-		} else if (!firstName.equals(other.firstName))
-			return false;
-		if (id != other.id)
-			return false;
-		if (lastname == null) {
-			if (other.lastname != null)
-				return false;
-		} else if (!lastname.equals(other.lastname))
-			return false;
-		return true;
+		return Objects.equals(firstName, other.firstName) && id == other.id && Objects.equals(lastName, other.lastName);
 	}
 
+	@Override
+	public String toString() {
+		return "DummyUser [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
 	
 	
 	

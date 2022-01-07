@@ -6,61 +6,33 @@
 	<artifactId>SpringCore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<!-- This makes my project modular by providing a central location to update 
 			the version of Spring Dependencies from the Spring Framework Family that 
-<<<<<<< HEAD
-			I include -->
-=======
 			I might include -->
->>>>>>> main
 		<spring.version>5.3.9</spring.version>
 	</properties>
 
 	<dependencies>
 
-<<<<<<< HEAD
+
 		<!-- Spring Context (This contains Spring Core which is Spring's IoC container -->
-=======
-		<!-- Spring Context (This contains Spring Core which is Spring's IoC container) -->
->>>>>>> main
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-<<<<<<< HEAD
+
 		<!--  -->
 		<dependency> <!-- SLF4j A -->
-=======
-
-
-<!-- SLF4J or Simple logging Facade for Java is not really a logging implementation, 
-		instead, it's an abstraction layer, which allows you to use any logging library 
-		in the back-end. 
-		
-		SLF4J makes your code independent of any particular logging API, which 
-		is a good thing for public API developers.-->
-		
-<!-- Read more: https://javarevisited.blogspot.com/2013/08/why-use-sl4j-over-log4j-for-logging-in.html#ixzz7Gt0pxKD2 -->
-		<dependency> <!--  SLF4J API -->
->>>>>>> main
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
-=======
-		<dependency> <!--  Binding Dependency (Bridge) to Log4j -->
->>>>>>> main
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.25</version>
@@ -73,10 +45,4 @@
 
 
 	</dependencies>
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 </project>

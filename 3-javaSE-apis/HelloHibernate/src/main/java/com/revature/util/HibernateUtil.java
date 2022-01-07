@@ -7,28 +7,31 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 	
 	/**
-	 * THe purpose of the HibernateUtil.java Helper File 
-	 * is to handle startup (DB connection) and access Hibernate's 
-	 * SessionFactory interface to obtain a Session Object.
+	 * The purpose of the HibernateUtil.java helper file
+	 * is to handle the startup (DB connection) and access Hibernate's
+	 * SessionFactory interface to obtain a Session object.
 	 */
-
-	private static Session ses; // This is like the Connection Interface from JDBC
+	
+	private static Session ses; // This is like the connection interface from JDBC
 	
 	/**
-	 * We will use SessionFactory interface to create a configuration object which will 
-	 * call the .configure method to establish the connection to the DB based on the creds we supplied in that file
+	 * We will use SessionFactory interface to create a configuration object which will
+	 * call the .configure method to establish the connection to the DB based on the creds
+	 * we supplied in that file.
 	 */
+	
 	private static SessionFactory sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+	
 	
 	/**
 	 * The getSession() method is called in the DAO layer.
 	 * This method obtains a JDBC connection which we can use
-	 * to perform a transaction on our Database.
+	 * to perform a transaction on our database.
 	 */
-	public static Session getSession() { // similar to getCOnnection()
+	public static Session getSession() { // similar to getConnection()
 		
 		if (ses == null) {
-			ses =  sf.openSession();
+			ses = sf.openSession();
 		}
 		
 		return ses;
@@ -43,6 +46,7 @@ public class HibernateUtil {
 		 * by another thread or operation.
 		 */
 		ses.close();
-		
 	}
+	
+	
 }

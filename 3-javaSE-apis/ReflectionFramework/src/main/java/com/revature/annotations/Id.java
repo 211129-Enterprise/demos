@@ -6,7 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * We use this annotation to determine primary keys
+ * We use this annnotation to determine primary keys
+ *
  */
 
 @Target(ElementType.FIELD)
@@ -14,5 +15,5 @@ import java.lang.annotation.Target;
 public @interface Id {
 	
 	String columnName();
-
+	
 }

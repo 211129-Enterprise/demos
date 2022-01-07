@@ -1,41 +1,40 @@
 package com.revature.models;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
-import javax.persistence.Entity; // this is a the JPA sepcification package
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-// JPA Is the Java Persistance API 
+// JPA is the Java Persistance API
 
 @Entity
 @Table(name="crimes") // now the table will show up as "crimes" instead of crime (the name of the class) in the database
 public class Crime {
 	
-	@Id // ID annotation specifies a primary key
+	@Id // ID Annotation specifies primary key
 	@Column(name="crime_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY) // this is equivelent to the SERIAL keyword
+	@GeneratedValue(strategy=GenerationType.IDENTITY)// this is equivalent to the Serial keyword 
 	private int crimeId;
-	
-	@Column(name="crime_name", unique=true, nullable=false) // setting extra constraints to the column
+	@Column(name="crime_name",unique=true, nullable=false) // setting extra constraints to the column
 	private String crimeName;
-	
-	// this will automatically be created as a column called "description"
+	//This will automatically be created as a column called "description"
 	private String description;
 	
-	// 3 constructors: a no-args, one with an initialized id field, and one without
+	// 3 constructors: no-args, without id, with id
 	public Crime() {
 		
-		
 	}
-
+	
 	public Crime(String crimeName, String description) {
 		super();
 		this.crimeName = crimeName;
 		this.description = description;
 	}
-
+	
 	public Crime(int crimeId, String crimeName, String description) {
 		super();
 		this.crimeId = crimeId;
@@ -69,12 +68,7 @@ public class Crime {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + crimeId;
-		result = prime * result + ((crimeName == null) ? 0 : crimeName.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		return result;
+		return Objects.hash(crimeId, crimeName, description);
 	}
 
 	@Override
@@ -86,19 +80,8 @@ public class Crime {
 		if (getClass() != obj.getClass())
 			return false;
 		Crime other = (Crime) obj;
-		if (crimeId != other.crimeId)
-			return false;
-		if (crimeName == null) {
-			if (other.crimeName != null)
-				return false;
-		} else if (!crimeName.equals(other.crimeName))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		return true;
+		return crimeId == other.crimeId && Objects.equals(crimeName, other.crimeName)
+				&& Objects.equals(description, other.description);
 	}
 
 	@Override
@@ -107,8 +90,4 @@ public class Crime {
 	}
 	
 	
-	
-	
-	
-
 }

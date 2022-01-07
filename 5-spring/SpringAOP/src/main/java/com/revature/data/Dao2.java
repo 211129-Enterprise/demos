@@ -2,9 +2,6 @@ package com.revature.data;
 
 import org.springframework.stereotype.Repository;
 
-<<<<<<< HEAD
-@Repository
-=======
 /**
  * The Spring @Repository annotation is a specialization of the @Component
  * annotation which indicates that an annotated class is a �Repository�, which
@@ -12,7 +9,6 @@ import org.springframework.stereotype.Repository;
  * behavior which emulates a collection of objects.
  */
 @Repository 
->>>>>>> main
 public class Dao2 {
 
 	public String retrieveSomething() {
@@ -20,8 +16,4 @@ public class Dao2 {
 		return "Dao2";
 		
 	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> main
 }

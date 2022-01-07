@@ -9,32 +9,24 @@ import org.hibernate.criterion.Restrictions;
 import com.revature.models.SuperVillain;
 import com.revature.util.HibernateUtil;
 
-/**
- * 3 different ways to wrtie complex queries
- * 
- * - HQL - Hibernate Query Language
- * - Criteria API 
- * - Native SQL 
- *
- */
 public class SuperVillainDAO {
 	
-	public int insert(SuperVillain svill) {
+	public int insert(SuperVillain sVill) {
 		
 		Session ses = HibernateUtil.getSession();
 		Transaction tx = ses.beginTransaction();
 		
-		int pk = (int) ses.save(svill);
+		int pk = (int) ses.save(sVill);
+		
 		
 		tx.commit();
-		return pk; // reutrn the auto-generated PK
+		return pk;
+		
 	}
 	
 	// select all
 	public List<SuperVillain> selectAll() {
-		
-		// HQL - Hibernate Query Language
-		
+
 		Session ses = HibernateUtil.getSession();
 		
 		/**
@@ -45,6 +37,7 @@ public class SuperVillainDAO {
 		// HQL will return instances of the SuperVillain.java class
 		
 		return villList;
+		
 	}
 	
 	public SuperVillain selectByName(String name) {
@@ -53,29 +46,30 @@ public class SuperVillainDAO {
 		/**
 		 * Native SQL querying
 		 */
-//		SuperVillain vill = (SuperVillain) ses.createNativeQuery("SELECT * FROM super_villains WHERE svill_name = '" +name+ "'", SuperVillain.class);
+//		SuperVillain vill = (SuperVillain) ses.createNativeQuery("SELECT * FROM super_villains WHERE svill_name = '" + name + "'", SuperVillain.class);
 		
 		/**
 		 * Criteria API
 		 */
+		
 //		SuperVillain vill = (SuperVillain) ses.createCriteria(SuperVillain.class).add(Restrictions.like("svill_name", name));
 		
 		/**
-		  * HQL - Hibernate Query Language 
-		  * */
-		SuperVillain vill = (SuperVillain) ses.createQuery("from SuperVillain where name = '" +name+"'", SuperVillain.class);
-		
+		 * HQL
+		 */
+		SuperVillain vill = (SuperVillain) ses.createQuery("from SuperVillain where name ='"+name+"'", SuperVillain.class);
 		
 		return vill;
 	}
 	
 	public void update(SuperVillain vill) {
-		
 		Session ses = HibernateUtil.getSession();
+		
 		Transaction tx = ses.beginTransaction();
 		
 		ses.update(vill);
 		
 		tx.commit();
 	}
+	
 }

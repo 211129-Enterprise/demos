@@ -8,13 +8,13 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JoinColumn {
-	
+
 	String columnName();
 	
 	/**
 	 * The ForeignKeyField.java Class is used to introspect
-	 * classes who have properties with the @JoinColumn annotation
+	 * classes that have properties with the @JoinColumn annotation
 	 * and construct a ForeignKeyField object.
 	 */
-
+	
 }

@@ -2,23 +2,15 @@ package com.revature.lambdas;
 
 import java.util.Objects;
 
-// POJO
-public class Employee { // implement serializable if this were a bean
+public class Employee {
 
 	private String name;
 	private int age;
-
-	// no -args constructor if it were a java bean
 	
 	public Employee(String name, int age) {
 		super();
 		this.name = name;
 		this.age = age;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [name=" + name + ", age=" + age + "]";
 	}
 
 	public String getName() {
@@ -36,7 +28,7 @@ public class Employee { // implement serializable if this were a bean
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+		
 	@Override
 	public int hashCode() {
 		return Objects.hash(age, name);
@@ -54,6 +46,9 @@ public class Employee { // implement serializable if this were a bean
 		return age == other.age && Objects.equals(name, other.name);
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", age=" + age + "]";
+	}
+	
 }

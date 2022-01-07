@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,15 +18,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="super_villains")
 public class SuperVillain {
-	
 	@Id
 	@Column(name="svill_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int svillId;
+	private int sVillId;
 	
 	@Column(name="svill_name", unique=true, nullable=false)
-	private String svillName;
-	
+	private String sVillName;
 	@Column(name="super_power")
 	private String superPower;
 	
@@ -34,52 +33,51 @@ public class SuperVillain {
 	// separate joins table would best describe this relationship
 	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY) // Lazy fetching means that the data won't be loaded into memory until we call getCrimes();
 	private List<Crime> crimes;
-
-	// This will be a foreign key pointing ot some record of a SuperPrison in our SuperPrisons table
+	
+	// This will be a foreign key pointing to some record of a SuperPrison in our SuperPrisons table
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="prison_fk")
-	private SuperPrison superPrisonHolder; // this is a foreign key pointing to the super prison where the super villain
-	
+	private SuperPrison superPrisonHolder; // this is a foreign key pointing to the superprison where the supervillain
 	
 	public SuperVillain() {
 		
 	}
 
-	public SuperVillain(String svillName, String superPower, double bounty, List<Crime> crimes,
+	public SuperVillain(String sVillName, String superPower, double bounty, List<Crime> crimes,
 			SuperPrison superPrisonHolder) {
 		super();
-		this.svillName = svillName;
+		this.sVillName = sVillName;
+		this.superPower = superPower;
+		this.bounty = bounty;
+		this.crimes = crimes;
+		this.superPrisonHolder = superPrisonHolder;
+	}
+	
+	public SuperVillain(int sVillId, String sVillName, String superPower, double bounty, List<Crime> crimes,
+			SuperPrison superPrisonHolder) {
+		super();
+		this.sVillId = sVillId;
+		this.sVillName = sVillName;
 		this.superPower = superPower;
 		this.bounty = bounty;
 		this.crimes = crimes;
 		this.superPrisonHolder = superPrisonHolder;
 	}
 
-	public SuperVillain(int svillId, String svillName, String superPower, double bounty, List<Crime> crimes,
-			SuperPrison superPrisonHolder) {
-		super();
-		this.svillId = svillId;
-		this.svillName = svillName;
-		this.superPower = superPower;
-		this.bounty = bounty;
-		this.crimes = crimes;
-		this.superPrisonHolder = superPrisonHolder;
+	public int getsVillId() {
+		return sVillId;
 	}
 
-	public int getSvillId() {
-		return svillId;
+	public void setsVillId(int sVillId) {
+		this.sVillId = sVillId;
 	}
 
-	public void setSvillId(int svillId) {
-		this.svillId = svillId;
+	public String getsVillName() {
+		return sVillName;
 	}
 
-	public String getSvillName() {
-		return svillName;
-	}
-
-	public void setSvillName(String svillName) {
-		this.svillName = svillName;
+	public void setsVillName(String sVillName) {
+		this.sVillName = sVillName;
 	}
 
 	public String getSuperPower() {
@@ -113,19 +111,11 @@ public class SuperVillain {
 	public void setSuperPrisonHolder(SuperPrison superPrisonHolder) {
 		this.superPrisonHolder = superPrisonHolder;
 	}
-
+	
+	
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(bounty);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((crimes == null) ? 0 : crimes.hashCode());
-		result = prime * result + ((superPower == null) ? 0 : superPower.hashCode());
-		result = prime * result + svillId;
-		result = prime * result + ((svillName == null) ? 0 : svillName.hashCode());
-		return result;
+		return Objects.hash(bounty, crimes, sVillId, sVillName, superPower, superPrisonHolder);
 	}
 
 	@Override
@@ -137,34 +127,17 @@ public class SuperVillain {
 		if (getClass() != obj.getClass())
 			return false;
 		SuperVillain other = (SuperVillain) obj;
-		if (Double.doubleToLongBits(bounty) != Double.doubleToLongBits(other.bounty))
-			return false;
-		if (crimes == null) {
-			if (other.crimes != null)
-				return false;
-		} else if (!crimes.equals(other.crimes))
-			return false;
-		if (superPower == null) {
-			if (other.superPower != null)
-				return false;
-		} else if (!superPower.equals(other.superPower))
-			return false;
-		if (svillId != other.svillId)
-			return false;
-		if (svillName == null) {
-			if (other.svillName != null)
-				return false;
-		} else if (!svillName.equals(other.svillName))
-			return false;
-		return true;
+		return Double.doubleToLongBits(bounty) == Double.doubleToLongBits(other.bounty)
+				&& Objects.equals(crimes, other.crimes) && sVillId == other.sVillId
+				&& Objects.equals(sVillName, other.sVillName) && Objects.equals(superPower, other.superPower)
+				&& Objects.equals(superPrisonHolder, other.superPrisonHolder);
 	}
 
 	@Override
 	public String toString() {
-		return "SuperVillain [svillId=" + svillId + ", svillName=" + svillName + ", superPower=" + superPower
-				+ ", bounty=" + bounty + ", crimes=" + crimes + "]";
+		return "SuperVillain [sVillId=" + sVillId + ", sVillName=" + sVillName + ", superPower=" + superPower
+				+ ", bounty=" + bounty + ", crimes=" + crimes + ", superPrisonHolder=" + superPrisonHolder + "]";
 	}
-	
 	
 	
 	
