@@ -122,4 +122,11 @@ public class MetaModel<T> { // we're inferring that the MetaModel class can only
 		return clazz.getName();
 	}
 	
+<<<<<<< Updated upstream:3-JavaSE-apis/ReflectionFramework/src/main/java/com/revature/util/MetaModel.java
+=======
+	public String getTableName() {
+		return !this.clazz.getAnnotation(Entity.class).tableName().isBlank() ? this.clazz.getAnnotation(Entity.class).tableName() : this.getSimpleClassName().replaceAll("([a-z])([A-Z]+)","$1_$2").toLowerCase() + "s" ;
+	}
+
+>>>>>>> Stashed changes:3-javaSE-apis/ReflectionFramework/src/main/java/com/revature/util/MetaModel.java
 }

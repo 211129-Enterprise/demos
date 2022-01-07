@@ -7,18 +7,25 @@ import com.revature.annotations.Entity;
 import com.revature.annotations.Id;
 import com.revature.annotations.JoinColumn;
 
-@Entity(tableName="users")
+@Entity(tableName="")
 public class DummyUser {
 	
 	@Id(columnName="user_id") // this has been marked as a primary key
 	private int id;
 	
-	@Column(columnName="first_name")
+	@Column(columnName="       ")
 	private String firstName;
 	
 	@Column(columnName="last_name")
 	private String lastName;
 	
+<<<<<<< Updated upstream:3-JavaSE-apis/ReflectionFramework/src/main/java/com/revature/demomodels/DummyUser.java
+=======
+	@Column(columnName="healthy")
+	private boolean healthy;
+	
+	// this is an example of how we might define a property that serves as a foreign key
+>>>>>>> Stashed changes:3-javaSE-apis/ReflectionFramework/src/main/java/com/revature/demomodels/DummyUser.java
 	@JoinColumn(columnName="test_relation")
 	private DummyOtherClass testRelation;
 	

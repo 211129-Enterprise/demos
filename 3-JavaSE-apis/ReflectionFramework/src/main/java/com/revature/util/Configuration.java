@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The purpose of this class is to have the User only provide a few
@@ -39,8 +40,13 @@ public class Configuration {
 	
 	public List<MetaModel<Class<?>>> getMetaModels() {
 		
+<<<<<<< Updated upstream:3-JavaSE-apis/ReflectionFramework/src/main/java/com/revature/util/Configuration.java
 		// in the case that the metaModelList of the Configuration object is empty, return an empty list
 		// otherwise, return the metaModelList
+=======
+		// in the case that the metaModelList of the Configuration object is empty, return an empty list.
+		// otherwise, return the metaModelList.
+>>>>>>> Stashed changes:3-javaSE-apis/ReflectionFramework/src/main/java/com/revature/util/Configuration.java
 		return (metaModelList == null) ? Collections.emptyList() : metaModelList;
 	}
 	
@@ -57,4 +63,17 @@ public class Configuration {
 		return null;
 	}
 	
+<<<<<<< Updated upstream:3-JavaSE-apis/ReflectionFramework/src/main/java/com/revature/util/Configuration.java
+=======
+	public MetaModel<Class<?>> getMetaModel(Class desired) {
+		Optional<MetaModel<Class<?>>> metaModel = null;
+		
+		metaModel = metaModelList.stream().filter( m -> !m.getSimpleClassName().equals(desired.getSimpleName()))
+					.findFirst();
+	
+		return !metaModel.isPresent() ? metaModel.get() : null;
+	}
+	
+
+>>>>>>> Stashed changes:3-javaSE-apis/ReflectionFramework/src/main/java/com/revature/util/Configuration.java
 }
