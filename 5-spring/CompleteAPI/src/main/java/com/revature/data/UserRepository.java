@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.revature.model.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>{
+public interface UserRepository extends JpaRepository<User, Integer>{ // JPA extends PagingAndSortingRepository which extends CrudRepo
 
 	// automatically remember  that Spring Data JPA
 	Optional<User> findByUsername(String username); // property expressions! Srping Data JPA infers the SQL statement
