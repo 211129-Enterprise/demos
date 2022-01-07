@@ -55,6 +55,7 @@ function addUser() {
         }
     }
 
+    // we send the whole object to our controller at http:localhost:5000/api/users/add
     fetch(postUrl, request)
         .then(res => res.json())
         .then(res => console.log(res)); // print out the response from the server to the console of our dev toos

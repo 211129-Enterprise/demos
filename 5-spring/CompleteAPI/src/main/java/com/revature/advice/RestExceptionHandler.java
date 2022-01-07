@@ -52,6 +52,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler{
 	
 	/**
 	 * Intercept exceptions cause by Validation issues
+	 * 
+	 * If the User passed to the controller's add() method
 	 */
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(
