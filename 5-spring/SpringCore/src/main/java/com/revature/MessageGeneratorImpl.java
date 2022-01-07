@@ -1,6 +1,6 @@
 package com.revature;
 
-import javax.annotation.PostConstruct;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
 	private Game game;
 	
 	// == public methods ==
-	@PostConstruct // Spring Bean Life Cycle callback
+//	@PostConstruct // Spring Bean Life Cycle callback
 	public void init() { // As SOON as DI is fulfilled, that's when this method will be called
 		log.info("DI has finished, and the game = {}", game);
 	}

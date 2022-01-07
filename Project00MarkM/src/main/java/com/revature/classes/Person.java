@@ -2,18 +2,47 @@ package com.revature.classes;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="customer")
 public abstract class Person {
 	
-	private int id; 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(name="first_name", columnDefinition="VARCHAR(20)")
 	private String firstName;
+	
+	@Column(name="middle_initial", columnDefinition="VARCHAR(1)")
 	private String middleInitial;
+	
+	@Column(name="last_name", columnDefinition="VARCHAR(25)")
 	private String lastName;
-	protected static int accountRanking;
-	protected int creditCheck;
+	
+	@Column(name ="acc_ranking", columnDefinition="Number(1,0)", updatable=false)
+	private int accountRanking;
+	
+	@Column(name ="credit_check")
+	private int creditCheck;
+	
+	@Column(name="social_security", updatable=false, columnDefinition="VARCHAR(9)", unique=true)
 	private String socialSecurity;
+	
+	@Column(name="user_name", columnDefinition="VARCHAR(15)", unique=true)
 	private String userName;
-	private String passWord;
-	private boolean active;
+	
+	@Column(name="pwd", columnDefinition="VARCHAR(25)")
+	private String passWord; 
+	
+	@Column(name="active", updatable=true, columnDefinition="BOOLEAN", nullable=false)
+	private Boolean active;
 	
 	//General Constructor============================================================================
 	public Person() {

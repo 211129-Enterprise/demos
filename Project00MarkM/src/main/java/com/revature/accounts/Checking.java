@@ -7,28 +7,57 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.revature.classes.Administrator;
 import com.revature.classes.Customers;
 import com.revature.classes.Employee;
 
+@Entity
+@Table(name="account")
 public class Checking implements Serializable, List<Checking>  {
 	
+	private static final long serialVersionUID = 1098420551338136533L;
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	private boolean isActive;
+	
+	@Column(name="active", updatable=true, columnDefinition="BOOLEAN", nullable=false)
+	private Boolean active;
+	
+	@Column(name="balance", columnDefinition="BigInteger(15,2)", updatable=true)
 	private double balance;
+	
+	@Column(name="account_number", updatable=false, unique = true, nullable=false)
 	private String number;
+	
+	@Column(name="account_type", updatable=false)
 	private AccountType accountType;
+	
+	
 	private List<Customers> customers = new LinkedList<Customers>();
+	
 	private List<Employee> employee = new LinkedList<Employee>();
+	
 	private List<Administrator> administrator = new LinkedList<Administrator>();
+	
+	
 	//Constructors==========================================================================================
 	public Checking() {
 		super();
 	}
-	public Checking(int id, String number, double balance, AccountType accountType, boolean isActive) {
+	public Checking(int id, String number, double balance, AccountType accountType, boolean active) {
 		super();
 		this.id = id;
-		this.isActive = isActive;
+		this.active = active;
 		this.balance = balance;
 		this.number = number;
 		this.accountType = accountType;
@@ -38,7 +67,7 @@ public class Checking implements Serializable, List<Checking>  {
 	public Checking(int id, boolean isActive, double balance, String number, AccountType accountType) {
 		super();
 		this.id = id;
-		this.isActive = isActive;
+		this.active = isActive;
 		this.balance = balance;
 		this.number = number;
 		this.accountType = accountType;
@@ -47,7 +76,7 @@ public class Checking implements Serializable, List<Checking>  {
 			, List<Employee> employee, List<Administrator> administrator) {
 		super();
 		this.id = id;
-		this.isActive = isActive;
+		this.active = isActive;
 		this.balance = balance;
 		this.number = number;
 		this.accountType = accountType;
@@ -59,7 +88,7 @@ public class Checking implements Serializable, List<Checking>  {
 	//toString===============================================================================================
 	@Override
 	public String toString() {
-		return "Checking [id=" + id + ", isActive=" + isActive + ", balance=" + balance
+		return "Checking [id=" + id + ", isActive=" + active + ", balance=" + balance
 				+ ", number=" + number + ", accountType=" + accountType + "]";
 	}
 
@@ -73,10 +102,10 @@ public class Checking implements Serializable, List<Checking>  {
 	}
 	
 	public boolean isActive() {
-		return isActive;
+		return active;
 	}
 	public void setActive(boolean isActive) {
-		this.isActive = isActive;
+		this.active = isActive;
 	}
 	public double getBalance() {
 		return balance;
@@ -119,7 +148,7 @@ public class Checking implements Serializable, List<Checking>  {
 	//hash code and equals ==================================================================================
 	@Override
 	public int hashCode() {
-		return Objects.hash(accountType, balance, id, isActive, number);
+		return Objects.hash(accountType, balance, id, active, number);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -132,7 +161,7 @@ public class Checking implements Serializable, List<Checking>  {
 		Checking other = (Checking) obj;
 		return accountType == other.accountType
 				&& Double.doubleToLongBits(balance) == Double.doubleToLongBits(other.balance) && id == other.id
-				&& isActive == other.isActive && Objects.equals(number, other.number);
+				&& active == other.active && Objects.equals(number, other.number);
 	}
 	
 	

@@ -76,6 +76,7 @@ public class AccountDAO implements IAccountDAO {
 				if (((rs = stmt1.executeQuery()) != null) && ((rs1 = stmt.executeQuery()) != null)) {
 					rs1.next();
 					rs.next();
+					@SuppressWarnings("unused")
 					int id = rs1.getInt(1);
 					return p;
 				}
@@ -109,6 +110,7 @@ public class AccountDAO implements IAccountDAO {
 				if (((rs = stmt1.executeQuery()) != null) && ((rs1 = stmt.executeQuery()) != null)) {
 					rs1.next();
 					rs.next();
+					@SuppressWarnings("unused")
 					int id = rs1.getInt(1);
 					return f;
 				}
@@ -143,6 +145,7 @@ public class AccountDAO implements IAccountDAO {
 				if (((rs = stmt1.executeQuery()) != null) && ((rs1 = stmt.executeQuery()) != null)) {
 					rs1.next();
 					rs.next();
+					@SuppressWarnings("unused")
 					int id = rs1.getInt(1);
 					return l;
 				}
@@ -220,6 +223,7 @@ public class AccountDAO implements IAccountDAO {
 	// APPROVE=================================================================================================
 	public double update(double newBalance, int id) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
+			@SuppressWarnings("unused")
 			Customers c = new Customers();
 
 			String sql = "UPDATE bank SET balance = ? WHERE id = ?";
@@ -338,8 +342,10 @@ public class AccountDAO implements IAccountDAO {
 	@Override
 	public boolean approve(int id) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
+			@SuppressWarnings("unused")
 			Customers c = new Customers();
 			String sql = "UPDATE accounts SET active = ? WHERE id = ?";
+			@SuppressWarnings("unused")
 			boolean denied = false;
 			boolean approved = true;
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -360,8 +366,10 @@ public class AccountDAO implements IAccountDAO {
 	@Override
 	public boolean deny(int id) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
+			@SuppressWarnings("unused")
 			Customers c = new Customers();
 			String sql = "UPDATE accounts SET active = ? WHERE id = ?";
+			@SuppressWarnings("unused")
 			boolean denied = false;
 			boolean approved = true;
 			PreparedStatement stmt = conn.prepareStatement(sql);

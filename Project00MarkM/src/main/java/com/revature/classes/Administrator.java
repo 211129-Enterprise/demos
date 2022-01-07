@@ -3,14 +3,28 @@ package com.revature.classes;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.revature.accounts.Checking;
 import com.revature.util.Role;
 
+@Entity
+@Table(name="customer")
 public class Administrator extends Person implements Serializable {
 	
-	static int accountRanking = 3;
+	private static final long serialVersionUID = -7454619768107080653L;
+
+	@Column(name ="acc_ranking", columnDefinition="Number(1,0)", updatable=false)
+	private int accountRanking = 3;
+	
+	@Column(name="account_ranking", updatable=false)
 	private Role role;
+	
 	private List<Checking> accounts;
+	
 	
 	//constructors======================================================================================================
 	public Administrator() {

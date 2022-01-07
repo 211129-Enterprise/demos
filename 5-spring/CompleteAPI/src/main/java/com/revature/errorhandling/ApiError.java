@@ -34,28 +34,75 @@ public class ApiError {
 	}
 
 	public ApiError(HttpStatus status) {
-		super();
+		this();
 		this.status = status.value();
 		this.error = status.getReasonPhrase();
-	}
+	}	
 
 	public ApiError(HttpStatus status, Throwable ex) {
-		super();
+		this(status);
 		this.message = "No message available";
 		this.debugMessage = ex.getLocalizedMessage();
+	}
+	
+	public ApiError(HttpStatus status, String message, Throwable ex) {
+		this(status, ex);
+		this.message = message;
 	}
 	
 	public void addSubError(ApiSubError err) {
 		this.subErrors.add(err);
 
 	}
+
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getDebugMessage() {
+		return debugMessage;
+	}
+
+	public void setDebugMessage(String debugMessage) {
+		this.debugMessage = debugMessage;
+	}
+
+	public List<ApiSubError> getSubErrors() {
+		return subErrors;
+	}
+
+	public void setSubErrors(List<ApiSubError> subErrors) {
+		this.subErrors = subErrors;
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
+
 }

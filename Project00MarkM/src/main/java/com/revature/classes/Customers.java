@@ -3,15 +3,28 @@ package com.revature.classes;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.revature.accounts.Checking;
 import com.revature.util.Role;
 
+@Entity
+@Table(name="customer")
 public class Customers extends Person implements Serializable {
 
-	static int accountRanking = 1;
+	private static final long serialVersionUID = -6755322236624519095L;
+	
+	@Column(name ="acc_ranking", columnDefinition="Number(1,0)", updatable=false)
+	private int accountRanking = 1;
+	
+	@Column(name="account_ranking", updatable=false)
 	private Role role;
+	
 	private List<Checking> accounts;
-
+	
 	// Constructor
 	// ===================================================================================
 	public Customers() {
@@ -36,8 +49,6 @@ public class Customers extends Person implements Serializable {
 	
 	// Getters &
 	// setters===============================================================================
-
-
 	public int getaccountRanking() {
 		return accountRanking;
 	}

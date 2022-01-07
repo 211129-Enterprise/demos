@@ -10,7 +10,7 @@ public class ApiValidationError extends ApiSubError{
 	private String object; // the Type of object
 	private String field; // field name
 	private Object rejectedValue; // the entire object that couldn't pass
-	private String reason;
+	private String reason; // why the obj couldn't pass
 	
 	public ApiValidationError(String object, String reason) {
 		this.object = object;
@@ -22,7 +22,8 @@ public class ApiValidationError extends ApiSubError{
 		this.field = field;
 	}
 
-	public ApiValidationError(String object, String field, Object rejectedValue, String reason) {
+	// I switched the order of reason and rejectedValue in the constructor's param order
+	public ApiValidationError(String object, String field, String reason, Object rejectedValue) {
 		this(object, reason, field);
 		this.rejectedValue = rejectedValue;
 
