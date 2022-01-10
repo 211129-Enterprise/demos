@@ -28,9 +28,9 @@ public class UserController {
 	
 	// a GET request to the above URL
 	@GetMapping
-	public Set<User> getAll() {
+	public ResponseEntity<Set<User>> getAll() {
 		// Spring Boot web starter has Jackson Object Mapper automatically built in so this willbe returned as JSON
-		return userServ.findAll(); // findAll() from userService!
+		return ResponseEntity.ok(userServ.findAll()); // findAll() from userService!
 	}
 	
 	@GetMapping("/find/{username}")  // localhost:5000/users/find/spongebob <- we extract this parameter
