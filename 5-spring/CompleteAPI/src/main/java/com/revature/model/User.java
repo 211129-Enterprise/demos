@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email; // Java Persistence API
 import javax.validation.constraints.NotBlank;
@@ -64,6 +65,11 @@ public class User {
     inverseJoinColumns = @JoinColumn(name = "address_id"))
     @JsonView(JsonViewProfiles.User.class)
 	private Set<Address> addresses;
+    
+    
+    // One user may have many Pokemon
+    @OneToMany
+    private Set<Pokemon> pokemon;
 
 	public User(@Length(min = 1) String firstName, String lastName,
 			@Length(min = 5) @NotBlank @Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") String username,
