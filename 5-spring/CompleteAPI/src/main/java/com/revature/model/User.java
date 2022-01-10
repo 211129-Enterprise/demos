@@ -62,7 +62,7 @@ public class User {
     joinColumns = @JoinColumn(name= "user_id"),
     inverseJoinColumns = @JoinColumn(name = "address_id"))
 	@JsonView(JsonViewProfiles.User.class)
-	private Set<Address> addresses; // this is 
+	private Set<Address> addresses; // this points to the property that is inversely mapped within 
 
 	// constructor without an id field
 	public User(@Length(min = 2) String firstName, String lastName,

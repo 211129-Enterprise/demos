@@ -18,7 +18,7 @@ import com.revature.model.User;
 import com.revature.service.UserService;
 
 // Component-> Controller -> RestController (Very specific type of SteroType Annotation)
-@RestController // automatically infers that the return vlaue of all methods below will be within the HttpResponse body
+@RestController // automatically infers that the return value of all methods below will be within the HttpResponse body
 @RequestMapping("/users") // all methods available at localhost:5000/users...
 public class UserController {
 	
@@ -44,7 +44,7 @@ public class UserController {
 	// POST - add()
 	@PostMapping("/add")
 	public ResponseEntity<User> addUser(@Valid @RequestBody User u) { // valid annotation ensures that we can only accept a VALID user object
-		// will reutrn the newly added User object in JSON
+		// will return the newly added User object in JSON
 		return ResponseEntity.ok(userServ.add(u)); 
 	}
 	
@@ -59,8 +59,4 @@ public class UserController {
 	public void removeUser(@PathVariable("id") int id) {
 		userServ.remove(id);
 	}
-	// Complete these methods
-	// fill out the applciaiton.properties file to include a database - connect to H2
-	// Test with Postman
-	// ad dcusomt eexception handling
 }

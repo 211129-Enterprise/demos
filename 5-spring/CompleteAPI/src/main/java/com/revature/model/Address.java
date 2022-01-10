@@ -44,9 +44,6 @@ public class Address {
 	private @NonNull String zip; // 07033-0102
 
 	@ManyToMany(mappedBy="addresses") // this will be the name of the prop in User.java
-	@JsonView(JsonViewProfiles.Address.class)
+	@JsonView(JsonViewProfiles.Address.class) // https://stackoverflow.com/questions/67886252/spring-boot-jpa-infinite-loop-many-to-many
 	private @NonNull Set<User> owners; // create an addresses field in the User class
-	
-	// https://stackoverflow.com/questions/67886252/spring-boot-jpa-infinite-loop-many-to-many
-
 }
