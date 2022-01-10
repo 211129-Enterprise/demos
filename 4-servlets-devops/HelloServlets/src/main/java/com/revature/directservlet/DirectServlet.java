@@ -2,6 +2,9 @@ package com.revature.directservlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +21,19 @@ public class DirectServlet extends HttpServlet {
 	 */
 	
 	// init() is called 
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public static int[] solution(int[] data, int n) {
+		LinkedList<Integer> a = new LinkedList<Integer>();
+		for(int i : data) {
+			a.add(i);
+		}
+		
+		return Arrays.stream(data).filter(m -> (Collections.frequency(a, m) <=n)).toArray();
+	}
 	
 	
 	
