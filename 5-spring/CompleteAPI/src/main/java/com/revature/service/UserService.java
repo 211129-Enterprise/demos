@@ -24,8 +24,6 @@ public class UserService {
 	 *                being called, we want to make sure that those methods are
 	 *                fired against the DB in one unit of work (transaction).
 	 */
-
-	
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
@@ -35,13 +33,13 @@ public class UserService {
 	AddressRepository addressRepo;
 	
 	// why a Set? no duplicates!
-//	@Transactional(readOnly=true)
+	@Transactional(readOnly=true)
 	public Set<User> findAll() {
 		// return from the UserRepository the findAll() method but Stream it to a set
 		return userRepo.findAll().stream().collect(Collectors.toSet());
 	}
 	
-//	@Transactional(readOnly=true)
+	@Transactional(readOnly=true)
 	public User getByUsername(String username) {
 		
 		// add a logging statement to check that username isn't empty
@@ -52,7 +50,7 @@ public class UserService {
 	}
 	
 	
-//	@Transactional(readOnly=true)
+	@Transactional(readOnly=true)
 	public User getById(int id) {
 		
 		if (id <= 0) {
@@ -74,7 +72,7 @@ public class UserService {
 		return userRepo.save(u);
 	}
 	
-//	@Transactional(propagation=Propagation.REQUIRED) // defaults setting of transactions in Spring
+	@Transactional(propagation=Propagation.REQUIRED) // defaults setting of transactions in Spring
 	public void remove(int id) { // JpaRespoitory is an interfaces that EXTENDS CrudRepository
 		userRepo.deleteById(id);
 	}

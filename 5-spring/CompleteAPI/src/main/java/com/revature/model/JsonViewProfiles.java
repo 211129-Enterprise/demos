@@ -19,5 +19,9 @@ public class JsonViewProfiles {
 		
 	}
 	
+	public static class Pokemon {
+		
+	}
+	
 
 }
