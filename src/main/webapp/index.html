@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Awesome App</title>
+<style>
+
+body {
+	background-color: light-blue;
+	font-family: "Gill Sans", sans-serif;
+}
+
+</style>
+</head>
+<body>
+	<h1>Welcome Employee!</h1>
+	<h3>Please log in below</h3>
+	<!--  POST requests obfuscate the parameters from the search bar unlike a GET request-->
+	<form method="POST" action="login">
+		<label>Username:</label>
+		<input type="text" name="username" placeholder="Enter your username:">
+		
+		<br />
+		
+		<label>Password:</label>
+		<input type="text" name="pwd" placeholder="Enter your password:">
+		<button type="submit">Login!</button>
+	</form>
+	
+	<form method="GET" action="employees">
+		<p> To see all Employees in the system please click below. </p>
+		<input type="submit" value="Click me!">
+	
+	</form>
+	
+</body>
+</html>
