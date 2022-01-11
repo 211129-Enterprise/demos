@@ -2,7 +2,7 @@
 
 <br>
 
-# Week 6: HTML/CSS/JavaScript
+# Week 6: HTML, CSS, JavaScript & the DOM
 *These are the general topics that you should look into.  Refer to our class notes or [Google](https://www.google.com/) for continued study*
 
 <br>
