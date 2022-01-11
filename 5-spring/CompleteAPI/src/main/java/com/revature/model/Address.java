@@ -20,9 +20,11 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(name="addresses")
@@ -37,20 +39,27 @@ public class Address {
 	@JsonView({ JsonViewProfiles.User.class, JsonViewProfiles.Address.class })
 	private int id;
 	
-	private @NonNull String street; // 22 Pine St.
-	private @NonNull String secondary; // Apt. 3
+	private String street; // 22 Pine St.
+	private String secondary; // Apt. 3
 	
 	@Length(min=2, max=2)
 	private @NonNull String state; // NJ
 	
-	private @NonNull String city; // Trenton
-	private @NonNull String zip; // 07033-0102
+	private String city; // Trenton
+	private String zip; // 07033-0102
 
-	@ManyToMany(mappedBy="addresses") // this will be the name of the prop in User.java
-	@JsonView(JsonViewProfiles.Address.class)
-	private @NonNull Set<User> owners; // create an addresses field in the User class
-	
+	@ManyToMany(mappedBy = "addresses") // this will be the name of the prop in User.java
+	@JsonView(JsonViewProfiles.Address.class) // https://stackoverflow.com/questions/67886252/spring-boot-jpa-infinite-loop-many-to-many
+	private Set<User> owners; // create an addresses field in the User class
+
 
 	// https://stackoverflow.com/questions/67886252/spring-boot-jpa-infinite-loop-many-to-many
 
+	public Address(String street, String secondary, @Length(min = 2, max = 2) String state, String city) {
+		super();
+		this.street = street;
+		this.secondary = secondary;
+		this.state = state;
+		this.city = city;
+	}
 }

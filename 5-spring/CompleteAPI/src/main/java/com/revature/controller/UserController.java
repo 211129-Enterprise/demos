@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.model.User;
 import com.revature.service.UserService;
 
+
+// Component-> Controller -> RestController (Very specific type of SteroType Annotation)
 @RestController // automatically infers that the return value of all methods below will be within the HttpResponse body
-@RequestMapping("/users") // all methods available at localhost:5000/users
+@RequestMapping("/users") // all methods available at localhost:5000/users...
+
 public class UserController {
 
 	@Autowired
@@ -26,9 +29,10 @@ public class UserController {
 	
 	// a get request to the above URL
 	@GetMapping
-	public Set<User> getAll() {
-		// Spring Boot web starter has Jackson Object Mapper automatically built in so this will be returned as JSON
-		return uServ.findAll();
+
+	public ResponseEntity<Set<User>> getAll() {
+		// Spring Boot web starter has Jackson Object Mapper automatically built in so this willbe returned as JSON
+		return ResponseEntity.ok(uServ.findAll()); // findAll() from userService!
 	}
 	
 	@GetMapping("/find/{username}")  // localhost:5000/users/find/spongebob 
@@ -37,13 +41,14 @@ public class UserController {
 		return ResponseEntity.ok(uServ.getByUsername(username));
 	}
 	
-	// Think of how you implement hte following methods
-	// Post - add()
-	@PostMapping("/new")		
-	public ResponseEntity<User> registerNewUser(@Valid @RequestBody User u) { // valid annotation ensures we can only accept a VALID user object
-		
+
+	// Think of how you implement the following methods
+	
+	// POST - add()
+	@PostMapping("/add")
+	public ResponseEntity<User> addUser(@Valid @RequestBody User u) { // valid annotation ensures that we can only accept a VALID user object
 		// will return the newly added User object in JSON
-		return ResponseEntity.ok(uServ.add(u));
+		return ResponseEntity.ok(uServ.add(u)); 
 	}
 	
 	// GET - getById() - extract id from URI like in findByUsername();
@@ -57,7 +62,5 @@ public class UserController {
 	public void removeUser(@PathVariable("id")int id) {
 		uServ.remove(id);
 	}
-	
-	// PUT/PATCH - for update
-	//
+
 }
