@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lists</title>
+</head>
+<body>
+  <div id="hemp-milk-recipe"> <!-- Alternatively we use classes for groups of elements -->
+    <h1>Homemade Hemp Milk</h1>
+    <h2>Ingredients</h2>
+
+    <!-- Declare an unordered List -->
+    <ul style="list-style-type:square">
+      <li class="list-group-item">4 cups of water</li>
+      <li class="list-group-item">1/4 cup of raw unshelled hemp seeds</li>
+      <li class="list-group-item">1-2 tsp of Maple Syrup</li>
+      <li class="list-group-item">1/4 tsp of salt</li>
+    </ul>
+
+    <h2>Directions</h2>
+    <!-- Declare an Ordered List-->
+    <ol type="1">
+      <li>Add all ingredients to a blender</li>
+        <ol type="a">
+          <li>Plug blender in</li>
+          <li>Turn blender on high</li>
+        </ol>
+      <li>Blend on high for about 2min</li>
+      <li>Store in fridge for up to 5 days</li>
+      <blockquote>
+        If you let it sit for more than 5 days, it will go <strong>bad</strong>
+      </blockquote>
+    </ol>
+
+    <!-- Definition (or Description) List -->
+    <dl>
+      <dt>HyperText Markup Language</dt> <!-- key -->
+      <dd>A markup language for structuring content on a webpage.</dd> <!-- value-->
+    
+      <dt>Cascading Style Sheets</dt> <!-- key -->
+      <dd>A rule-based styling language for describing the presentation of a document.</dd> <!-- value-->
+    </dl>
+
+    <ol type="1" reversed start="10">
+      <li>Thing 1</li>
+      <li>Thing 2</li>
+      <li>Thing 3</li>
+    </ol>
+
+  </div>
+</body>
+</html>

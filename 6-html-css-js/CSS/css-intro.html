@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Into to CSS</title>
+  <!-- 3 ways to style a document
+    
+    1. Inline styling - adding a CSS rule to the style attribute on an element (like <img src="something" stle="float:right") - THis is not considered best practice because it's difficult to maintain
+    2. Internal Styling - You supply CSS rules in the <style> tag within the head of the document you're stlying
+    3. External Styling - You supply CSS rules in an external document which you link the html doc to via the <link ref="stylesheet" href="my-styles.css"> - This is considered best practice because it's easy to maintain
+  -->
+  <style>
+    /* Everything I code here is in CSS - This is how  you comment in CSS */
+    p { /* this overrides the specific styling rules we have in id & class specific CSS rules */
+      font-family:Impact;
+    }
+    /* To select something by its ID we use # */
+    #my-special-div {
+      font-family: Arial;
+      padding-left: 30%;
+      border: 2px aqua;
+      color:brown;
+      background-color: rgb(9, 22, 8);
+    }
+    /* To select something by its class we use a . */
+    .my-special-class {
+      margin: top 20%;
+      border: dashed cadetblue;
+      border-radius: 20px;
+      line-height: 15px;
+      background-color:steelblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="inline-styling-example">
+    <h4>CSS rules are definied by key/value pairs. Separated by a colon { : }</h4>
+    <p style="color:goldenrod; background-color:black">This is an example of the color rule with inline styling</p>
+  
+    <span style="background-color: aqua;">Some content here</span><!-- In line element -->
+  </div>
+  <div id="internal-styling-example">
+    <h2>Selectors</h2>
+    <h3>Elements, Classes, &amp; IDs</h3>
+
+    <div id="my-special-div"> <!-- shorthand: div#my-special-div, then press enter -->
+      <p>Here's a bunch of text identified by <code>my-special-div</code></p>
+      <p>Some more text here</p>
+    </div>
+    <div class="my-special-class">
+      <p>This belongs to a class labeled as <code>my-special-class</code></p>
+    </div>
+    <div class="my-special-class">
+      <p>This also belongs to a class labeled as <code>my-special-class</code></p>
+    </div>
+  </div>
+</body>
+</html>
