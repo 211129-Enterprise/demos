@@ -7,12 +7,9 @@
 
 <br>
 
-## `Wednesday`
+## `Weekly Challenges to Try`
 - ⭐ Build a Binary Calculator with HTML/CSS/JS [here](https://www.hackerrank.com/challenges/js10-binary-calculator?h_r=internal-search)
-- ⭐ Complete [this HackerRank contest](https://www.hackerrank.com/210823-enterprise-hrjs)
 - ⭐ Practice the JavaScript basics [here](https://www.codecademy.com/courses/introduction-to-javascript/lessons/introduction-to-javascript/exercises/intro)
-
-
 
 <br>
 
