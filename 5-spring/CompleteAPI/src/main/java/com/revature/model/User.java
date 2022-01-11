@@ -13,6 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email; // Java Persistence API
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern; // JPA specification vs. Hibernate implementatino and Spring Data's role with both
 
 import org.hibernate.validator.constraints.Length;
@@ -57,17 +58,16 @@ public class User {
 	
 	// Here since we're defining the JoinTable in the user class, we declare that User.java OWNS the relationship
 	
-	@ManyToMany
+    @ManyToMany
 	@JoinTable(name = "users_address",
     joinColumns = @JoinColumn(name= "user_id"),
     inverseJoinColumns = @JoinColumn(name = "address_id"))
-	@JsonView(JsonViewProfiles.User.class)
-	private Set<Address> addresses; // this is 
+    @JsonView(JsonViewProfiles.User.class)
+	private Set<Address> addresses;
 
-	// constructor without an id field
-	public User(@Length(min = 2) String firstName, String lastName,
-			@NotBlank @Length(min = 5) @Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") String username,
-			@NotBlank String password, @Email String email) {
+	public User(@Length(min = 1) String firstName, String lastName,
+			@Length(min = 5) @NotBlank @Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") String username,
+			@NotEmpty String password, @Email String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;

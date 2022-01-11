@@ -2,7 +2,7 @@
 <br>
 
 ## QC on Week of Jan. 10<sup>th</sup>
-*QC Questions on Spring & REST [here](https://github.com/210823-Enterprise/demos/blob/main/5-spring/qc-questions.md)*
+*QC Questions on Spring & REST [here](https://github.com/211129-Enterprise/demos/blob/main/5-spring/qc-questions.md)*
 
 <br>
 
