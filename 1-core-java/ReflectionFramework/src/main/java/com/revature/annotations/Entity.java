@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  * Annotations are used to associates metadata about the program elements (constructors, fields, methods)
  * Annotations can change the way a program is treated by the compiler
  */
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Entity {
 

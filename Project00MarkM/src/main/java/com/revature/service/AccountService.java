@@ -18,11 +18,6 @@ public class AccountService {
 	Customers customer = new Customers();
 	Employee employee = new Employee();
 	Administrator administrator = new Administrator();
-	AccountDAO adao = new AccountDAO();
-	private IAccountDAO iadao = new AccountDAO();
-
-	public static IUserDAO udao = new UserDAO();
-
 	// inject the AccountDAO object on which this class depends
 
 	Scanner scan = new Scanner(System.in);

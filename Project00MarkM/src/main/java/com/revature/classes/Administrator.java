@@ -23,6 +23,7 @@ public class Administrator extends Person implements Serializable {
 	@Column(name="account_ranking", updatable=false)
 	private Role role;
 	
+	
 	private List<Checking> accounts;
 	
 	

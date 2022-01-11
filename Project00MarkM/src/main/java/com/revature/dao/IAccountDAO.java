@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.util.List;
+import java.util.Random;
 
 import com.revature.accounts.Checking;
 import com.revature.classes.Administrator;
@@ -27,4 +28,13 @@ public interface IAccountDAO {
 	boolean approve(int id);
 	boolean deny(int id);
 	
+	
+	static String Number() {
+		int min = 10000000;
+		int max = 99999999;
+		Random r = new Random();
+		int randomNumber = r.nextInt((max + 1 - min) + min);
+		String str = String.valueOf(randomNumber);
+		return str;
+	}
 }	

@@ -1,0 +1,16 @@
+@import url('for-import.css');
+  
+  /*
+This is external styling
+ 1. Inline
+ 2. Internal
+ 3. External
+*/
+
+body {
+    background-color: rgb(171, 84, 230);
+}
+
+#my-special-div { /* This rule will be overwriten by the internalstyling properties we have outlines in the <style> tag of the <head> of the doc */ 
+    background-color: aquamarine;
+}

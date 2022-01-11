@@ -8,14 +8,13 @@ import com.revature.classes.Administrator;
 import com.revature.classes.Customers;
 import com.revature.classes.Employee;
 import com.revature.classes.Person;
-import com.revature.dao.AccountDAO;
+
 import com.revature.service.AccountService;
 import com.revature.service.UserService;
 
 public class Methods {
 	private static final Checking Checking = null;
 	private static final com.revature.accounts.Checking Savings = null;
-	AccountDAO dao = new AccountDAO();
 	Scanner scan = new Scanner(System.in);
 	Person person = new Customers();
 	AccountService aserv = new AccountService();

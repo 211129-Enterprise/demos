@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+</head>
+<body>
+    <!-- HTML Images <img>
+        
+        Used to add an image to a web page.  It is a self-closing tag, so no need to provide a closing tag.
+        Attributes of <img> (not all-inclusive)
+            src     =   path to the image file (can be local or external)
+            alt     =   provides a text description if the image does not load (also used with screen readers)
+            title   =   used to provide titular info when the image is hovered over by the cursor
+            width   =   specifies the desired width of the image
+            height  =   specifies the desired height of the image
+            align*   =   (DEPRECATED) used to align the image with any surrounding content (bad practice to use; use CSS instead)
+    -->
+
+    <div> <!-- Block line element-->
+
+        <p> <!-- Inline element -->
+            <img src="assets/quokka.jpg" alt="It's a quokka" width="400" height="250" title="A quokka is a marsupial" />
+        </p>
+
+        <p>
+            <img src="assets/earth-spinning.gif" alt="the spinning earth" width="250" />
+        </p>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <hr> <!-- Horizontal line -->
+
+    <div>
+
+        <img src="assets/bird-of-paradise-flower.jpg" height="100" width="100" />
+        <p>
+            Strelitzia, whose common name is the bird of paradise flower, because of a resemblance of its flowers
+            to birds-of-paradise (Paradisaea raggiana). The species S. nicolai is the largest in the genus, reaching
+            10m tall, with stately white and blue flowers; the other species typically reach 2-3.5m tall, except
+            S. caudata which is a tree of a typically smaller size than S. nicolai. The leaves are large, 30–200cm
+            long and 10–80cm broad, similar to a banana leaf in appearance but with a longer petiole, and arranged
+            strictly in two ranks to form a fan-like crown of evergreen foliage. The flowers are produced in a
+            horizontal inflorescence emerging from a stout spathe.
+        </p>
+        <br />
+        <br />
+        <br />
+        <!-- Here we're instroducing CSS styling for the first time in the form of INLINE styling-->
+        <img src="assets/bird-of-paradise-flower.jpg" height="100" width="100" style="float:right" />
+        <p>
+            Strelitzia, whose common name is the bird of paradise flower, because of a resemblance of its flowers
+            to birds-of-paradise (Paradisaea raggiana). The species S. nicolai is the largest in the genus, reaching
+            10m tall, with stately white and blue flowers; the other species typically reach 2-3.5m tall, except
+            S. caudata which is a tree of a typically smaller size than S. nicolai. The leaves are large, 30–200cm
+            long and 10–80cm broad, similar to a banana leaf in appearance but with a longer petiole, and arranged
+            strictly in two ranks to form a fan-like crown of evergreen foliage. The flowers are produced in a
+            horizontal inflorescence emerging from a stout spathe.
+        </p>
+    </div>
+
+    <div>
+        <h1>iFrames!</h1>
+        <p>An iFrame is a little window that you can place on a webpage.  iFrame is actually short
+            form inline frame.
+        </p>
+
+        <br />
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12306.835615628956!2d3.327190839631582!3d39.543620368545625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1296413bc7f5e825%3A0x7b948646a36e4626!2s07680%20Porto%20Cristo%2C%20Balearic%20Islands%2C%20Spain!5e0!3m2!1sen!2sus!4v1641916549814!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <br />
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dD2EISBDjWM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+    
+</body>
+</html>
