@@ -1,7 +1,7 @@
 console.log("Hello World!")
 
 /**
- * Primitive Datatypes
+ * PRIMITIVE DATATYPES
  * 
  * - boolean
  * - number
@@ -9,11 +9,12 @@ console.log("Hello World!")
  * - null
  * - undefined
  * 
- * Reference Datatypes
+ * REFERENCE DATATYPES
  * - objects
  * - arrays
  * - functions (it's an object)
  */
+
 
 /**
  * How do we declare a variable?
@@ -23,11 +24,9 @@ var num = 5; // the primitive data type of "number" is automatically inferred up
 console.log(typeof(num)); // typeof returns the datatype in the form of a string ( so if it's a number, it returns number)
 num = 'five'; // declaring  string witih '' or ""
 console.log(typeof(num));
-
 console.log(num); // prints the word 5
 
 // every variable declared with var against the window object is global
-
 // 2015 a new standardization of JS was introduced called ECMAScript 6 -> introduced new ways of declaring variables: let & const
 
 let fruit = 'apple';

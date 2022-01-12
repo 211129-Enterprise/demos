@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello JavaScript</title>
-  <script src="hellojs.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello JavaScript</title>
+
+    <script src="hellojs.js" defer></script>
+
 </head>
 <body>
-  
-  <h1>JavaScript Example</h1>
-  <p>Some Repetitive Statement we will repeat with a lot of repetition.</p>
+    
+    <h1>JavaScript Example</h1>
 
-  <script>
-    // This is a comment in JS
+    <p>some repetative statement we will repeat</p>
 
-    /*
-    This
-    is a multiline commment
+    <script>
+        // This is a comment in JS
 
-    What is a Scripting Language? A snippet of code that automates some functionality
-    I want to repeat the paragraph node 50 times
-    */
+        /**This 
+         * is a multi-line comment
+         * 
+         * What is a Scripting Language? A snippet of code that automates some functionality
+         * 
+         * I want to repeat the paragraph node 50 times
+         **/
+        for (let i=0; i<50; i++) {
+            document.write("<br><br>"); // semicolons aren't necessary in JS!
+            document.write("<p>some repetative statement we will repeat</p>");
+        }
 
-    for (let i=0; i < 50; i++ ) {
+        console.log("look at this log statement!")
+        console.warn("Pineapples do NOT go on pizza")
+        console.error("something has gone horribly wrong")
 
-      document.write("")
-      document.write("<p>Some Repetitive Statement we will repeat with a lot of repetition.</p>")
+    </script>
 
-    }
-    console.log("Look at this logging statement!");
-    console.warn("Pineapples do NOT go on pizza!");
-    console.error("Something has gone horribly wrong");
-  </script>
 
-  <!-- <script src="hellojs.js"></script> -->
+    <!-- <script src="hellojs.js"></script> -->
 </body>
 </html>

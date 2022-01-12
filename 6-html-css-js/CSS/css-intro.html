@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Into to CSS</title>
-  <!-- 3 ways to style a document
-    
-    1. Inline styling - adding a CSS rule to the style attribute on an element (like <img src="something" stle="float:right") - THis is not considered best practice because it's difficult to maintain
-    2. Internal Styling - You supply CSS rules in the <style> tag within the head of the document you're stlying
-    3. External Styling - You supply CSS rules in an external document which you link the html doc to via the <link ref="stylesheet" href="my-styles.css"> - This is considered best practice because it's easy to maintain
-  -->
-  <style>
-    /* Everything I code here is in CSS - This is how  you comment in CSS */
-    p { /* this overrides the specific styling rules we have in id & class specific CSS rules */
-      font-family:Impact;
-    }
-    /* To select something by its ID we use # */
-    #my-special-div {
-      font-family: Arial;
-      padding-left: 30%;
-      border: 2px aqua;
-      color:brown;
-      background-color: rgb(9, 22, 8);
-    }
-    /* To select something by its class we use a . */
-    .my-special-class {
-      margin: top 20%;
-      border: dashed cadetblue;
-      border-radius: 20px;
-      line-height: 15px;
-      background-color:steelblue;
-    }
-  </style>
-  <link rel="stylesheet" href="styles/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to CSS</title>
+<!-- 3 Ways to style a document
+
+    1. Inline styling - adding a CSS rule to the style attribute on an element (like <img src ="something.jpg style="float:right") - This is not considered best practice because it's difficult to maintain
+
+    2. Internal Styling - You supply CSS rules in the <style> tag within the <head> of the document you're styling
+
+    3. External Styling - You supply CSS rules in an external document which you link the html doc to via the 
+    <link ref="stylesheet" href="my-styles.css"> - This is considered best practice because it's easy to maintain
+-->
+
+    <style>
+        /* Eveverything i code here is in CSS - this is how you 
+        comment in CSS */
+        p { /* this overrides the specific syling rules we have set up in id specific or class specific CSS rules*/
+            font-family: 'Indie Flower', cursive;
+        }
+
+        /* To select something by its ID we use # */
+        #my-special-div {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-left: 30%;
+            border: 2px aqua;
+            color:blueviolet;
+            background-color: burlywood;
+        }
+
+        /* We select elements by their class with a . */
+        .my-special-class {
+            margin: top 20%;
+            border: dashed rebeccapurple;
+            border-radius: 20px;
+            line-height: 18px;   
+            background-color: aquamarine;         
+        }
+    </style>
+
+    <!-- Linking to the external stylesheet-->
+    <link rel="stylesheet" href="styles/styles.css">
+
 </head>
 <body>
   <div id="inline-styling-example">

@@ -21,6 +21,7 @@ const divide2 = function(x, y ) {
   return x/y;
 }
 
+
 let num1 = 100;
 let num2 = 0;
 
