@@ -6,6 +6,10 @@ const backdrop = document.getElementById('backdrop');
 const cancelAddMovieButton = document.querySelector('.btn--passive');
 const confirmAddMovieButton =  cancelAddMovieButton.nextElementSibling;
 const userInputs = addMovieModal.querySelectorAll('input'); // selecting all of the input fields within an element and returning a collection
+const entryTextSection = document.getElementById('entry-text');
+const listRoot = document.getElementById('movie-list');
+
+const movies = [];
 
 const toggleBackdropHandler = () => {
     backdrop.classList.toggle('visible') // backdrop.visible 
@@ -22,6 +26,44 @@ const clearMovieInput = () => {
     }
 }
 
+const updateUi = () => {
+
+    // check that the length of the movies array is or isn't === 0
+    if (movies.length === 0) {
+        // capture the element we want to affect
+        entryTextSection.style.display = 'block';
+    } else {
+        entryTextSection.style.display = 'none'; // it dissapears!
+    }
+
+}
+
+/**
+ * Take in aparameters and build an HTML element to display on the UI
+ */
+const renderNewMovieElement = (title, imageUrl, rating) => {
+
+    // createElement on the DOM
+    const newMovieElement = document.createElement('li')
+
+    // give the elemtna class-name
+    newMovieElement.className = 'movie-element'
+
+    // set the innerHTML of the element = to a a template literal which will
+    newMovieElement.innerHTML = `
+        <div class="movie-element__image">
+            <img src="${imageUrl}" alt="${title}">
+        </div>
+        <div class="movie-element__info">
+            <h2>${title}</h2>
+            <p>${rating}</p>
+        </div>
+    `;
+
+    // we need to append this element to an existing element on our DOM
+    listRoot.append(newMovieElement);
+}
+
 const confirmAddMovieHandler = () => {
     // capture the value of the 3 input fields
     const titleValue = userInputs[0].value;
@@ -32,8 +74,8 @@ const confirmAddMovieHandler = () => {
     if (titleValue.trim() === '' || 
         imageUrlValue.trim() === '' || 
         ratingValue.trim() === '' ||
-        +ratingValue < 1 ||
-        +ratingValue > 5
+        +ratingValue < 1 || // the plus sign will convert the string to a numeric type IF it's a number like '2'
+        +ratingValue > 5 // kind of like Integer.parseInt()
     ) {
         window.alert('Please Enter valid values (raing must be between 1 and 5)')
         return;
@@ -45,12 +87,14 @@ const confirmAddMovieHandler = () => {
         rating: ratingValue
     }
 
-    console.log(newMovie)
+    movies.push(newMovie);
+
+    toggleMovieModal();
     clearMovieInput();
 
-    // push the newMovie to an array of movie objects
+    renderNewMovieElement(newMovie.title, newMovie.image, newMovie.rating);
 
-    // call a renderNewMovieElement() to dynamically add the object to the user interface
+    // this function will remove the message if there are movies in the array
 
 }
 

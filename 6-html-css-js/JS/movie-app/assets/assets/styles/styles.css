@@ -122,7 +122,7 @@
   }
   
   /* we will toggle this property on the modal with a JS function */
-  .modal.visible {
+  .modal.visible { /* adding this extra class (visible) to the element */
     display: block;
     animation: fade-slide-in 0.3s ease-out forwards;
   }
