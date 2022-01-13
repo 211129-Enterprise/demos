@@ -33,4 +33,7 @@ export class AllComponent implements OnInit {
       .subscribe(data => this.users = data); // you must subscribe to a an observable to process its data
   }
 
+
+
+
 }
