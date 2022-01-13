@@ -23,4 +23,4 @@ console.log(e[2]);
 enum Color {Red, Blue, Green}
 
 console.log(Color.Blue)
-let backgorundColor = Color.Blue;
+let backgorundColor = Color.Blue; // compile, then transpile
