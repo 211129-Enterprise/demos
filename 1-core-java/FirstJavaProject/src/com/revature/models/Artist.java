@@ -1,5 +1,6 @@
 package com.revature.models;
 
+<<<<<<< HEAD
 public class Artist extends Person {
 
 	public Artist() {
@@ -17,5 +18,8 @@ public class Artist extends Person {
 	}
 	
 	
+=======
+public class Artist extends Person{
+>>>>>>> d828daa3e2b69e132493fdbbbf8ca90ffe1851db
 
 }

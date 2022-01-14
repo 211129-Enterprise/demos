@@ -1,0 +1,5 @@
+--DCL
+CREATE USER Potter WITH PASSWORD 'Dumbledore';
+
+--Grant Priveleges 
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA aidanh;
