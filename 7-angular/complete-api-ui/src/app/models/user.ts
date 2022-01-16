@@ -8,7 +8,7 @@ export class User {
   email: string;
   addresses: any[];
 
-  constructor(
+  constructor( // google Auto Constructor Generators (ctrl + shift + p opens the command palette)
     id: number,
     firstName: string,
     lastName: string,

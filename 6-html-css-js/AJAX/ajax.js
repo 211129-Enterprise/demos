@@ -12,19 +12,18 @@ button.addEventListener('click', ajaxCall);
 // }
 
 function ajaxCall() {
-
   // capture the id from the user input
   let idNum = pokeId.value;
 
   // 1. attain the XMLHttpRequestObject
   let xhr = new XMLHttpRequest();
-  /**
-   * 0. USENT: open() method has not been called
-   * 1. OPENED: open() method has been called
-   * 2. Headers_Request: send() method has been called and the headers + status code of the HTTP response are available
-   * 3. LOADING: downloading the full response from the server
-   * 4. DONE entire operation is complete and now we have a sserer 
-   */
+    /**
+     * 0. UNSENT: open() method has not been called 
+     * 1. OPENED: open() method has been called
+     * 2. HEADERS_REQUEST: send() method has been called and the ehaders + status code of the HTTP response are available
+     * 3. LOADING: downloading the full response from the server
+     * 4. DONE: entire operation is complete and now we have a server response.
+     */
   xhr.onreadystatechange = function() {
     // this inside of a function refers to the object that's calling the function
     if (this.readyState == 4 && this.status == 200) {

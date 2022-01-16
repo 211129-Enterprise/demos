@@ -15,4 +15,5 @@ export const environment = {
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 
-export const awsUrl = "http://completeapibeanstalk-env.eba-sfn83npg.us-east-1.elasticbeanstalk.com/api"
+
+export const awsUrl = `http://completeapibeanstalk-env.eba-sfn83npg.us-east-1.elasticbeanstalk.com/api`

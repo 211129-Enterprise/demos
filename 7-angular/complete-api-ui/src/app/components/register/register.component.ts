@@ -19,12 +19,16 @@ export class RegisterComponent {
 
   public registerUser(): void {
 
-    this.userService.registerUser(this.user)
-        .subscribe(
-          data => this.userService.logger.log(data),
-          error => this.userService.logger.error(error)
-        )
+    this.user.addresses.push(this.address);
 
+    this.userService.registerUser(this.user)
+      .subscribe(
+        data => this.userService.logger.log(data),
+        error => this.userService.logger.error(error)
+        )
   }
+
+
+
 
 }

@@ -5,23 +5,19 @@ import { Injectable } from '@angular/core';
 })
 export class LoggerService { // we don't have a constructor because LoggerService does not depend on another service
 
-  /**
-   * (msg? ) is the same as (msg: any | undefined)
-   * this lets you 
-   */
-  // log
-  log(msg: any) {
+  // log // if you place a ? infront of a parameter it will mark is as possibly undefined
+  log(msg: any) { // modify line 8 in tsconfig to allow this
     console.log(msg);
   }
 
   // warn
   warn(msg: any) {
-    console.log(msg);
+    console.warn(msg);
   }
 
   // error
   error(msg: any) {
-    console.log(msg);
+    console.error(msg);
   }
 
 }

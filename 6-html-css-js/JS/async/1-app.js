@@ -15,5 +15,5 @@ function buttonClickHandler() {
 
 }
 
-button.addEventListener('click',buttonClickHandler);
+button.addEventListener('click',buttonClickHandler); // event loop place callbacks into a queue
 

@@ -26,12 +26,13 @@ export class UserService {
     // send a GET request
     // from the values received in the response, we need to return them or handle an error
     return this.http.get<User[]>(url)
-      .pipe(catchError(this.handleError));
+    // this will reach the rest controller of the Spring Boot API!!
+      .pipe(catchError(this.handleError)); // very similar to .then() because it allows us to call a method on the data returned
   }
 
   // POST - http://completeapibeanstalk-env.eba-sfn83npg.us-east-1.elasticbeanstalk.com/api/users/add
   registerUser(user: User): Observable<User> {
-
+    // Sending a User object in the body of the request
     return this.http.post<User>(`${url}/add`, user, this.httpOptions)
           .pipe(catchError(this.handleError));
   }
@@ -44,7 +45,7 @@ export class UserService {
 
 
 
-  public handleError(httpError : HttpErrorResponse) {
+  private handleError(httpError : HttpErrorResponse) {
 
     if (httpError.error instanceof ErrorEvent) {
       console.log('An error occurred: ', httpError.error.message)
@@ -54,8 +55,8 @@ export class UserService {
         body was: ${httpError.error}
       `)
     }
-    // throwError is an Observable object form RxJS Reactive Extensions for JavaScript
-    return throwError(() => new Error('Something really bad happened, please tryi agin later'));
+    // throwError is an Observable object from RxJS Reactive Extensions for JavaScript
+    return throwError(() => new Error('Something really bad happened, please try again later'));
   };
 
 }

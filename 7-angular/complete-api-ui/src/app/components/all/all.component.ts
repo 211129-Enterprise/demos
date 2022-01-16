@@ -14,9 +14,12 @@ export class AllComponent implements OnInit {
   title= "All Users"
   public users: User[] = []
 
-  public clientMessage: ClientMessage = new ClientMessage('Sorry no users to display');
+  public clientMessage: ClientMessage = new ClientMessage(
+    'Sorry no users to display'
+    ); // calling constructor to initialize constructor property
 
-  constructor(private userService: UserService, private logger: LoggerService) { }
+  // later we will inject a UserService which will have an HttpClient module injected into it
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
 
@@ -27,7 +30,7 @@ export class AllComponent implements OnInit {
   findAllUsers() {
     // We are calling a method from the user service that will return an Observable
     this.userService.findAllUsers()
-                    .subscribe(data => {
+                    .subscribe((data) => {
                       this.userService.logger.log(data.length);
                       this.users = data;  // you must subscribe to an observable to process its data
                     });
