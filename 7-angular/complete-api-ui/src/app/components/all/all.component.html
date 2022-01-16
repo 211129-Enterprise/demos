@@ -1,0 +1,30 @@
+<div>
+
+  <div>
+    <h2 class="card-header text-center">{{ title }}</h2>
+  </div>
+
+  <div class="card-body">
+
+    <ul *ngFor="let u of users" class="list-group">
+
+      <li class="list-group-item">ID : {{  u.id }}<br>
+                                  First Name: {{  u.firstName }}<br>
+                                  Last Name: {{  u.lastName }}<br>
+                                  Username: {{ u.username }}<br>
+                                  Email: {{ u.email }}
+                            </li>
+
+    </ul>
+
+    <!-- IF there are no Users in the array, display this HTML  (use a structural directive)-->
+    <div *ngIf="users.length == 0">
+      {{ clientMessage.message }}
+    </div>
+
+    <div>
+      <button class="btn btn-secondary btn-center" (click)="findAllUsers()">Fetch Users</button>
+    </div>
+
+  </div>
+</div>
