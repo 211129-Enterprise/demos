@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to CSS</title>
+<!-- 3 Ways to style a document
+
+    1. Inline styling - adding a CSS rule to the style attribute on an element (like <img src ="something.jpg style="float:right") - This is not considered best practice because it's difficult to maintain
+
+    2. Internal Styling - You supply CSS rules in the <style> tag within the <head> of the document you're styling
+
+    3. External Styling - You supply CSS rules in an external document which you link the html doc to via the 
+    <link ref="stylesheet" href="my-styles.css"> - This is considered best practice because it's easy to maintain
+-->
+
+    <style>
+        /* Eveverything i code here is in CSS - this is how you 
+        comment in CSS */
+        p { /* this overrides the specific syling rules we have set up in id specific or class specific CSS rules*/
+            font-family: 'Indie Flower', cursive;
+        }
+
+        /* To select something by its ID we use # */
+        #my-special-div {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-left: 30%;
+            border: 2px aqua;
+            color:blueviolet;
+            background-color: burlywood;
+        }
+
+        /* We select elements by their class with a . */
+        .my-special-class {
+            margin: top 20%;
+            border: dashed rebeccapurple;
+            border-radius: 20px;
+            line-height: 18px;   
+            background-color: aquamarine;         
+        }
+    </style>
+
+    <!-- Linking to the external stylesheet-->
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+<body>
+
+    <div id="inline-styling-example">
+        <h4>CSS rules are defined by key/value pairs. separated by a color { : }</h4>
+        <p style="color:darkgoldenrod; background-color: black;">This is an example of the color rule with inline styling</p>
+    
+        <span style="background-color:aqua">Some content here</span> <!-- In line element-->
+    </div>
+
+    <div id="internal-styling-example">
+        
+        <h2>Selectors</h2>
+        <h3>Elements, Classes, &amp; Id's</h3>
+
+        <div id="my-special-div"> <!-- shorthand: div#my-special-div, then press enter-->
+            <p>Here's a bunch of text identified by id <code>my-special-class</code></p>
+            <p>Some more text here</p>
+        </div>
+
+        <div class="my-special-class">
+            <p>This belongs to a class labeled as <code>my-special-class</code></p>
+        </div>
+
+        <div class="my-special-class">
+            <p>This also belongs to a class labeled as <code>my-special-class</code></p>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+</html>
