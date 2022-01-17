@@ -44,6 +44,7 @@ public class Driver {
 		SuperVillainDAO svdao = new SuperVillainDAO();
 		svdao.insert(joker);
 		
+		
 		System.out.println(svdao.selectAll());
 
 	}

@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * This class will contain a bunch of methods which have the ability 
@@ -70,7 +71,7 @@ public class ClassInspector {
 		}
 	}
 
-	public static void listPublicMethods(Class<?> clazz) {
+	public static Method[] listPublicMethods(Class<?> clazz) {
 		System.out.println("Printing public fields of the " + clazz.getName());
 		Method[] methods = clazz.getMethods();
 		if (methods.length == 0) {
@@ -91,7 +92,10 @@ public class ClassInspector {
 				System.out.println("\t\tParameter annotations: " + Arrays.toString(param.getDeclaredAnnotations()));
 			}
 			System.out.println();
+		
 		}
+		
+		return methods;
 	}
 
 	public static void listNonPublicConstructors(Class<?> clazz) {
