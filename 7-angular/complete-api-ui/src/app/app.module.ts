@@ -10,6 +10,7 @@ import { MainComponent } from './components/main/main.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms'; // built in library where we get ngModel directive from
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import { RegisterComponent } from './components/register/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-    // NgbModule
+    HttpClientModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
