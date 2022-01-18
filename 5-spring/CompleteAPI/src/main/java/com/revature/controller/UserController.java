@@ -19,7 +19,8 @@ import com.revature.service.UserService;
 
 // Component-> Controller -> RestController (Very specific type of SteroType Annotation)
 @RestController // automatically infers that the return value of all methods below will be within the HttpResponse body
-@RequestMapping("/users") // all methods available at localhost:5000/users...
+@RequestMapping("/users") // all methods available at localhost:5000/api/users...
+@CrossOrigin(origins = "*", allowedHeaders = "*") // this exposes this controller to all ports
 public class UserController {
 	
 	
