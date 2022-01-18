@@ -31,8 +31,7 @@ A framework is a platform for developing software applications. It provides a fo
 - it is a super-set of JS
 - it is **strictly typed**
 - Browsers themselves cannot interpret TS, so it must be **transpiled into JS**.
-    > This is done with the TypeScropt compiler (tsc).
-- It has syntax closer to higher level languages like Java, therfore it gives us compilation errors.
+- It has syntax closer to higher level languages like Java, and a compiler, therfore it gives us compilation errors.
 
 ## Node JS
 - It is a JS interpreter/server environment that allows us to run JS outside of the browser.
