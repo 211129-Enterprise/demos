@@ -10,7 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { FindComponent } from './components/find/find.component'; // built in library where we get ngModel directive from
+import { FindComponent } from './components/find/find.component';
+import { RemoveComponent } from './components/remove/remove.component'; // built in library where we get ngModel directive from
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FindComponent } from './components/find/find.component'; // built in li
     MainComponent,
     AllComponent,
     RegisterComponent,
-    FindComponent
+    FindComponent,
+    RemoveComponent
   ],
   imports: [
     BrowserModule,

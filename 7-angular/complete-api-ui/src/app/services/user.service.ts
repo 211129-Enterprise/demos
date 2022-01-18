@@ -52,6 +52,15 @@ export class UserService {
 
 
   // DELETE
+  deleteUser(id: number) {
+    let deleteUrl = `${url}/${id}`;
+    return this.http.delete(deleteUrl)
+      .pipe(
+        catchError(this.handleError)
+      );
+    // this.http.request('delete', deleteUrl).subscribe(console.log);
+    // this is another way of making a delete request
+  }
 
 
 

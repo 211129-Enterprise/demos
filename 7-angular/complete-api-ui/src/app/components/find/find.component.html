@@ -13,10 +13,10 @@
     <div class="input-group flex-nowrap">
       <span class="input-group-text" id="addon-wrapping">Id</span>
       <!-- 2 way property binding: ngModel [()] -->
-      <input [(ngModel)]="userId" name="userId" type="number" class="form-control" placeholder="User's Id Number" aria-label="Username" aria-describedby="addon-wrapping">
+      <input [(ngModel)]="userId" name="userId" type="number" class="form-control" placeholder="User's Id Number" aria-label="Username" aria-describedby="addon-wrapping" (keydown.enter)="findUser()">
     </div>
 
-    <button class="btn btn-secondary" (click)="findUser()">Find</button>
+    <button class="btn btn-secondary" ((keypress))="findUser()">Find</button>
 
     <!-- The HTML defined below will only be visible IF the expression after the structural directive is TRUE -->
     <ul *ngIf="this.user.id > 0" id="user-info">
@@ -30,6 +30,7 @@
 
     </ul>
 
+    <!-- In the case that an error is thrown upon retrieving the user, render this client message -->
     <div *ngIf="clientMessage.message.length > 0" class="alert alert-danger" role="alert">
       {{ clientMessage.message }}
     </div>
