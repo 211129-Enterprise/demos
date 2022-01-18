@@ -24,9 +24,9 @@ export class RegisterComponent {
 
     this.userService.registerUser(this.user)
       .subscribe(
-        data => this.userService.logger.log(data),
-        error => this.userService.logger.error(error)
-        )
+        data => this.clientMessage.message = `Successfully registered ${data.firstName}`, // data => this.userService.logger.log(data),
+        error => this.clientMessage.message = `Something went wrong. Error: ${error}`   // error => this.userService.logger.error(error)
+      )
   }
 
 
