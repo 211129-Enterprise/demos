@@ -1,52 +1,60 @@
 <div>
-
   <div>
     <h2 class="card-header text-center">{{ title }}</h2>
   </div>
 
   <div class="card-body">
 
-    <form action="">
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="inputFirstName">First Name</label>
-          <!-- We need to bind the values capture in the template to our application data -->
-          <input type="text" name="fname" class="form-control" id="inputFirstName">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputLastName">Last Name</label>
-          <input type="text" name="lname" class="form-control" id="inputLastName">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputUsername">Username</label>
-          <input type="text" name="username" class="form-control" id="inputUsername">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword">Password</label>
-          <input type="password" name="password" class="form-control" id="inputPassword">
-        </div>
-        <div class="form-group">
-          <label for="inputEmail">Email</label>
-          <input type="email" name="email" class="form-control" id="inputEmail">
-        </div>
-      </div>
+    <!-- We'll take all of values captured ot the form and bind it to a User object
+      in our register.component.ts file....then we can call a method that calls an HTTP service
+      and send a POST request to our backend API.-->
 
-      <div class="row">
-        <div class="form-group">
-          <label for="inputStreet">Street:</label>
-          <input type="text" name="street" class="form-control" id="inputStreet">
+    <!-- https://getbootstrap.com/docs/5.1/forms/layout/ -->
+    <form>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputFirstName">First Name</label>
+          <!-- Here I want to take input from the user, and change the property of the user object in my ts file
+                  This is called 2-way property binding which is achieved with [(ngModel)] exported from FormsModule-->
+          <input [(ngModel)]="user.firstName" name="first" type="text" class="form-control" id="inputFirstName"
+            placeholder="First name">
         </div>
-        <div class="form-group">
-          <label for="inputSecondary">Address 2:</label>
-          <input type="text" name="Secondary" class="form-control" id="inputSecondary">
+        <div class="col-md-6">
+          <label for="inputLastName">Last Name</label>
+          <input [(ngModel)]="user.lastName" name="last" type="text" class="form-control" id="inputLastName"
+            placeholder="First name">
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputCity">City:</label>
-        <input type="text" name="city" class="form-control" id="inputCity">
+        <div class="col-md-6">
+          <label for="inputUsername">Username</label>
+          <input [(ngModel)]="user.username" name="username" type="text" class="form-control" id="inputUsername"
+            placeholder="Last name">
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputState">State:</label>
-          <select type="text" name="state" class="form-control" id="inputState">
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input [(ngModel)]="user.password" type="password" name="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input [(ngModel)]="user.email" type="email" name="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-6">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input [(ngModel)]="address.street" name="address" type="text" class="form-control" id="inputAddress"
+            placeholder="1234 Main St">
+        </div>
+        <div class="col-6">
+          <label for="inputAddress2" class="form-label">Secondary Address</label>
+          <input [(ngModel)]="address.secondary" name="secondary" type="text" class="form-control" id="inputAddress2"
+            placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input [(ngModel)]="address.city" name="city" type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select [(ngModel)]="address.state" name="state" id="inputState" class="form-select">
+            <option selected>Choose...</option>
             <option value="">N/A</option>
             <option value="AK">Alaska</option>
             <option value="AL">Alabama</option>
@@ -102,11 +110,25 @@
             <option value="WY">Wyoming</option>
           </select>
         </div>
-        <div class="form-group col-md-3">
-          <label for="inputZip">Zip Code:</label>
-        <input type="text" name="zip" class="form-control" id="inputZip">
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input [(ngModel)]="address.zip" name="zip" type="text" class="form-control" id="inputZip">
         </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-secondary" (click)="registerUser()">Register</button>
+        </div>
+      </form>
+
+      <br>
+
+      <!--  SRUCTURAL DIRECTIVE first check DO we have a client message that's either positive or negative?
+                THEN we populate the view with the alert  -->
+      <div *ngIf="clientMessage.message.length > 0" class="alert alert-success" role="alert">
+        {{ clientMessage.message }}
       </div>
+      <!--*ngIf checks for a condition before displaying the element-->
     </form>
+
   </div>
+
 </div>
