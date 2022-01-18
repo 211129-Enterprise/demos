@@ -16,7 +16,7 @@ A framework is a platform for developing software applications. It provides a fo
 - Created in 2010 as AngularJS
 - Then in 2016 it was rewritten to support TypeScript and Angular 2 was released
 - About every 6 months a new version of Angular is released
-- We will use Angular 11.
+- We will use Angular 13.
 
 ### What makes an Angular app?
 - **TypeScript** framework developed and maintained by Google.
