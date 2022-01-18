@@ -41,9 +41,19 @@ export class UserService {
       .pipe(catchError(this.handleError))
   }
 
+   // GET by ID -> http://completeapibeanstalk-env.eba-sfn83npg.us-east-1.elasticbeanstalk.com/api/users/{id}
+   findUserById(id: number): Observable<User> {
+
+      return this.http.get<User>(`${url}/${id}`)
+        .pipe(
+          catchError(this.handleError)
+        );
+   }
+
+
   // DELETE
 
-  // GET by ID
+
 
   private handleError(httpError: HttpErrorResponse) {
 

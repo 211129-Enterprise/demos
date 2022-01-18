@@ -1,0 +1,37 @@
+<div>
+
+  <div>
+    <h2 class="card-header text-center">{{ title }}</h2>
+  </div>
+
+  <div class="card-body">
+
+    <!-- My input box and button! -->
+
+    <h5 class="card-title">Enter the Id of the User you want to find:</h5>
+
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="addon-wrapping">Id</span>
+      <!-- 2 way property binding: ngModel [()] -->
+      <input [(ngModel)]="userId" name="userId" type="number" class="form-control" placeholder="User's Id Number" aria-label="Username" aria-describedby="addon-wrapping">
+    </div>
+
+    <button class="btn btn-secondary" (click)="findUser()">Find</button>
+
+    <!-- The HTML defined below will only be visible IF the expression after the structural directive is TRUE -->
+    <ul *ngIf="this.user.id > 0" id="user-info">
+
+      <!-- display the user's info -->
+      <li class="list-group-item">Id: {{ user.id }}</li>
+      <li class="list-group-item">First Name: {{ user.firstName }}</li>
+      <li class="list-group-item">Last Name: {{ user.lastName }}</li>
+      <li class="list-group-item">Username: {{ user.username }}</li>
+      <li class="list-group-item">Email: {{ user.email }}</li>
+
+    </ul>
+
+    <div *ngIf="clientMessage.message.length > 0" class="alert alert-danger" role="alert">
+      {{ clientMessage.message }}
+    </div>
+  </div>
+</div>
