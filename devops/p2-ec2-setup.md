@@ -70,14 +70,14 @@ sudo service docker start
 3. **Build a Docker Image** by running:
 
 ```
-docker build -t myapp:auto .
+sudo docker build -t myapp:auto .
 ```
 
 4. **Run the Container exposing the port your server is set to in your `application.properties` file**
 > *The `-d` stands for "detached mode" so that you can still use your console*
 
 ```
-docker run -d -p 5000:5000 myapp:auto
+sudo docker run -d -p 5000:5000 myapp:auto
 ```
 
 <br>
