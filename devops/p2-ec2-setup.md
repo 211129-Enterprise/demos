@@ -6,7 +6,8 @@ You have been provisioned with a `pem` key which allows you to ssh into your AWS
 #### 3 Steps to Deployment:
 - Step 1: Dockerize your app (pre-req)
 - Step 2: Connect to your instance
-- Step 3: Clone, Containerize, & Deploy your App
+- Step 3: Build the JAR with Maven
+- Step 4: Clone, Containerize, & Deploy your App
 
 <br>
 
@@ -45,18 +46,28 @@ ssh -i "team-x-e211129.pem" ec2-user@ec2-3-86-216-116.compute-1.amazonaws.com
 <br>
 <br>
 
-## Clone, Containerize, & Deploy your App:
+## Clone your App and Build the JAR file:
 1. In the EC2 instance clone your Spring Boot app onto the instance by running `git clone https://github.com/your-project.git`
 
-2. `cd` into the project's root directory, where the `Dockerfile` is located.
+2. `cd` into the root direcotry of your project and build the `JAR` file by running:
+
+```
+ `mvn clean package`
+```
+
+<br>
+<br>
+
+## Containerize, & Deploy your App:
+1. `cd` into the project's root directory, where the `Dockerfile` is located.
   
-3. **Build a Docker Image** by running:
+2. **Build a Docker Image** by running:
 
 ```
 docker build -t myapp:auto .
 ```
 
-4. **Run the Container exposing the port your server is set to in your `application.properties` file**
+3. **Run the Container exposing the port your server is set to in your `application.properties` file**
 > *The `-d` stands for "detached mode" so that you can still use your console*
 
 ```
