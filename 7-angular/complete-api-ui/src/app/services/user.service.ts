@@ -22,7 +22,7 @@ export class UserService {
     }
 
   // GET All
-  public findAllUsers(): Observable<User[]> {
+  findAllUsers(): Observable<User[]> {
     // send a GET request
     // from the values received in the response, we need to return them or handle an error
     return this.http.get<User[]>(url)
@@ -38,10 +38,20 @@ export class UserService {
   }
 
   // GET/1
-
+  findUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${url}/${id}`)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // DELETE
-
+  removeUserById(id: number) {
+    return this.http.delete<User>(`${url}/${id}`)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
 
 
 

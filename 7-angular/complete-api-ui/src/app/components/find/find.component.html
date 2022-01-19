@@ -1,0 +1,35 @@
+<div>
+
+  <div>
+    <h2 class="card-header text-center">{{ title }}</h2>
+  </div>
+
+  <div class="card-body">
+    <!-- My input box and button -->
+
+    <h5 class="card-title">Enter the Id of the User you want to find</h5>
+
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="addon-wrapping">Id</span>
+      <!-- 2-way Property Binding: nModel [()] -->
+      <input [(ngModel)]="userId" name="userId" type="number" class="form-control" placeholder="User Id Number" aria-label="Username" aria-describedby="addon-wrapping">
+    </div>
+
+    <button class="btn btn-secondary" (click)="findUser()">Find</button>
+
+    <div *ngIf="user.id > 0" id="foundUser">
+      ID : {{  user.id }}<br>
+      First Name: {{  user.firstName }}<br>
+      Last Name: {{  user.lastName }}<br>
+      Username: {{ user.username }}<br>
+      Email: {{ user.email }}<br>
+      Address:
+    </div>
+
+    <div *ngIf="clientMessage.message.length > 0" class="alert alert-danger" role="alert">
+      {{ clientMessage.message }}
+    </div>
+
+  </div>
+
+</div>

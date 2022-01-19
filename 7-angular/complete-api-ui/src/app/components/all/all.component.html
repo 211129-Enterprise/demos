@@ -18,7 +18,7 @@
     </ul>
 
     <!-- IF there are no Users in the array, display this HTML  (use a structural directive)-->
-    <div *ngIf="users.length == 0">
+    <div *ngIf="users.length == 0" class="alert alert-danger">
       {{ clientMessage.message }}
     </div>
 
