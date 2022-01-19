@@ -59,15 +59,21 @@ mvn clean package
 <br>
 
 ## 4. Containerize, & Deploy your App:
-1. `cd` into the project's root directory, where the `Dockerfile` is located.
+1. Start the Docker Daemon - run:
+
+```
+sudo service docker start
+```
+
+2. `cd` into the project's root directory, where the `Dockerfile` is located.
   
-2. **Build a Docker Image** by running:
+3. **Build a Docker Image** by running:
 
 ```
 docker build -t myapp:auto .
 ```
 
-3. **Run the Container exposing the port your server is set to in your `application.properties` file**
+4. **Run the Container exposing the port your server is set to in your `application.properties` file**
 > *The `-d` stands for "detached mode" so that you can still use your console*
 
 ```
