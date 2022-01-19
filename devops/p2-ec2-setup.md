@@ -11,7 +11,7 @@ You have been provisioned with a `pem` key which allows you to ssh into your AWS
 
 <br>
 
-## Pre-requisites: Dockerize You App :whale:
+## 1. Pre-requisites: Dockerize You App :whale:
 Be sure that your Spring Boot app has a `Dockerfile` in it's root directory. You can use the following code, but be sure to replace the `.jar` name with the name of the jar generated when you run `mvn clean package` on your app:
 
 ```Dockerfile
@@ -26,7 +26,7 @@ ENTRYPOINT ["java", "-jar", "/your-app-0.0.1-SNAPSHOT.jar"]
 <br>
 <br>
 
-## Connect to your instance
+## 2. Connect to your instance
 1. Download the `pem` key I sent you via Slack > drag it to a folder on your desktop.
 
 2. Right click on the folder with the pem key inside it > click `Git Bash Here`
@@ -46,7 +46,7 @@ ssh -i "team-x-e211129.pem" ec2-user@ec2-3-86-216-116.compute-1.amazonaws.com
 <br>
 <br>
 
-## Clone your App and Build the JAR file:
+## 3. Clone your App and Build the JAR file:
 1. In the EC2 instance clone your Spring Boot app onto the instance by running `git clone https://github.com/your-project.git`
 
 2. `cd` into the root direcotry of your project and build the `JAR` file by running:
@@ -58,7 +58,7 @@ ssh -i "team-x-e211129.pem" ec2-user@ec2-3-86-216-116.compute-1.amazonaws.com
 <br>
 <br>
 
-## Containerize, & Deploy your App:
+## 4. Containerize, & Deploy your App:
 1. `cd` into the project's root directory, where the `Dockerfile` is located.
   
 2. **Build a Docker Image** by running:
