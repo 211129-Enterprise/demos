@@ -52,7 +52,7 @@ ssh -i "team-x-e211129.pem" ec2-user@ec2-3-86-216-116.compute-1.amazonaws.com
 2. `cd` into the root direcotry of your project and build the `JAR` file by running:
 
 ```
- `mvn clean package`
+mvn clean package
 ```
 
 <br>
