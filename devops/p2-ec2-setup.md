@@ -77,7 +77,7 @@ docker run -d -p 5000:5000 myapp:auto
 <br>
 <br>
 
-:tada: **All done!**
+### :tada: All done!
 > *Your application is now running in a docker container accepting requests via the IPv4 address of your EC2 instance*
 
 - Team 1 Public IPv4 DNS: `ec2-3-86-216-116.compute-1.amazonaws.com`
