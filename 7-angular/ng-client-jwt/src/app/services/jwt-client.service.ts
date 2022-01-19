@@ -28,4 +28,14 @@ export class JwtClientService {
 
     return this.http.get(url, {headers, responseType: 'text' as 'json'}) // the login() method of our spring security app returns a string!
   }
+
+  public login(username:string, password:string) {
+
+    let req: any = {
+      "username" : username,
+      "password" : password
+    }
+
+    return this.generateToken(req); // we can subscribe to this return value in the login component
+  }
 }
