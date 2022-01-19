@@ -1,6 +1,22 @@
 # How to Set Up an EC2 to Deploy a Spring Boot Backend
 You have been provisioned with a `pem` key which allows you to ssh into your AWS Linux EC2 instance. To Connect to it, do the following
 
+<br>
+
+## Pre-requisites: Dockerize You App :whale:
+Be sure that your Spring Boot app has a `Dockerfile` in it's root directory. You can use the following code, but be sure to replace the `.jar` name with the name of the jar generated when you run `mvn clean package` on your app:
+
+```Dockerfile
+FROM openjdk:8-jdk-alpine
+
+# Copy the JAR from the target folder into the container
+COPY /target/your-app-0.0.1-SNAPSHOT.jar your-app-0.0.1-SNAPSHOT.jar 
+
+ENTRYPOINT ["java", "-jar", "/your-app-0.0.1-SNAPSHOT.jar"]
+```
+
+<br>
+
 ## Connect to your instance
 1. Download the `pem` key I sent you via Slack > drag it to a folder on your desktop.
 
@@ -17,20 +33,6 @@ ssh -i "team-x-e211129.pem" ec2-user@ec2-3-86-216-116.compute-1.amazonaws.com
 4. After running the above `ssh` command, type yes if prompted to continue connecting.
   
 > *I have installed the JDK 8, Maven, Git, and Docker on your instance.  All you need to do is deploy your containerized app as follows:*
-
-<br>
-
-## Pre-requisites: Dockerize You App :whale:
-Be sure that your Spring Boot app has a `Dockerfile` in it's root directory. You can use the following code, but be sure to replace the `.jar` name with the name of the jar generated when you run `mvn clean package` on your app:
-
-```Dockerfile
-FROM openjdk:8-jdk-alpine
-
-# Copy the JAR from the target folder into the container
-COPY /target/your-app-0.0.1-SNAPSHOT.jar your-app-0.0.1-SNAPSHOT.jar 
-
-ENTRYPOINT ["java", "-jar", "/your-app-0.0.1-SNAPSHOT.jar"]
-```
 
 <br>
 
