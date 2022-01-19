@@ -12,7 +12,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { FindComponent } from './components/find/find.component';
 import { RemoveComponent } from './components/remove/remove.component'; // built in library where we get ngModel directive from
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 
 @NgModule({
   declarations: [
@@ -29,7 +32,12 @@ import { RemoveComponent } from './components/remove/remove.component'; // built
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+<<<<<<< HEAD
     FormsModule
+=======
+    FormsModule, // this is necessary for ([ngModel])
+    NgbModule
+>>>>>>> main
   ],
   providers: [],
   bootstrap: [AppComponent]

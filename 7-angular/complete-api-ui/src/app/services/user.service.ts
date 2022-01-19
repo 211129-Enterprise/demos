@@ -45,6 +45,7 @@ export class UserService {
     );
   }
 
+<<<<<<< HEAD
   // DELETE
   removeUserById(id: number) {
     return this.http.delete<User>(`${url}/${id}`)
@@ -52,6 +53,29 @@ export class UserService {
       catchError(this.handleError)
     );
   }
+=======
+   // GET by ID -> http://completeapibeanstalk-env.eba-sfn83npg.us-east-1.elasticbeanstalk.com/api/users/{id}
+   findUserById(id: number): Observable<User> {
+
+      return this.http.get<User>(`${url}/${id}`)
+        .pipe(
+          catchError(this.handleError)
+        );
+   }
+
+
+  // DELETE
+  deleteUser(id: number) {
+    let deleteUrl = `${url}/${id}`;
+    return this.http.delete(deleteUrl)
+      .pipe(
+        catchError(this.handleError)
+      );
+    // this.http.request('delete', deleteUrl).subscribe(console.log);
+    // this is another way of making a delete request
+  }
+
+>>>>>>> main
 
 
 

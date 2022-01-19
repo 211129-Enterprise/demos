@@ -27,8 +27,4 @@ export class RegisterComponent {
         error => this.clientMessage.message = `Something went wrong. Error: ${error}`   // error => this.userService.logger.error(error)
       )
   }
-
-
-
-
 }

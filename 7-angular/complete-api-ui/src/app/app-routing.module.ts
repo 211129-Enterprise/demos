@@ -8,6 +8,7 @@ import { RemoveComponent } from './components/remove/remove.component';
 
 const routes: Routes = [
 
+<<<<<<< HEAD
   { path: '', component: MainComponent },
   { path: 'main', component: MainComponent }, // http:localhost:4200/main
   { path: 'all', component: AllComponent },
@@ -17,6 +18,16 @@ const routes: Routes = [
 
 
   { path: '**', component: MainComponent } // this is a WildCard Route to handle unknown paths (must be last)
+=======
+  {path: '', component: MainComponent},
+  {path: 'main', component: MainComponent}, // http:localhost:4200/main
+  {path: 'all', component: AllComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'find', component: FindComponent },
+  { path: 'remove', component: RemoveComponent },
+
+  {path: '**', component: MainComponent}, // this is a WildCard Route to handle unknown paths (this MUST be last)
+>>>>>>> main
 ];
 
 @NgModule({

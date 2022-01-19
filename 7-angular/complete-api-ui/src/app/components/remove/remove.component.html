@@ -3,6 +3,7 @@
   <div>
     <h2 class="card-header text-center">{{ title }}</h2>
   </div>
+<<<<<<< HEAD
   <div class="card-body">
     <!-- My input box and button -->
 
@@ -12,14 +13,34 @@
       <span class="input-group-text" id="addon-wrapping">Id</span>
       <!-- 2-way Property Binding: nModel [()] -->
       <input [(ngModel)]="userId" name="userId" type="number" class="form-control" placeholder="User Id Number" aria-label="Username" aria-describedby="addon-wrapping" (keydown.enter)="removeUser()">
+=======
+
+  <div class="card-body">
+
+    <!-- My input box and button! -->
+
+    <h5 class="card-title">Enter the Id of the User you want to remove:</h5>
+
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="addon-wrapping">Id</span>
+      <!-- 2 way property binding: ngModel [()] -->
+      <input [(ngModel)]="userId" name="userId" type="number" class="form-control" placeholder="User's Id Number" aria-label="Username" aria-describedby="addon-wrapping" (keydown.enter)="removeUser()">
+>>>>>>> main
     </div>
 
     <button class="btn btn-secondary" (click)="removeUser()">Find</button>
 
+<<<<<<< HEAD
+=======
+        <!-- In the case that an error is thrown upon retrieving the user, render this client message -->
+>>>>>>> main
     <div *ngIf="clientMessage.message.length > 0" class="alert" role="alert">
       {{ clientMessage.message }}
     </div>
 
   </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 </div>

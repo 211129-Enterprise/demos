@@ -13,6 +13,8 @@ export class JwtClientService {
   public generateToken(request: any) {
     // hit the authenticate endpoint of our server
     return this.http.post(`${url}/authenticate`, request, {responseType: 'text' as  'json'})
+    // https://stackoverflow.com/questions/50798592/angular-6-how-to-set-response-type-as-text-while-making-http-call
+    // https://angular.io/guide/http
   }
 
   // accessLogin(token) - send the request with the token to the login() method at "/"
