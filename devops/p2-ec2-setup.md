@@ -1,5 +1,5 @@
 # How to Set Up an EC2 to Deploy a Spring Boot Backend
-You have been provisioned with a `pem` key which allows you to ssh into your AWS Linux EC2 instance. To Connect to it, do the following
+You have been provisioned with a `pem` key which allows you to ssh into your AWS Linux EC2 instance. To connect to it, follow all steps (connection is step 2).
 
 <br>
 
