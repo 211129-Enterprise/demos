@@ -6,8 +6,8 @@ You have been provisioned with a `pem` key which allows you to ssh into your AWS
 #### 3 Steps to Deployment:
 - Step 1: Dockerize your app (pre-req)
 - Step 2: Connect to your instance
-- Step 3: Build the JAR with Maven
-- Step 4: Clone, Containerize, & Deploy your App
+- Step 3: Clone your App & Build the JAR with Maven
+- Step 4: Containerize, & Deploy your App
 
 <br>
 
