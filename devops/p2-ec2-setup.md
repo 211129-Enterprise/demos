@@ -3,6 +3,13 @@ You have been provisioned with a `pem` key which allows you to ssh into your AWS
 
 <br>
 
+#### 3 Steps to Deployment:
+- Step 1: Dockerize your app (pre-req)
+- Step 2: Connect to your instance
+- Step 3: Clone, Containerize, & Deploy your App
+
+<br>
+
 ## Pre-requisites: Dockerize You App :whale:
 Be sure that your Spring Boot app has a `Dockerfile` in it's root directory. You can use the following code, but be sure to replace the `.jar` name with the name of the jar generated when you run `mvn clean package` on your app:
 
