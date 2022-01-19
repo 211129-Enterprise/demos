@@ -23,6 +23,7 @@ ENTRYPOINT ["java", "-jar", "/your-app-0.0.1-SNAPSHOT.jar"]
 ```
 
 <br>
+<br>
 
 ## Connect to your instance
 1. Download the `pem` key I sent you via Slack > drag it to a folder on your desktop.
@@ -42,6 +43,7 @@ ssh -i "team-x-e211129.pem" ec2-user@ec2-3-86-216-116.compute-1.amazonaws.com
 > *I have installed the JDK 8, Maven, Git, and Docker on your instance.  All you need to do is deploy your containerized app as follows:*
 
 <br>
+<br>
 
 ## Clone, Containerize, & Deploy your App:
 1. In the EC2 instance clone your Spring Boot app onto the instance by running `git clone https://github.com/your-project.git`
@@ -60,6 +62,9 @@ docker build -t myapp:auto .
 ```
 docker run -d -p 5000:5000 myapp:auto
 ```
+
+<br>
+<br>
 
 :tada: **All done!**
 > *Your application is now running in a docker container accepting requests via the IPv4 address of your EC2 instance*
