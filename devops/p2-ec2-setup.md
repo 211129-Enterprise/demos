@@ -34,7 +34,7 @@ ENTRYPOINT ["java", "-jar", "/your-app-0.0.1-SNAPSHOT.jar"]
 3. Inside the Git Bash terminal, run the following command:
 
 ```
-ssh -i "team-x-e211129.pem" ec2-user@ec2-3-86-216-116.compute-1.amazonaws.com
+ssh -i "team-x-e211129.pem" ec2-user@<Your EC2 IP>.compute-1.amazonaws.com
 ```
 
 > *The name of the pem key after `-i` corresponds **to the exact name of the pem key file I sent you***. *If you are on a Mac, you may need to run `chmod 400 team-1-e211129.pem` if your terminal shoots back a permissions error.  Then run the `ssh` command again.*
