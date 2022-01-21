@@ -43,9 +43,13 @@
 
 - Evaluate JavaScript expressions such as: `console.log(1 + "2" + "2");`
 
+- Create a method to evaluate a SQL expression using JDBC.
+
 - Wipro doesn't follow the normal panel style "question/answer". They will focus on Collections at some point for sure, however, they will test candidates on whatever they say in their "About me" at the beginning, especially if they say they are good at it.
     - For example, one candidate said he worked a lot with Maven. Eventually, he was asked to write a `pom.xml` file from scratch.
     - **DO NOT** talk about previous languages outside of these 10 weeks you've worked with briefly (like R or Python, for example), because they will turn the interview into an R or Python interview.  Stick to Java.
+
+
 
  
  
