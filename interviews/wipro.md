@@ -42,6 +42,10 @@
  ## Coding Problems:
  *Below I've outline common tehcnical interview questions along with a resource on how to do it:*
  
+ > *While you are coding infront of them, Wipro will look for you to say your thought process outloud. **DO NOT** code in silence.  They also welcome questions about the code.  They are looking for good listeners who are creative and communicative in their problem solving process - rely on your own knowledge and practice as well as your interviewer's.  Don't be afraid to ask them questions.*
+ 
+<br>
+ 
  - Fibbonacci Implementation
     - [How to do it](https://www.geeksforgeeks.org/different-ways-to-print-fibonacci-series-in-java/)
     - [Hackerrank Practice Problem](https://www.hackerrank.com/challenges/ctci-fibonacci-numbers/problem)
