@@ -1,6 +1,8 @@
 # Wipro Interview Prep
 *Below are the criteria upon which Wipro will evaluate.  See coding problems at the bottom.  **The biggest thing that Wipro looks for is confidence and communication.  You must speak through your thought process when coding in front of them**:*
 
+<br>
+
 - Java 8 Basics
   - Basics/Fundamentals: Be confident and adept in all Java basics (Week 1 & 3)
   - :star: Collections: Maps, Set, `equals()` and `hashCode()` contracts - *Wipro asks a lot of questions about the different data structures*
