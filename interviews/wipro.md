@@ -24,6 +24,10 @@
 
 <br>
 
+- "Tell me about yourself" - [How to answer well](https://www.indeed.com/career-advice/interviewing/interview-question-tell-me-about-yourself)
+
+<br>
+
 - Soft Skills: Evalutated for...
   -  Communication & Articulation
   -  Attitude
