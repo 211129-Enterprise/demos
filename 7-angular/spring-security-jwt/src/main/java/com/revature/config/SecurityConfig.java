@@ -31,6 +31,7 @@ import com.revature.service.CustomUserDetailsService;
  */
 @Configuration
 @EnableWebSecurity
+// possibility to include @CrossOrigin("http://localhost:4200");
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
