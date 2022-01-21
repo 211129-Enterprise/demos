@@ -1,9 +1,9 @@
 # Wipro Interview Prep
-*Below are the criteria upon which Wipro will evaluate:*
+*Below are the criteria upon which Wipro will evaluate.  See coding problems at the bottom:*
 
 - Java 8 Basics
   - Basics/Fundamentals: Be confident and adept in all Java basics (Week 1 & 3)
-  - :star: Collections: Maps, Set, `equals()` and `hashCode()` contracts
+  - :star: Collections: Maps, Set, `equals()` and `hashCode()` contracts - *Wipro asks a lot of questions about the different data structures*
   - Multithreading: What are the multiple ways to create a thread in Java?
 
 <br>
@@ -27,8 +27,13 @@
   -  Communication & Articulation
   -  Attitude
   -  Coachability/Adaptability
+  -  How well does the candidate listen 
  
  <br>
+ 
+ - Basic Javascript - Datatypes, Strings & Boolean Manipulation
+
+- [MVC: Model View Controller pattern](https://www.codecademy.com/article/mvc)
  
  ## Coding Problems:
  *Below I've outline common tehcnical interview questions along with a resource on how to do it:*
