@@ -1,10 +1,18 @@
 # Wipro Interview Prep
-*Below are the criteria upon which Wipro will evaluate.  See coding problems at the bottom:*
+*Below are the criteria upon which Wipro will evaluate.  See coding problems at the bottom.  **The biggest thing that Wipro looks for is confidence and communication.  You must speak through your thought process when coding in front of them**:*
 
 - Java 8 Basics
   - Basics/Fundamentals: Be confident and adept in all Java basics (Week 1 & 3)
   - :star: Collections: Maps, Set, `equals()` and `hashCode()` contracts - *Wipro asks a lot of questions about the different data structures*
   - Multithreading: What are the multiple ways to create a thread in Java?
+  - **How does Java verify that an object is unique? How does a Set check uniqueness?
+
+<br>
+
+- SQL
+  - Be able to make an `INNER JOIN` from two tables
+  - Purpose of `UNION`
+  - Purpose of Prepared Statements (be able to cite that SQL Injection is a recognized threat to Web services as stated by [OWASP](https://owasp.org/www-community/attacks/SQL_Injection))
 
 <br>
 
@@ -13,13 +21,6 @@
 <br>
 
 - REST API - What makes an API RESTful?
-
-<br>
-
-- SQL
-  - Be able to make an `INNER JOIN` from two tables
-  - Purpose of `UNION`
-  - Purpose of Prepared Statements (be able to cite that SQL Injection is a recognized threat to Web services as stated by [OWASP](https://owasp.org/www-community/attacks/SQL_Injection))
 
 <br>
 
@@ -40,7 +41,7 @@
  <br>
  
  ## Coding Problems:
- *Below I've outline common tehcnical interview questions along with a resource on how to do it:*
+ *Below I've outlined common tehcnical interview questions along with a resource on how to do it:*
  
  > *While you are coding infront of them, Wipro will look for you to say your thought process outloud. **DO NOT** code in silence.  They also welcome questions about the code.  They are looking for good listeners who are creative and communicative in their problem solving process - rely on your own knowledge and practice as well as your interviewer's.  Don't be afraid to ask them questions.*
  
