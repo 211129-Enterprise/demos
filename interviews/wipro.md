@@ -30,10 +30,14 @@
   -  How well does the candidate listen 
  
  <br>
- 
- - Basic Javascript - Datatypes, Strings & Boolean Manipulation
+
+- Basic Javascript - Datatypes, Strings & Boolean Manipulation
+
+<br>
 
 - [MVC: Model View Controller pattern](https://www.codecademy.com/article/mvc)
+ 
+ <br>
  
  ## Coding Problems:
  *Below I've outline common tehcnical interview questions along with a resource on how to do it:*
