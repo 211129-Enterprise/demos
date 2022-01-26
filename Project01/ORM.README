@@ -1,4 +1,6 @@
-ORMageddon
+BankAssist
+
+BankAssist
 Project Description
 A java based ORM for connecting to and from an SQL database without the need for SQL or connection management.
 
@@ -10,12 +12,12 @@ Features
 List of features ready and TODOs for future development
 
 Easy to use and straightforward user API.
-No need for SQL, HQL, or any databse specific language.
+No need for SQL, HQL, or any database specific language.
 Straightforward and simple Annotations for ease of use.
 
   <dependency>
     <groupId>com.revature</groupId>
-	  <artifactId>demo</artifactId>
+	  <artifactId>BankAssist</artifactId>
 	  <version>0.0.1-SNAPSHOT</version>
   </dependency>
 
@@ -39,7 +41,7 @@ Indicates that the annotated field is the primary key for the table. If a name i
 User API
 public HashMap<Class<?>, HashSet<Object>> getCache()
 returns the cache as a HashMap.
-public boolean addClass(final Class<?> clazz)
+public boolean addClass(final Class<?> claxx)
 Adds a class to the ORM. This is the method to use to declare a Class is an object inside of the database. By default, the ORM will add all of your annotated classes to the database.
 public boolean UpdateObjectInDB(final Object obj,final String update_columns)
 Updates the given object in the databse. Update columns is a comma seperated list of all columns in the object which need to be updated.
@@ -47,8 +49,8 @@ public boolean removeObjectFromDB(final Object obj)
 Removes the given object from the database.
 public boolean addObjectToDB(final Object obj)
 Adds the given object to the database.
-public Optional<List<Object>> getListObjectFromDB(final Class <?> clazz, final String columns, final String conditions)
-public Optional<List<Object>> getListObjectFromDB(final Class<?> clazz)
+public Optional<List<Object>> getListObjectFromDB(final Class <?> claxx, final String columns, final String conditions)
+public Optional<List<Object>> getListObjectFromDB(final Class<?> claxx)
 Gets a list of all objects in the database which match the included search criteria
 columns - comma seperated list of columns to search by.
 conditions - coma seperated list the values the columns should match to.
@@ -64,5 +66,5 @@ public void releaseSavepoint(final String name)
 Release the savepoint with the given name.
 public void commitTransaction()
 Commit the transaction block.
-public void addAllFromDBToCache(final Class<?> clazz)
+public void addAllFromDBToCache(final Class<?> claxx)
 Adds all objects currently in the databse of the given class type to the cache.
