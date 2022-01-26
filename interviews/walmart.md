@@ -17,7 +17,8 @@
 
 - Difference between forEach and Map in JavaScript?
 
-- How do you implement SWAGGER? They mean [this](https://swagger.io/)!
+- How do you implement Swagger? They mean [this](https://swagger.io/)!
+  - We did this in class [here](https://github.com/211129-Enterprise/demos/blob/main/5-spring/CompleteAPI/src/main/java/com/revature/controller/RootController.java) 
 
 - "Name CRUD and RESTful methods"
   > I beleive they were looking for what HTTP verbs correspond to different CRUD methods.
