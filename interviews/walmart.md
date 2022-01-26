@@ -1,6 +1,8 @@
 # Walmart Interview Questions
 > *It has been reported by previous associates that the interview lasted exactly 60 minutes and incorporated both technical and behavioral questions. **All coding problems were exclusively on Core Java***
 
+<br>
+
 ## Verbal Technical Questions
 
 - What is Java?
@@ -20,6 +22,7 @@
 - "Name CRUD and RESTful methods"
   > I beleive they were looking for what HTTP verbs correspond to different CRUD methods.
 
+<br>
 
 ## Coding Problems (in Java only)
 
@@ -29,6 +32,9 @@
 
 - [Merge 2 lists](https://howtodoinjava.com/java/collections/arraylist/merge-arraylists/)
 
+- [Print the right-side view of a binary tree](https://www.geeksforgeeks.org/print-right-view-binary-tree-2/)
+
+<br>
 
 ## Behavioral Questions
 - What book did you read most recently? 👀
