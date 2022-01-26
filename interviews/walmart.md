@@ -1,5 +1,5 @@
 # Walmart Interview Questions
-> *It has been reported by previous associates that the interview lasted exactly 60 minutes and incorporated both technical and behavioral questions. **All coding problems were exclusively on Core Java***
+> *It has been reported by previous associates that the interview lasted exactly 60 minutes and incorporated both technical and behavioral questions. **All coding problems were exclusively in Java***
 
 <br>
 
