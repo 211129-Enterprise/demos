@@ -27,6 +27,10 @@
 
 ## Coding Problems (in Java only)
 
+- Given an input string such as "Welcome to Walmart e-Commerce" write code using Java to reverse the letter of each word while keeping the position of the word in the string using a recursive method. (Expected output: "emocleW ot tramlaW ecremmoC-e")
+
+- Given an array of numbers such as [12, 345, 121, 67, 786, 9] write code using Java to sort them using [mergeSort](https://www.geeksforgeeks.org/merge-sort/).
+
 - [Sort an array](https://www.javatpoint.com/how-to-sort-an-array-in-java)
 
 - [Recursively reverse a String](https://www.geeksforgeeks.org/reverse-a-string-using-recursion/)
