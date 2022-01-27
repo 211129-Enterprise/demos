@@ -3,6 +3,10 @@
 
 <br>
 
+ :star: [Here](https://docs.google.com/spreadsheets/d/1PVKgjH_LgKxR5LaUCgGqbdwwWAUQtVqUjNMQa9TKyCc/edit?usp=sharing) is a report from serveral previous associates in a Walmart interview
+
+<br>
+
 ## Verbal Technical Questions
 
 - What is Java?
