@@ -11,14 +11,14 @@
 # /home/ec2-user is where you are (you are ec2-user)
 
 # ====== EC2 ENVIRONMENT SETUP ======
+# install cowsay and play around if you want :p
+sudo yum install cowsay -y
+
 # Set up the environment for your EC2 instance
 sudo yum install java-1.8.0-openjdk-devel -y
 sudo yum install maven -y
 sudo yum install git -y
 sudo amazon-linux-extras install tomcat8.5 -y
-
-# install cowsay and play around if you want :p
-sudo yum install cowsay -y
 
 # Make a new directory to hold your project to host
 mkdir projects
