@@ -24,7 +24,7 @@
   		<property name="hibernate.connection.pool_size">10</property>
   
         <!-- Update database on startup -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
   		<!-- NONE, CREATE, UPDATE, VALIDATE (prod) -->
 
   
