@@ -8,7 +8,7 @@
   
         <!-- Connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://week4-211129.cvtq9j4axrge.us-east-1.rds.amazonaws.com:5432/postgres</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://week4-220214.cvtq9j4axrge.us-east-1.rds.amazonaws.com:5432/postgres</property>
         <property name="hibernate.connection.username">postgres</property>
         <!-- Keep in mind your password may be different -->
         <property name="hibernate.connection.password">postgres</property>
@@ -24,8 +24,9 @@
   		<property name="hibernate.connection.pool_size">10</property>
   
         <!-- Update database on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
   		<!-- NONE, CREATE, UPDATE, VALIDATE (prod) -->
+
   
         <!-- Annotated entity classes -->
         <mapping class="com.revature.models.Employee"/>

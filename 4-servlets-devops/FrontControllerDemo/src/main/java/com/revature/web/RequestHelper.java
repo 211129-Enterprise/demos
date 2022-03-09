@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.dao.EmployeeDAO;
@@ -20,8 +20,8 @@ import com.revature.service.EmployeeService;
 
 public class RequestHelper {
 	
-	// a logger
-	private static Logger logger = Logger.getLogger(RequestHelper.class);
+//	// a logger
+//	private static Logger logger = Logger.getLogger(RequestHelper.class);
 	// an employeeService instance
 	private static EmployeeService eserv = new EmployeeService(new EmployeeDAO());
 	// an object mapper
@@ -36,7 +36,7 @@ public class RequestHelper {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		logger.info("User attempted to login with username " + username);
+//		logger.info("User attempted to login with username " + username);
 		
 		// call the confirmLogin() method with those values
 		Employee e = eserv.confirmLogin(username, password);
@@ -53,6 +53,8 @@ public class RequestHelper {
 			response.setContentType("text/html");
 			
 			// conver the object with Jackson object mapper and print it out
+			out.println("<h1>Welcome " + e.getFirstName() + " !</h1>");
+			out.println("<h3>You have successfully logged in - here's your info:</h3> <br />");
 			out.println(om.writeValueAsString(e));
 		} else {
 			// if the reutrned object is null return a HTTP status called No Content Status

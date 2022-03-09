@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 	
 	/**
-	 * THe purpose of the HibernateUtil.java Helper File 
+	 * The purpose of the HibernateUtil.java Helper File 
 	 * is to handle startup (DB connection) and access Hibernate's 
 	 * SessionFactory interface to obtain a Session Object.
 	 */
