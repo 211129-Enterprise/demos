@@ -1,0 +1,13 @@
+html, body {
+    height: 70%;
+    background-color: whitesmoke;
+}
+
+body {
+    padding: 70px;
+}
+
+.card {
+    padding: 1%;
+    background-color: rgb(223, 223, 132);
+}
