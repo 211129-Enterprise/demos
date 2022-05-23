@@ -1,8 +1,6 @@
 # Welcome to Java :coffee:
 In this demo we'll create our first Java program...without an IDE, simply by writing some simple java source code in a plain text file (with a `.java` extension).
 
-> *Please note:* I use Windows 10 with **Cmdr** as an alternative to the Windows CLI.  Learn to install it [here](https://medium.com/@alikingravi/installing-cmder-as-an-alternative-windows-command-line-tool-202b866115d9).
-
 <br>
 
 1. Confirm that the JDK is installed on your machine by opening your terminal and running `java -version`.  Additionally, ensure that the java compiler is installed by running `javac -version`.
