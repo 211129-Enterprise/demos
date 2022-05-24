@@ -9,7 +9,9 @@ In this demo we'll create our first Java program...without an IDE, simply by wri
 
 <br>
 
-2. Create a folder. `cd` into this folder and create a document called `HelloWorld.java` with `touch HelloWorld.java`. Open the folder in a plain text editor of your choice.
+2. Open up Gitbash on your computer (if you're on Windows) or a termianl if you're on Mac. Create a folder by running the command `mkdir FirstJavaProgram`. Then `cd` into this folder and create a document called `HelloWorld.java` with `nano HelloWorld.java`.
+
+> *`nano` will open a terminal-based text editor traditionally used for UNIX-based systems*
 
 3. Write the following code:
 
@@ -27,7 +29,7 @@ public class HelloWorld {
 
 <br>
 
-4. Save the file. In the terminal **COMPILE** the program with: `javac HelloWorld.java`.  You will notice that a `HelloWorld.class` file appears in the same directory where `HelloWorld.java` is located.
+4. Save the file by typing `ctrl + X` and then press `Y`. In the terminal **COMPILE** the program with: `javac HelloWorld.java`.  You will notice that a `HelloWorld.class` file appears in the same directory where `HelloWorld.java` is located.
     
     > *What happened?* `javac` is the program that translates Java code into bytecode in the form of a `.class` file...or Class. The `.class` extenstion allows it to be executed by the *JVM*.
 
