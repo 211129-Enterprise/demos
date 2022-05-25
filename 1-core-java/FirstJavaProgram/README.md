@@ -9,7 +9,7 @@ In this demo we'll create our first Java program...without an IDE, simply by wri
 
 <br>
 
-2. Open up Gitbash on your computer (if you're on Windows) or a termianl if you're on Mac. Create a folder by running the command `mkdir FirstJavaProgram`. Then `cd` into this folder and create a document called `HelloWorld.java` with `nano HelloWorld.java`.
+2. Open up Gitbash on your computer (if you're on Windows) or a terminal if you're on Mac. Create a folder by running the command `mkdir FirstJavaProgram`. Then `cd` into this folder and create a document called `HelloWorld.java` with `nano HelloWorld.java`.
 
 > *`nano` will open a terminal-based text editor traditionally used for UNIX-based systems*
 
